@@ -6,6 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
+
+    /* This makes animating gradients possible
+       Won't really work in Safari, Firefox */
+
     @property --brightness {
       syntax: '<percentage>';
       inherits: false;
@@ -54,7 +58,7 @@
       background-image: repeating-linear-gradient(-45deg, #000 0 2rem, hsl(55 100% 45%) 2rem 4rem); 
       background-position: center;
       border-radius: .33rem;
-      box-shadow: 0 0 10px hsl(0 0% 0% / .5);
+      box-shadow: 5px 1px 0 hsl(0 0% 0% / .5);
       position: relative;
     }
 
@@ -86,10 +90,7 @@
       top: -1.9rem;
       transform: translateX(-50%);
       background-image: radial-gradient(hsl(30 100% var(--brightness)), hsl(0 100%  calc(var(--brightness) * .8)), hsl(0 30% calc(var(--brightness) * .3)));
-      
-      @supports (@property --foo) {
-        animation: 1s infinite alternate blinkers;
-      }
+      animation: 1s infinite alternate blinkers;
     }
 
     .light:nth-of-type(2) {

@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-
     @property --brightness {
       syntax: '<percentage>';
       inherits: false;
@@ -51,7 +50,6 @@
 
     .underConstruction {
       padding: 1rem;
-      line-height: 1rem;
       margin-top: 3rem;
       background-image: repeating-linear-gradient(-45deg, #000 0 2rem, hsl(55 100% 45%) 2rem 4rem); 
       background-position: center;
@@ -62,8 +60,11 @@
 
     .underConstruction span {
       display: inline-block;
-      font-size: 1.5rem;
+      font-size: 3vw;
+      font-size: clamp(1rem, 3vw, 1.5rem);
+      line-height: 1.2;
       background-color: hsl(0 0% 20% / .9); 
+      background-position-x: center;
       box-shadow: 0 0 4px hsl(200 80% 30%);
       border: 1px #fff3 solid;
       color: white;
@@ -73,9 +74,7 @@
     }
 
     .light {
-      --brightness: 80%;
-
-      animation: 1s infinite alternate blinkers;
+      --brightness: 50%;
       background-color: red;
       border: 2px hsl(0 0% 0% / .1) solid;
       box-shadow: 0 0 20px hsl(0 100% 80% / var(--brightness));
@@ -87,17 +86,23 @@
       top: -1.9rem;
       transform: translateX(-50%);
       background-image: radial-gradient(hsl(30 100% var(--brightness)), hsl(0 100%  calc(var(--brightness) * .8)), hsl(0 30% calc(var(--brightness) * .3)));
+      
+      @supports (@property --foo) {
+        animation: 1s infinite alternate blinkers;
+      }
     }
 
     .light:nth-of-type(2) {
+      --brightness: 30%;
       left: 50%;
       animation-delay: -.2s;
     }
 
     .light:nth-of-type(3) {
+      --brightness: 80%;
       left: 75%;
       animation-delay: -.5s;
-    }    
+    }
 
   </style>
 </head>

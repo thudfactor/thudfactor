@@ -5,6 +5,7 @@ node_modules
 public
 src/css
 social
+dist
 
 # secrets and errors
 .env

@@ -39,9 +39,9 @@ body {
   margin-inline: auto;
 }
 
-header {
-  padding: var(--gutter);
-  font-size: var(--baseFont);
+.always-dark {
+  color: var(--lightest);
+  background-color: var(--darkest);
 
   a {
     color: var(--lightest);
@@ -52,6 +52,11 @@ header {
       text-decoration: underline;
     }
   }
+}
+
+header {
+  padding: var(--gutter);
+  font-size: var(--baseFont);
 
   > div {
     display: flex;
@@ -82,16 +87,11 @@ main {
 }
 
 header {
-  color: var(--lightest);
-  background-color: var(--darkest);
-
   display: flex;
   justify-content: space-between;
 }
 
 footer {
-  color: var(--lightest);
-  background-color: var(--darkest);
   text-align: center;
   padding: var(--gutter);
 }

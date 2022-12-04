@@ -12,7 +12,9 @@
     "type": "git",
     "url": "git+https://github.com/thudfactor/thudfactor.git"
   },
-  "keywords": ["blog"],
+  "keywords": [
+    "blog"
+  ],
   "author": "John Williams",
   "license": "ISC",
   "bugs": {
@@ -20,6 +22,8 @@
   },
   "homepage": "https://github.com/thudfactor/thudfactor#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^1.0.2"
+    "@11ty/eleventy": "^1.0.2",
+    "eleventy-plugin-rev": "^1.0.2",
+    "eleventy-sass": "^2.1.3"
   }
 }

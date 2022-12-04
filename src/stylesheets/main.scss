@@ -4,7 +4,7 @@
 :root {
   // Color scheme
   --lightest: hsl(60 70% 95%);
-  --darkest: hsl(60 70% 10%);
+  --darkest: hsl(80 20% 10%);
 
   --baseFont: clamp(1rem, 2vw, 1.8rem);
   --scan-length: 75ch;
@@ -40,6 +40,7 @@ body {
 }
 
 .always-dark {
+  --darkest: hsl(260, 50%, 5%);
   color: var(--lightest);
   background-color: var(--darkest);
 
@@ -47,6 +48,7 @@ body {
     color: var(--lightest);
     text-decoration: none;
     font-weight: 700;
+    text-shadow: 1px 1px 0 black;
 
     &:hover {
       text-decoration: underline;

@@ -83,6 +83,12 @@ main {
       margin: calc(1.3rem * var(--article-lh)) 0;
       font-weight: 500;
     }
+
+    img {
+      max-width: 30%;
+      margin: 0 auto;
+      height: auto;
+    }
   }
 }
 

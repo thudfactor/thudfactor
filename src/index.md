@@ -3,6 +3,10 @@ title: Welcome to Thudfactor
 layout: base
 ---
 
+<div>
+  <img src="/images/himark.jpg" alt="Scene from 'The Room.' Caption: Oh, hi Mark" />
+</div>
+
 Oh hi, this is awkward. I am…
 
 <div class="underConstruction">

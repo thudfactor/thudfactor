@@ -19,6 +19,15 @@
   @media (prefers-color-scheme: dark) {
     --c-fg: var(--lightest);
     --c-bg: var(--darkest);
+
+    a {
+      &:link, &:visited {
+        color: hsl(60 100% 50%);
+      }
+      &:hover, &:active {
+        color: hsl(45, 100%, 50%);
+      }
+    }
   }
 }
 

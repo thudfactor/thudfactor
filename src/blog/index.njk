@@ -1,0 +1,16 @@
+---
+title: Archives
+layout: base
+---
+
+<div class="blog-list">
+{%- for post in collections.post -%}
+  <section>
+    <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+    <span>{{ post.date.toLocaleDateString() }}</span>
+    <div>
+      {{ post.data.description }}
+    </div>
+  <section>
+{%- endfor -%}
+</div>

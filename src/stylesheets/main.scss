@@ -85,22 +85,6 @@ header {
 
 main {
   padding: var(--gutter);
-
-  article {
-    font-size: clamp(1rem, 2vw, 1.8rem);
-    line-height: var(--article-lh);
-
-    p {
-      margin: calc(1.3rem * var(--article-lh)) 0;
-      font-weight: 500;
-    }
-
-    img {
-      max-width: 30%;
-      margin: 0 auto;
-      height: auto;
-    }
-  }
 }
 
 header {
@@ -111,6 +95,50 @@ header {
 footer {
   text-align: center;
   padding: var(--gutter);
+}
+
+article {
+  --paragraph-margin: calc(1.3rem * var(--article-lh));
+  --text-offset: calc(((1em * var(--article-lh)) - 1em) / 2);
+  font-size: clamp(1rem, 2vw, 1.8rem);
+  line-height: var(--article-lh);
+
+  p {
+    margin: var(--paragraph-margin) 0;
+    font-weight: 500;
+  }
+
+  figure {
+    max-width: 100%;
+    
+    img {
+      width: 100%;
+      max-width: none;
+      height: auto;
+    }
+
+    figcaption {
+      font-size: 1rem; 
+      background-color: var(--darkest);
+      color: var(--lightest);
+      padding: 1rem;
+    }
+  }
+
+  @media (min-width: 640px) {
+    figure {
+      &.right, &.left {
+        max-width: calc(var(--scan-length) * .41);  
+      }
+      &.right {
+        float: right;
+        margin: calc(var(--paragraph-margin) + var(--text-offset)) 0 2ch 2ch;
+      }
+      &.left {
+        float: left;
+      }
+    }
+  }
 }
 
 

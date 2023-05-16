@@ -2,6 +2,7 @@ const eleventySass = require("eleventy-sass");
 const pluginRev = require("eleventy-plugin-rev");
 const path = require("path");
 const Image = require("@11ty/eleventy-img");
+const UpgradeHelper = require("@11ty/eleventy-upgrade-help");
 
 const dir = {
   input: "src",
@@ -42,6 +43,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(eleventySass, {
     rev: true
   });
+  eleventyConfig.addPlugin(UpgradeHelper);
   eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
   eleventyConfig.addShortcode("pageInfo", pageInfo);
   return { dir };

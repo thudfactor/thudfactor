@@ -4,7 +4,7 @@ layout: posts
 date: 2023-06-04
 ---
 
-Hey, this is my <q>Now</q> page. Woot. [What the heck is a now page?](https://nownownow.com/).
+Hey, this is my <q>Now</q> page. Woot. [What the heck is a “Now” page?](https://nownownow.com/).
 
 ## Current project
 

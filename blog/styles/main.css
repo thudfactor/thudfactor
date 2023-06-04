@@ -1,0 +1,113 @@
+@import "reset";
+
+header, footer {
+  text-align: center;
+  border-color: hsl(0deg 0% 90%);
+  border-style: solid;
+  border-width: 0
+}
+
+header {
+
+}
+
+header {
+  padding-bottom: .75rem;
+  border-bottom-width: 1px;
+
+  & .site-title {
+    font-family: "rowdies", sans-serif;
+    font-weight: 300;
+    font-size: 3em;
+    color: hsl(0deg 0% 20%);
+    text-shadow: 0 1px 3px hsla(0deg 0% 10% / 0.5);
+    line-height: 1;
+
+    & a {
+      color: currentColor;
+      text-decoration-thickness: 2;
+      text-decoration-color: hsl(240deg 80% 60% / 0);
+      transition: text-decoration-color 0.2s ease-in-out;
+
+      &:hover {
+        text-decoration-color: hsl(240deg 80% 60% / 1);
+      }
+    }
+  }
+
+  & nav {
+    margin-top: 1.5em;
+    font-family: sans-serif;
+    font-weight: 300;
+    font-size: .9em;
+  }
+
+  & a {
+    color: hsl(0deg 0% 20%);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+      border-bottom-color: hsl(0deg 0% 20%);
+    }
+  }
+}
+
+body {
+  background-color: hsl(0deg 0% 95%);
+  color: hsl(0deg 0% 10%);
+  hyphens: auto;
+  hyphenate-limit-chars: 6 3 3;
+  hyphenate-limit-last: always;
+  hyphenate-limit-lines: 2;
+  hyphenate-limit-zone: 8%;
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: fit-content;
+  background-color: hsl(0deg 0% 100%);
+  padding: 24px;
+}
+
+article {
+  max-width: 38em;
+  margin: 0 auto;
+
+  & h1 {
+    font-family: "rowdies", sans-serif;
+    color: hsl(150deg 30% 30%);
+    font-weight: 300;
+    margin-top: 1.5em;
+  }
+
+  .post-meta {
+    font-size: .9rem;
+    font-family: sans-serif;
+    color: hsl(0deg 0% 30%);
+    margin-bottom: 1.5em;
+  }
+
+  & p {
+    text-indent: 2em;
+  }
+}
+
+.excerpt {
+  margin: 1.5rem 0;
+  & p {
+    text-indent: 0;
+    margin-top: .5em;
+  }
+}
+
+footer {
+  margin-top: 1.5em;
+  padding-top: .6em;
+  border-top-width: 1px;
+  color: hsl(0deg 0% 40%);
+  font-family: sans-serif;
+  font-size: .9em;
+}

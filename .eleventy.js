@@ -1,50 +1,48 @@
-const eleventySass = require("eleventy-sass");
-const pluginRev = require("eleventy-plugin-rev");
-const path = require("path");
-const Image = require("@11ty/eleventy-img");
-const UpgradeHelper = require("@11ty/eleventy-upgrade-help");
+const pluginRss = require("@11ty/eleventy-plugin-rss");
+const pluginPostCSS = require("eleventy-plugin-postcss");
 
-const dir = {
-  input: "src",
-  output: "dist",
-  layouts: "_layouts"
-};
+module.exports = eleventyConfig => {
+  eleventyConfig.addPlugin(pluginRss);
+  eleventyConfig.addPlugin(pluginPostCSS);
 
-function pageInfo() {
-  return '<h1>foo</h1>';
-};
+  eleventyConfig.addShortcode('excerpt', article => extractExcerpt(article));
 
-async function imageShortcode(page, src, alt, width = "1024") {
-  const { inputPath } = page;
-  const filePath = path.dirname(inputPath);
-
-  const computedSrc = `${filePath}/${src}`;
-
-  const metadata = await Image(computedSrc, {
-    formats: "webp",
-    widths: [width],
-    outputDir: "./dist/images",
-    urlPath: "/images/"
+  eleventyConfig.addCollection('categories', collectionApi => {
+    const categories = new Set();
+    const posts = collectionApi.getFilteredByTag('post');
+    posts.forEach(p => {
+      const cats = p.data.categories;
+      cats.forEach(cat => categories.add(cat));
+    });
+    return Array.from(categories);
   });
 
-  const imageAttributes = {
-    alt,
-    sizes: '',
-    loading: "lazy",
-    decoding: "async",
-  };
-
-  return Image.generateHTML(metadata, imageAttributes);
-}
-
-module.exports = function(eleventyConfig) {
-  eleventyConfig.addPassthroughCopy("src/images");
-  eleventyConfig.addPlugin(pluginRev);
-  eleventyConfig.addPlugin(eleventySass, {
-    rev: true
+  eleventyConfig.addFilter("filterByCategory", (posts, cat) => {
+    cat = cat.toLowerCase();
+    const result = posts.filter(p => {
+      const cats = p.data.categories.map(s => s.toLowerCase());
+      return cats.includes(cat);
+    });
+    return result;
   });
-  eleventyConfig.addPlugin(UpgradeHelper);
-  eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
-  eleventyConfig.addShortcode("pageInfo", pageInfo);
-  return { dir };
+
+  const english = new Intl.DateTimeFormat('en-US');
+  eleventyConfig.addFilter('nicedate', date => english.format(date));
+
+  function extractExcerpt(post) {
+    if (!post.templateContent) return '';
+    if (post.templateContent.indexOf('</p>') > 0) {
+      let end = post.templateContent.indexOf('</p>');
+      return post.templateContent.substr(0, end + 4);
+    }
+    return post.templateContent;
+  }
+
+  eleventyConfig.addPassthroughCopy('blog/images/*');
+
+  return {
+    dir: {
+      input: 'blog'
+    }
+  }
 };

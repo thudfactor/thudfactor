@@ -15,7 +15,7 @@ I’m going to try not to write about politics this time.
 
 My current intention is to use this space to write about things I learn, primarily for my own benefit. This approach has worked well for me over at [FilmHydra](https://www.filmhydra.com), which serves more or less as a long form film diary. Here I will talk a lot about web development, agile processes, and … well, anything else I am bouncing around in my head.
 
-This incarnation of _Thudfactor_ (there have been many) was created using [Eleventy](https://www.11ty.dev/). To build it, I leaned pretty heavily on Raymond Camden’s [A Complete Guide to Building a Blog with Eleventy](https://cfjedimaster.github.io/eleventy-blog-guide/guide.html). I found _that_ thanks to [11tybundle.dev](https://11tybundle.dev/). It was good for a leg up, but I am already full of ideas on how to take this further.
+This incarnation of _Thudfactor_ (there have been many) was created using [Eleventy](https://www.11ty.dev/). To build it, I leaned pretty heavily on Raymond Camden’s [A Complete Guide to Building a Blog with Eleventy](https://cfjedimaster.github.io/eleventy-blog-guide/guide.html). I found _that_ thanks to [11tybundle.dev](https://11tybundle.dev/). It was good for a leg up, but I am already full of ideas on how to take this further. I’m keeping a running list of [resources I found helpful](/pages/helpful) here as well.
 
 I’m hosting this sucker through [Netlify](https://www.netlify.com/).
 

@@ -1,7 +1,7 @@
 const config = {
   plugins: [
     require('postcss-import')({
-      path: './blog/_includes/css',
+      path: './src/_includes/css',
     }),
     require('postcss-nesting'),
   ]

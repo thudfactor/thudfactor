@@ -2,6 +2,7 @@
 title: Now
 layout: posts
 date: 2023-06-04
+permalink: now/
 ---
 
 Hey, this is my <q>Now</q> page. Woot. [What the heck is a “Now” page?](https://nownownow.com/).

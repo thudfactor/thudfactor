@@ -7,6 +7,11 @@ header, footer {
   border-width: 0
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 header {
   padding-bottom: .75rem;
   border-bottom-width: 1px;
@@ -71,6 +76,25 @@ body {
 article {
   max-width: 38em;
   margin: 0 auto;
+
+  & blockquote {
+    font-family: sans-serif;
+    margin: 1.5rem 0;
+    padding-left: 1.5em;
+    font-size: .9rem;
+    border-left: 3px #ccc solid;
+
+    & p {
+      text-indent: 0;
+      margin-block: 1.5em;
+    }
+
+    & cite {
+      display: block;
+      font-size: .8rem;
+      text-align: right;
+    }
+  }
 
   & h1 {
     font-family: "rowdies", sans-serif;

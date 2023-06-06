@@ -1,8 +1,13 @@
 ---
 title: Welcome
 layout: main
+pagination:
+  data: collections.post
+  size: 5
+  alias: posts
+  reverse: true
 ---
 
-{% for post in collections.post reversed %}
+{% for post in posts %}
   {% include "post-excerpt.liquid" %}
 {% endfor %}

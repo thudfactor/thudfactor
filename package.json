@@ -26,5 +26,8 @@
     "postcss": "^8.4.24",
     "postcss-import": "^15.1.0",
     "postcss-nesting": "^11.2.2"
+  },
+  "dependencies": {
+    "@11ty/eleventy-img": "^3.1.0"
   }
 }

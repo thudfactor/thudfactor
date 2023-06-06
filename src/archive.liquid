@@ -12,7 +12,7 @@ layout: main
   {% include "post-excerpt.liquid" %}
 {% endfor %}
 
-<p>
+<nav>
   {% if pagination.href.previous %}
     <a href="{{ pagination.href.previous }}">Previous</a>
   {% else %}
@@ -24,4 +24,4 @@ layout: main
   {% else %}
     Next
   {% endif %}
-</p>
+</nav>

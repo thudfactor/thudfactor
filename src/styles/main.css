@@ -10,6 +10,10 @@ header, footer {
 img {
   max-width: 100%;
   height: auto;
+
+  &.basic-image {
+    width: 100%;
+  }
 }
 
 header {
@@ -101,6 +105,20 @@ article {
     color: hsl(150deg 30% 30%);
     font-weight: 300;
     margin-top: 1.5em;
+    line-height: 1.2;
+
+    & span {
+      color: hsl(150deg 0% 40%);
+      font-family: sans-serif;
+      font-weight: 600;
+      font-style: italic;
+      font-size: 1rem;
+      display: block;
+      width: fit-content;
+      border-top: 1px hsl(150deg 0% 80%) solid;
+      margin-top: .5em;
+      padding-top: .5em;
+    }
   }
 
   & h2 {
@@ -116,10 +134,15 @@ article {
     font-family: sans-serif;
     color: hsl(0deg 0% 30%);
     margin-bottom: 1.5em;
+    line-height: 2;
   }
 
   & p {
     text-indent: 1.5em;
+  }
+
+  .basic-image {
+    margin: 1.5em 0;
   }
 }
 

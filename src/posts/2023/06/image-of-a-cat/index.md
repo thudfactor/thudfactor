@@ -10,7 +10,7 @@ Here is a picture of my cat, Cato. He’s a very good cat except for the two hou
 
 {% image "cat.jpeg" "Cato, an orange and white cat, looking at the camera and loudly meowing." %}
 
-It’s hard to believe, but the earliest version of the Web did not include a way to post an image — like I just did above. In fact, the original suggestion from [Marc Andreessen](https://en.wikipedia.org/wiki/Marc_Andreessen)) met with a lot of opposition.
+It’s hard to believe, but the earliest version of the Web did not include a way to post an image. In fact, the original suggestion from [Marc Andreessen](https://en.wikipedia.org/wiki/Marc_Andreessen)) met with a lot of opposition.
 
 > Some worried that arbitrary tags opened the floodgates, and it wouldn’t be long before we had an element for every media type, like an aud tag for audio (or a video tag maybe? That would be just too much)…
 >

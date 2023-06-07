@@ -16,7 +16,7 @@ It’s hard to believe, but the earliest version of the Web did not include a wa
 >
 > Tim Berners-Lee, the creator of the World Wide Web, was hesitant too. He suggested that Andreessen instead use the anchor tag to display inline images instead of creating something entirely new. This would allow users to set their own preferences for how images should be handled. <cite>from [The Origin of the IMG tag](https://thehistoryoftheweb.com/the-origin-of-the-img-tag/)</cite>
 
-Marc wasn’t waiting around for people to agree, however. Later that year he shipped NCSA Mosaic with support for the still-controversial `<img>`. Mosaic became the standard browser for the Web
+Marc wasn’t going to wait around. Later that year he shipped NCSA Mosaic with support for the still-controversial `<img>` tag.
 
 This decision had two consequences. First, it put the web on the road to being a _designable_ medium, which gave the web — and the internet — broad appeal. When I returned to college from my co-op semester in January of 1994 and found Mosaic on my re-imaged computer science workstation, it was the inline images that grabbed my attention and created my entire career.
 

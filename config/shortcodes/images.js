@@ -15,8 +15,8 @@ const path = require('path');
 async function image(
   imgSrc,
   alt,
-  widths="[300, 600, 900, 1200]",
-  sizes="(min-width: 320px) 50vw, 100vw") {
+  widths="[300, 600, 900, 1200, 1800]",
+  sizes="(max-width: 600px) 100vw, 600px") {
 
   const parsedWidths = JSON.parse(widths);
   if (!Array.isArray(parsedWidths)) {
@@ -41,9 +41,9 @@ async function image(
   let result = await Image(imgPath, config);
 
   const srcset = result.webp.map(({srcset}) => srcset).join(', ');
-  const lastImage = result.webp[result.webp.length - 1];
+  const defaultImage = result.webp[0];
 
-  const img = `<img alt="${alt}" src="${lastImage.url}" width="${lastImage.width}" height="${lastImage.height}" srcset="${srcset}" sizes="${sizes}" />`;
+  const img = `<img class="basic-image" alt="${alt}" src="${defaultImage.url}" width="${defaultImage.width}" height="${defaultImage.height}" srcset="${srcset}" sizes="${sizes}" />`;
 
   return img;
 }

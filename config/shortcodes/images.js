@@ -43,7 +43,7 @@ async function image(
   const srcset = result.webp.map(({srcset}) => srcset).join(', ');
   const defaultImage = result.webp[0];
 
-  const img = `<img class="basic-image" alt="${alt}" src="${defaultImage.url}" width="${defaultImage.width}" height="${defaultImage.height}" srcset="${srcset}" sizes="${sizes}" />`;
+  const img = `<img class="basic-image" loading="lazy" alt="${alt}" src="${defaultImage.url}" width="${defaultImage.width}" height="${defaultImage.height}" srcset="${srcset}" sizes="${sizes}" />`;
 
   return img;
 }

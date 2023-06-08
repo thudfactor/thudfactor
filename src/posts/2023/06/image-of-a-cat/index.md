@@ -4,6 +4,9 @@ subtitle: Meditations on the IMG tag
 date: 2023-06-05
 categories: ["HTML"]
 tags: post
+cover:
+  src: cat.jpeg
+  alt: Cato, an orange and white cat, looking at the camera and loudly meowing.
 ---
 
 Here is a picture of my cat, Cato. He’s a very good cat except for the two hours prior to dinnertime. But he’s not the reason I am writing this — I am writing it to talk a bit about images in HTML.

@@ -33,10 +33,14 @@ async function image(
   }
   const templatePath = path.dirname(this.page.inputPath);
 
-  const isLocal = !imgSrc.startsWith('/') & !imgSrc.startsWith('http');
-  const imgPath = (isLocal)
-    ? path.join(templatePath, imgSrc)
-    : imgSrc;
+  let imgPath = "";
+  if (imgSrc.startsWith('/')) {
+    imgPath = path.join('./src', imgSrc);
+  } else if (imgSrc.startsWith('http')) {
+    imgPath = imgSrc;
+  } else {
+    imgPath = path.join(templatePath, imgSrc);
+  }
 
   let result = await Image(imgPath, config);
 

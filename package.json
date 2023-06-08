@@ -21,6 +21,7 @@
   "homepage": "https://github.com/thudfactor/thudfactor#readme",
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-plugin-inclusive-language": "^1.0.3",
     "@11ty/eleventy-plugin-rss": "^1.2.0",
     "eleventy-plugin-postcss": "^1.0.4",
     "postcss": "^8.4.24",

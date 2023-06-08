@@ -1,5 +1,6 @@
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginPostCSS = require("eleventy-plugin-postcss");
+const inclusive = require("@11ty/eleventy-plugin-inclusive-language");
 const { getCategories } = require("./config/collections");
 const { extractExcerpt } = require("./config/shortcodes");
 const { image } = require("./config/shortcodes/images");
@@ -8,6 +9,7 @@ const { filterByCategory, nicedate } = require("./config/filters");
 module.exports = eleventyConfig => {
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginPostCSS);
+  eleventyConfig.addPlugin(inclusive);
 
   eleventyConfig.addCollection('categories', getCategories);
 

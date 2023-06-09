@@ -1,15 +1,21 @@
 <div class="excerpt">
-  <div class="teaser">
-    <a href="{{post.url}}">{{ post.data.title }}</a>
-    - {{ post.date | nicedate }}<br/>
-    {% excerpt post %}
+  <div class="excerpt-header">
+    <h2>
+      <a href="{{post.url}}">{{ post.data.title }}</a>
+    </h2>
+    {{ post.date | nicedate }}<br/>
   </div>
-  {% if post.data.cover %}
-    <figure>
-      {%- capture imagepath -%}
-        {{ post.page.url }}{{ post.data.cover.src }}
-      {%- endcapture -%}
-      {% image imagepath post.data.cover.alt %}
-    </figure>
-  {% endif %}
+  <div class="excerpt-body">
+    <div class="teaser">
+      {% excerpt post %}
+    </div>
+    {% if post.data.cover %}
+      <figure>
+        {%- capture imagepath -%}
+          {{ post.page.url }}{{ post.data.cover.src }}
+        {%- endcapture -%}
+        {% image imagepath post.data.cover.alt %}
+      </figure>
+    {% endif %}
+  </div>
 </div>

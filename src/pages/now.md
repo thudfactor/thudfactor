@@ -1,11 +1,13 @@
 ---
 title: Now
 layout: posts
-date: 2023-06-04
+date: 2023-06-23
 permalink: now/
 ---
 
 Hey, this is my <q>Now</q> page. Woot. [What the heck is a “Now” page?](https://nownownow.com/).
+
+_Updated: 6/12/23_
 
 ## Current project
 
@@ -17,7 +19,12 @@ Making this site. I’ve got a lot of work to do, but that’s OK. I’m looking
 
 ## Reading (For funsies)
 
-I _just_ finished [The Light Fantastic](https://www.terrypratchettbooks.com/books/the-light-fantastic/) by Terry Pratchett and am now at loose ends. I’ll need to find something soon.
+* [Pineapple Grenade](https://www.harpercollins.com/products/pineapple-grenade-tim-dorsey?variant=32207490777122), Tim Dorsey
+
+### Recently
+
+* [The Light Fantastic](https://www.terrypratchettbooks.com/books/the-light-fantastic/), Terry Pratchett
+* [The Apocalypse Codex](https://www.penguinrandomhouse.com/books/310011/the-apocalypse-codex-by-charles-stross/), Charles Stross
 
 ## Watching
 

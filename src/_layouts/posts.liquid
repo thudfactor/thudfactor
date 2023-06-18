@@ -3,6 +3,9 @@ layout: main
 ---
 
 <article>
+  {% if cover %}
+    {% coverImage cover %}
+  {% endif %}
   <h1>
     {{ title }}
     {% if subtitle %}

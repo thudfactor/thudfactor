@@ -4,6 +4,7 @@ subtitle: Font size, line height & line width
 date: 2023-06-17
 categories: ["CSS", "Typography"]
 tags: post
+description: Three CSS typography properties to improve your site’s readability
 cover:
   src: original-movable-type.jpg
   alt: A page set with moveable lead type

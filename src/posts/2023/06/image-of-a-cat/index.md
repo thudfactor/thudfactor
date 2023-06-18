@@ -4,6 +4,7 @@ subtitle: Meditations on the IMG tag
 date: 2023-06-05
 categories: ["HTML"]
 tags: post
+description: John discusses the history of HTML’s image tag.
 cover:
   src: cat.jpeg
   alt: Cato, an orange and white cat, looking at the camera and loudly meowing.

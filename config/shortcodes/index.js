@@ -7,6 +7,10 @@
     return post.templateContent;
   }
 
+  function alertCallout(content, variant = 'info') {
+    return `<div class="alert-callout ${variant}">\n${content}\n</div>`;
+  }
+
   module.exports = {
-    extractExcerpt,
+    extractExcerpt, alertCallout
   }

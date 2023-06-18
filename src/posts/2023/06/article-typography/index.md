@@ -18,7 +18,7 @@ cover:
 
 “Thud factor” is a bit of academic slang for how loud the sound of your thesis hitting the floor. When I first registered this domain in (let me check…) August of 2000 (‼️) my intent was to fill up the site with a whole bunch of text. I did actually do that once upon a time, but one thing I never really got right was the typography.
 
-That’s unfortuate because getting the basics of typography right is not that difficult and there are quite a few excellent examples to emmulate. I am still working and learing, even on this site. but here’s some stuff about the basics.
+That’s unfortuate because getting the basics of typography right is not that difficult and there are quite a few excellent examples to emmulate. I am still learning, still working on this site. But here’s some stuff about the basics.
 
 ## What to focus on first
 

@@ -3,7 +3,7 @@ const pluginPostCSS = require("eleventy-plugin-postcss");
 const inclusive = require("@11ty/eleventy-plugin-inclusive-language");
 const { getCategories } = require("./config/collections");
 const { extractExcerpt, alertCallout } = require("./config/shortcodes");
-const { image, coverImage } = require("./config/shortcodes/images");
+const { image, coverImage, facebookImagePath } = require("./config/shortcodes/images");
 const { filterByCategory, nicedate } = require("./config/filters");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
@@ -18,6 +18,7 @@ module.exports = eleventyConfig => {
   eleventyConfig.addShortcode('excerpt', extractExcerpt);
   eleventyConfig.addShortcode('image', image);
   eleventyConfig.addShortcode('coverImage', coverImage);
+  eleventyConfig.addShortcode('facebookImagePath', facebookImagePath);
 
   eleventyConfig.addPairedShortcode('alertCallout', alertCallout);
 

@@ -1,6 +1,7 @@
 ---
 title: This is an alpha
 date: 2023-06-04
+description: The Thudfactor First Post
 categories: ["throat clearing"]
 tags: post
 ---

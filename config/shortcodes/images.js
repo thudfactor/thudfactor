@@ -29,6 +29,31 @@ function findInputPath(partialPath, templatePath = "") {
  * @param {object} config
  * @returns { string }
  */
+
+async function facebookImagePath(imgPath) {
+  const templatePath = path.dirname(this.page.inputPath);
+  const imgSrc = findInputPath(imgPath, templatePath);
+  const config = {
+    sizes: [1080],
+    format: ['jpg'],
+    outputDir: "./dist/img/",
+  }
+  const result = await Image(imgSrc, config);
+  return `https://www.thudfactor.com${result.jpeg[0].url}`;
+}
+
+async function twitterImagePath(imgPath) {
+  const templatePath = path.dirname(this.page.inputPath);
+  const imgSrc = findInputPath(imgPath, templatePath);
+  const config = {
+    sizes: [1080],
+    format: ['jpg'],
+    outputDir: "./dist/img/",
+  }
+  const result = await Image(imgSrc, config);
+  return `https://www.thudfactor.com${result.jpeg[0].url}`;
+}
+
 async function generateImageTag(imgPath, config, alt="", sizes ="100vw", className="") {
   // provide a default output directory but override the format array if
   // that's provided in the config
@@ -105,5 +130,5 @@ async function coverImage (cover) {
 }
 
 module.exports = {
-  image, coverImage
+  image, coverImage, facebookImagePath, twitterImagePath
 }

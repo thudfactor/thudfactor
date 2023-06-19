@@ -13,7 +13,8 @@ layout: main
     {% endif %}
   </h1>
   <div class="post-meta">
-    {{ date | nicedate }} •
+    {{ date | nicedate }}
+    {% if categories %}•{% endif %}
     {% for cat in categories %}
       <a href="/categories/{{ cat | slugify }}">{{ cat }}</a>
       {% unless forloop.last %}

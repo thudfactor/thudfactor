@@ -205,7 +205,7 @@ Text centered in the line-height (CSS).
 It becomes a mathematical and strategic exercise any time you want to align a border, photo, or other block of something with the top of a line of text. Tell the browsers to line these items up with their tops, and the browser will align the top of an image (for example) and the top of the line-height for the text. But the text itself doesn't actually start at that point unless the line-height is `1`.
 
 <figure class="text-figure">
-<blockquote style="line-height: 2; border-left: 2px #000 solid; padding-left: .8rem; margin-left: 0">
+<blockquote style="line-height: 2; padding-top: 0; padding-bottom: 0; border-left: 2px #000 solid; padding-left: .8rem; margin-left: 0">
 <p>“It was much pleasanter at home,” thought poor Alice, “when one wasn’t
 always growing larger and smaller, and being ordered about by mice and
 rabbits. I almost wish I hadn’t gone down that rabbit-hole—and yet—and

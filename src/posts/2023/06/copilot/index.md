@@ -15,7 +15,7 @@ I’ve been using Copilot for a few weeks now and have come to a few tenative co
 
 Before we get too far in, I’d like to direct your attention to Frederick Brooks’s 1987 essay [No Silver Bullet: Essence and Accident in Software Engineering](https://ieeexplore.ieee.org/document/1702388). Brooks says software development has sped up quite a lot, but attributes this to tools that help us write and debug code more quickly. He said we were beginning to reach the level of diminishing returns from these mechanical aids.
 
-Some things have indeed become faster since then, but I think he was probably right. The big speed gains from tooling have already been made.
+Some things have indeed become faster since then, but I think he was probably right. The big speed gains from tooling were made long ago.
 
 Any significant improvement software production speed, he argues, would have to come from advancements in how we think about software and what it is we are trying to build. That is, it has to come in the analysis stage, when we are asking WTF we are doing anyway.
 

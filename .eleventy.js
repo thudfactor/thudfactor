@@ -1,6 +1,6 @@
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginPostCSS = require("eleventy-plugin-postcss");
-const inclusive = require("@11ty/eleventy-plugin-inclusive-language");
+//const inclusive = require("@11ty/eleventy-plugin-inclusive-language");
 const { getCategories } = require("./config/collections");
 const { extractExcerpt, alertCallout } = require("./config/shortcodes");
 const { image, coverImage, facebookImagePath } = require("./config/shortcodes/images");
@@ -10,7 +10,7 @@ const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 module.exports = eleventyConfig => {
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginPostCSS);
-  eleventyConfig.addPlugin(inclusive);
+  //eleventyConfig.addPlugin(inclusive);
   eleventyConfig.addPlugin(syntaxHighlight);
 
   eleventyConfig.addCollection('categories', getCategories);

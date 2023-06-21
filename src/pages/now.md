@@ -28,5 +28,5 @@ Making this site. I’ve got a lot of work to do, but that’s OK. I’m looking
 
 ## Watching
 
-- A bunch of movies staring The Spanish Lon Cheney, [Paul Naschy](https://en.wikipedia.org/wiki/Paul_Naschy).
-- [Star Trek: Lower Decks](https://www.startrek.com/shows/star-trek-lower-decks)
+* A bunch of movies staring The Spanish Lon Cheney, [Paul Naschy](https://en.wikipedia.org/wiki/Paul_Naschy).
+* [Star Trek: Lower Decks](https://www.startrek.com/shows/star-trek-lower-decks)

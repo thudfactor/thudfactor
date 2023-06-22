@@ -34,30 +34,26 @@ title: Default title
     <title>{{ title }} | Thudfactor</title>
   </head>
   <body>
-    <div class="contentWrapper">
-      <header>
-        <div class="site-title">
-          <a href="/">Thudfactor</a>
-        </div>
+    <header>
+      <div class="site-title">
+        <a href="/">Thudfactor</a>
         <div class="site-statement">Heavy.</div>
-        <nav>
-          <a href="/about">About</a>
-          |
-          <a href="/now">Now</a>
-          |
-          <a href="/archive">Archive</a>
-          |
-          <a href="/feed.xml">RSS</a>
-        </nav>
-      </header>
+      </div>
+      <nav>
+        <a href="/about">About</a>
+        <a href="/now">Now</a>
+        <a href="/archive">Archive</a>
+        <a href="/feed.xml">RSS</a>
+      </nav>
+    </header>
+    <div class="contentWrapper">
       <main>
         {{ content }}
       </main>
-      <footer>
-        Copyright © 2023 J H Williams.
-        Meet me on
-        <a rel="me" href="https://social.horrorhub.club/@thudfactor">Mastodon</a>.
-      </footer>
     </div>
+    <footer>
+      Copyright © 2023 J H Williams.
+      <a rel="me" href="https://social.horrorhub.club/@thudfactor">Meet me on Mastodon</a>.
+    </footer>
   </body>
 </html>

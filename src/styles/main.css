@@ -52,7 +52,7 @@ a:not([class]) {
 }
 
 header {
-  padding: 1.5rem 2rem 1.25rem;
+  padding: 1.25rem 2rem 1.5rem;
   border-bottom-width: 1px;
   height: min-content;
   display: flex;
@@ -68,18 +68,15 @@ header {
     line-height: 1.2;
 
     & a {
-      color: currentColor;
-      text-decoration-color: hsl(240deg 80% 60% / 0);
-      transition: text-decoration-color 0.3s ease-in-out;
+      transition: color 0.3s ease-in-out;
+      text-decoration: none;
 
       &:link, &:visited {
-        text-decoration: none;
+        color: currentColor;
       }
 
       &:hover {
-        text-decoration-thickness: 2px;
-        text-decoration-offset: 0.05em;
-        text-decoration-color: hsl(240deg 80% 60% / 1);
+        color: hsl(170deg 40% 80%);
       }
     }
   }
@@ -98,6 +95,7 @@ header {
     font-style: italic;
     display: flex;
     gap: 2rem;
+    transform: translateY(-0.2em);
   }
 }
 

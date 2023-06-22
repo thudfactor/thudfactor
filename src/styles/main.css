@@ -12,10 +12,20 @@
 }
 
 header, footer {
-  text-align: center;
-  border-color: hsl(0deg 0% 90%);
-  border-style: solid;
-  border-width: 0
+  background-color: hsl(0deg 0% 10%);
+  color: hsl(0deg 0% 90%);
+
+  & a {
+    color: hsl(170deg 20% 80%);
+    text-decoration-color: hsl(0deg 0% 20% / 0);
+    transition: text-decoration-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+    &:hover {
+      color: hsl(170deg 40% 80%);
+      text-decoration-color: hsl(0deg 0% 20% / 1);
+      text-decoration: underline;
+    }
+  }
 }
 
 body {
@@ -42,16 +52,18 @@ a:not([class]) {
 }
 
 header {
-  padding: 1.5rem 0 .75rem;
-  padding-bottom: .75rem;
+  padding: 1.5rem 2rem 1.25rem;
   border-bottom-width: 1px;
   height: min-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
   & .site-title {
     font-family: var(--title-font-family);
     font-weight: 900;
-    font-size: 3em;
-    color: hsl(0deg 0% 20%);
+    font-size: 3rem;
+    color: hsl(0deg 0% 90%);
     text-shadow: 0 1px 3px hsla(0deg 0% 10% / 0.5);
     line-height: 1.2;
 
@@ -72,23 +84,20 @@ header {
     }
   }
 
+  & .site-statement {
+    font-size: 1rem;
+    font-family: var(--heading-font-family);
+    font-style: italic;
+    font-weight: 200;
+  }
+
   & nav {
-    margin-top: 1.5em;
-    font-family: var(--body-contrast-font-family);
+    font-family: var(--heading-font-family);
     font-weight: 600;
-    font-size: .9em;
-
-    & a {
-      color: hsl(0deg 0% 20%);
-      text-decoration-color: hsl(0deg 0% 20% / 0);
-      transition: text-decoration-color 0.3s ease-in-out, color 0.3s ease-in-out;
-
-      &:hover {
-        color: hsl(0deg 0% 0%);
-        text-decoration-color: hsl(0deg 0% 20% / 1);
-        text-decoration: underline;
-      }
-    }
+    font-size: 1.4em;
+    font-style: italic;
+    display: flex;
+    gap: 2rem;
   }
 }
 
@@ -99,7 +108,7 @@ header {
   gap: 24px;
   max-width: fit-content;
   min-height: 100%;
-  padding: 0 48px;
+  padding: 3rem;
 }
 
 main {
@@ -319,10 +328,8 @@ figure.cover-image {
 
 footer {
   height: min-content;
-  padding-top: .6em;
-  padding-bottom: 1em;
-  border-top-width: 1px;
-  color: hsl(0deg 0% 40%);
+  padding: 1.5rem 2rem 1.25rem;
+  color: hsl(0deg 0% 80%);
   font-family: var(--body-contrast-font-family);
   font-size: .9em;
 }

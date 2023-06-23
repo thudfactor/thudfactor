@@ -9,6 +9,22 @@
   --content-width: 36rem;
   --border-radius: .4rem;
 
+  --font-s: .7953rem;
+  --font-m: 1rem;
+  --font-l: 1.2574;
+  --font-xl: 1.5811rem;
+  --font-xxl: 1.9882rem;
+  --font-xxxl: 2.5rem;
+}
+
+body {
+  font-size: clamp(1rem, .4167vw + .8875rem, 1.125rem);
+  background-color: hsl(0deg 0% 98%);
+  color: hsl(0deg 0% 10%);
+  font-family: var(--body-font-family);
+  font-weight: 400;
+  hyphens: auto;
+  hyphenate-limit-chars: 6 3 3;
 }
 
 header, footer {
@@ -26,15 +42,6 @@ header, footer {
       text-decoration: underline;
     }
   }
-}
-
-body {
-  background-color: hsl(0deg 0% 98%);
-  color: hsl(0deg 0% 10%);
-  font-family: var(--body-font-family);
-  font-weight: 400;
-  hyphens: auto;
-  hyphenate-limit-chars: 6 3 3;
 }
 
 img {
@@ -69,7 +76,7 @@ header {
   & .site-title {
     font-family: var(--title-font-family);
     font-weight: 900;
-    font-size: 3rem;
+    font-size: var(--font-xxxl);
     color: hsl(0deg 0% 90%);
     text-shadow: 0 1px 3px hsla(0deg 0% 10% / 0.5);
     line-height: 1.2;
@@ -89,7 +96,7 @@ header {
   }
 
   & .site-statement {
-    font-size: 1rem;
+    font-size: var(--font-m);
     font-family: var(--heading-font-family);
     font-style: italic;
     font-weight: 200;
@@ -98,7 +105,7 @@ header {
   & nav {
     font-family: var(--heading-font-family);
     font-weight: 600;
-    font-size: 1.4em;
+    font-size: var(--font-xl);
     font-style: italic;
     display: flex;
     gap: 2rem;
@@ -138,7 +145,7 @@ article {
     padding-left: 0;
 
     & li {
-      font-size: .9em;
+      font-size: var(--font-m);
       font-family: var(--body-contrast-font-family);
     }
   }
@@ -148,7 +155,7 @@ article {
     max-width: var(--content-width);
     margin: 1.5rem 0 1.5rem -1.5rem;
     padding: 1rem 1rem 1rem 1.5rem;
-    font-size: .95rem;
+    font-size: var(--font-m);
     border-left: 3px hsl(120deg 20% 90%) solid;
     background-color: hsl(120deg 20% 98%);
 
@@ -159,7 +166,7 @@ article {
 
     & cite {
       display: block;
-      font-size: .8rem;
+      font-size: var(--font-s);
       text-align: right;
       margin-top: 1.6em;
     }
@@ -169,6 +176,7 @@ article {
     font-family: var(--title-font-family);
     color: hsl(150deg 30% 30%);
     font-weight: 800;
+    font-size: var(--font-xxxl);
     line-height: 1.2;
 
     & span {
@@ -189,7 +197,7 @@ article {
     font-family: var(--heading-font-family);
     font-style: italic;
     color: hsl(150deg 0% 30%);
-    font-size: 1.25rem;
+    font-size: var(--font-xxl);
     margin-top: 1.5em;
   }
 
@@ -197,12 +205,12 @@ article {
     font-family: var(--heading-font-family);
     color: hsl(150deg 0% 30%);
     font-weight: 300;
-    font-size: 1.1rem;
+    font-size: var(--font-xl);
     margin-top: 1rem;
   }
 
   .post-meta {
-    font-size: .9rem;
+    font-size: var(--font-s);
     font-family: var(--body-contrast-font-family);
     color: hsl(0deg 0% 30%);
     margin-bottom: 1.5em;
@@ -228,16 +236,17 @@ article {
     padding: 1rem;
     margin: 1.7rem -1rem;
     border: 1px hsl(0deg 0% 80%) solid;
-    font-size: .7rem;
+    font-size: var(--font-s);
   }
 
   & figure {
     max-width: calc(var(--content-width) + 2rem);
     margin: 2rem -1rem;
     padding: 1rem;
+
     & figcaption {
       font-family: var(--body-contrast-font-family);
-      font-size: .9rem;
+      font-size: var(--font-s);
       color: hsl(0deg 0% 40%);
       border-top: 1px currentColor solid;
       margin-top: 1em;
@@ -245,7 +254,7 @@ article {
     }
   }
 
-  figure.text-figure {
+  & figure.text-figure {
     background-color: hsl(0deg 0% 96%);
     width: 100%;
     border-radius: var(--border-radius);
@@ -268,7 +277,7 @@ figure.cover-image {
     margin: 1.3rem auto 1.3rem 1rem;
     border-top: 1px #ccc solid;
     padding-top: .4rem;
-    font: .9rem var(--body-contrast-font-family);
+    font: var(--font-s) var(--body-contrast-font-family);
     line-height: 1.3;
     position: relative;
     max-width: var(--content-width);
@@ -290,7 +299,7 @@ figure.cover-image {
   border: 1px hsl(0deg 0% 80%) solid;
   margin: 1.5em -1rem;
   font-family: var(--body-contrast-font-family);
-  font-size: .9rem;
+  font-size: var(--font-m);
   line-height: 1.5;
   color: hsl(0deg 0% 30%);
   max-width: calc(var(--content-width) + 2rem);
@@ -302,7 +311,7 @@ figure.cover-image {
     &::before {
       content: '🤔 ';
       display: inline-block;
-      font-size: 1.4rem;
+      font-size: var(--font-xl);
     }
   }
 }
@@ -357,6 +366,6 @@ footer {
   padding: 1.5rem 2rem 1.25rem;
   color: hsl(0deg 0% 80%);
   font-family: var(--body-contrast-font-family);
-  font-size: .9em;
+  font-size: var(--font-s);
 }
 

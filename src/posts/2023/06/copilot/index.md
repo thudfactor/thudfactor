@@ -11,7 +11,7 @@ cover:
   description: With more experience, Copilot feels less like a different intellegence and more like an inflatable replacement human.
 ---
 
-I’ve been using Copilot for a few weeks now and have come to a few tenative conclusions. It’s been frequently helpful in small places, remarkably unhelpful in larger areas, and sometimes in the way. In fact, as I write this blog post it is in the way quite a lot.
+I’ve been using Copilot for a few weeks and have thoughts. It’s been helpful in small places, unhelpful in larger ones, and sometimes in the way. In fact, as I write this blog post it is in the way quite a lot.
 
 Before we get too far in, I’d like to direct your attention to Frederick Brooks’s 1987 essay [No Silver Bullet: Essence and Accident in Software Engineering](https://ieeexplore.ieee.org/document/1702388). Brooks says software development has sped up quite a lot, but attributes this to tools that help us write and debug code more quickly. He said we were beginning to reach the level of diminishing returns from these mechanical aids.
 

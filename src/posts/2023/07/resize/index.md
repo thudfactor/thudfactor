@@ -39,7 +39,7 @@ And there are a lot of events to manage. My process here is to attach `move` and
 
 Native resizing doesn’t seem to be affected by paint / layout sluggishness, so it seems to work faster than handling it myself.
 
-## Drawbacks of CSS resize
+## Drawbacks of CSS’s `resize`
 
 In short: the CSS `resize` solution is easier, significantly less code, and more performant. What’s not to love? Quite a lot, as it turns out.
 
@@ -62,7 +62,7 @@ To apply the CSS resize I had to shrink-wrap all of the containing elements arou
 
 I thought I could get around this by listening to resizing events and moving those values elsewehere as needed, but…
 
-### There are no resizing events specific to the CSS resize
+### There are no resizing events specific to the CSS `resize`
 
 Ideally, we’d have “start,” “stop,” and “resizing” events so I could change behavior or tie other side-effect logic to resizing an element. The CSS resize strategy doesn’t provide any of those. Instead, you need to rely on the [`ResizeObserver`](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver). That makes distingushing between user-driven resizes and resizes that result from other events — minimizing or closing the window, for example, or content size changes — pretty darn tricky. And since the `ResizeObserver` only reports that an element’s size has changed, you still need to interpret “resizing has started” and “resizing has ended” on your own.
 

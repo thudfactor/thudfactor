@@ -2,10 +2,11 @@
 
 :root {
   font-size: 18px;
-  --title-font-family: 'Exo 2', sans-serif;
-  --heading-font-family: 'Crete Round', serif;
-  --body-font-family: 'Lora', serif;
-  --body-contrast-font-family: 'Nunito Sans', sans-serif;
+  --title-font-family: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
+;
+  --heading-font-family: Rockwell, 'Rockwell Nova', 'Roboto Slab', 'DejaVu Serif', 'Sitka Small', serif;
+  --body-font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
+  --body-contrast-font-family: system-ui, sans-serif;
   --content-width: 36rem;
   --border-radius: .4rem;
 
@@ -203,7 +204,6 @@ article {
 
   & h2 {
     font-family: var(--heading-font-family);
-    font-style: italic;
     color: hsl(150deg 0% 30%);
     font-size: var(--font-xxl);
     margin-top: 1.5em;
@@ -214,7 +214,7 @@ article {
     color: hsl(150deg 0% 30%);
     font-weight: 300;
     font-size: var(--font-xl);
-    margin-top: 1rem;
+    margin-top: 1.5rem;
   }
 
   .post-meta {

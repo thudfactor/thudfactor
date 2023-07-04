@@ -4,14 +4,14 @@ subtitle: How I learned to love the resize property, then hate it again
 date: 2023-07-04
 categories: ["CSS"]
 tags: post
-description: CSS offers a browser-native way to make elements resizable, but it comes with a lot of limitiations.
+description: CSS offers a browser-native way to make elements resizable, but it comes with a lot of limitations.
 cover:
   src: super-genius.png
   alt: Still from a Coyote / Road Runner cartoon. The Coyote holds a business card saying Wile E. Coyote Super Genius
   description: Not every elegant solution is the correct one.
 ---
 
-We’ve been working on a project at work that is growing a fairly elaborate user interface heavily informed by desktop applications like Photoshop. What used to be straightforward `divs` now need to be moved around, closed, minimized, and resized.
+We’ve been working on a project at work that is growing a fairly elaborate user interface heavily informed by desktop applications like Photoshop. What used to be straightforward `div`s now need to be moved around, closed, minimized, and resized.
 
 The typical way to handle resizing is to create a `mousedown` event handler on a resize control, then listen to subsequent `mousemove` and `mouseup` events. Or, if you’re really on top of things, you can use the newer [`pointer events`](https://caniuse.com/?search=pointer).
 
@@ -33,7 +33,7 @@ The CSS `resize` handles all of that for us, which is a relief.
 
 ### You don’t have to manage events
 
-And there are a lot of events to manage. My process here is to attach `move` and `up` events on `down`, then detatch the `move` and `up` events on `up` so they are not continuiously firing. And since I am working in a React environment, I also need to clean these events up when the component that owns them is removed and/or re-rendered to avoid memory leaks or rapidly multiplying event listeners handling the same event.
+And there are a lot of events to manage. My process here is to attach `move` and `up` events on `down`, then detach the `move` and `up` events on `up` so they are not continuously firing. And since I am working in a React environment, I also need to clean these events up when the component that owns them is removed and/or re-rendered to avoid memory leaks or rapidly multiplying event listeners handling the same event.
 
 ### Browser-native resizing is smooth right out of the box
 
@@ -60,11 +60,11 @@ It would be nice to be able to resize from all edges. But at a minimum, I need a
 
 To apply the CSS resize I had to shrink-wrap all of the containing elements around the specific one I applied the resize element to. That’s because the resized element gets inline “height” and “width” styles applied. This broke my layout logic a bit, which was frustrating.
 
-I thought I could get around this by listening to resizing events and moving those values elsewehere as needed, but…
+I thought I could get around this by listening to resizing events and moving those values elsewhere as needed, but…
 
 ### There are no resizing events specific to the CSS `resize`
 
-Ideally, we’d have “start,” “stop,” and “resizing” events so I could change behavior or tie other side-effect logic to resizing an element. The CSS resize strategy doesn’t provide any of those. Instead, you need to rely on the [`ResizeObserver`](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver). That makes distingushing between user-driven resizes and resizes that result from other events — minimizing or closing the window, for example, or content size changes — pretty darn tricky. And since the `ResizeObserver` only reports that an element’s size has changed, you still need to interpret “resizing has started” and “resizing has ended” on your own.
+Ideally, we’d have “start,” “stop,” and “resizing” events so I could change behavior or tie other side-effect logic to resizing an element. The CSS resize strategy doesn’t provide any of those. Instead, you need to rely on the [`ResizeObserver`](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver). That makes distinguishing between user-driven resizes and resizes that result from other events — minimizing or closing the window, for example, or content size changes — pretty darn tricky. And since the `ResizeObserver` only reports that an element’s size has changed, you still need to interpret “resizing has started” and “resizing has ended” on your own.
 
 ### You can’t manage the resize handle’s appearance
 
@@ -73,6 +73,3 @@ The second thing my designer asked was “can we make that handle larger?” It�
 ## Back to the drawing board for me
 
 Given all of these limitations, I’ve had to abandon the native resize. I don’t regret the effort — it’s best to do through CSS and HTML what you can, rather than take control of these behaviors yourself — but the CSS `resize` seems to fit only a narrow use case, and it’s not suitable for other interactive implementations. It _might_ be possible to work around those limitations, but that puts all of the benefits of using the native code at risk.
-
-
-

@@ -5,23 +5,25 @@ pagination:
   size: 10
   alias: posts
   reverse: true
-layout: main
+layout: archive
 ---
 
 {% for post in posts %}
   {% include "post-excerpt.liquid" %}
 {% endfor %}
 
+<!-- Pagination links
 <nav>
-  {% if pagination.href.previous %}
-    <a href="{{ pagination.href.previous }}">Previous</a>
-  {% else %}
-    Previous
-  {% endif %}
-  /
-  {% if pagination.href.next %}
-    <a href="{{ pagination.href.next }}">Next</a>
-  {% else %}
-    Next
-  {% endif %}
+{% if pagination.href.previous %}
+<a href="{{ pagination.href.previous }}">Previous</a>
+{% else %}
+Previous
+{% endif %}
+/
+{% if pagination.href.next %}
+<a href="{{ pagination.href.next }}">Next</a>
+{% else %}
+Next
+{% endif %}
 </nav>
+-->

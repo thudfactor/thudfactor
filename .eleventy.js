@@ -25,6 +25,7 @@ module.exports = eleventyConfig => {
   eleventyConfig.addFilter("filterByCategory", filterByCategory);
   eleventyConfig.addFilter('nicedate', nicedate);
 
+  eleventyConfig.addPassthroughCopy('src/img/*');
   eleventyConfig.addPassthroughCopy('src/video/*');
   eleventyConfig.addPassthroughCopy('src/favicon/*');
 

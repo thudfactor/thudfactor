@@ -3,7 +3,6 @@
 :root {
   font-size: 18px;
   --title-font-family: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
-;
   --heading-font-family: Rockwell, 'Rockwell Nova', 'Roboto Slab', 'DejaVu Serif', 'Sitka Small', serif;
   --body-font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
   --body-contrast-font-family: system-ui, sans-serif;
@@ -12,7 +11,7 @@
 
   --font-s: .7953rem;
   --font-m: 1rem;
-  --font-l: 1.2574;
+  --font-l: 1.2574rem;
   --font-xl: 1.5811rem;
   --font-xxl: 1.9882rem;
   --font-xxxl: 2.5rem;
@@ -136,21 +135,21 @@ header {
   & nav {
     font-family: var(--heading-font-family);
     font-weight: 600;
-    font-size: var(--font-xl);
+    font-size: var(--font-m);
     font-style: italic;
     display: flex;
-    gap: 2rem;
+    gap: .6rem;
     transform: translateY(.3em);
+    text-align: center;
 
-    @media (max-width: 800px) {
-      text-align: center;
+    & a {
+      text-decoration: none;
     }
 
-    @media (max-width: 1080px) {
-      //flex-direction: column;
-      gap: .6rem;
-      font-size: var(--font-l);
-      transform: none;
+    & svg {
+      width: .8em;
+      height: .8em;
+      display: inline-block;
     }
   }
 }
@@ -202,6 +201,11 @@ article {
   max-width: 100%;
   width: 50rem;
   margin: 0 auto;
+
+  .alert-callout {
+    max-width: calc(var(--content-width) + 2rem);
+    margin: 1.5em -1rem;
+  }
 
   & ul {
     margin-block: 1em;
@@ -358,12 +362,11 @@ figure.cover-image {
   border-radius: 4px;
   background-color: hsl(0deg 0% 90%);
   border: 1px hsl(0deg 0% 80%) solid;
-  margin: 1.5em -1rem;
   font-family: var(--body-contrast-font-family);
   font-size: var(--font-m);
   line-height: 1.5;
   color: hsl(0deg 0% 30%);
-  max-width: calc(var(--content-width) + 2rem);
+  margin: 1.5em 0;
 
   &.info {
     display: flex;
@@ -422,8 +425,13 @@ figure.cover-image {
       text-indent: 0;
     }
 
-    .teaser {
-      flex: 0 0 69%;
+    &.rss .teaser {
+      > * {
+        display: none;
+      }
+      > p:first-of-type {
+        display: block;
+      }
     }
   }
 

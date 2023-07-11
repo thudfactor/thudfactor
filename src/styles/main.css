@@ -16,6 +16,10 @@
   --font-xl: 1.5811rem;
   --font-xxl: 1.9882rem;
   --font-xxxl: 2.5rem;
+
+  @media (max-width: 800px) {
+    font-size: 16px;
+  }
 }
 
 body {
@@ -62,7 +66,7 @@ header, footer {
 
 #doris {
   position: fixed;
-  top: 60%;
+  bottom: 10%;
   left: -.1rem;
   width: 2rem;
   height: 2rem;
@@ -152,6 +156,18 @@ header {
   }
 }
 
+.page-top {
+  position: relative;
+
+  @media (min-width: 800px) {
+    & header {
+      position: absolute;
+      inset: 0 0 auto;
+      background-color: hsl(0deg 0% 94% / .8);
+    }
+  }
+}
+
 .contentWrapper {
   display: flex;
   flex-direction: column;
@@ -206,9 +222,9 @@ article {
 
   & h1 {
     font-family: var(--title-font-family);
+    font-size: var(--font-xxxl);
     color: hsl(150deg 0% 30%);
     font-weight: 800;
-    font-size: var(--font-xxxl);
     line-height: 1.2;
 
     & span {

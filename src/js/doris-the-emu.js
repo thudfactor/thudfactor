@@ -34,6 +34,7 @@ const quotes = [
   "Birds and snakes and aeroplanes, and Lenny Bruce is not afraid",
   "All we want is life beyond the Thunderdome",
   "When you believe in things that you don’t understand, then you suffer",
+  "Hip-hop got turned into hit pop",
 ];
 
 let workingQuotes = quotes.slice();
@@ -60,7 +61,7 @@ template.innerHTML = `
   #doris-tooltip {
     position: absolute;
     top: 0;
-    left: calc(100% + .5em);
+    left: 80%;
     width: max-content;
     font-size: 14px;
     font-family: sans-serif;
@@ -72,11 +73,13 @@ template.innerHTML = `
     border-radius: 0.5em;
     opacity: 0;
     mouse-events: none;
-    transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out, left 0.2s ease-in-out;
   }
-    #doris-tooltip.active {
-      opacity: 1;
-    }
+
+  #doris-tooltip.active {
+    opacity: 1;
+    left: calc(100% + .5em);
+  }
 
     #doris-tooltip::after {
       content: '';

@@ -1,5 +1,20 @@
 const template = document.createElement('template');
 
+/** Selects a quote at random from the data list and returns it.
+ *  Also removes that quote from the available pool until that
+ *  pool is empty, at which point it resets the pool to the
+ *  original list.
+ */
+function superRandom() {
+  if (workingQuotes.length === 0) {
+    workingQuotes = quotes.slice();
+  }
+  const index = Math.floor(Math.random() * workingQuotes.length);
+  const quote = workingQuotes[index];
+  workingQuotes = workingQuotes.filter((_, i) => i !== index);
+  return quote;
+}
+
 const quotes = [
   "Move aside, and let the man go through",
   "I think it’s hot the way she looks left a lot",
@@ -13,7 +28,15 @@ const quotes = [
   "Back on the set and coverin’ all bets",
   "Moving to the country, gonna eat a lot of peaches",
   "It's just your jive talkin’ that gets in the way",
+  "I can gather all the news I need on the weather report",
+  "Shock me like an electric eel",
+  "That ain’t workin’, that’s the way you do it",
+  "Birds and snakes and aeroplanes, and Lenny Bruce is not afraid",
+  "All we want is life beyond the Thunderdome",
+  "When you believe in things that you don’t understand, then you suffer",
 ];
+
+let workingQuotes = quotes.slice();
 
 template.innerHTML = `
 <style>
@@ -89,7 +112,7 @@ class DorisTheEmu extends HTMLElement {
     const tooltip = this._shadowRoot.querySelector('#doris-tooltip');
     doris.addEventListener('mouseenter', () => {
       tooltip.classList.add('active');
-      tooltip.textContent = quotes[Math.floor(Math.random() * quotes.length)];
+      tooltip.textContent = superRandom();
     });
     doris.addEventListener('mouseleave', () => {
       tooltip.classList.remove('active');

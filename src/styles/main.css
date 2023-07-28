@@ -62,13 +62,12 @@ header, footer {
   }
 }
 
-#doris {
+doris-the-emu {
   position: fixed;
   bottom: 10%;
   left: -.1rem;
   width: 2rem;
   height: 2rem;
-  object-fit: contain;
 }
 
 img {
@@ -446,6 +445,7 @@ figure.cover-image {
 
 .archive {
   max-width: 38em;
+  width: 100%;
 }
 
 footer {
@@ -454,5 +454,40 @@ footer {
   padding: 1.5rem 3rem 1.25rem;
   font-family: var(--body-contrast-font-family);
   font-size: var(--font-s);
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3rem;
+}
+
+.sidebar {
+  width: auto;
+  margin: 0 3rem;
+
+  & aside {
+    border: 1px hsl(0deg 0% 0% / .3) solid;
+    padding: .6rem 1rem .8rem;
+    border-radius: 4px;
+    background-color: white;
+  }
+
+  .aside-header {
+    font-size: var(--font-l);
+    font-weight: bold;
+  }
+
+  & ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: var(--font-s);
+    font-family: var(--body-contrast-font-family);
+  }
+
+  & li {
+    margin-bottom: .5rem;
+  }
 }
 

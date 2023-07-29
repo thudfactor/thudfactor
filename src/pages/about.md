@@ -10,25 +10,27 @@ Hi!
 
 My name is John Williams, and I am not a composer or a conductor. Sorry about that — it disappoints a lot of people.
 
-Funny story about that. For as far back as I can remember people have made jokes about me writing the music for _Star Wars_. Occasionally people mix it up and say _Harry Potter_ or _Jurassic Park_. But a few months ago I went through a Dunkin’ Donuts drive-through to pick up an order I made through their app. It puts only part of my name on the order sheet, “JOHN W” or some nonsense. The young guy at the window says “hey, what’s your name again?”
+Funny story. For as far back as I can remember people have made jokes about me writing the music for _Star Wars_. Occasionally people mix it up and say _Harry Potter_ or _Jurassic Park_. But a few months ago I went through a Dunkin’ Donuts drive-through to pick up an order. The app only puts only part of my name on the order sheet — “JOHN W” or some nonsense. The guy at the window says “hey, what’s your name again?”
 
-I say “John Williams,” and I think _here it comes again_.
-
-He laughs and says says “I was hoping it was John Wick!”
+“John Williams,” I say, and think _here it comes again_. He laughs and says says “I was hoping it was John Wick!”
 
 It’s always nice to hear a new one.
 
 ## From Typesetting to Web Development
 
-Anyway, I am John Williams the famous _web developer_. I’ve been making web sites almost from the start. I am so old my earliest sites pre-date CSS. Heck, they pre-date `<table>` — I remember the earliest debates about table layout. “Tables are for data,” said one side. “But how else can we get a sidebar?” said the other, and that side persevered until better options were available.
+Anyway, I am John Williams the famous _web developer_. I’ve been making web sites almost from the start. I am so old my earliest sites pre-date CSS. Heck, they pre-date `<table>`.  — I remember the earliest debates about table layout. “Tables are for data,” said one side. “But how else can we get a sidebar?” said the other, and that side persevered until better options were available.
 
-Because there _was_ no typical path towards web development, I came to the industry sideways through typesetting. I worked summers at my hometown newspaper using QuarkXPress to reproduce ad layouts. We’d print those on a very high-resolution printer, then I’d take a razor blade and [adhesive wax machine](https://www.forgottenartsupplies.com/?what=artifacts&image_id=46&cat=53), cut the ad out, and stick it to a broadsheet paper to send off to the camera room. It was an odd mix of technologies, but it worked pretty well. The Web became commercially relevant just as I was graduating from college, so the newspaper hired me to make and run their first web site. This I built with the aid of [BBEdit](https://www.barebones.com/products/bbedit/) and [UserLand Frontier](https://en.wikipedia.org/wiki/UserLand_Software), building the site anew each morning with a script and pushing the new pages up through a 9600 baud modem connection.
+Because there _was_ no typical path towards web development, I came to the industry sideways through typesetting. I worked summers at my hometown newspaper using QuarkXPress to reproduce ad layouts. We’d print those on a very high-resolution printer, then I’d take a razor blade and [adhesive wax machine](https://www.forgottenartsupplies.com/?what=artifacts&image_id=46&cat=53), cut the ad out, and stick it to a broadsheet. From there it went to the camera room, and then the press. It was an odd mix of technologies, but it worked pretty well.
+
+The web became commercially relevant just as I was graduating from college, so the newspaper hired me to make and run their first web site. This I built with the aid of [BBEdit](https://www.barebones.com/products/bbedit/) and [UserLand Frontier](https://en.wikipedia.org/wiki/UserLand_Software). I used Frontier on my local computer to build the site anew each morning, and pushing the resulting HTML up through a 9600 baud modem.
 
 ## Evolving with the Web
 
-The web has changed a lot since then. It’s become professional and specialized. For most of my career I’ve stayed in the front-end publishing end of web development, but in the last few years I’ve slid over to the UI Engineering side of things.
+The web has changed a lot since then. It’s become professional and specialized. For most of my career I’ve stayed in front-end publishing, but in the last few years I’ve slid over to the UI Engineering side of things.
 
-It has always been a struggle to keep up with this _still_ nascent industry, but here in the 2020’s things have really picked up speed. It’s the most exciting time since the birth of the Web, and I am thrilled to still be here learning new things every day and sharing them as much as I can with the small circle of people around me. Now you are in that circle! 🎉
+It has always been a struggle to keep up, but here in the 2020’s things are really hopping. It’s the most exciting time since the birth of the Web, and I am thrilled to still be here learning new things every day and sharing them as much as I can with the small circle of people around me.
+
+Now you are in that circle! 🎉
 
 ## Embracing Agile Development
 
@@ -39,7 +41,7 @@ What the technology industry calls “agile” a lot of other people call “mak
 ## Me, elsewhere
 
 * [ElfinJohn](https://elfinjohn.com) is my portfolio site. It’s not been updated in awhile, really, because it covers a lot of my “working at an agency” life. I now live the “B2B SAAS” life, which makes for a lot fewer pretty pictures.
-* [FilmHydra](https://www.filmhydra.com) is my movie blog. Remember, I said I came from the humanities? Every so often I feel the need to write something about a movie I watched, and I do it over there. Good examples are [this review on _Carnival of Souls_](https://www.filmhydra.com/movies/1960/carnival-of-souls/) and [_Dracula vs Frankenstein_](https://www.filmhydra.com/movies/1970/dracula-vs-frankenstein/)
+* [FilmHydra](https://www.filmhydra.com) is my movie blog. Remember, I said I came from the humanities? Every so often I feel the need to write something about a movie, and that’s the place. My recent favorites are [this review on _Carnival of Souls_](https://www.filmhydra.com/movies/1960/carnival-of-souls/) and [_Dracula vs Frankenstein_](https://www.filmhydra.com/movies/1970/dracula-vs-frankenstein/)
 * You can also follow me on [Letterboxd](https://letterboxd.com/thudfactor/), a movie-focused social media site, but [Mastodon](https://horrorhub.club/@thudfactor) is my social media of choice.
 * Like that very first newspaper web site, _Thudfactor_ is built using a scripting toolkit with only static pages pushed up to the web host. You can read more about that on my [Using page](/using). For a more up-to-date sense of what’s going through my head, you can check out the [Now page](/now).
 

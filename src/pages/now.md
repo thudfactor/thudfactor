@@ -18,15 +18,14 @@ Making this site. I’ve got a lot of work to do, but that’s OK. I’m looking
 
 ## Reading (For funsies)
 
-* [Blood Standard](https://www.penguinrandomhouse.com/books/550396/blood-standard-by-laird-barron/), Laird Barron
+* [Deathstalker](https://en.wikipedia.org/wiki/Deathstalker_(series)), Simon R. Green
 
 ### Recently
 
+* [Blood Standard](https://www.penguinrandomhouse.com/books/550396/blood-standard-by-laird-barron/), Laird Barron
 * [Station Eternity](https://www.penguinrandomhouse.com/books/609886/station-eternity-by-mur-lafferty/), Mur Lafferty
 * [Providence](https://maxbarry.com/providence/), Max Barry
 * [Pineapple Grenade](https://www.harpercollins.com/products/pineapple-grenade-tim-dorsey?variant=32207490777122), Tim Dorsey
-* [The Light Fantastic](https://www.terrypratchettbooks.com/books/the-light-fantastic/), Terry Pratchett
-* [The Apocalypse Codex](https://www.penguinrandomhouse.com/books/310011/the-apocalypse-codex-by-charles-stross/), Charles Stross
 
 ## Watching
 

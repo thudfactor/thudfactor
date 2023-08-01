@@ -8,6 +8,15 @@ Hi!
 
 ## I am not a composer
 
+{% articleFig "sorta-selfie.png" "An AI artist’s concept of the author" "right" %}
+
+I fed Midjourney an image I took of myself, asked it to describe the image, then fed the image back. This is what I got. Except for the silly t-shirt, it’s not a significant resemblance.
+
+<cite><a href="https://www.midjourney.com/app/jobs/66e89a3a-4de1-41f7-b9c6-cbbdbaaa09bf/">John Williams/Midjourney</a></cite>
+
+{% endarticleFig %}
+
+
 My name is John Williams, and I am not a composer or a conductor. Sorry about that — it disappoints a lot of people.
 
 Funny story. For as far back as I can remember people have made jokes about me writing the music for _Star Wars_. Occasionally people mix it up and say _Harry Potter_ or _Jurassic Park_. But a few months ago I went through a Dunkin’ Donuts drive-through to pick up an order. The app only puts only part of my name on the order sheet — “JOHN W” or some nonsense. The guy at the window says “hey, what’s your name again?”

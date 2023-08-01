@@ -206,7 +206,9 @@ article {
     margin: 1.5em -1rem;
   }
 
-  & ul {
+  & ul,
+  & ol {
+    max-width: var(--content-width);
     margin-block: 1em;
     padding-left: 0;
 
@@ -214,6 +216,13 @@ article {
       font-size: var(--font-m);
       font-family: var(--body-contrast-font-family);
       margin-bottom: .6rem;
+
+      &::marker {
+        font-size: var(--font-m);
+        font-family: var(--body-contrast-font-family);
+        font-weight: bold;
+        font-size: var(--font-s);
+      }
     }
   }
 
@@ -224,11 +233,19 @@ article {
     padding: 1rem 1rem 1rem 1.5rem;
     font-size: var(--font-m);
     border-left: 3px hsl(120deg 20% 90%) solid;
-    background-color: hsl(120deg 20% 98%);
+    background-color: hsl(120deg 20% 94%);
 
     & p {
       text-indent: 0;
       margin-block: 1.5em;
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
 
     & cite {
@@ -302,21 +319,6 @@ article {
     margin: 1.7rem -1rem;
     border: 1px hsl(0deg 0% 80%) solid;
     font-size: var(--font-s);
-  }
-
-  & figure {
-    max-width: calc(var(--content-width) + 2rem);
-    margin: 2rem -1rem;
-    padding: 1rem;
-
-    & figcaption {
-      font-family: var(--body-contrast-font-family);
-      font-size: var(--font-s);
-      color: hsl(0deg 0% 40%);
-      border-top: 1px currentColor solid;
-      margin-top: 1em;
-      padding-top: .6em;
-    }
   }
 
   & figure.text-figure {
@@ -491,4 +493,41 @@ footer {
     margin-bottom: .5rem;
   }
 }
+
+article figure {
+  max-width: calc(var(--content-width) + 2rem);
+  margin: 2rem -1rem;
+  padding: 1rem;
+
+  & img {
+    margin: 0 auto;
+    width: 100%;
+    max-height: 400px;
+    object-fit: contain;
+    background-color: #333333;
+  }
+
+  @media (min-width: 640px) {
+    &.right {
+      float: right;
+      width: max-content;
+      max-width: calc(var(--content-width) / 2);
+      margin: 2rem 0 2rem 2rem;
+    }
+  }
+
+  & figcaption {
+    font-family: var(--body-contrast-font-family);
+    font-size: var(--font-s);
+    color: hsl(0deg 0% 40%);
+    border-top: 1px currentColor solid;
+    margin-top: 1em;
+    padding-top: .6em;
+  }
+
+  & p:has(cite) {
+    text-align: right;
+  }
+}
+
 

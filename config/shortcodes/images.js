@@ -129,6 +129,23 @@ async function coverImage (cover) {
   </figure>`;
 }
 
+async function articleFig (content, src, alt, position) {
+  const widths = [400, 900, 1200, 1800];
+  const sizes = '(max-width: 600px) 100vw, 600px';
+
+  const templatePath = path.dirname(this.page.inputPath);
+  imgPath = findInputPath(src, templatePath);
+
+  const image = await generateImageTag(imgPath, {widths}, alt, sizes);
+
+  return  `<figure class="article-figure ${position}">\
+    ${image}\
+    <figcaption> \
+      ${content} \
+    </figcaption>\
+  </figure>`;
+}
+
 module.exports = {
-  image, coverImage, facebookImagePath, twitterImagePath
+  image, coverImage, articleFig, facebookImagePath, twitterImagePath
 }

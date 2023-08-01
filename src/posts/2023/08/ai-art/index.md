@@ -101,7 +101,7 @@ The positive prompt guides what SD will include. Note I said nothing about weapo
 
 Sometimes things are implied that you wouldn’t expect. The first prompt did not include eye color, so I had an entirely different background that was shades of brown. Asking for green eyes got me the green background as well.
 
-Sometimes changing a prompt slightly has very slight results, and I was able to refine the image over multiple passes. Asking for no armor gave me a simple green tunic instead, but it also got me two noses. “Hands” and “fingers” are in the negative prompt because I got a lot of weird results — our warrior here would be holding a sword, but by the blade, not the hilt. Oh, and she would have seven fingers.
+Sometimes changing a prompt slightly has very slight results, and I was able to refine the image over multiple passes. But other times, small changes have bizzare side effects. For example, asking for no armor gave me a simple green tunic instead, but it also got me two noses. “Hands” and “fingers” are in the negative prompt because I got a lot of weird results — our warrior here would be holding a sword, but by the blade, not the hilt. Oh, and she would have seven fingers.
 
 Once I got a smaller version of her growing out of her shoulder.
 

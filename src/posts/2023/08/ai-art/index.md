@@ -1,16 +1,38 @@
 ---
 title: Some notes about working with AI Art
 date: 2023-08-01
-description:
-categories: ["AI", "Art"]
+description: null
+categories:
+  - AI
+  - Art
 tags: post
 cover:
   src: spaceship.png
-  alt: AI art of a large spaceship with many antennae and protrusions landing in a fog-filled forest canyon.
+  alt: AI art of a large spaceship with many antennae and protrusions landing in a
+    fog-filled forest canyon.
   description: I am not sure if it is art, but it is fun.
   attribution:
     name: John Williams / Midjourney
     link: https://www.midjourney.com/app/jobs/407060d3-c71e-4db7-b70e-9ca5c2b165bd/
+egbert:
+  titles:
+    - Exploring the Ethics of AI-Generated Art
+    - Unraveling the Mysteries of AI Art Tools
+    - Using AI Art for Entertainment and Blogging
+  summaries:
+    - Delve into the ethical concerns surrounding AI-generated art and the
+      appropriation of artists' work.
+    - Discover the two types of AI art tools available and the challenges of
+      using them to achieve specific results.
+    - Learn how the author plans to incorporate AI art into their blogging and
+      entertainment endeavors.
+  sentiment: The sentiment of this post is generally positive. The author
+    expresses enthusiasm for exploring AI-generated art and sees it as an
+    interesting and entertaining tool with a lot of potential. However, they
+    also acknowledge the challenges and ethical concerns associated with AI art
+    and advocate for greater public investment in the arts to support artists.
+    Overall, the author's tone is thoughtful and reflective.
+
 ---
 
 I’ve spent a fair amount of time in the last few days playing around with AI-generated art. I have a few mostly unorganized thoughts I wanted to get down, so here you go.
@@ -85,17 +107,16 @@ All I’ve been doing recently with SD is trying out different models (each mode
 
 This looks really great if you don’t scrutinize it too much. There's an impression of Celtic knotwork, but it’s incoherent as a real knot. I don’t know what’s up with the weapons, those are strange. But overall, I’m very pleased with this one.
 
-<p><cite>John Williams / Stable Diffusion</cite>. <a href="/img/celtic.jpg">High-resolution version</a></p>
+<p><cite>John Williams / Stable Diffusion</cite>.</p>
 
 {% endarticleFig %}
 
 Off to the right is an image I worked with for multiple hours over several days. _My_ scruples say AI art belongs to the community, and so I should share my prompts any time I share the art.
 
-> Positive prompt: photo of a female celtic warrior, pale    green eyes, looking left
-
+> Positive prompt: photo of a female celtic warrior, pale green eyes, looking left
 > Negative prompt: hands, fingers, cropped head, smooth skin, (makeup)
 
-If you look at a lot of other people’s Stable Diffusion prompts you will notice they are much more detailed in comparison. Part of the reason mine are so short is I am using a newer model which requires a little less guidance. Another reason is a lot of SD artists take a kitchen-sink approach -- I am not convinced all their keywords do anything.
+If you look at a lot of other people’s Stable Diffusion prompts you will notice they are much more detailed in comparison. Part of the reason mine are so short is I am using a newer model which requires a little less guidance. Another reason is a lot of SD artists take a kitchen-sink approach -- I am not convinced all their keywords do anything. I mean, even in this one our warrior is looking right, facing right. So much for “looking left.”
 
 The positive prompt guides what SD will include. Note I said nothing about weapons or armor, but SD decided those were implied by “warrior.” The hair style, skin tone, and decorations are all probably implied by “celtic.”
 
@@ -111,7 +132,8 @@ Here is a screenshot of the ComfyUI workflow I used to create this.
 
 {% articleFig "screenshot.png" "A screenshot of the comfy UI, showing multiple models being loaded, and several image previews" %}
 
-<p><cite>John Williams</cite>. <a href="/img/celtic.jpg">High-resolution version</a></p>
+A workflow in ComfyUI.
+
 {% endarticleFig %}
 
 _This does not represent a complex workflow._ Here’s what it’s doing:

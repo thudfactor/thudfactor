@@ -2,13 +2,39 @@
 title: User-initiated element resizing in CSS
 subtitle: How I learned to love the resize property, then hate it again
 date: 2023-07-04
-categories: ["CSS"]
+categories:
+  - CSS
 tags: post
-description: CSS offers a browser-native way to make elements resizable, but it comes with a lot of limitations.
+description: CSS offers a browser-native way to make elements resizable, but it
+  comes with a lot of limitations.
 cover:
   src: super-genius.png
-  alt: Still from a Coyote / Road Runner cartoon. The Coyote holds a business card saying Wile E. Coyote Super Genius
+  alt: Still from a Coyote / Road Runner cartoon. The Coyote holds a business card
+    saying Wile E. Coyote Super Genius
   description: Not every elegant solution is the correct one.
+egbert:
+  titles:
+    - "Exploring CSS's Resize Property: Benefits and Drawbacks"
+    - "CSS's Resize Property: A Blessing and a Curse"
+    - Unveiling the Pros and Cons of CSS's Resize Property
+  summaries:
+    - Discover the benefits and drawbacks of using CSS's resize property for
+      handling element resizing in your web projects.
+    - Learn about the advantages and limitations of CSS's resize property and
+      its impact on user interface design.
+    - Uncover the pros and cons of incorporating CSS's resize property into your
+      web development workflow.
+  sentiment: The sentiment of the post is mixed. The author initially highlights
+    the benefits of using CSS's `resize` property for handling element resizing,
+    such as avoiding complex math and event management, as well as achieving
+    smooth resizing. However, they also discuss the drawbacks, including the
+    inability to choose the resize handle's location, the need to shrink-wrap
+    containing elements, the lack of specific resizing events, and the inability
+    to customize the appearance of the resize handle. Despite the limitations,
+    the author acknowledges the value of CSS and HTML in handling behaviors
+    whenever possible. Overall, the post provides a balanced assessment of the
+    CSS `resize` property.
+
 ---
 
 We’ve been working on a project at work that is growing a fairly elaborate user interface heavily informed by desktop applications like Photoshop. What used to be straightforward `div`s now need to be moved around, closed, minimized, and resized.

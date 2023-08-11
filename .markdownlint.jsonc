@@ -209,9 +209,11 @@
   // MD043/required-headings/required-headers - Required heading structure
   "MD043": {
     // List of headings
-    "headings": [],
-    // List of headings
-    "headers": [],
+    "headings": [
+      "## Section",
+      "### Subsection (optional)",
+      "*"
+    ],
     // Match case of headings
     "match_case": false
   },

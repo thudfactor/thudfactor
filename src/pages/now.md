@@ -5,7 +5,7 @@ date: 2023-06-21
 permalink: now/
 ---
 
-Hey, this is my <q>Now</q> page. Woot. [What the heck is a “Now” page?](https://nownownow.com/).
+Hey, this is my <q>Now</q> page. [What the heck is a “Now” page?](https://nownownow.com/).
 
 ## Current project
 
@@ -15,7 +15,7 @@ Making this site. I’ve got a lot of work to do, but that’s OK. I’m looking
 
 * [Joy of Living](https://www.penguinrandomhouse.com/books/115218/the-joy-of-living-by-yongey-mingyur-rinpoche-and-eric-swanson/), by Yongey Mingyur Rinpoche
 
-## Reading (For funsies)
+## Reading (For fun)
 
 * [Deathstalker](https://en.wikipedia.org/wiki/Deathstalker_(series)), Simon R. Green
 

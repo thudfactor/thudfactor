@@ -13,7 +13,6 @@ Making this site. I’ve got a lot of work to do, but that’s OK. I’m looking
 
 ## Reading (Professional, Growth)
 
-* [Pragmatic Thinking and Learning](https://pragprog.com/titles/ahptl/pragmatic-thinking-and-learning/) by Andy Hunt. It’s a bit long in the tooth, but still pretty useful. I might not have restarted this weblog without it.
 * [Joy of Living](https://www.penguinrandomhouse.com/books/115218/the-joy-of-living-by-yongey-mingyur-rinpoche-and-eric-swanson/), by Yongey Mingyur Rinpoche
 
 ## Reading (For funsies)
@@ -22,13 +21,10 @@ Making this site. I’ve got a lot of work to do, but that’s OK. I’m looking
 
 ### Recently
 
+* [Everyone in My Family Has Killed Someone](https://www.harpercollins.com/products/everyone-in-my-family-has-killed-someone-benjamin-stevenson?variant=40371879936034), Benjamin Stevenson
 * [Blood Standard](https://www.penguinrandomhouse.com/books/550396/blood-standard-by-laird-barron/), Laird Barron
 * [Station Eternity](https://www.penguinrandomhouse.com/books/609886/station-eternity-by-mur-lafferty/), Mur Lafferty
-* [Providence](https://maxbarry.com/providence/), Max Barry
-* [Pineapple Grenade](https://www.harpercollins.com/products/pineapple-grenade-tim-dorsey?variant=32207490777122), Tim Dorsey
 
 ## Watching
 
-* [The Last Drive-In](https://joebobbriggs.com/the-last-drive-in-with-joe-bob-briggs/), on Shudder
-* [Let’s Play Resident Evil 4 Remake](https://www.youtube.com/watch?v=lpKsgy2x6LE&list=PL_WcVABbXAhATityjo9gA5NXpQfYnJCZS) by Outside XBox
-* [Star Trek: Lower Decks](https://www.startrek.com/shows/star-trek-lower-decks)
+* Tons of Giallo

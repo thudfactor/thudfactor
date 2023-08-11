@@ -22,27 +22,13 @@
 }
 
 body {
-  font-size: clamp(1rem, .4167vw + .8875rem, 1.125rem);
   background-color: hsl(0deg 0% 94%);
   color: hsl(0deg 0% 10%);
+  font-size: clamp(1rem, .4167vw + .8875rem, 1.125rem);
   font-family: var(--body-font-family);
   font-weight: 400;
   hyphens: auto;
   hyphenate-limit-chars: 6 3 3;
-
-  & a {
-    transition: text-decoration-color 0.3s ease-in-out, color 0.3s ease-in-out;
-
-    &:link, &:visited {
-      color: hsl(170deg 70% 20%);
-      text-decoration-color: hsl(170deg 40% 30% / .6);
-    }
-
-    &:hover, &:active {
-      color: hsl(170deg 70% 20%);
-      text-decoration-color: hsl(170deg 40% 30% / 1);
-    }
-  }
 }
 
 header, footer {
@@ -68,6 +54,13 @@ doris-the-emu {
   left: -.1rem;
   width: 2rem;
   height: 2rem;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-out;
+
+  @media (min-width: 1000px) {
+    display: block;
+    transform: translateX(0);
+  }
 }
 
 img {
@@ -79,12 +72,26 @@ img {
   }
 }
 
-a:not([class]) {
-  text-decoration-thickness: max(0.07em, 1px);
-  text-underline-offset: 0.15em;
+a {
+  transition: text-decoration-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+  &:not([class]) {
+    text-decoration-thickness: max(0.07em, 1px);
+    text-underline-offset: 0.15em;
+  }
+
+  &:link, &:visited {
+    color: hsl(170deg 70% 20%);
+    text-decoration-color: hsl(170deg 40% 30% / .6);
+  }
+
+  &:hover, &:active {
+    color: hsl(170deg 70% 20%);
+    text-decoration-color: hsl(170deg 40% 30% / 1);
+  }
 }
 
-& .site-info {
+.site-info {
   font: 800 var(--font-xxxl) var(--title-font-family);
   color: hsl(0deg 0% 10%);
   //text-shadow: 0 1px 3px hsla(0deg 0% 10% / 0.5);
@@ -114,7 +121,6 @@ a:not([class]) {
     font-style: italic;
     font-weight: 200;
   }
-
 }
 
 header {
@@ -153,42 +159,14 @@ header {
   }
 }
 
-.page-top {
-  position: relative;
-  .banner-photo {
-    & img {
-      width: 100%;
-      max-height: min(75vh, 1080px);
-      object-fit: cover;
-    }
-  }
-
-  & header {
-    position: absolute;
-    inset: 0 0 auto;
-    background-color: hsl(0deg 0% 94% / .8);
-    backdrop-filter: blur(5px);
-    box-shadow: hsl(270deg 80% 20% / .6) 5px 0 3px;
-  }
-}
-
 .contentWrapper {
   display: flex;
   flex-direction: column;
-  margin: 0 auto 0 0;
+  margin: 0 auto;
   gap: 24px;
   max-width: fit-content;
   min-height: 100%;
   padding: 3rem;
-
-  @media (min-width: 1180px) and (min-aspect-ratio: 1.3/1) {
-    background-color: hsl(0deg 0% 100% / .8);
-    backdrop-filter: blur(5px);
-    position: absolute;
-    right: 2rem;
-    top: max(8rem, 20%);
-    border-radius: var(--border-radius);
-  }
 }
 
 main {
@@ -208,7 +186,6 @@ article {
 
   & ul,
   & ol {
-    max-width: var(--content-width);
     margin-block: 1em;
     padding-left: 0;
 
@@ -294,7 +271,6 @@ article {
     font-family: var(--body-contrast-font-family);
     color: hsl(0deg 0% 30%);
     line-height: 2;
-    background-color: hsl(0deg 0% 100%);
     margin: .5rem -.6rem;
     padding: .3rem .6rem;
   }
@@ -302,11 +278,8 @@ article {
   > p {
     line-height: 1.7;
     letter-spacing: -0.02em;
-    max-width: var(--content-width);
 
-    + p {
-      text-indent: 1.5em;
-    }
+    margin-block: 1rem;
   }
 
   .basic-image {
@@ -387,7 +360,6 @@ figure.cover-image {
   margin-bottom: 3rem;
   display: block;
   text-decoration: none;
-  background-color: hsl(0deg 0% 100% / .4);
   padding: .4rem 1rem 1rem;
   border-radius: var(--border-radius);
   transition: background-color .2s ease-in-out;

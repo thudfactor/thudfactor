@@ -98,7 +98,7 @@ Maybe they pull a Reddit and hike the price of their API drastically. Or they pu
 
 This is not a new risk; tons of folks built businesses on services provided by YouTube, TikTok, Ebay, Twitter, and Reddit, only to have service fees, changes in direction, or even an increased censorious attitude undermine all of their work.
 
-## It’s exciting, but there’s a lot to be concerned about
+## It’s exciting (and worrying)
 
 All of that said, the AI makes some previously very difficult programming tasks _remarkably_ easy, and I think we’ve just scratched the surface of those. No doubt future generations of LLMs will get faster. Maybe we will replace “lore” with better understanding. Maybe prompt writing will actually become _engineering_ at some point. Maybe we will find a way to make these very complex, poorly understood tools respond in a consistent manner without us having to worry about it embarrassing us in front of Mom or starting political fights over Thanksgiving.
 

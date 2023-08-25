@@ -20,4 +20,4 @@ This incarnation of _Thudfactor_ (there have been many) was created using [Eleve
 
 I’m hosting this sucker through [Netlify](https://www.netlify.com/).
 
-Hello, or hello again — as the case may be. Things look a little rough right now, but it’ll get better. If you want to keep track, I think I've got an old-school RSS feed up there somewhere. Or you can [follow me on Mastodon](https://social.horrorhub.club/@thudfactor).
+Hello, or hello again — as the case may be. Things look a little rough right now, but it’ll get better. If you want to keep track, I think I've got an old-school RSS feed up there somewhere. Or you can [follow me on Mastodon](https://hachyderm.io/@thudfactor).

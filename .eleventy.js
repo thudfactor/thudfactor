@@ -1,5 +1,5 @@
 const pluginRss = require("@11ty/eleventy-plugin-rss");
-const pluginPostCSS = require("eleventy-plugin-postcss");
+//const pluginPostCSS = require("eleventy-plugin-postcss");
 //const inclusive = require("@11ty/eleventy-plugin-inclusive-language");
 const { getCategories } = require("./config/collections");
 const { extractExcerpt, alertCallout } = require("./config/shortcodes");
@@ -10,7 +10,7 @@ const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 module.exports = eleventyConfig => {
   eleventyConfig.addPlugin(pluginRss);
-  eleventyConfig.addPlugin(pluginPostCSS);
+  //eleventyConfig.addPlugin(pluginPostCSS);
   //eleventyConfig.addPlugin(inclusive);
   eleventyConfig.addPlugin(syntaxHighlight);
 
@@ -30,7 +30,14 @@ module.exports = eleventyConfig => {
   eleventyConfig.addPassthroughCopy('src/img/*');
   eleventyConfig.addPassthroughCopy('src/video/*');
   eleventyConfig.addPassthroughCopy('src/favicon/*');
+
   eleventyConfig.addPassthroughCopy('src/js/*');
+  eleventyConfig.addWatchTarget("src/js/*");
+  eleventyConfig.addPassthroughCopy('src/posts/**/*.js');
+  eleventyConfig.addWatchTarget("src/posts/**/*.js");
+  eleventyConfig.addPassthroughCopy('src/**/*.css');
+  eleventyConfig.addWatchTarget("src/**/*.css");
+
   //eleventyConfig.addPassthroughCopy('src/*.xsl');
 
   return {

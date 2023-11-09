@@ -220,7 +220,7 @@ _Suggested by: [@troy@opencoaster.net](https://opencoaster.net/@troy/11137019763
 
 You could argue that most of web development for the first ten years or so was just exploiting various tricks and work-arounds. But here are a few.
 
-### Matching background colors for transparent GIFs [@wonkeythemonkey@mastodon.social](https://mastodon.social/@wonkeythemonkey/111369353992289765)
+### Matching background colors for transparent GIFs
 
 Until about 2007, if you needed bits of your website to show through an image your only choice was a transparent GIF. The problem was that GIFs only had `1-bit transparency`, which means a pixel was either fully transparent or completely opaque. This would cause an ugly, rough halo around images if they were used on a different background color than where they were used.
 
@@ -228,11 +228,15 @@ To get around this, you had to make your transparent GIF in an image editor usin
 
 *Replaced by:* PNG, WebP, SVG
 
-### Progressively loading images (with tables!) [@bcdavid@hachyderm.io](https://hachyderm.io/@bcdavid/111369208433512075)
+_Suggested by:_ [@wonkeythemonkey@mastodon.social](https://mastodon.social/@wonkeythemonkey/111369353992289765)
+
+### Progressively loading images (with tables!)
 
 Then, as now, if you have a really large image it can take forever to download without much user feedback that anything was happening. One solution was to slice the image up into a lot of smaller bits, then re-assemble them in the browser with a table. This way, bits of the image could load in. Ultimately this made the total file size larger and the download slower, but at least it gave some feedback.
 
-*Replaced by*: Better compression (`webp`, for example). Broadband. Paying attention to download sizes. Also `picture` and `img srcset`.
+*Replaced by:* Better compression (`webp`, for example). Broadband. Paying attention to download sizes. Also `picture` and `img srcset`.
+
+_Suggested by:_ [@bcdavid@hachyderm.io](https://hachyderm.io/@bcdavid/111369208433512075)
 
 ## Annoyances
 
@@ -266,7 +270,7 @@ One thing that has _never_ changed is that professional web development happens 
 
 It’s been a long, long time since I met any “web developer” who relied on any of these tools.
 
-*Replaced by:* Themeable CMSs. Most of the small-business designers who haven’t learned web development yet — or haven’t gone particularly deep — now build sites using Wordpress, Wix, or SquareSpace and assemble parts from theme components.
+*Replaced by:* Themeable CMSs, Site builders like Squarespace and Wix
 
 ---
 

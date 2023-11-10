@@ -23,11 +23,7 @@
     "@11ty/eleventy": "^2.0.1",
     "@11ty/eleventy-plugin-inclusive-language": "^1.0.3",
     "@11ty/eleventy-plugin-rss": "^1.2.0",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
-    "eleventy-plugin-postcss": "^1.0.4",
-    "postcss": "^8.4.24",
-    "postcss-import": "^15.1.0",
-    "postcss-nesting": "^11.2.2"
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0"
   },
   "dependencies": {
     "@11ty/eleventy-img": "^3.1.0",

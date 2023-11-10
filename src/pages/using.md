@@ -5,7 +5,7 @@ date: 2023-06-21
 permalink: using/
 ---
 
-_Thudfactor_ is built using [11ty](https://www.11ty.dev/) in mostly HTML, CSS, and maybe a tiny touch of Javascript. I use PostCSS to let me nest CSS selectors without using SCSS, but even that will go away once browser support for nested selectors settles down a bit.
+_Thudfactor_ is built using [11ty](https://www.11ty.dev/) in mostly HTML, CSS, and maybe a tiny touch of Javascript.
 
 My editor is [VSCode](https://code.visualstudio.com/), my programming font is [Dank Mono](https://medium.com/@philpl/what-sets-dank-mono-apart-1bbdc1cc3cbd). My color theme is [Material Theme Darker High Contrast](https://www.vscolors.com/themes/45bfc9eb-5e03-487f-bffe-315fa6881d6a-098bf801) but I might switch that out for something with a punchier name. My OS of choice is Commodore KERNAL, but since that’s wildly impractical these days I just use MacOS.
 

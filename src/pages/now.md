@@ -9,22 +9,14 @@ Hey, this is my <q>Now</q> page. [What the heck is a “Now” page?](https://no
 
 ## Current project
 
-Making this site. I’ve got a lot of work to do, but that’s OK. I’m looking forward to using Web Components and writing CSS in as-close-to-plain-CSS as I can tolerate.
+* Delving again into creative coding (AKA “Generative Art”), this time working with HTML Canvas
+* Working on a “snake” game using vanilla HTML, CSS, and Javascript with my teenager
 
 ## Reading (Professional, Growth)
 
-* [Joy of Living](https://www.penguinrandomhouse.com/books/115218/the-joy-of-living-by-yongey-mingyur-rinpoche-and-eric-swanson/), by Yongey Mingyur Rinpoche
+* [The Nature of Code](https://natureofcode.com/book/), by Daniel Shiffman. (Link is to a free HTML version.)
 
 ## Reading (For fun)
 
-* [Deathstalker](https://en.wikipedia.org/wiki/Deathstalker_(series)), Simon R. Green
+* [ElfQuest](https://elfquest.com/), Wendy and Richard Pini
 
-### Recently
-
-* [Everyone in My Family Has Killed Someone](https://www.harpercollins.com/products/everyone-in-my-family-has-killed-someone-benjamin-stevenson?variant=40371879936034), Benjamin Stevenson
-* [Blood Standard](https://www.penguinrandomhouse.com/books/550396/blood-standard-by-laird-barron/), Laird Barron
-* [Station Eternity](https://www.penguinrandomhouse.com/books/609886/station-eternity-by-mur-lafferty/), Mur Lafferty
-
-## Watching
-
-* Tons of Giallo

@@ -1,0 +1,41 @@
+color-bar {
+	display: flex;
+	justify-content: stretch;
+	height: var(--color-bar-height, 5rem);
+
+	> * {
+		width: 100%;
+	}
+}
+
+.swatch {
+	background-color: #ccc;
+}
+
+.rgb {
+	--r: 0;
+	--g: 0;
+	--b: 0;
+
+	.swatch {
+		background-color: rgb(var(--r) var(--g) var(--b));
+	}
+
+	&.red .swatch {
+		--r: calc(256 / var(--numswatches) * var(--index));
+	}
+
+	&.green .swatch {
+		--g: calc(256 / var(--numswatches) * var(--index));
+	}
+
+	&.blue .swatch {
+		--b: calc(256 / var(--numswatches) * var(--index));
+	}
+
+	&.greyscale .swatch {
+		--r: calc(256 / var(--numswatches) * var(--index));
+		--g: calc(256 / var(--numswatches) * var(--index));
+		--b: calc(256 / var(--numswatches) * var(--index));
+	}
+}

@@ -30,6 +30,7 @@ module.exports = eleventyConfig => {
   eleventyConfig.addPassthroughCopy('src/img/*');
   eleventyConfig.addPassthroughCopy('src/video/*');
   eleventyConfig.addPassthroughCopy('src/favicon/*');
+  eleventyConfig.addPassthroughCopy('src/_headers');
 
   eleventyConfig.addPassthroughCopy('src/js/*');
   eleventyConfig.addWatchTarget("src/js/*");

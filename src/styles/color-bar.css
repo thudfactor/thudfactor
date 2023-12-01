@@ -1,0 +1,39 @@
+color-bar {
+	display: flex;
+	justify-content: stretch;
+	height: var(--color-bar-height, 5rem);
+
+	> * {
+		width: 100%;
+	}
+
+  .swatch {
+	  background-color: #ccc;
+  }
+}
+
+
+.color-bars:has(> :nth-child(3)) {
+	--color-bar-height: 3.5rem;
+}
+
+.color-bars:has(> :nth-child(5)) {
+	--color-bar-height: 1.5rem;
+}
+
+labeled-swatch {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	font-size: 20px;
+
+  .swatch {
+		width: 50px;
+		aspect-ratio: 3/2;
+    background-color: var(--color, #ccc);
+	}
+
+  .label {
+    font-family: monospace;
+  }
+}

@@ -22,11 +22,7 @@ cover:
       name: Public Domain
 ---
 
-It's a revolution for color in CSS. Not only do we now have access to many different color models, we also have entirely new color spaces to explore. As part of deepening my own understanding of what’s available to us, I've been experimenting with the different color spaces and color notations.
-
-## Color spaces
-
-Color terms get rapidly technical, and — to be honest — I only have a fingernail grip on it to begin with. But for our purposes as web designers or developers, it seems to be correct enough to say that _color space_ represents the entire set of colors that can be seen or reproduced on a specific device.
+It’s a revolution for CSS color! Not only do we now have access to many different color models, we also have entirely new color spaces to explore. As part of deepening my own understanding of what’s available to us, I’ve been experimenting a bit. Here’s what I’ve learned.
 
 {% articleFig "color-spaces-apple.png" "A screenshot of Apple’s monitor color space settings" "right" %}
 
@@ -34,7 +30,19 @@ Apple monitors are the exception to those terrible monitor menus; you can access
 
 {% endarticleFig %}
 
-Example color spaces are: sRGB, Adobe RGB, DCI-P3, and Rec2020. If you dig into your monitor’s display settings — those are the ones behind the annoying and difficult-to-use monitor firmware menus — you may discover you can switch between these.
+## Color spaces
+
+Color terms get rapidly technical, and — to be honest — I only have a fingernail grip on the definitions to begin with. But for our purposes as web designers or developers, it seems to be correct enough to say that _color space_ represents the whole set of colors available to us.
+
+Color spaces may be different from a device’s color _gamut_ — or all the colors the device is _capable_ of displaying. In other words, a color space is an abstract or standardized set of colors, and _gamut_ is a result of real-world hardware.
+
+Example color spaces are: _sRGB_, _Adobe RGB_, _DCI-P3_, and _Rec. 2020_. If you dig into your monitor’s display settings — those are the ones behind the annoying and difficult-to-use monitor firmware menus — you may discover you can switch between these. So a monitor may be capable of displaying the enormous number of colors described in _Rec. 2020_, but if it’s set to _sRGB_ mode you’re only going to get a few of those.
+
+Early computer monitors had limited color gamuts. Due to memory constraints, the color _spaces_ available were often quite small. In the very early days of the web, there were only 216 colors we could use more or less reliably. This was the so-called “web-safe color palette.” But as early as 1996 we were getting into having 16 million colors.
+
+{% articleFig "websafe.gif" "All 216 colors once considered “web-safe.”" "right" %}
+If you chose a color outside of these 216, some old monitors would try to approximate them by “dithering,” trying to mix the colors by showing pixels of the others very close together. Since these monitors were very low resolution, the results were not ideal.
+{% endarticleFig %}
 
 ## Color models
 
@@ -55,9 +63,9 @@ Similar to the old "Red, Yellow, Blue" system is the "Red, Blue, Green" system. 
   </figcaption>
 </figure>
 
-This trick with red, blue, and green works because our eyes have photoreceptors called “cones” which are specifically designed to detect these colors. All the in-between colors we see comes from some mixture of these as a result.
+This trick with red, blue, and green works because the photoreceptor cones in our eyes are tuned to specifically these colors. All the other colors we see are mixed in our brain from these three different cones. The RGB color model mimics this behavior.
 
-The RGB color model expresses color in exactly this way. The sRGB color space — created in 1996 — is the most common and compatible model for colors on the web. If you have used “hex color,” you are working in the RGB color space. The intensity of each color is described by a number from 0 to 255 (or 00 to FF in hexadecimal). In hexadecimal notation, the amount of blue constitutes the first two digits, green the second two, and red is the third two. For example:
+The sRGB color space — created in 1996 — is the most common and compatible model for colors on the web. If you have used “hex color,” you are working in the RGB color space. In hexadecimal notation, each primary color is represented by a number from 0 to FF, which is 0 to 255 using decimal numbers. We then glue these numbers together, so (reading left to right) the first two digits are red (`#FF0000`), the second two are green (`#00FF`), and the third two are blue (`#0000FF`).
 
 <figure class="right">
   <labeled-swatch color="#9760f0" label="9,920,752 — grimace purple"></labeled-swatch>
@@ -71,9 +79,6 @@ The RGB color model expresses color in exactly this way. The sRGB color space �
 Why hexadecimal notation? This format makes it easy for us to see the intensity of red, green, and blue values independently. Decimal is a lot harder to manage. “15,728,755” is a combination of both red and blue, but it’s hard to tease out how much by looking at the decimals. Once it’s in hex, it’s a lot easier to see that it's quite a lot of red and a bit of blue: `#f00073`.
 
 The amount of each of these colors tells us how much of that wavelength of light contributes to the final color value. If we turn off all but one, and then sweep through the values from 0 to 256 for a single color, we get shades of that color.
-
-
-
 
 <figure class="color-bars">
   <color-bar numswatches="16" class="rgb red" style=""></color-bar>
@@ -150,6 +155,8 @@ CSS has a few other ways to describe an RGB color.
 <dt><code>rgb(0 128 255 / 0.1)</code></dt>
 <dd>A space-separated version with an optional opacity value separated from the color channels by a slash.</dd>
 </dl>
+
+The last syntax style is the most recent, but it’s been available on all modern browsers for a long time now.
 
 ## Advantages and Disadvantages
 

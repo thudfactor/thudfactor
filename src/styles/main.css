@@ -6,7 +6,7 @@
   --heading-font-family: Rockwell, 'Rockwell Nova', 'Roboto Slab', 'DejaVu Serif', 'Sitka Small', serif;
   --body-font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
   --body-contrast-font-family: system-ui, sans-serif;
-  --content-width: 36rem;
+  --content-width: 100%;
   --border-radius: .4rem;
 
   --font-s: .7953rem;
@@ -175,7 +175,7 @@ main {
 }
 
 article {
-  max-width: 100%;
+  max-width: var(--content-width);
   width: 50rem;
   margin: 0 auto;
 
@@ -185,11 +185,19 @@ article {
   }
 
   & ul,
-  & ol {
+  & ol,
+  & dl {
     margin-block: 1em;
     padding-left: 0;
 
-    & li {
+    & dt {
+      font-weight: bold;
+      font-family: var(--body-contrast-font-family);
+      font-size: var(--font-m);
+    }
+
+    & li,
+    & dd {
       font-size: var(--font-m);
       font-family: var(--body-contrast-font-family);
       margin-bottom: .6rem;
@@ -200,6 +208,10 @@ article {
         font-weight: bold;
         font-size: var(--font-s);
       }
+    }
+
+    & dd {
+      margin-left: 1.5rem;
     }
   }
 
@@ -484,7 +496,7 @@ article figure {
       float: right;
       width: max-content;
       max-width: calc(var(--content-width) / 2);
-      margin: 2rem 0 2rem 2rem;
+      margin: 1rem 0 2rem 2rem;
     }
   }
 

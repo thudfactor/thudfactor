@@ -160,7 +160,7 @@
   // MD033/no-inline-html - Inline HTML
   "MD033": {
     // Allowed elements
-    "allowed_elements": ["q","figure", "figcaption", "br", "cite"]
+    "allowed_elements": ["q","figure", "figcaption", "br", "cite", "color-bar", "labeled-swatch"]
   },
 
   // MD034/no-bare-urls - Bare URL used
@@ -210,7 +210,7 @@
   "MD043": {
     // List of headings
     "headings": [
-      "## Section",
+      "## Section (optional)",
       "### Subsection (optional)",
       "*"
     ],

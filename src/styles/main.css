@@ -6,7 +6,7 @@
   --heading-font-family: Rockwell, 'Rockwell Nova', 'Roboto Slab', 'DejaVu Serif', 'Sitka Small', serif;
   --body-font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
   --body-contrast-font-family: system-ui, sans-serif;
-  --content-width: 36rem;
+  --content-width: 100%;
   --border-radius: .4rem;
 
   --font-s: .7953rem;
@@ -175,7 +175,7 @@ main {
 }
 
 article {
-  max-width: 100%;
+  max-width: var(--content-width);
   width: 50rem;
   margin: 0 auto;
 

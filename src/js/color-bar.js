@@ -27,6 +27,9 @@ class LabeledSwatch extends HTMLElement {
     label.classList.add("label");
     label.innerHTML = this.label;
     this.appendChild(label);
+    const content = document.createElement("div");
+    content.classList.add("content");
+
   }
 
   get color() {

@@ -1,5 +1,5 @@
 ---
-title: Article Typography
+title: Article typography
 subtitle: Font size, line height & line width
 date: 2023-06-17
 categories: ["CSS", "Typography"]

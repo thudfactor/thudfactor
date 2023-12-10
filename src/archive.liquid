@@ -8,9 +8,12 @@ pagination:
 layout: archive
 ---
 
-{% for post in posts %}
-  {% include "post-excerpt.liquid" %}
-{% endfor %}
+<div class="excerpt-list">
+  <h1>Archive</h1>
+  {% for post in posts %}
+    {% include "post-excerpt.liquid" %}
+  {% endfor %}
+</div>
 
 <!-- Pagination links
 <nav>

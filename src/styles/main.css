@@ -179,7 +179,8 @@ article {
   width: 50rem;
   margin: 0 auto;
 
-  h2, h3 {
+  & h2,
+  & h3 {
     margin-top: 1.5em;
   }
 
@@ -258,7 +259,7 @@ article {
     padding: .3rem .6rem;
   }
 
-  > p {
+  & > p {
     line-height: 1.7;
     letter-spacing: -0.02em;
 

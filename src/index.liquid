@@ -8,6 +8,22 @@ pagination:
   reverse: true
 ---
 
+<div class="excerpt-list">
 {% for post in posts %}
   {% include "post-excerpt.liquid" %}
 {% endfor %}
+</div>
+
+<nav class="pagination">
+{% if pagination.href.previous %}
+<a href="{{ pagination.href.previous }}">Newer posts</a>
+{% else %}
+Newer posts
+{% endif %}
+/
+{% if pagination.href.next %}
+<a href="{{ pagination.href.next }}">Older posts</a>
+{% else %}
+Older posts
+{% endif %}
+</nav>

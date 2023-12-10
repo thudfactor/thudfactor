@@ -179,6 +179,10 @@ article {
   width: 50rem;
   margin: 0 auto;
 
+  h2, h3 {
+    margin-top: 1.5em;
+  }
+
   .alert-callout {
     max-width: calc(var(--content-width) + 2rem);
     margin: 1.5em -1rem;
@@ -243,39 +247,6 @@ article {
       text-align: right;
       margin-top: 1.6em;
     }
-  }
-
-  & h1 {
-    font-family: var(--title-font-family);
-    font-size: var(--font-xxxl);
-    //color: hsl(150deg 0% 30%);
-    font-weight: 800;
-    line-height: 1.2;
-
-    & span {
-      //color: hsl(150deg 0% 40%);
-      font-family: var(--body-contrast-font-family);
-      font-weight: 800;
-      font-style: italic;
-      font-size: 1rem;
-      display: block;
-      width: fit-content;
-    }
-  }
-
-  & h2 {
-    font-family: var(--heading-font-family);
-    color: hsl(150deg 0% 30%);
-    font-size: var(--font-xxl);
-    margin-top: 1.5em;
-  }
-
-  & h3 {
-    font-family: var(--heading-font-family);
-    color: hsl(150deg 0% 30%);
-    font-weight: 300;
-    font-size: var(--font-xl);
-    margin-top: 1.5rem;
   }
 
   .post-meta {
@@ -367,6 +338,16 @@ figure.cover-image {
   }
 }
 
+.excerpt-list {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  clear: both;
+
+  & h1 {
+    margin-bottom: 2rem;
+  }
+}
+
 .excerpt {
   clear: both;
   margin-bottom: 3rem;
@@ -375,7 +356,7 @@ figure.cover-image {
   padding: .4rem 1rem 1rem;
   border-radius: var(--border-radius);
   transition: background-color .2s ease-in-out;
-  //margin: -1rem;
+  margin: -1rem;
 
   .excerpt-header {
     margin-bottom:.6rem;
@@ -514,4 +495,40 @@ article figure {
   }
 }
 
+.pagination {
+  text-align: center;
+  font-size: var(--font-s);
+  font-family: var(--body-contrast-font-family);
+  clear: both;
+}
 
+h1 {
+  font-family: var(--title-font-family);
+  font-size: var(--font-xxxl);
+  //color: hsl(150deg 0% 30%);
+  font-weight: 800;
+  line-height: 1.2;
+
+  & span {
+    //color: hsl(150deg 0% 40%);
+    font-family: var(--body-contrast-font-family);
+    font-weight: 800;
+    font-style: italic;
+    font-size: 1rem;
+    display: block;
+    width: fit-content;
+  }
+}
+
+h2 {
+  font-family: var(--heading-font-family);
+  color: hsl(150deg 0% 30%);
+  font-size: var(--font-xxl);
+}
+
+h3 {
+  font-family: var(--heading-font-family);
+  color: hsl(150deg 0% 30%);
+  font-weight: 300;
+  font-size: var(--font-xl);
+}

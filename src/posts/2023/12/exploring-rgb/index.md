@@ -1,5 +1,5 @@
 ---
-title: Exploring the RGB Color Space
+title: Exploring the RGB color space
 date: 2023-12-09
 description:
 categories:

@@ -1,5 +1,5 @@
 ---
-title: "AI Integration: Challenges and Discoveries"
+title: "AI integration: challenges and discoveries"
 date: 2023-08-09
 description: I spent a couple of weeks diving into coding _with_ AI, and there are a lot of challenges. The most concerning, however, have very little to do with the technology.
 categories:

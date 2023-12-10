@@ -1,5 +1,5 @@
 ---
-title: A Month (or so) with GitHub Copilot
+title: A month (or so) with GitHub Copilot
 subtitle: Your plastic pal who’s fun to be with
 date: 2023-06-20
 categories: ["AI"]

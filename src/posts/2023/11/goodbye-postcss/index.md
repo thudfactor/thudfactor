@@ -1,5 +1,5 @@
 ---
-title: Web Development of auld lang syne
+title: Web development of auld lang syne
 date: 2023-11-07
 description: Removing any form of CSS post-processing has me nostalgic for the other web development strategies that have become obsolete thanks to modern development strategies.
 categories:

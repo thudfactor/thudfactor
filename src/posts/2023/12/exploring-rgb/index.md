@@ -1,7 +1,7 @@
 ---
-title: Exploring the RGB color space
+title: Exploring RGB
 date: 2023-12-09
-description:
+description: In this post, we begin exploring color in CSS by taking a close look at RGB color.
 categories:
   - CSS
   - Color
@@ -13,7 +13,7 @@ css:
   - rgb-bars.css
 cover:
   src: LED_RGB_matrix.jpg
-  alt: Closeup of tiny red, greenm and blue LEDs arranged in a matrix for a display.
+  alt: Closeup of tiny red, green and blue LEDs arranged in a matrix for a display.
   description: These LEDs are arranged very close together in a tight matrix; when viewed from a normal distance, the colors from these lights will blend to reproduce a large portion of the visible spectrum.
   attribution:
     name: Komatta / Wikimedia

@@ -19,6 +19,10 @@ cover:
     name: John Williams
 ---
 
+The next most common color model in CSS is _HSL_. Unlike the RGB color model, HSL doesn’t define color as a mixture of three primaries. It describes color as being made up of three different qualities.
+
+The first, _hue_, sets the overall color from the spectrum. _Saturation_ is how much that hue contributes to the overall color. _Lightness_ is how light or dark the color is.
+
 <figure class="right">
   <labeled-swatch color="#c414b3" label="#c414b3"></labeled-swatch>
   <labeled-swatch color="rgb(196 20 179)" label="rgb(196 20 179)"></labeled-swatch>
@@ -28,9 +32,7 @@ cover:
   </figcaption>
 </figure>
 
-The next most common color model in CSS is _HSL_. Unlike the RGB color model from [the last article](../exploring-rgb/), HSL doesn’t define color as a mixture of three primaries. It describes color as being made up of three different qualities. The first, _hue_, sets the overall color from the spectrum. _Saturation_ is how much that hue contributes to the overall color. _Lightness_ is how light or dark the color is.
-
-In CSS, both the HSL and the RGB color models work within the sRGB color space. All colors specified using RGB can also be specified using HSL, so they can be chosen more or less by personal preference. But many people find working with HSL values more intuitive.
+In CSS, both the HSL and the RGB color models work within the sRGB color space. All colors specified using RGB can also be specified using HSL, so you can pick the one you are more comfortable with. But many people find working with HSL values more intuitive.
 
 ## Adjusting one axis
 
@@ -51,7 +53,7 @@ Just as we did with RGB, let’s look at each axis in isolation. (Or, at least, 
 
 Hue is specified as an angle on a color wheel, so values range from 0º to 360º, with decimal values available. Just as with other circles, angles equal to or greater than 360º just take another turn around the wheel — 0º and 360º are the same hue (red), 60º and 420º are both the same yellow, and so forth.
 
-Saturation and lightness are both specified as percentages. Adjusting saturation alone causes colors to tend towards grey, which sometimes appears to lighten the colors even though the lightness value is untouched. At 0% saturation, all colors are the same because the hue value contributes nothing to the overall color, so only lightness matters.
+Saturation and lightness are both specified as percentages. Adjusting saturation alone causes colors to tend towards grey, which sometimes appears to lighten the colors even though the lightness value is untouched. At 0% saturation, all colors are the same because the hue value contributes nothing to the overall color. Only saturation and lightness matter.
 
 <figure>
   <color-bar numswatches="16" class="hsl hue" style="--s: 100%"></color-bar>
@@ -64,7 +66,7 @@ Saturation and lightness are both specified as percentages. Adjusting saturation
   </figcaption>
 </figure>
 
-Adjusting lightness can also seem to pull the hue out of the color because the hue is gradually overwhelmed by the black and white tints.
+Adjusting lightness can also seem to pull the hue out of the color because the hue is overwhelmed by black and white, but you can’t get anything approaching a neutral grey that way.
 
 <figure>
   <color-bar numswatches="16" class="hsl hue" style="--l: 0%"></color-bar>
@@ -78,17 +80,17 @@ Adjusting lightness can also seem to pull the hue out of the color because the h
   </figcaption>
 </figure>
 
-To get purely neutral tones, you can set the hue to any degree, reduce saturation to 0, and sweep through the lightness values.
+To get those neutral tones, you can set the hue to any degree, reduce saturation to 0, and and then change the lightness.
 
 <figure>
   <color-bar numswatches="16" class="hsl lightness" style="--s: 0%"></color-bar>
   <color-bar numswatches="16" class="hsl hue" style="--l: 25%"></color-bar>
   <figcaption>
-    Every block in both bars has a different hue, but they are all shades of grey in the bottom bar because saturation is 0%.
+    Every block in both bars has a different hue, but they are all shades of grey in the top bar because saturation is 0%.
   </figcaption>
 </figure>
 
-The difference between lightness and saturation is a bit subtle, but it helps me to think of it this way. Removing saturation is like turning a color photo black and white. But increasing or decreasing lightness makes a color photo more faded or darker, until you get completely white or black.
+The difference between lightness and saturation is a bit hard to grasp, but think about changing colors in a photograph. Removing saturation from a color photo will make it look black and white. But increasing or decreasing lightness makes a color photo more darker or brighter. You will start to lose details in the shadows (which get darker) or highlights (which get blown out) until everything disappears into black or white.
 
 ## Advantages and Disadvantages
 
@@ -101,7 +103,7 @@ The difference between lightness and saturation is a bit subtle, but it helps me
   </figcaption>
 </figure>
 
-Once you have a good feel for where hues are located on the color wheel, it’s relatively easy to pick a color and get it into the general ballpark. It does take some practice, but in my experience you have a wider range of colors you can get to (roughly) without having to reach for a color picker.
+Once you have a good feel for where hues are located on the color wheel, it’s easy to pick a color and get it into the general ballpark. It does take some practice, but in my experience you have a wider range of colors you can get to without having to reach for a color picker.
 
 HSL also mimics a common way we think about colors. If you think “that red is too vivid,” you can pull saturation down. But if you want “dark red” or “light red” you can adjust lightness. This also means it’s better suited to cases where colors have to change programmatically.
 
@@ -114,22 +116,22 @@ HSL also mimics a common way we think about colors. If you think “that red is 
   </figcaption>
 </figure>
 
-There are a couple of flaws with HSL, however. Because all three color components are always required, there are a few places where only one or two matter. At 100% or 0% lightness, it does not matter what either the saturation or the hue are. Those “theoretical” colors just get clipped to white and black.
+There are a couple of flaws with HSL, however. Because all three color components are always required, there are a few places where just one or two matter. At 100% or 0% lightness, it does not matter what either the saturation or the hue are. Those “theoretical” colors just get clipped to white and black.
 
-There’s also a human-assumption issue, since we tend to like to think in whole numbers. With RGB you can get 256 levels of grey without reaching for fractions — You just increase all three colors in lock-step from 0 to 255 (#00 to #FF). With HSL percentages, though, you only have 101 whole number values — 0% to 100%.
+There’s also a human-assumption issue, since we tend to like to think in whole numbers. With RGB you can get 256 levels of grey without reaching for fractions — You just increase all three colors in lock-step from 0 to 255 (#00 to #FF). With HSL percentages, though, you have 101 whole number values — 0% to 100%.
 
-You can see this tendency in many online color pickers or color picker apps. Although decimal values for lightness and saturation are completely valid, [A Most Excellent HSL Color Picker](https://hslpicker.com/#f0f0f0) treats them as invalid. That means two to three levels of RGB grey are unreachable — not by HSL itself, but through the color picker. You could argue that the visual difference between `#ececec`, `#ededed`, and `#eeeeee` is indistinguishable, but no doubt it matters to someone.
+You can see this tendency in many online color pickers or color picker apps. Although decimal values for lightness and saturation are valid, [A Most Excellent HSL Color Picker](https://hslpicker.com/#f0f0f0) presents an error message. That means two to three levels of RGB grey are unreachable — not by HSL itself, but through the color picker. You could argue that the visual difference between `#ececec`, `#ededed`, and `#eeeeee` is indistinguishable, but no doubt it matters to someone.
 
 The biggest disadvantage, however, is that colors of the same lightness _value_ are perceived as lighter or darker than their neighbors. Let’s take a look at the HSL spectrum again:
 
 <figure>
   <color-bar numswatches="18" class="hsl hue" style="--s: 100%"></color-bar>
   <figcaption>
-    The HSL color spectrum, with saturation at 100% and lightness at 50%. Although lightness is consistent, some of these colors look distinctly brighter than others.
+    The HSL color spectrum, with saturation at 100% and lightness at 50%. Although lightness is consistent, some of these colors look brighter than others.
   </figcaption>
 </figure>
 
-This is not as critical for some concerns as it is for others, but if you’re dynamically assigning contrasting colors and also trying to adhere to color contrast guidelines.
+This is not as critical for some concerns as it is for others, but it’s critical if you’re assigning colors automatically while sticking to the WCAG color contrast guidelines.
 
 {% alertCallout %}
 Fun fact: the WCAG 2.0 color contrast guidelines have some [significant deficiencies](https://git.apcacontrast.com/documentation/WhyAPCA), in part because they also lean on a flawed mathematical  understanding of contrast.
@@ -139,7 +141,7 @@ Other color models try to address this, and we’ll take a look at those in futu
 
 ## Similar variations
 
-There are many similar color models to HSL that can be easily confused. CSS also supports HWB, which expresses color as a mixture of hue, white, and black. Changing _either_ W or B while keeping the other at 0% is essentially the same as sweeping through the "lightness" values in HSL. HWB is perhaps more intuitive for lightening and darkening colors.
+There are many similar color models often confused with HSL. CSS also has HWB, which expresses color as a mixture of hue, white, and black. Changing _either_ W or B while keeping the other at 0% is the same as sweeping through the "lightness" values in HSL. HWB is perhaps more intuitive for lightening and darkening colors, but counter-intuitive for neutral tones.
 
 <figure>
   <color-bar numswatches="16" class="hwb hue" style="margin-bottom: 1rem;"></color-bar>
@@ -155,15 +157,17 @@ There are many similar color models to HSL that can be easily confused. CSS also
   </figcaption>
 </figure>
 
-Since HSL’s “lightness” gets spread across two components, you can express 200 shades of grey using whole numbers alone.
+Stefan Judis has an excellent [article about HWB](https://www.stefanjudis.com/blog/hwb-a-color-notation-for-humans/).
 
-Other color models easily confused with HSL are HSB (Hue, Saturation, Brightness) and HSV (Hue, Saturation, Value). HSB and HSV are actually the same model, they just disagree on what the third component should be called. In HSB, 100% _brightness_ does not make the color white. Instead, it gives the color its most intense hue. You only get actual white by setting brightness to 100% and saturation to 0%. [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Hsl-hsv_models_b.svg) as a great, but very large, illustration of the differences.
+The other color model confused with HSL is HSB, which stands for Hue, Saturation, and Brightness. In HSB, 100% _brightness_ does not make the color white. Instead, it gives the color its most intense hue. You get actual white by setting brightness to 100% and saturation to 0%. [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Hsl-hsv_models_b.svg) has a great, but very large, illustration of the differences.
+
+HSV (Hue, Saturation, and Value) is the same color model as HSB — they just disagree on what that third color component is called.
 
 ## Which is better, RGB or HSL?
 
-If you had to choose just one of these two, I’d argue that HSL is more often than not a better choice.
+If you had to choose just one of these two, HSL is more often than not a better choice. It’s easy to understand. With practice it’s easier to picture what any given color value will be. And the biggest benefit is that it’s easier to manipulate with code.
 
-That said, _you don’t have to choose_. CSS supports both, so there’s no reason not to switch modes if you find one works better than the other. Remember that you can create every color with HSL that you can with RGB (even if some color pickers won’t let you), so my suggestion is to use the one you like until circumstances require a change.
+That said, _you don’t have to choose_. CSS supports both, so there’s no reason not to switch modes if you find one works better than the other. Remember that you can create every color with HSL that you can with RGB (even if some color pickers won’t let you), so use the one you like until circumstances require a change.
 
 Coming up: we complicate matters with newer color models and color spaces beyond the now very dated sRGB.
 

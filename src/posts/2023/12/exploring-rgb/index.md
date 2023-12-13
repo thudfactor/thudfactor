@@ -1,7 +1,7 @@
 ---
 title: Exploring RGB
 date: 2023-12-09
-description: In this post, we begin exploring color in CSS by taking a close look at RGB color.
+description: We begin exploring color in CSS by taking a close look at RGB color.
 categories:
   - CSS
   - Color
@@ -54,6 +54,8 @@ Over the course of a few posts, I want to take a look at other color models and 
 
 Similar to the old "Red, Yellow, Blue" system is the "Red, Blue, Green" system. This color model works well with light. You can get black by reducing _all_ of the light, and you get white by turning red, blue, and green up to their full intensities. Old color CRT displays used tiny red, blue, and green phosphor dots, and modern televisions use the same colors but different technologies.
 
+A lot of articles about color models have illustrations of the models as 3D objects which, while cool, are really hard for me to follow. I think it’s easier to see what’s going on with color bars and swatches, so let’s look at what each of the R, G, and B values look like on their own below.
+
 <figure class="right">
   <labeled-swatch color="#ff0000" label="#ff0000 — red"></labeled-swatch>
   <labeled-swatch color="#00ff00" label="#00ff00 — green"></labeled-swatch>
@@ -63,7 +65,7 @@ Similar to the old "Red, Yellow, Blue" system is the "Red, Blue, Green" system. 
   </figcaption>
 </figure>
 
-This trick with red, blue, and green works because the photoreceptor cones in our eyes are tuned to specifically these colors. All the other colors we see are mixed in our brain from these three different cones. The RGB color model mimics this behavior.
+Mixing red, green, and blue to make all of the colors works because we have three types of photoreceptor cones in our eyes tuned to them specifically. All the other colors we see are mixed in our brain from these three different cones.
 
 The sRGB color space — created in 1996 — is the most common and compatible model for colors on the web. If you have used “hex color,” you are working in the RGB color space. In hexadecimal notation, each primary color is represented by a number from 0 to FF, which is 0 to 255 using decimal numbers. We then glue these numbers together, so (reading left to right) the first two digits are red (`#FF0000`), the second two are green (`#00FF`), and the third two are blue (`#0000FF`).
 

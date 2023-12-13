@@ -8,7 +8,11 @@ function filterByCategory(posts, cat) {
   }
 
 function nicedate(date) {
-  const english = new Intl.DateTimeFormat('en-US');
+  const english = new Intl.DateTimeFormat('en-US', {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric'
+  });
   return english.format(date);
 }
 

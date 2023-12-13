@@ -13,11 +13,11 @@ color-bar {
 }
 
 
-.color-bars:has(> :nth-child(3)) {
+figure:has(> :nth-child(3)) {
 	--color-bar-height: 3.5rem;
 }
 
-.color-bars:has(> :nth-child(5)) {
+figure:has(> :nth-child(5)) {
 	--color-bar-height: 1.5rem;
 }
 

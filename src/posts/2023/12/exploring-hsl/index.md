@@ -118,20 +118,28 @@ There are a couple of flaws with HSL, however. Because all three color component
 
 There’s also a human-assumption issue, since we tend to like to think in whole numbers. With RGB you can get 256 levels of grey without reaching for fractions — You just increase all three colors in lock-step from 0 to 255 (#00 to #FF). With HSL percentages, though, you only have 101 whole number values — 0% to 100%.
 
-You can see this tendency in many online color pickers or color picker apps. Although decimal values for lightness and saturation are completely valid, [A Most Excellent HSL Color Picker](https://hslpicker.com/#f0f0f0) treats them as invalid. That means two to three levels of RGB grey are unreachable — not by HSL itself, but through the color picker.
+You can see this tendency in many online color pickers or color picker apps. Although decimal values for lightness and saturation are completely valid, [A Most Excellent HSL Color Picker](https://hslpicker.com/#f0f0f0) treats them as invalid. That means two to three levels of RGB grey are unreachable — not by HSL itself, but through the color picker. You could argue that the visual difference between `#ececec`, `#ededed`, and `#eeeeee` is indistinguishable, but no doubt it matters to someone.
 
-The biggest disadvantage, however, is that colors of the same lightness _value_ are perceived as lighter or darker than their neighbors.
+The biggest disadvantage, however, is that colors of the same lightness _value_ are perceived as lighter or darker than their neighbors. Let’s take a look at the HSL spectrum again:
 
 <figure>
-  <color-bar numswatches="16" class="hsl hue" style="--s: 100%"></color-bar>
+  <color-bar numswatches="18" class="hsl hue" style="--s: 100%"></color-bar>
   <figcaption>
-    The HSL color spectrum, with saturation at 100% and lightness at 50%.
+    The HSL color spectrum, with saturation at 100% and lightness at 50%. Although lightness is consistent, some of these colors look distinctly brighter than others.
   </figcaption>
 </figure>
 
-## HWB Color
+This is not as critical for some concerns as it is for others, but if you’re dynamically assigning contrasting colors and also trying to adhere to color contrast guidelines.
 
-Like HSL, HWB has a hue component, but the other two axes are "whiteness" and "blackness." Changing _either_ W or B while keeping the other at 0% is essentially the same as sweeping through the "lightness" values in HSL — you just have to change to a different axis once you want lightness values > 50%.
+{% alertCallout %}
+Fun fact: the WCAG 2.0 color contrast guidelines have some [significant deficiencies](https://git.apcacontrast.com/documentation/WhyAPCA), in part because they also lean on a flawed mathematical  understanding of contrast.
+{% endalertCallout %}
+
+Other color models try to address this, and we’ll take a look at those in future installments.
+
+## Similar variations
+
+There are many similar color models to HSL that can be easily confused. CSS also supports HWB, which expresses color as a mixture of hue, white, and black. Changing _either_ W or B while keeping the other at 0% is essentially the same as sweeping through the "lightness" values in HSL. HWB is perhaps more intuitive for lightening and darkening colors.
 
 <figure>
   <color-bar numswatches="16" class="hwb hue" style="margin-bottom: 1rem;"></color-bar>
@@ -147,59 +155,14 @@ Like HSL, HWB has a hue component, but the other two axes are "whiteness" and "b
   </figcaption>
 </figure>
 
-To get more neutral tones, you have to mix both white and black — just as you might if you were mixing paint.
+Since HSL’s “lightness” gets spread across two components, you can express 200 shades of grey using whole numbers alone.
 
-<figure>
-  <color-bar numswatches="16" class="hwb hue" style="--w: 0%; --b: 0%"></color-bar>
-  <color-bar numswatches="16" class="hwb hue" style="--w: 10%; --b: 10%"></color-bar>
-  <color-bar numswatches="16" class="hwb hue" style="--w: 20%; --b: 20%"></color-bar>
-  <color-bar numswatches="16" class="hwb hue" style="--w: 30%; --b: 30%"></color-bar>
-  <color-bar numswatches="16" class="hwb hue" style="--w: 40%; --b: 40%"></color-bar>
-  <color-bar numswatches="16" class="hwb hue" style="--w: 50%; --b: 50%; margin-bottom: 1rem;"></color-bar>
-  <figcaption>
-    Increasing W and B equally, from 0% to 50%. This is the same effect as changing
-    saturation in HSL from 100% to 0%, while keeping lightness at 50%.
-  </figcaption>
-</figure>
+Other color models easily confused with HSL are HSB (Hue, Saturation, Brightness) and HSV (Hue, Saturation, Value). HSB and HSV are actually the same model, they just disagree on what the third component should be called. In HSB, 100% _brightness_ does not make the color white. Instead, it gives the color its most intense hue. You only get actual white by setting brightness to 100% and saturation to 0%. [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Hsl-hsv_models_b.svg) as a great, but very large, illustration of the differences.
 
-Increasing both together beyond 50% W and B has no further effect…
+## Which is better, RGB or HSL?
 
-<figure>
-  <color-bar numswatches="16" class="hwb hue" style="--w: 50%; --b: 50%"></color-bar>
-  <color-bar numswatches="16" class="hwb hue" style="--w: 60%; --b: 60%"></color-bar>
-  <color-bar numswatches="16" class="hwb hue" style="--w: 70%; --b: 70%"></color-bar>
-  <color-bar numswatches="16" class="hwb hue" style="--w: 80%; --b: 80%"></color-bar>
-  <color-bar numswatches="16" class="hwb hue" style="--w: 90%; --b: 90%"></color-bar>
-  <color-bar numswatches="16" class="hwb hue" style="--w: 100%; --b: 100%"></color-bar>
-  <figcaption>
-    White values increase from left to right for each bar, black values from top to bottom.
-    Although this looks like one block, it is 96 swatches with 96 different HSB values … that
-    all result in a neutral grey.
-  </figcaption>
-</figure>
+If you had to choose just one of these two, I’d argue that HSL is more often than not a better choice.
 
-Changing them in inverse proportion results in a predictable (but hard to visualize) pattern of desaturation.
+That said, _you don’t have to choose_. CSS supports both, so there’s no reason not to switch modes if you find one works better than the other. Remember that you can create every color with HSL that you can with RGB (even if some color pickers won’t let you), so my suggestion is to use the one you like until circumstances require a change.
 
-<figure>
-  <color-bar numswatches="16" class="hwb whiteness" style="--b: 100%"></color-bar>
-  <color-bar numswatches="16" class="hwb whiteness" style="--b: 80%"></color-bar>
-  <color-bar numswatches="16" class="hwb whiteness" style="--b: 60%"></color-bar>
-  <color-bar numswatches="16" class="hwb whiteness" style="--b: 40%"></color-bar>
-  <color-bar numswatches="16" class="hwb whiteness" style="--b: 20%"></color-bar>
-  <color-bar numswatches="16" class="hwb whiteness" style="--b: 0%"></color-bar>
-  <figcaption>
-    White increases from left to right. Black decreases from top to bottom.
-  </figcaption>
-</figure>
 
-<figure>
-  <color-bar numswatches="16" class="hwb blackness" style="--w: 100%"></color-bar>
-  <color-bar numswatches="16" class="hwb blackness" style="--w: 80%"></color-bar>
-  <color-bar numswatches="16" class="hwb blackness" style="--w: 60%"></color-bar>
-  <color-bar numswatches="16" class="hwb blackness" style="--w: 40%"></color-bar>
-  <color-bar numswatches="16" class="hwb blackness" style="--w: 20%"></color-bar>
-  <color-bar numswatches="16" class="hwb blackness" style="--w: 0%"></color-bar>
-  <figcaption>
-    Black increases from left to right. Black decreases from top to bottom.
-  </figcaption>
-</figure>

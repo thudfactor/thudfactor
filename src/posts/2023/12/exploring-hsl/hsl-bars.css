@@ -1,0 +1,43 @@
+.hsl {
+	--h: 0;
+	--s: 100%;
+	--l: 50%;
+
+	.swatch {
+		background-color: hsl(var(--h) var(--s) var(--l));
+	}
+
+	&.hue .swatch {
+		--h: calc(360 / var(--numswatches) * var(--index));
+	}
+
+	&.lightness .swatch {
+		--l: calc(100% / var(--numswatches) * var(--index));
+	}
+
+	&.saturation .swatch {
+		--s: calc(100% / var(--numswatches) * var(--index));
+	}
+}
+
+.hwb {
+	--h: 0;
+	--w: 0%;
+	--b: 0%;
+
+	.swatch {
+		background-color: hwb(var(--h) var(--w) var(--b));
+	}
+
+	&.hue .swatch {
+		--h: calc(360 / var(--numswatches) * var(--index));
+	}
+
+	&.whiteness .swatch {
+		--w: calc(100% / var(--numswatches) * var(--index));
+	}
+
+	&.blackness .swatch {
+		--b: calc(100% / var(--numswatches) * var(--index));
+	}
+}

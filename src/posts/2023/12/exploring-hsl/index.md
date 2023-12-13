@@ -165,4 +165,6 @@ If you had to choose just one of these two, I’d argue that HSL is more often t
 
 That said, _you don’t have to choose_. CSS supports both, so there’s no reason not to switch modes if you find one works better than the other. Remember that you can create every color with HSL that you can with RGB (even if some color pickers won’t let you), so my suggestion is to use the one you like until circumstances require a change.
 
+Coming up: we complicate matters with newer color models and color spaces beyond the now very dated sRGB.
+
 

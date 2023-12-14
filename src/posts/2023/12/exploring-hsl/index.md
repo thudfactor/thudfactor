@@ -95,11 +95,12 @@ The difference between lightness and saturation is a bit hard to grasp, but thin
 ## Advantages and Disadvantages
 
 <figure class="right">
-  <labeled-swatch color="hsl(60deg 70% 50%)" label="#c414b3"></labeled-swatch>
-  <labeled-swatch color="rgb(196 20 179)" label="rgb(196 20 179)"></labeled-swatch>
-  <labeled-swatch color="hsl(306deg, 81%, 42%)" label="hsl(306deg 81% 42%)"></labeled-swatch>
+  <labeled-swatch color="hsl(127deg 100% 50%)" label="hsl(127deg 100% 50%)"></labeled-swatch>
+  <labeled-swatch color="hsl(127deg 10% 50%)" label="hsl(127deg 10% 50%)"></labeled-swatch>
+  <labeled-swatch color="hsl(127deg, 56%, 37%)" label="hsl(127deg 56% 37%)"></labeled-swatch>
   <figcaption>
-    Specifying the same color three different ways: RGB hex notation, the `rgb()` function, and the `hsl()` function.
+    All three color swatches above use the same hue value.
+    Top: A very vivid green. Middle: A very faded green. Bottom: A rather spring-like green.
   </figcaption>
 </figure>
 

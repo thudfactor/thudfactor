@@ -16,16 +16,15 @@ cover:
     name: Ray Harryhausen / United Artists
 ---
 
-There are lots of theories about why Medusa turned people to stone. One says she was just that ugly. Another says that she’s was magical, evil being. And a third claims Medusa was a case of victim-blaming by Minerva. I have my own theory, which is that Medusa just wanted people to settle down and be quiet.
+Some people say Medusa turned people to stone because she was just that ugly. Others portray her as an evil, magical being. And a third claims Medusa was unlucky enough to run afoul of the victim-blaming Minerva. I have my own theory, which is that Medusa just wanted people to settle down.
 
 {% articleFig "display-settings.png" "Display settings on MacOS, with Reduce Motion, Dim Flashing Lights turned on, and Auto-play Animated Images turned off." "right" %}
 The MacOS display settings, which shows many different accessibility options.
 {% endarticleFig %}
 
-I can sympathize. I am one of many, many people prone to [sensory overload](https://health.clevelandclinic.org/sensory-overload), triggered by both motion and sound. Unlike folks with vestibular disorders, I don’t react to motion and sound by becoming dizzy, nauseous, or getting a headache. I instead get tense, anxious, irritable, and withdrawn. That’s why I’ve turned on “reduce motion” for every device that supports it. It’s also the primary reason I run my browser with ad blockers on — one flashing or auto-playing advertisement on the screen can make the entire page unusable for me.
+I can sympathize. I am prone to [sensory overload](https://health.clevelandclinic.org/sensory-overload), which is triggered by both motion and sound. Unlike folks with vestibular disorders, I don’t get dizzy, nauseous, or a headache. I instead get tense, anxious, irritable, and withdrawn. That’s why I’ve turned on “reduce motion” for every device that supports it. (It’s also the primary reason I run my browser with ad blockers on — one flashing or auto-playing advertisement on the screen can make the entire page unusable for me.)
 
-Regardless of how motion sensitivity manifests, it’s a common accessibility issue for web sites. Fortunately, you can keep all your crazy animation stuff in place _and_ help those
-of us who can’t even by using a pretty simple media query.
+Motion sensitivity is a big problem for a lot of people, but web sites often don’t take that into account. I hope it’s not because they think you have to have a boring site and serve the rest of us, because since 2020 you can _totally_ keep your wacky spinning logo and turn it off for the people who can’t take it. All it takes is a media query.
 
 ```css
 @media (prefers-reduced-motion: reduce) {
@@ -69,6 +68,8 @@ WCAG says it must be possible to “[pause, stop, or hide](https://www.w3.org/WA
 
 Turning these animations off preemptively is somewhat more aggressive but certainly friendlier, and it’s been my default coding strategy for some time now when doing design implementation for clients. In the cases of incidental, decorative animations, it’s a lot safer to remove them than it is to offer toggle switches.
 
-For the larger features, well, lots of folks are willing die on the hill of auto-advancing carousels and auto-playing video, but in my experience most will allow a carve-out for people like me who have expressed an opinion at the operating-system level.
+For the larger features, well, lots of folks are willing die on the hill of auto-advancing carousels and auto-playing video, but in my experience most will allow a carve-out for accessibility purposes. Assume your clients want an accessible web site and make ’em tell you otherwise, that’s my policy.
+
+
 
 

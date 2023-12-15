@@ -18,8 +18,8 @@ cover:
 
 There are lots of theories about why Medusa turned people to stone. One says she was just that ugly. Another says that she’s was magical, evil being. And a third claims Medusa was a case of victim-blaming by Minerva. I have my own theory, which is that Medusa just wanted people to settle down and be quiet.
 
-{% articleFig "display-settings.png" "Display settings on MacOS, with Reduce Motion, Dim Flashing Lights turned on, and Auto-play Animated Images turned off." %}
-
+{% articleFig "display-settings.png" "Display settings on MacOS, with Reduce Motion, Dim Flashing Lights turned on, and Auto-play Animated Images turned off." "right" %}
+The MacOS display settings, which shows many different accessibility options.
 {% endarticleFig %}
 
 I can sympathize. I am one of many, many people prone to [sensory overload](https://health.clevelandclinic.org/sensory-overload), triggered by both motion and sound. Unlike folks with vestibular disorders, I don’t react to motion and sound by becoming dizzy, nauseous, or getting a headache. I instead get tense, anxious, irritable, and withdrawn. That’s why I’ve turned on “reduce motion” for every device that supports it. It’s also the primary reason I run my browser with ad blockers on — one flashing or auto-playing advertisement on the screen can make the entire page unusable for me.

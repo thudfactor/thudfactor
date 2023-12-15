@@ -16,7 +16,7 @@ cover:
     name: Ray Harryhausen / United Artists
 ---
 
-Some people say Medusa turned people to stone because she was just that ugly. Others portray her as an evil, magical being. And a third claims Medusa was unlucky enough to run afoul of the victim-blaming Minerva. I have my own theory, which is that Medusa just wanted people to settle down.
+Some people say Medusa turned people to stone because she was just that ugly. Others portray her as an evil, magical being. Still more claim Medusa was just an unlucky woman cursed by the victim-blaming God Minerva. I have my own theory, which is that Medusa just wanted people to settle down.
 
 {% articleFig "display-settings.png" "Display settings on MacOS, with Reduce Motion, Dim Flashing Lights turned on, and Auto-play Animated Images turned off." "right" %}
 The MacOS display settings, which shows many different accessibility options.
@@ -24,7 +24,7 @@ The MacOS display settings, which shows many different accessibility options.
 
 I can sympathize. I am prone to [sensory overload](https://health.clevelandclinic.org/sensory-overload), which is triggered by both motion and sound. Unlike folks with vestibular disorders, I don’t get dizzy, nauseous, or a headache. I instead get tense, anxious, irritable, and withdrawn. That’s why I’ve turned on “reduce motion” for every device that supports it. (It’s also the primary reason I run my browser with ad blockers on — one flashing or auto-playing advertisement on the screen can make the entire page unusable for me.)
 
-Motion sensitivity is a big problem for a lot of people, but web sites often don’t take that into account. I hope it’s not because they think you have to have a boring site and serve the rest of us, because since 2020 you can _totally_ keep your wacky spinning logo and turn it off for the people who can’t take it. All it takes is a media query.
+Motion sensitivity is a big problem for a lot of people, but web sites often don’t take that into account. I hope it’s not because they think they have to have a boring site, because since 2020 you can _totally_ keep your wacky spinning logo and turn it off for the people who can’t even. All it takes is a media query.
 
 ```css
 @media (prefers-reduced-motion: reduce) {
@@ -50,7 +50,7 @@ If you want to treat animation as a progressive enhancement, you can _add_ anima
 “No preference” in this context evaluates to “false.”
 {% endalertCallout %}
 
-This media query ties into the accessibility on the users’s operating system, so you can test the effect by toggling that feature on and off wherever you need to set it. Alternatively, there's an emulation switch in Chrome’s developer tools, but if you turn on reduced motion in MacOS display preferences this will override the emulation settings.
+This media query ties into the accessibility on the user’s operating system, so you can test the effect by toggling that feature on and off in your system preferences. Alternatively, there's an emulation switch in Chrome’s developer tools, but if you turn on reduced motion in MacOS display preferences this will override the emulation settings.
 
 Access to this OS-level setting is not just limited to CSS, however. You can use `window.matchMedia()` to check it your Javascript.
 
@@ -62,7 +62,7 @@ Some ideas for this are:
 
 - turning off or replacing blinking items, spinning logos, or other interface nonsense
 - disabling auto-advancing carousels
-- turning autoplay _off_ on videos if reduced motion preferences are on.
+- turning auto-play _off_ on videos if reduced motion preferences are on.
 
 WCAG says it must be possible to “[pause, stop, or hide](https://www.w3.org/WAI/WCAG21/Understanding/pause-stop-hide.html)” any animation on a page that’s not crucial to the page’s operation. This is such an important consideration it’s a requirement of passing WCAG level A, so it’s baseline accessibility.
 

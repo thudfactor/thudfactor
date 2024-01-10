@@ -33,7 +33,7 @@ After the oatmeal is done, I will then add the following. No real measurements h
 * 1 tablespoon of butter
 * Vanilla extract, ½ teaspoon
 * Almond extract, ¼ teaspoon
-* ½ tablespoon or so of kirsch, also called “kirsch” or “cherry brandy”
+* ½ tablespoon or so of kirsch, also called “kirschwasser” or “cherry brandy”
 * A small handful of slivered almonds
 
 I bring half & half, ground cinnamon, salt, and sugar to the table so we can add these to individual taste.

@@ -18,6 +18,4 @@ My current intention is to use this space to write about things I learn, primari
 
 This incarnation of _Thudfactor_ (there have been many) was created using [Eleventy](https://www.11ty.dev/). To build it, I leaned pretty heavily on Raymond Camden’s [A Complete Guide to Building a Blog with Eleventy](https://cfjedimaster.github.io/eleventy-blog-guide/guide.html). I found _that_ thanks to [11tybundle.dev](https://11tybundle.dev/). It was good for a leg up, but I am already full of ideas on how to take this further. I’m keeping a running list of [resources I found helpful](/pages/helpful) here as well.
 
-I’m hosting this sucker through [Netlify](https://www.netlify.com/).
-
 Hello, or hello again — as the case may be. Things look a little rough right now, but it’ll get better. If you want to keep track, I think I've got an old-school RSS feed up there somewhere. Or you can [follow me on Mastodon](https://hachyderm.io/@thudfactor).

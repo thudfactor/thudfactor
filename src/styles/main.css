@@ -278,7 +278,7 @@ article {
     font-size: var(--font-s);
   }
 
-  & figure.text-figure {
+  & .text-figure {
     background-color: hsl(0deg 0% 96%);
     width: 100%;
     border-radius: var(--border-radius);

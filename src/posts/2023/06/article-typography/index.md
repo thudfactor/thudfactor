@@ -19,11 +19,11 @@ cover:
 
 “Thud factor” is academic slang for how loud your thesis sounds when it’s thrown downstairs. When I first registered this domain in (let me check…) August of 2000 (‼️) my intent was to fill up the site with a whole bunch of text. I did actually do that once upon a time, but one thing I never really got right was the typography.
 
-That’s unfortuate because getting the basics of typography right is not that difficult and there are quite a few excellent examples to emmulate. I am still learning, still working on this site. But here’s some stuff about the basics.
+That’s unfortunate because getting the basics of typography right is not that difficult and there are quite a few excellent examples to emulate. I am still learning, still working on this site. But here’s some stuff about the basics.
 
 ## What to focus on first
 
-Typography is a true _Alice_-sized rabbithole and getting distracted by minutae is a real risk. But you can get most of what you need to improve readability right away by working with three basic values. These are:
+Typography is a true _Alice_-sized rabbit-hole and getting distracted by minutia is a real risk. But you can get most of what you need to improve readability right away by working with three basic values. These are:
 
 * Font size: the vertical size of the letters
 * Line width: how many letters can fit on a line

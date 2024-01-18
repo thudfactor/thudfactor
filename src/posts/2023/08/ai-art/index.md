@@ -93,7 +93,7 @@ The prompt for this was “1950s airbrush painting of a cheerful nun reclining o
 
 ### Stable Diffusion
 
-Stable Diffusion is a free AI art tool. There’s a large and community — maybe it’s better to say “multiple communities” that have sprung up around SD. In the spirit of open source code, these folks are expanding the toolset by training and creating their own models, tutorials, and other bits and bobs. There are several hosted options available, but you can also download and run on your own machine… maybe.
+Stable Diffusion is a free AI art tool. There’s a large and community — maybe it’s better to say “multiple communities” that have sprung up around SD. In the spirit of open source code, these folks are expanding the tool set by training and creating their own models, tutorials, and other bits and bobs. There are several hosted options available, but you can also download and run on your own machine… maybe.
 
 If you are a PC gamer you are probably set. If what you have is more of a business machine or one of the lower-end Macbook Pros, you are going to be waiting a long time. This is a problem because, just like Midjourney, you’re likely to be going through multiple iterations.
 
@@ -170,11 +170,3 @@ But artists have been continually squeezed in the service of wringing more produ
 That’s my feeling anyway. I don’t get to make these decisions, but anytime anyone asks for my opinion — in person or in the voting booth — that’s what it is.
 
 We should pay people to make art. Lots of art. Any way they want to do it. It’s a public good.
-
-
-
-
-
-
-
-

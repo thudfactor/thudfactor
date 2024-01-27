@@ -30,7 +30,7 @@ I am as guilty of making this shift as just about anyone else.
 
 So as garbage generation was accelerating, authentic creation was captured and monetized by an increasingly smaller number of platforms. Not just Twitter and Facebook, either, but places like Reddit and Stack Overflow. Independent publishers were not just crowded out of PageRank by SEO practitioners, people just stopped making things outside of these platforms.
 
-Even some of the places that _used_ to be quality content ended up getting sold to or [commandeered by](https://www.businessinsider.com/the-hairpin-blog-ai-spam-content-farm-cybersquatting-2024-1?op=1) operators far more interested in advertising revenue than the material people were being attracted to the web site to see. Sites that remained content-focused started hiding more and more stuff behind paywalls and registration links. _The Verge_ and _404 Media_ have both recently elected for the latter.
+Even some of the places that _used_ to be quality content ended up getting sold to or [commandeered by](https://www.businessinsider.com/the-hairpin-blog-ai-spam-content-farm-cybersquatting-2024-1?op=1) operators far more interested in advertising revenue than the material people were being attracted to the web site to see. Sites that remained content-focused started hiding more and more stuff behind paywalls and registration links. _The Verge_ has recently [opted for the former](https://www.theverge.com/subscriptions/hot-pod) and _404 Media_ [the latter](https://www.404media.co/why-404-media-needs-your-email-address/) have both recently elected for the latter.
 
 What search engines are looking for? Increasingly, it’s just not there to find.
 

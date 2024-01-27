@@ -32,7 +32,7 @@ So as garbage generation was accelerating, authentic creation was captured and m
 
 Even some of the places that _used_ to be quality content ended up getting sold to or [commandeered by](https://www.businessinsider.com/the-hairpin-blog-ai-spam-content-farm-cybersquatting-2024-1?op=1) operators far more interested in advertising revenue than the material people were being attracted to the web site to see. Sites that remained content-focused started hiding more and more stuff behind paywalls and registration links. _The Verge_ and _404 Media_ have both recently elected for the latter.
 
-What search engines were looking for? Increasingly, it’s just not there to find.
+What search engines are looking for? Increasingly, it’s just not there to find.
 
 And now many of us who remain publishing independently are _blocking_ crawlers in an attempt to prevent our work being used to train the artificial intelligences other humans are using to make automatic garbage content at an unimaginable rate.
 

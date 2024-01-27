@@ -38,9 +38,9 @@ And now many of us who remain publishing independently are _blocking_ crawlers i
 
 Where does that leave us?
 
-Despite it all, I think it’s important for people who have the inclination and ability to start making their own content again. Maybe that content is a blog like this one. Maybe it’s a fan site for an obscure Australian 70s children’s show.
+Despite it all, I think it’s important for people who have the inclination and ability to start making their own content again. Maybe that content is a blog like this one. Maybe it’s a fan site for an obscure Australian 70s children’s show. Maybe it’s [hand-curating links](https://jackyan.com/blog/2023/09/bring-back-the-human-curated-web-directory/).
 
-The important bit is to stop posting that stuff on the Facebook machine or Blue Sky and _absolutely_ stop having anything to do with _X née Twitter_. Maybe it’s [hand-curating links](https://jackyan.com/blog/2023/09/bring-back-the-human-curated-web-directory/).
+The important bit is to stop posting that stuff on the Facebook machine or Blue Sky and _absolutely_ stop having anything to do with _X née Twitter_.
 
 The web is _still_ open. Anyone who wants to learn how can publish on it, for free or very close to it. We should take advantage of it. I don’t think there will ever be a circumstance again where most of the material on the web is being made by people who care about what they are doing more than they care about monetizing traffic.
 

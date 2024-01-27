@@ -9,14 +9,12 @@ Hey, this is my <q>Now</q> page. [What the heck is a “Now” page?](https://no
 
 ## Current project
 
-* Delving again into creative coding (AKA “Generative Art”), this time working with HTML Canvas
-* Working on a “snake” game using vanilla HTML, CSS, and Javascript with my teenager
+* Completing, or at least wringing a useful amount of entertainment out of, _Tears of the Kingdom_.
+* Learning Italian.
 
 ## Reading (Professional, Growth)
 
-* [The Nature of Code](https://natureofcode.com/book/), by Daniel Shiffman. (Link is to a free HTML version.)
+* [Web Components in Action](https://www.manning.com/books/web-components-in-action), by Ben Farrell
+* [The Creative Programmer](https://www.manning.com/books/the-creative-programmer), by Wouter Groeneveld
 
-## Reading (For fun)
-
-* [ElfQuest](https://elfquest.com/), Wendy and Richard Pini
 

@@ -21,6 +21,10 @@
   }
 }
 
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
 body {
   background-color: hsl(0deg 0% 94%);
   color: hsl(0deg 0% 10%);

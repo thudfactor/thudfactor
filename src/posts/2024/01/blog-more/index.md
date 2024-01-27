@@ -44,4 +44,4 @@ The important bit is to stop posting that stuff on the Facebook machine or Blue 
 
 The web is _still_ open. Anyone who wants to learn how can publish on it, for free or very close to it. We should take advantage of it. I don’t think there will ever be a circumstance again where most of the material on the web is being made by people who care about what they are doing more than they care about monetizing traffic.
 
-But we can keep at least part of the web weird, and let the bots go talk to each other.
+But we can keep at least part of the web weird. Let the bots go talk to each other.

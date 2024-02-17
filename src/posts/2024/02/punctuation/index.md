@@ -1,5 +1,5 @@
 ---
-title: Real Punctuation for Programers
+title: Real Punctuation for Programmers
 subtitle: But don’t quote me on that…
 date: 2024-02-15
 css:

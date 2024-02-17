@@ -1,0 +1,36 @@
+.keymap {
+  --border-color: hsl(0 0% 80%);
+  --cell-padding: .2rem .5rem;
+
+  font-family: var(--body-contrast-font-family);
+  min-width: fit-content;
+  width: 18rem;
+  margin: .5rem auto;
+
+  caption {
+    font-size: var(--font-s);
+    caption-side: bottom;
+    padding: var(--cell-padding);
+  }
+
+  th, td {
+    white-space: nowrap;
+    border-bottom: var(--border-width, 1px) var(--border-style, solid) var(--border-color);
+    padding: var(--cell-padding);
+  }
+
+  th {
+    --border-width: 3px;
+    --border-style: double;
+    font-size: var(--font-s);
+  }
+
+  td {
+    white-space: nowrap;
+    font-family: var(--body-font-family);
+
+    &:nth-child(2) {
+      text-align: center;
+    }
+  }
+}

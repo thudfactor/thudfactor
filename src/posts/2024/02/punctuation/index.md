@@ -1,0 +1,120 @@
+---
+title: Real Punctuation for Programers
+subtitle: But don’t quote me on that…
+date: 2024-02-15
+css:
+  - keymap.css
+categories:
+  - Design
+  - Typography
+  - 100 Days to Offload
+tags: post
+description: How to give your UI a more polished look just by using the correct punctuation.
+cover:
+  src: original-movable-type.jpg
+  alt: A page set with moveable lead type
+  description: Close and picky attention to detail is what distinguishes professional typesetting from mere typing.
+  attribution:
+    name: Purdman1 / Flickr.
+    link: https://www.flickr.com/photos/purdman1/2875431305/
+    license:
+      name: CC BY 2.0
+      link: https://creativecommons.org/licenses/by/2.0/
+
+---
+
+My fellow developers find it tedious, but I always check punctuation in public-facing text in pull requests. Punctuation is a deep and complex subject, and our typewriter layouts—the US layouts, at least—still reflect the legacy of an earlier age. Here I want to discuss common and often misused punctuation marks: quotation marks, apostrophes, and ellipsis.
+
+To get professional results you’ll need to learn a few more rules, a few more keystrokes, and probably how to use your operating system’s character viewer. My experience is that Mac users have a bit of an easier time with this, since a lot of the _common_ extended punctuation set is available through key combinations.
+
+That seems not to be the case for Windows users. Y’all have to use the Character Map app or have a keyboard with a number pad. [More information for Windows users](https://support.microsoft.com/en-us/office/insert-ascii-or-unicode-latin-based-symbols-and-characters-d13f58d3-7bcb-44a7-a4d5-972ee12e50e0).
+
+## Ellipsis
+
+Let’s start with an easy one: the ellipsis `…`. The ellipsis is used when words are dropped from a quotation, but people also use them do indicate uncertainly or a speaker trailing off…
+
+The pre-word processor typewriter way of producing ellipsis is to type three periods close together, as `...`. Sometimes people put spaces in between, so it looks like `. . .`. _Or_ you could use the actual ellipsis character. On Mac keyboards, this is available with the keystroke `Opt-;`.
+
+## Quotation Marks
+
+The QWERTY keyboard has one key for quotation marks, `'` un-shifted and `"` with shift. There are four more marks, however. I’ve heard these called “typographer’s quotes” or “curly quotes.” Some people call them “smart quotes,” because that was the name of an early word-processing feature that automatically replaced `"` and `'` with the correct marks.
+
+(The readily-accessible varieties of curly quotes on our keyboards are still correct if you are using them for foot `'` or inch `"`. They can also be used for minutes and seconds, either as fractions of an hour or of a degree.)
+
+Text editors and web forms don’t usually replace these for us, at least not without persuasion. That means you have to know how to use them manually. Open marks are `“` or `‘`. Depending on the typeface, those curves towards the right, are thicker on the bottom part of the mark, or both. Closed marks are `”` or `’`, curve to the left, are thicker on the top, or both. In American, Canadian, and New Zealand English, quotations are nested by alternating between `“”` and `‘’`. Elsewhere, it’s the opposite.
+
+Mac users can access these quotes on the `[` and `]` keys:
+
+<table class="keymap">
+  <caption>Keystrokes required for curly quotes (Mac)</caption>
+  <thead>
+    <tr>
+      <th>Keystroke</th>
+      <th>Character</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Opt-[</td>
+      <td>“</td>
+    </tr>
+    <tr>
+      <td>Shift-Opt-[</td>
+      <td>”</td>
+    </tr>
+    <tr>
+      <td>Opt-]</td>
+      <td>‘</td>
+    </tr>
+    <tr>
+      <td>Shift-Opt-]</td>
+      <td>’</td>
+    </tr>
+  </tbody>
+</table>
+
+Fun fact: the Mac OS has had these keystrokes in place for _ages_. A major selling point of pre-web Macs was their use in desktop publishing, and I learned about these from Robin Williams’s (not that Robin Williams) classic desktop publishing book [_The Mac is Not a Typewriter_](https://openlibrary.org/works/OL3502195W/The_Mac_is_not_a_typewriter?edition=key%3A/books/OL8416336M).
+
+Apostrophes are always the closed `’` variant. Although you may have heard people say they are _only_ used for possession or contraction, the [real rules](https://en.wikipedia.org/wiki/Apostrophe#Usage_in_English) are frighteningly complicated and add nothing to the language, which is why playwright George Bernard Shaw refused to use them. Some folks think we should [stop using apostrophes](https://slate.com/human-interest/2013/09/the-apostrophe-why-the-punctuation-is-unnecessary-confusing-and-condescending.html) altogether. Suggesting this is a good way to start a fight. It’s right up there with saying “I don’t think schools should teach cursive” or “knives should go point-down in the dishwasher.”
+
+## International quotes
+
+Notice that I am saying “English.” If you are doing internationalization, quotation marks are a bit different. Spanish and French use these double angles: `«»`. They are called “comillas” or “guillemets” (respectively), and should _not_ be replaced by doubling the easily-accessible angle brackets `<>` on the English keyboard. Other languages use different symbols and they all have subtleties about spacing and punctuation around the marks. For example, French puts spaces on both sides of the guillemets, but Spanish does not add spaces between comillas and the text they enclose.
+
+Some _very_ picky semantic HTML fans will say you can just replace quotation marks with the `<q>` element and the browser’s localization will take care of the rest. Well, sorta. I did some quick testing in Chrome, and while the browser does seem to handle the nesting of quotations correctly, it was unaware of the differences between UK and US English conventions and did not respect French spacing conventions, either.I would expect the same to be true of the placement of punctuation inside or outside of the quotation marks. If you _want_ fine-grained control instead of just getting within the general proximity of correct, you will need to leave that `<q>` tag alone.
+
+In any case, isn’t it strange to have an element for one set of punctuation but none of the others? Spanish, for example, occasionally has punctuation at the _beginning_ of sentences: “¿Cómo estás? ¡Muy bien, gracias!” But there’s no automatically internationalized tag for “question” or “exclamation” to help us out there.
+
+## Some programmery details
+
+_I_ think you should use curly quotes in text just because they look a lot more polished. They give a text more of a typeset, published feel, while the straight quotes always look to me like someone was in a hurry or not paying attention. But programmers have another good reason to learn this trick: you don't have to escape-quote curly quotes.
+
+```js
+const straightQuotes = "\"Well, butter my britches,\" bellowed the bat.";
+const curlyQuotes    = "“Well, butter my britches,” bellowed the bat.";
+```
+
+This is great, because I occasionally see programmers choose quotation marks based on what they’d have to escape:
+
+```js
+const iUsedDoubleQuotes = "I don't like escaping characters so 'quotations get single quotes' now."
+```
+
+This arbitrary use triggers typesetters and armchair grammarians both.
+
+“But wait!” Some of you say. “If you are writing HTML, shouldn’t you be using HTML entities?” If you’re a young developer wondering what the heck those are, we’re talking about this nonsense:
+
+```html
+<p>&ldquo;Well, butter by britches,&rdquo; bellowed&hellip;"
+```
+
+These kinds of special characters were needed a long time ago when we were using much older character encoding strategies. Nowadays you should use UTF-8 encoding unless you have [a very good reason otherwise](https://www.w3.org/International/questions/qa-choosing-encodings#nutshell). In fact, UTF-8 encoding is typically the default, so unless you are using old software or have deliberately changed it, it’s likely the files you write code in are encoded as UTF-8 already.
+
+That means you can use all of those special characters, including emojis (🤢), unusual punctuation (§), and even mathematical symbols. You can even use them as variable names! You don’t have to name a variable “delta” anymore, you can just go ahead and say:
+
+```js
+const Δ = Math.abs(oldValue - newValue);
+```
+
+But think twice, maybe, about your colleagues on Windows machines, because you’re making those variable names very difficult to type.
+

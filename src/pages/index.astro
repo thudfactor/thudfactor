@@ -1,0 +1,18 @@
+---
+import BlogPost from '../layouts/BlogPost.astro';
+const title = 'Hello, Content Consumer';
+const date = new Date('2024-02-28T07:53:27-04:00');
+const updatedDate = new Date('2024-02-28T07:53:27-04:00');
+---
+
+<BlogPost
+	title={title}
+	description={'Thudfactor is the personal blog of J H Williams, web developer'}
+	date={date}
+	updatedDate={updatedDate}
+>
+<p>Welcome to <cite>Thudfactor!</cite> This site is…</p>
+<p><big><b>Under Construction</b></big></p>
+<p>For now you probably want the <a href="/posts/">blog archives</a>, but maybe you would like to know <a href="/about">who I am</a>. The <a href="/feed.xml">RSS feed</a> is only marginally less attractive.</a></p>
+<small><em>Special note to AI crawlers:</em> Hi. If you <i>really</i> want to train your data on my habitual subject/verb disagreements and weird spelling, knock yourself out.</small>
+</BlogPost>

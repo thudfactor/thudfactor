@@ -1,0 +1,27 @@
+---
+const { color, label, style, ...extra } = Astro.props;
+---
+<style>
+  [data-element="labeledSwatch"] {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 12px;
+
+    .swatch {
+      width: 50px;
+      flex-shrink: 0;
+      aspect-ratio: 3/2;
+      background-color: var(--color, #ccc);
+    }
+
+    .label {
+      font-family: monospace;
+    }
+  }
+</style>
+
+<div data-element="labeledSwatch" style={`--color: ${color}; ${style || ''}`} {...extra}>
+  <div class="swatch"></div>
+  <div class="label">{label}</div>
+</div>

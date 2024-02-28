@@ -1,0 +1,34 @@
+---
+import { getCollection } from 'astro:content';
+import FormattedDate from '@components/FormattedDate.astro';
+import BlogPost from '@layouts/BlogPost.astro';
+const title = "Archives";
+const description = "A list of all the posts on this blog.";
+const date = new Date();
+
+const posts = (await getCollection('posts')).sort(
+	(a, b) => a.data.date.valueOf() - b.data.date.valueOf()
+).reverse();
+---
+<style>
+	.teaser-card {
+		border-bottom: 2px groove #f0f0f0;
+		margin: 2rem 0;
+	}
+</style>
+<BlogPost
+	title={title}
+	description={description}
+	date={date}>
+	{
+		posts.map((post) => (
+			<div class="teaser-card">
+				<div>
+					<small><FormattedDate date={post.data.date} /></small>
+				</div>
+				<h2 class="title"><a href={`/posts/${post.slug}/`}>{post.data.title}</a></h2>
+				<p>{post.data.description}</p>
+			</div>
+		))
+	}
+</BlogPost>

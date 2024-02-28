@@ -1,0 +1,23 @@
+---
+const { numSwatches, style, ...extra } = Astro.props;
+---
+<style>
+  [data-element="color-bar"] {
+    --numswatches: {`${numSwatches}`};
+    display: flex;
+    justify-content: stretch;
+    height: var(--color-bar-height, 5rem);
+
+    > * {
+		  width: 100%;
+	  }
+  }
+</style>
+
+<div data-element="color-bar" style={`--numswatches: ${numSwatches}; ${style || ''}`} {...extra}>
+  {
+    Array.from({ length: numSwatches }).map((_, i) => (
+      <div class="swatch" style={`--index: ${i}`}></div>
+    ))
+  }
+</div>

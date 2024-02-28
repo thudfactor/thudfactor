@@ -1,0 +1,5 @@
+---
+import { Image } from 'astro:assets';
+const { image, alt, align } = Astro.props;
+---
+<Image src={image} alt={alt} class={align} />

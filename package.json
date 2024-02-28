@@ -1,32 +1,20 @@
 {
-  "name": "Thudfactor",
-  "version": "1.0.0",
-  "description": "",
-  "main": ".eleventy.js",
+  "name": "thudfactor-2",
+  "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx @11ty/eleventy --serve",
-    "build": "npx @11ty/eleventy"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/thudfactor/thudfactor.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/thudfactor/thudfactor/issues"
-  },
-  "homepage": "https://github.com/thudfactor/thudfactor#readme",
-  "devDependencies": {
-    "@11ty/eleventy": "^2.0.1",
-    "@11ty/eleventy-plugin-inclusive-language": "^1.0.3",
-    "@11ty/eleventy-plugin-rss": "^1.2.0",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
-    "@11ty/eleventy-img": "^3.1.0",
-    "markdown-it-footnote": "^3.0.3"
+    "@astrojs/check": "^0.5.5",
+    "@astrojs/mdx": "^2.1.1",
+    "@astrojs/rss": "^4.0.5",
+    "@astrojs/sitemap": "^3.1.1",
+    "astro": "^4.4.3",
+    "typescript": "^5.3.3"
   }
 }

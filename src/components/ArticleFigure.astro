@@ -1,0 +1,11 @@
+---
+import ArticleImage from "./ArticleImage.astro";
+
+const { image, alt, variant } = Astro.props;
+---
+<figure class={variant}>
+  <slot name="fig">
+    <ArticleImage image={image} alt={alt} />
+  </slot>
+  <figcaption><slot /></figcaption>
+</figure>

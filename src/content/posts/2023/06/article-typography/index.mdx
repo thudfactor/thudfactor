@@ -17,6 +17,9 @@ cover:
       link: https://creativecommons.org/licenses/by/2.0/
 ---
 import AlertCallout from '@components/AlertCallout.astro';
+import ArticleFigure from '@components/ArticleFigure.astro';
+import ExampleScanLength from './ExampleScanLength.astro';
+import ExampleLineHeight from './ExampleLineHeight.astro';
 
 “Thud factor” is academic slang for how loud your thesis sounds when it’s thrown downstairs. When I first registered this domain in (let me check…) August of 2000 (‼️) my intent was to fill up the site with a whole bunch of text. I did actually do that once upon a time, but one thing I never really got right was the typography.
 
@@ -92,38 +95,10 @@ As you read, you can only focus on a few letters at a time. Humans like to read 
 
 The good news here is that the comfortable range is actually pretty wide. 50 to 75 characters per line is a good rule of thumb, and there's a fair amount of wiggle room at the extremes. Because we’re trying to take physical eye travel into account, the larger your font the shorter you want your line length to be, and vice-versa.
 
-<figure class="text-figure">
-
-<div style="font-size: 2rem; margin-bottom: 1rem;">
-
-**`2rem:`** There were doors all round the hall, but they were all locked; and when
-Alice had been all the way down one side and up the other, trying every
-door, she walked sadly down the middle, wondering how she was ever to
-get out again.
-
-</div>
-
-<div style="font-size: 1rem;">
-
-**`1rem:`** There were doors all round the hall, but they were all locked; and when
-Alice had been all the way down one side and up the other, trying every
-door, she walked sadly down the middle, wondering how she was ever to
-get out again.
-
-</div>
-
-<div style="font-size: .8rem; margin-top: 1rem;">
-
-**`0.8rem:`** There were doors all round the hall, but they were all locked; and when
-Alice had been all the way down one side and up the other, trying every
-door, she walked sadly down the middle, wondering how she was ever to
-get out again.
-
-</div>
-<figcaption>
-These three paragraphs have the same line length but different font sizes. Pay attention to how the muscles in your eyes feel as you read them. Do you notice any other impressions you get from text set large and short versus small and long?
-</figcaption>
-</figure>
+<ArticleFigure>
+  <ExampleScanLength slot="fig" />
+  These three paragraphs have the same line length but different font sizes. Pay attention to how the muscles in your eyes feel as you read them. Do you notice any other impressions you get from text set large and short versus small and long?
+</ArticleFigure>
 
 Remember that this rule applies _only_ to large blocks of text like article content. Other bits of text — headlines, captions, and so forth — serve different purposes, and thus merit different guidelines.
 
@@ -131,35 +106,10 @@ Remember that this rule applies _only_ to large blocks of text like article cont
 
 Line height is the distance between lines of text. Remember how your eye has to both backtrack across a line of text _and_ move to the next one at the same time? This trip is an excellent opportunity for the brain to get disoriented.
 
-<figure class="text-figure">
-
-<div style="line-height: 1; margin-bottom: 1rem;">
-
-**`line-height 1`** “Curiouser and curiouser!” cried Alice (she was so much surprised, that
-for the moment she quite forgot how to speak good English); “now I’m
-opening out like the largest telescope that ever was! Good-bye, feet!”
-
-</div>
-
-<div style="line-height: 1.5;">
-
-**`line-height 1½:`** “Curiouser and curiouser!” cried Alice (she was so much surprised, that
-for the moment she quite forgot how to speak good English); “now I’m
-opening out like the largest telescope that ever was! Good-bye, feet!”
-
-</div>
-
-<div style="line-height: 2; margin-top: 1rem;">
-
-**`line-height 2:`** “Curiouser and curiouser!” cried Alice (she was so much surprised, that
-for the moment she quite forgot how to speak good English); “now I’m
-opening out like the largest telescope that ever was! Good-bye, feet!”
-
-</div>
-<figcaption>
-These three paragraphs have the same font size but different line heights. Two of them feel really awful to me, only one seems comfortable. Which one seems best to you, again in the muscles of your eyes? Does the difference in line-height change any other impressions you have of the text?
-</figcaption>
-</figure>
+<ArticleFigure>
+  <ExampleLineHeight slot="fig" />
+  These three paragraphs have the same font size but different line heights. Two of them feel really awful to me, only one seems comfortable. Which one seems best to you, again in the muscles of your eyes? Does the difference in line height change any other impressions you have of the text?
+</ArticleFigure>
 
 Ever find yourself suddenly reading one or two lines down in the middle of a line? That might be because the line-spacing was too cramped. On the other extreme, spreading text out involves eye muscles even more. This doesn’t just make it difficult to keep your place, it’s also physically tiring.
 

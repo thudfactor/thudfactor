@@ -1,12 +1,26 @@
-body {
+@layer theme, layout, components, content, utilities, samples;
+
+@layer theme {
+	body {
 	background-color: #cccccc;
 	font-family: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
 	font-weight: normal;
 }
 
-img {
-	object-fit: cover;
-	max-width: 720px;
-	width: 100%;
-	height: auto;
+}
+
+@layer layout {
+	img {
+		object-fit: cover;
+		max-width: 720px;
+		width: 100%;
+		height: auto;
+	}
+}
+
+@layer content {
+	pre {
+		padding: 1.2rem;
+		margin-inline: -1.2rem;
+	}
 }

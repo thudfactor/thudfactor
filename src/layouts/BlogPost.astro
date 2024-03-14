@@ -1,5 +1,5 @@
 ---
-import Page from '@components/Page.astro';
+import Base from '@layouts/Base.astro';
 import Content from '@components/Content.astro';
 
 interface Props {
@@ -17,11 +17,11 @@ const { title, description } = Astro.props;
 		margin: 2em 0;
 	}
 </style>
-<Page title={title} description={description}>
+<Base title={title} description={description}>
 	<center id="UnderConstruction">
 		🚧🚧 This site is under construction. (<a href="/posts/2024/02/redesign/">what?</a>) 🚧🚧
 	</center>
 	<Content {...Astro.props}>
 		<slot />
 	</Content>
-</Page>
+</Base>

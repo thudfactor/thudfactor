@@ -6,6 +6,16 @@
 		font-family: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
 		font-weight: normal;
 	}
+	.sr-only {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		border: 0;
+	}
 }
 
 @layer layout {
@@ -25,7 +35,7 @@
 
 @layer content {
 	pre {
-		padding: 1.2rem;
-		margin-inline: -1.2rem;
+		padding: 1.1875rem;
+		margin-inline: -1.1875rem;
 	}
 }

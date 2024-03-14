@@ -9,5 +9,19 @@ const { pathname } = Astro.url;
 const subpath = pathname.match(/[^\/]+/g);
 const isActive = href === pathname || href === '/' + subpath?.[0];
 ---
+<style>
+  a {
+    color: inherit;
+    font-weight: bold;
+    text-decoration-color: transparent;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
 
+    &:hover, &:active {
+      text-decoration: underline;
+      text-decoration-color: #333333;
+      color: #0000cc;
+    }
+  }
+</style>
 <a href={href} aria-current={isActive ? 'page' : undefined} class:list={[className, { active: isActive }]} {...props}><slot /></a>

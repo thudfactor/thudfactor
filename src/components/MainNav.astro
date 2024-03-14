@@ -1,0 +1,58 @@
+---
+import MainNavLink from '@components/MainNavLink.astro';
+---
+<style>
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+  }
+
+  li:has([aria-current=page]) {
+    background-color: #f0f0f0;
+    border: 1px solid #a0a0a0;
+    border-width: 1px;
+    padding: 4px;
+    border-radius: 8px;
+    margin-left: -5px;
+    margin-right: -5px;
+  }
+
+  @container (max-width: 360px) {
+    ul {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: stretch;
+      gap: 8px;
+    }
+    li {
+      padding: 4px 9px 4px 4px;
+      margin-left: -8px;
+      margin-right: -9px;
+
+      &:has([aria-current=page]) {
+        margin-left: -8px;
+        margin-right: -9px;
+        background-color: #f0f0f0;
+        border: 1px solid #a0a0a0;
+        border-width: 1px 0 1px 1px;
+        border-radius: 8px 0 0 8px;
+      }
+    }
+  }
+</style>
+
+<nav aria-labeledby="main-nav-label">
+  <div class="sr-only" id="main-nav-label">Main Navigation</div>
+  <ul>
+    <li><MainNavLink href="/">Home</MainNavLink></li>
+    <li><MainNavLink href="/posts">Blog</MainNavLink></li>
+    <li><MainNavLink href="/about">About</MainNavLink></li>
+    <li><MainNavLink href="/now">Now</MainNavLink></li>
+    <li><MainNavLink href="/using">Using</MainNavLink></li>
+  </ul>
+</nav>

@@ -2,14 +2,19 @@
 
 @layer theme {
 	body {
-	background-color: #cccccc;
-	font-family: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
-	font-weight: normal;
-}
-
+		background-color: #cccccc;
+		font-family: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
+		font-weight: normal;
+	}
 }
 
 @layer layout {
+	html, body {
+		margin: 0;
+		padding: 0;
+		min-height: 100%;
+		min-width: 100%;
+	}
 	img {
 		object-fit: cover;
 		max-width: 720px;

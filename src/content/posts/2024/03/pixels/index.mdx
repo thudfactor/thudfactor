@@ -12,9 +12,13 @@ import ArticleFigure from '@components/ArticleFigure.astro';
 import FontSizeSettings from './font-size-selector.png';
 import TextZoomBroken from './text-zoom-broken.png';
 
-When I posted the early stages of my redesign at the end of February, someone on Mastodon suggested I convert width of my main container to use `em` units instead of `px`. Because it’s “more accessible,” he said.
+When I posted the early stages of my redesign at the end of February, someone on Mastodon said I should change the CSS of my main container to use `em` units instead of `px` because it’s “more accessible.”
 
-I’ve been doing this web development thing for a bit now, and sure, I’ve heard that story for years. The conventional wisdom is that you should convert all of your absolute units (like pixels) to relative units like `em` or `rem` so people who like to use a larger font size won’t have their choices overridden. And we’ve been doing that for years. I’ve even made a few SASS mixins in my time to automatically convert pixel values into `rem` units, and have for many years diligently converted every `px` in my codebase to `rem`. Even the border widths.
+About that.
+
+I’ve been doing this web development thing for a bit now, and sure, I’ve heard that line for years. Believed and used it, too.
+
+The conventional wisdom is that you should convert all of your absolute units (like pixels) to relative units like `em` or `rem` so people who like to use a larger font size won’t have their choices overridden. And we’ve been doing that for years. I’ve even made a few SASS mixins in my time to automatically convert pixel values into `rem` units, and have for many years diligently converted every `px` in my codebase to `rem`. Even the border widths.
 
 `1px` is generally `0.0625rem`, by the way.
 

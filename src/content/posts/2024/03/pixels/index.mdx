@@ -58,8 +58,8 @@ You are re-implementing page zoom, which is pointless. But you are also _removin
 
 Where does this leave us? Well.
 
-1. **Sizing everything using `px`** satisfies [WCAG 2.1 1.4.4](https://wcag.com/designers/1-4-4-resize-text/) through [technique G142](https://www.w3.org/WAI/WCAG21/Techniques/general/G142) as long as people use one of the very common browsers with “page zoom.” People who want to resize text independently of layout are just out of luck.
-2. **Sizing everything using `rem`** satisfies the same requirement through [technique C28](https://www.w3.org/WAI/WCAG21/Techniques/css/C28) and [technique G146](https://www.w3.org/WAI/WCAG21/Techniques/general/G146), but since that’s _already_ met by browser page zoom, resizing text independent from layout is impossible.
+1. **Sizing everything using `px`** satisfies [WCAG 2.1 1.4.4](https://wcag.com/designers/1-4-4-resize-text/) through [technique G142](https://www.w3.org/WAI/WCAG21/Techniques/general/G142) as long as people use one of the very common browsers with “page zoom.” People who want to resize text independently are just out of luck.
+2. **Sizing everything using `rem`** satisfies the same requirement through [technique C28](https://www.w3.org/WAI/WCAG21/Techniques/css/C28) and [technique G146](https://www.w3.org/WAI/WCAG21/Techniques/general/G146), but since that’s _already_ met by browser page zoom, resizing text independently  is impossible.
 3. **Mixing `px` and `rems` deliberately** satisfies accessibility requirements through [technique G179](https://www.w3.org/WAI/WCAG21/Techniques/general/G179), _as long as access to all of the content and functionality remains available_. It’s the only choice that supports both page zoom and text-only zoom.
 
 The third option is the most difficult. If you go this route, you have decide what should scale with font size and what shouldn’t. That’s many new judgement calls and a lot more testing. Maybe you don’t want or can’t support that. But it does preserve your visitors’ ability to scale text independently of your layout.

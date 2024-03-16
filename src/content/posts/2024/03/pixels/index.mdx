@@ -1,6 +1,7 @@
 ---
 title: Maybe sometimes you should use pixels
 date: 2024-03-14T19:02:38-04:00
+updatedDate: 2024-03-16T07:43:13-04:00
 categories:
   - Design
   - Typography
@@ -46,6 +47,8 @@ Chrome has their font size settings buried pretty deep in the settings. Safari b
 
 <p style="font-size: 16px">This text, on the other hand, ignores the font size changes because I’ve set the font size in pixels. So it remains true that setting the font size in pixels overrides the user’s expressed preferences. The standard page zoom, on the other hand, won’t make this paragraph look any different from the others.</p>
 
+**Update March 16, 2024:** [Nicolas Hoizey pointed out](https://mamot.fr/@nhoizey/112104806072228680) that Firefox zooms text even if the size is set in pixels. This is also the case in Safari. So to see the behavior I described above, you have to be using Chrome (or its derivatives). Interestingly, the only thing this effectively changes is that if Chrome adopts this strategy, too, even sizing fonts in `rem` or `em` will become an academic / purity exercise.
+
 <ArticleFigure image={TextZoomBroken} alt="A screenshot of this page, with the browser text size set to “very large.”">
 Here’s what it looks like on my computer if I set the font size setting to “very large” in Chrome. The font sizes set in `rem` or `em` scale, but the paragraph set in `px` stays the same regardless.
 </ArticleFigure>
@@ -60,7 +63,7 @@ Where does this leave us? Well.
 
 1. **Sizing everything using `px`** satisfies [WCAG 2.1 1.4.4](https://wcag.com/designers/1-4-4-resize-text/) through [technique G142](https://www.w3.org/WAI/WCAG21/Techniques/general/G142) as long as people use one of the very common browsers with “page zoom.” People who want to resize text independently are just out of luck.
 2. **Sizing everything using `rem`** satisfies the same requirement through [technique C28](https://www.w3.org/WAI/WCAG21/Techniques/css/C28) and [technique G146](https://www.w3.org/WAI/WCAG21/Techniques/general/G146), but since that’s _already_ met by browser page zoom, resizing text independently  is impossible.
-3. **Mixing `px` and `rems` deliberately** satisfies accessibility requirements through [technique G179](https://www.w3.org/WAI/WCAG21/Techniques/general/G179), _as long as access to all of the content and functionality remains available_. It’s the only choice that supports both page zoom and text-only zoom.
+3. **Mixing `px` and `rems` deliberately** satisfies accessibility requirements through [technique G179](https://www.w3.org/WAI/WCAG21/Techniques/general/G179), _as long as access to all of the content and functionality remains available_. This approach does not interfere with the native browser support offered through page zoom. So it’s the only choice that supports both page and text-only zoom on Chrome.
 
 The third option is the most difficult. If you go this route, you have decide what should scale with font size and what shouldn’t. That’s many new judgement calls and a lot more testing. Maybe you don’t want or can’t support that. But it does preserve your visitors’ ability to scale text independently of your layout.
 

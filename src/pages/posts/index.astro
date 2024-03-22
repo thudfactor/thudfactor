@@ -11,9 +11,17 @@ const posts = (await getCollection('posts')).sort(
 ).reverse();
 ---
 <style>
-	.teaser-card {
-		border-bottom: 2px groove #f0f0f0;
-		margin: 2rem 0;
+	@layer components {
+		h2 {
+			margin-block: 0;
+		}
+		.teaser-card {
+			border-bottom: 2px groove #f0f0f0;
+			margin: 2rem 0;
+		}
+		small {
+			display: block;
+		}
 	}
 </style>
 <BlogPost
@@ -23,10 +31,8 @@ const posts = (await getCollection('posts')).sort(
 	{
 		posts.map((post) => (
 			<div class="teaser-card">
-				<div>
-					<small><FormattedDate date={post.data.date} /></small>
-				</div>
 				<h2 class="title"><a href={`/posts/${post.slug}/`}>{post.data.title}</a></h2>
+				<small><FormattedDate date={post.data.date} /></small>
 				<p>{post.data.description}</p>
 			</div>
 		))

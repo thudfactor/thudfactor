@@ -5,8 +5,15 @@ interface Props {
 
 const { date } = Astro.props;
 ---
-
+<style>
+	@layer components {
+		span {
+			font-style: normal !important;
+		}
+	}
+</style>
 <time datetime={date.toISOString()}>
+	<span role="presentation">☉</span>
 	{
 		date.toLocaleDateString('en-us', {
 			year: 'numeric',

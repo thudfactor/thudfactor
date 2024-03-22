@@ -4,17 +4,15 @@ import ArticleImage from "./ArticleImage.astro";
 const { image, alt, variant } = Astro.props;
 ---
 <style>
-  @layer components {
-    figure {
-      padding: 1rem;
-      margin-inline: -1rem;
-      background-color: #dadada;
-    }
+  figure {
+    padding: 1rem;
+    margin-inline: -1rem;
+    background-color: #dadada;
+  }
 
-    figcaption {
-      margin-top: 1rem;
-      border-top: 1px #000 solid;
-    }
+  figcaption {
+    margin-top: 1rem;
+    border-top: 1px #000 solid;
   }
 </style>
 <figure class={variant}>

@@ -12,16 +12,15 @@ interface Props {
 const { title, description } = Astro.props;
 ---
 <style>
-	#UnderConstruction {
-		font-size: 1.5em;
-		margin: 2em 0;
+	.finial {
+		font-size: 6rem;
+		text-align: center;
+		color: hsl(0 0% 0% / .05);
 	}
 </style>
 <Base title={title} description={description}>
-	<center id="UnderConstruction">
-		🚧🚧 This site is under construction. (<a href="/posts/2024/02/redesign/">what?</a>) 🚧🚧
-	</center>
 	<Content {...Astro.props}>
 		<slot />
+		<div class="finial" role="presentation">☸</div>
 	</Content>
 </Base>

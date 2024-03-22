@@ -1,9 +1,18 @@
 ---
 import { SITE_TITLE, SITE_VALUE_STATEMENT } from '../consts';
+import FormattedDate from './FormattedDate.astro';
 ---
 <style>
-  @layer theme {
+  @layer components {
+    header {
+      padding-block: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
     a {
+      margin: 0 auto;
+      width: fit-content;
       font-size: 1.5rem;
       line-height: 1.2;
       font-weight: bold;
@@ -30,7 +39,12 @@ import { SITE_TITLE, SITE_VALUE_STATEMENT } from '../consts';
       height: 1.13rem;
       width: auto;
     }
-  }
+    .lastUpdate {
+      font-style: italic;
+      font-size: .8rem;
+      font-weight: 200;
+      color: hsl(0 0% 20%);
+    }
 </style>
 <header role="banner">
   <a id="Home" href="/">
@@ -39,4 +53,5 @@ import { SITE_TITLE, SITE_VALUE_STATEMENT } from '../consts';
     </svg>
     <span>{SITE_TITLE}: {SITE_VALUE_STATEMENT}</span>
   </a>
+  <span class="lastUpdate">Site last updated: <FormattedDate date={new Date()} /></span>
 </header>

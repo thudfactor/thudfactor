@@ -36,6 +36,31 @@ const { title, date, updatedDate, cover } = Astro.props;
   { cover &&
     <div class="hero-image">
       <img width={1020} height={510} src={cover.src.src} alt={cover.alt} />
+      <p><b>Above: </b>
+        { cover.description }
+      </p>
+      {
+        cover.attribution && (
+          <p>
+            <b>Image credit: </b>
+            { cover.attribution.link &&
+              <a href={cover.attribution.link}>
+                { cover.attribution.name }
+              </a>
+            }
+            {
+              !cover.attribution.link && cover.attribution.name && (
+                <span>{ cover.attribution.name }</span>
+              )
+            }
+            { cover.attribution.license && (
+              <a href={cover.attribution.license.link}>
+                { cover.attribution.license.name }
+              </a>
+            ) }
+          </p>
+        )
+      }
     </div>
   }
   <div class="prose">

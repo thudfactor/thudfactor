@@ -13,7 +13,7 @@ const posts = defineCollection({
 		cover: z.object({
       src: image(),
       alt: z.string(),
-      caption: z.string().optional(),
+      description: z.string().optional(),
 			attribution: z.object({
 				name: z.string(),
 				link: z.string().url().optional(),

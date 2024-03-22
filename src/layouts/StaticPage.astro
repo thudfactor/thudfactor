@@ -1,0 +1,22 @@
+---
+import Base from '@layouts/Base.astro';
+import Content from '@components/Content.astro';
+
+const pageProps = (Astro.props.frontmatter || Astro.props);
+
+const { title, description } = pageProps;
+console.log(Astro.props.frontmatter);
+---
+<style>
+	.finial {
+		font-size: 6rem;
+		text-align: center;
+		color: hsl(0 0% 0% / .05);
+	}
+</style>
+<Base title={title} description={description}>
+	<Content {...pageProps}>
+		<slot />
+		<div class="finial" role="presentation">☸</div>
+	</Content>
+</Base>

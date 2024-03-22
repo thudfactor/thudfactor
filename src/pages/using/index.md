@@ -1,13 +1,14 @@
 ---
 title: Using
-layout: ../../layouts/BlogPost.astro
+layout: ../../layouts/StaticPage.astro
 date: 2023-06-21
+updatedDate: 2024-03-22
 permalink: using/
 ---
 
 _Thudfactor_ is built using [Astro](https://astro.build) in mostly HTML, CSS, and maybe a tiny touch of Javascript.
 
-My editor is [VSCode](https://code.visualstudio.com/), my programming font is [Monaspace](https://github.com/githubnext/monaspace#monaspace). My color theme is [Material Theme Darker High Contrast](https://www.vscolors.com/themes/45bfc9eb-5e03-487f-bffe-315fa6881d6a-098bf801) but I might switch that out for something with a punchier name. My OS of choice is Commodore KERNAL, but since that’s wildly impractical these days I just use MacOS.
+My editor is [VSCode](https://code.visualstudio.com/), my programming font is [Dank Mono](https://philpl.gumroad.com/l/dank-mono). My color theme is [Monokai Pro (filter spectrum)](https://www.vscolors.com/themes/f5d7ffda-c1d6-4070-ba80-803c705a1ee6-3ed72ace) but I might switch that out for something with a punchier name. My OS of choice is Commodore KERNAL, but since that’s wildly impractical these days I just use MacOS.
 
 The site is hosted by [Cloudflare Pages](https://pages.cloudflare.com/) and is continuously deployed from Github.
 

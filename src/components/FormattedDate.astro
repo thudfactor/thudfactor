@@ -3,7 +3,8 @@ interface Props {
 	date: Date;
 }
 
-const { date } = Astro.props;
+const { date: incomingDate } = Astro.props;
+const date = typeof incomingDate === 'string' ? new Date(incomingDate) : incomingDate;
 ---
 <time datetime={date.toISOString()}>
 	<span role="presentation" style="font-style: normal">☉</span>

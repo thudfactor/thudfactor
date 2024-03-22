@@ -3,10 +3,41 @@ import FormattedDate from "./FormattedDate.astro";
 import '../styles/content.css';
 const { title, date, updatedDate, cover } = Astro.props;
 ---
+<style>
+@layer layout {
+  article {
+    container: article / inline-size;
+  }
+}
+@layer components {
+  article {
+    & :global(table) {
+      border-width: 4px;
+      border-style: ridge;
+      border-color: white;
+      width: 100%;
+      border-collapse: collapse;
+
+      td, th {
+        padding: 1rem;
+        border-width: 4px;
+        border-style: ridge;
+        border-color: white;
+      }
+
+      caption {
+        margin-block: 1rem;
+      }
+    }
+  }
+}
+</style>
 <article>
-  <div class="hero-image">
-    {cover && <img width={1020} height={510} src={cover.src.src} alt={cover.alt} />}
-  </div>
+  { cover &&
+    <div class="hero-image">
+      <img width={1020} height={510} src={cover.src.src} alt={cover.alt} />
+    </div>
+  }
   <div class="prose">
     <div class="title">
       <h1>{title}</h1>

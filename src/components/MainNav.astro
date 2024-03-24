@@ -2,6 +2,7 @@
 import MainNavLink from '@components/MainNavLink.astro';
 ---
 <style>
+@layer components {
   ul {
     list-style: none;
     padding: 0;
@@ -13,7 +14,7 @@ import MainNavLink from '@components/MainNavLink.astro';
   }
 
   li:has([aria-current=page]) {
-    background-color: #f0f0f0;
+    background-color: var(--color-article-background);
     border: 1px solid #a0a0a0;
     border-width: 1px;
     padding: 4px;
@@ -37,13 +38,12 @@ import MainNavLink from '@components/MainNavLink.astro';
       &:has([aria-current=page]) {
         margin-left: -8px;
         margin-right: -9px;
-        background-color: #f0f0f0;
-        border: 1px solid #a0a0a0;
         border-width: 1px 0 1px 1px;
         border-radius: 8px 0 0 8px;
       }
     }
   }
+}
 </style>
 
 <nav aria-labeledby="main-nav-label">

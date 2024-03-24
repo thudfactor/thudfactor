@@ -1,9 +1,33 @@
 @layer theme, layout, components, content, utilities, samples;
 
 @layer theme {
+	:root {
+		--font-system-ui: system-ui, sans-serif;
+		--font-transitional: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
+		--font-old-style: 'Iowan Old Style', 'Palatino Linotype', 'URW Palladio L', P052, serif;
+		--font-humanist: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
+		--font-geometric-humanist: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
+		--font-classical-humanist: Optima, Candara, 'Noto Sans', source-sans-pro, sans-serif;
+		--font-neo-grotesque: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+		--font-industrial: Bahnschrift, 'DIN Alternate', 'Franklin Gothic Medium', 'Nimbus Sans Narrow', sans-serif-condensed, sans-serif;
+		--font-rounded-sans: ui-rounded, 'Hiragino Maru Gothic ProN', Quicksand, Comfortaa, Manjari, 'Arial Rounded MT', 'Arial Rounded MT Bold', Calibri, source-sans-pro, sans-serif;
+		--font-slab-serif: Rockwell, 'Rockwell Nova', 'Roboto Slab', 'DejaVu Serif', 'Sitka Small', serif;
+		--font-antique: Superclarendon, 'Bookman Old Style', 'URW Bookman', 'URW Bookman L', 'Georgia Pro', Georgia, serif;
+		--font-didone: Didot, 'Bodoni MT', 'Noto Serif Display', 'URW Palladio L', P052, Sylfaen, serif;
+		--font-handwritten: 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive;
+		--font-default: var(--font-geometric-humanist);
+
+		/* Default color scheme */
+		--color-background: #ccc;
+		--color-article-background: #f0f0f0;
+		--color-text: #000;
+		--color-link: #009;
+		--color-link-hover: #00f;
+	}
 	body {
-		background-color: #cccccc;
-		font-family: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
+		background-color: var(--color-background);
+		color: var(--color-text);
+		font-family: var(--font-default);
 		font-weight: normal;
 	}
 	.sr-only {
@@ -28,13 +52,13 @@
 		transition: color 0.3s ease-in-out, text-decoration-color 0.3s ease-in-out;
 
 		&:link, &:visited {
-			color: #000099;
-			text-decoration-color: #00009933;
+			color: var(--color-link);
+			text-decoration-color: oklch(from var(--color-link) l c h / 20%);
 		}
 
 		&:hover, &:active {
-			color: #0000ff;
-			text-decoration-color: #0000ffcc;
+			color: var(--color-link-hover);
+			text-decoration-color:  oklch(from var(--color-link) l c h / 90%);
 		}
 	}
 }
@@ -110,7 +134,7 @@
 		grid-column: 1/3;
 		grid-row: 3;
 		display: block;
-		background-color: #f0f0f0;
+		background-color: var(--color-article-background);
 		padding: 19px;
 
 		@media (min-width: 768px) {

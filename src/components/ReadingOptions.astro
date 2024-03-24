@@ -1,0 +1,46 @@
+<style>
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+</style>
+<script>
+  // On page load, set the font style from local storage
+  document.addEventListener('DOMContentLoaded', function() {
+    const selectedFont = localStorage.getItem('font') || '--font-geometric-humanist';
+    document.documentElement.style.setProperty('--font-default', `var(${selectedFont})`);
+    const targetOption = document.querySelector(`option[value="${selectedFont}"]`) as HTMLOptionElement;
+    if (targetOption) {
+      targetOption.selected = true;
+    }
+  });
+
+  // On submit, change the font style by setting font-family style
+  document.getElementById('FontSelector')?.addEventListener('submit', function(event) {
+    event.preventDefault();
+    const font = this.querySelector('select')?.value || '--font-geometric-humanist';
+    document.documentElement.style.setProperty('--font-default', `var(${font})`);
+    localStorage.setItem('font', font);
+  });
+</script>
+<form id="FontSelector">
+<label> Font Style:
+<select>
+  <option value="--font-system-ui">System UI</option>
+  <option value="--font-transitional">Transitional</option>
+  <option value="--font-old-style">Old Style</option>
+  <option value="--font-humanist">Humanist</option>
+  <option value="--font-geometric-humanist">Geometric Humanist</option>
+  <option value="--font-classical-humanist">Classical Humanist</option>
+  <option value="--font-neo-grotesque">Neo-Grotesque</option>
+  <option value="--font-industrial">Industrial</option>
+  <option value="--font-rounded-sans">Rounded Sans</option>
+  <option value="--font-slab-serif">Slab Serif</option>
+  <option value="--font-antique">Antique</option>
+  <option value="--font-didone">Didone</option>
+  <option value="--font-handwritten">Handwritten</option>
+</select>
+</label>
+<button>Change</button>
+</form>

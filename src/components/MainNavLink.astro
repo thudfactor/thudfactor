@@ -11,7 +11,7 @@ const isActive = href === pathname || href === '/' + subpath?.[0];
 ---
 <style>
   a {
-    color: inherit;
+    color: var(--color-text);
     font-weight: bold;
     text-decoration-color: transparent;
     text-decoration-thickness: 1px;
@@ -19,8 +19,7 @@ const isActive = href === pathname || href === '/' + subpath?.[0];
 
     &:hover, &:active {
       text-decoration: underline;
-      text-decoration-color: #333333;
-      color: #0000cc;
+      text-decoration-color: oklch(from var(--color-text) l c h / 80%);
     }
   }
 </style>

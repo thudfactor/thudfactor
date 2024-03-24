@@ -10,6 +10,7 @@ import FormattedDate from './FormattedDate.astro';
       flex-direction: column;
       gap: 8px;
     }
+
     a {
       margin: 0 auto;
       width: fit-content;
@@ -20,7 +21,7 @@ import FormattedDate from './FormattedDate.astro';
       justify-content: center;
       align-items: baseline;
       text-decoration: none;
-      color: hsl(0 0% 0% / 1);
+      color: var(--text-color);
       gap: 8px;
 
       & span {
@@ -32,18 +33,20 @@ import FormattedDate from './FormattedDate.astro';
       }
 
       &:hover span {
-        text-decoration-color: hsl(0 0% 0% / 1);
+        text-decoration-color: var(--color-text);
       }
   	}
+
     svg {
       height: 1.13rem;
       width: auto;
     }
+
     .lastUpdate {
       font-style: italic;
       font-size: .8rem;
       font-weight: 200;
-      color: hsl(0 0% 20%);
+      color: oklch(from var(--color-text) l c h / 80%);
     }
   }
 </style>

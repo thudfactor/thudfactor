@@ -2,6 +2,7 @@
 import Page from '@components/Page.astro';
 import MainNav from '@components/MainNav.astro';
 import Masthead from '@components/Masthead.astro';
+import ReadingOptions from '@components/ReadingOptions.astro';
 
 const { title, description } = Astro.props;
 const today = new Date();
@@ -11,6 +12,17 @@ const today = new Date();
     main {
       padding: 19px;
     }
+
+    #main-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    aside {
+      border: 1px solid black;
+      padding: 1rem;
+    }
   }
 </style>
 <Page title={title} description={description}>
@@ -18,13 +30,16 @@ const today = new Date();
     <Masthead />
     <section id="main-sidebar">
       <MainNav />
+      <aside>
+        <ReadingOptions />
+      </aside>
       <slot name="sidebar" />
     </section>
     <main>
       <slot />
     </main>
     <footer>
-      &copy; 2023—{today.getFullYear()} J H Williams. All rights reserved.
+      ©️ 2023—{today.getFullYear()} J H Williams. All rights reserved.
     </footer>
   </div>
 </Page>

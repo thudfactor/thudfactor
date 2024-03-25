@@ -6,25 +6,28 @@
   }
 </style>
 <script>
+  const fontForm = document.getElementById('font-selector');
   // On page load, set the font style from local storage
-  document.addEventListener('DOMContentLoaded', function() {
+  // Right now this default value has to be manually kept in sync with the
+  // default value in the global.css.
+  document.addEventListener('DOMContentLoaded', () => {
     const selectedFont = localStorage.getItem('font') || '--font-geometric-humanist';
     document.documentElement.style.setProperty('--font-default', `var(${selectedFont})`);
-    const targetOption = document.querySelector(`option[value="${selectedFont}"]`) as HTMLOptionElement;
+    const targetOption = fontForm?.querySelector(`option[value="${selectedFont}"]`) as HTMLOptionElement;
     if (targetOption) {
       targetOption.selected = true;
     }
   });
 
   // On submit, change the font style by setting font-family style
-  document.getElementById('FontSelector')?.addEventListener('submit', function(event) {
+  fontForm?.addEventListener('submit', (event) => {
     event.preventDefault();
-    const font = this.querySelector('select')?.value || '--font-geometric-humanist';
+    const font = fontForm.querySelector('select')?.value || '--font-geometric-humanist';
     document.documentElement.style.setProperty('--font-default', `var(${font})`);
     localStorage.setItem('font', font);
   });
 </script>
-<form id="FontSelector">
+<form id="font-selector">
 <label> Font Style:
 <select>
   <option value="--font-system-ui">System UI</option>

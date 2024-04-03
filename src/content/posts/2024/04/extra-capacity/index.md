@@ -4,7 +4,7 @@ date: 2024-04-03T08:02:38-04:00
 categories:
   - Work Life
 tags: post
-description: The tremendous cost of learning on your own time
+description: Businesses that don’t strive for perfect efficiency are more creative and have happier employees.
 ---
 
 My first few jobs in web development had a lot of free time because the industry was so new. I kept plenty busy, but a large part of each workday was actually spent tinkering, reading about new techniques and new technology — even practicing on personal projects that were never intended to see any profit. They were just there for me to try out things I was learning before I actually needed to use them. This headroom was not traditionally productive in the typical MBA sense, but it meant that when new questions or new projects arose I could respond pretty quickly.

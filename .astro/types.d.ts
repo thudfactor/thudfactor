@@ -250,6 +250,13 @@ declare module 'astro:content' {
   collection: "posts";
   data: InferEntrySchema<"posts">
 } & { render(): Render[".md"] };
+"2024/03/font-stack/index.mdx": {
+	id: "2024/03/font-stack/index.mdx";
+  slug: "2024/03/font-stack";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".mdx"] };
 "2024/03/pixels/index.mdx": {
 	id: "2024/03/pixels/index.mdx";
   slug: "2024/03/pixels";
@@ -257,6 +264,13 @@ declare module 'astro:content' {
   collection: "posts";
   data: InferEntrySchema<"posts">
 } & { render(): Render[".mdx"] };
+"2024/04/extra-capacity/index.md": {
+	id: "2024/04/extra-capacity/index.md";
+  slug: "2024/04/extra-capacity";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".md"] };
 };
 
 	};

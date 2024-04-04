@@ -187,7 +187,19 @@
 }
 
 @layer components {
-
+	select {
+		padding: calc(var(--spacing) / 2);
+		margin-block: calc(var(--spacing) / 2);
+		display: block;
+		border-radius: 8px;
+	}
+	button {
+		appearance: none;
+		padding: calc(var(--spacing) / 2);
+		margin-block: calc(var(--spacing) / 2);
+		display: block;
+		border-radius: 8px;
+	}
 }
 
 @layer content {

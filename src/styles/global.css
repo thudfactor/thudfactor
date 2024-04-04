@@ -134,7 +134,7 @@
 		}
 
 		& main {
-			padding: calc(2.5 * var(--spacing));
+			padding: calc(3.5 * var(--spacing));
 		}
 	}
 

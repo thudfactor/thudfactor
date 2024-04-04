@@ -17,6 +17,12 @@
 		--font-handwritten: 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive;
 		--font-default: var(--font-geometric-humanist);
 
+		--lh-loose: 2;
+		--lh-normal: 1.6;
+		--lh-tight: 1.2;
+
+		--spacing: 8px;
+
 		/* Default color scheme */
 		--color-background: #ccc;
 		--color-article-background: #f0f0f0;
@@ -71,9 +77,10 @@
 		margin-bottom: 0.5rem;
 	}
 
-	p {
-		line-height: 1.6;
+	p, li {
+		line-height: var(--lh-normal);
 	}
+
 	a {
 		transition: color 0.3s ease-in-out, text-decoration-color 0.3s ease-in-out;
 
@@ -96,6 +103,7 @@
 		margin: 0;
 		padding: 0;
 	}
+
 	body {
 		margin: 0;
 		padding: 0;
@@ -104,12 +112,14 @@
 		overflow: auto;
 		scrollbar-gutter: stable both-edges;
 	}
+
 	img {
 		object-fit: cover;
 		max-width: 720px;
 		width: 100%;
 		height: auto;
 	}
+
 	#base-grid {
 		max-width: 1020px;
 		margin: 0 auto;
@@ -118,12 +128,13 @@
 		grid-template-columns: 240px 3fr;
 		grid-template-rows: auto auto 1fr auto;
 
-		> * {
-			padding: 8px;
+		& header[role="banner"],
+		& footer[role="contentinfo"] {
+			padding: var(--spacing);
 		}
 
-		> main {
-			padding: 16px;
+		& main {
+			padding: calc(2.5 * var(--spacing));
 		}
 	}
 
@@ -180,6 +191,9 @@
 }
 
 @layer content {
+	p, h1, h2, h3, h4, h5, h6 {
+		hanging-punctuation: first last;
+	}
 	pre {
 		padding: 1.1875rem;
 		margin-inline: -1.1875rem;

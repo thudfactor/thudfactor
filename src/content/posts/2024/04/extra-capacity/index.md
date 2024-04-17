@@ -31,11 +31,10 @@ This is probably why so many startups feel like dynamic, exciting places to work
 
 This is bad for employees, who see their development slow down if not getting entirely stuck. But it is also bad for _employers_. If you want innovation but don’t want to pay for it, you have to hire outside people with new ideas. Consultants, perhaps, but also well-established senior-level folks who can “hit the ground running.”
 
-Fortunately my next job after this gave me a lot more time to explore and learn. I feel like I’ve caught up. More than that — I actually enjoy my work again. Research, exploration, and learning new things are where I find joy. This is why an academic career once seemed so attractive. *Using* that knowledge is also fun, of course. Learning things without purpose ultimately feels empty. But if the company is focused on *doing* as quickly as possible and has not left significant room for thinking, they drain the value out of their current employees just as surely as private equity vampires drain established brands.
+Fortunately my next job after this gave me a lot more time to explore and learn. I feel like I’ve caught up. More than that — I actually enjoy my work again. Research, exploration, and learning new things are where I find joy. This is why an academic career once seemed so attractive. **Using** that knowledge is also fun, of course. Learning things without purpose ultimately feels empty. But if the company is focused on **doing** as quickly as possible and has not left significant room for thinking, they drain the value out of their current employees just as surely as private equity vampires drain established brands.
 
 So, some recommendations:
 
 * If you have a business, make sure you can make money even if your employees have a lot of headroom. A workforce that is working constantly at capacity can’t take on additional work. They also don’t have much time for creative thinking, problem-solving, or learning.
 * If you are an employee, don’t let companies drain your value by taking away your ability to think about problems. Work at a sustainable pace. If you feel yourself falling behind year-over-year because you are working at or above your capacity, maybe find a new job.
-* Don’t fall into the trap of thinking your *own* advancement isn’t worth investing in. Your employer _should_. But if they don’t, you need to find time and resources to do it yourself.
-
+* Don’t fall into the trap of thinking your **own** advancement isn’t worth investing in. Your employer _should_. But if they don’t, you need to find time and resources to do it yourself.

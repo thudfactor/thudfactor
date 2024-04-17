@@ -1,0 +1,215 @@
+<style>
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  dialog {
+    border-radius: 12px;
+    border-width: 1px;
+    background-color: #efefef;
+    border-color: white;
+    border-style: solid;
+    box-shadow: 5px 5px 5px black;
+    &::backdrop {
+      /* set the background color to a deep purple using hsl */
+      background-color: hsl(270 100% 20% / .4);
+    }
+  }
+  button {
+    all: unset;
+    cursor: pointer;
+    font-family: var(--font-system-ui);
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    justify-content: stretch;
+    align-items: center;
+    padding: 2rem 2rem;
+
+    > div {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    #actions {
+      padding-top: .8rem;
+      [type=reset] {
+        color: blue;
+        font-weight: 600;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      [type=submit] {
+        background-color: hsl(270 100% 40%);
+        text-shadow: 1px 1px 1px hsl(270 100% 20%), -1px -1px 1px hsl(270 100% 60%);
+        font-weight: 600;
+        color: white;
+        padding: .5rem 1rem;
+        border-radius: 12px;
+        transition: background-color .3s ease-in-out;
+
+        &:hover {
+          background-color: hsl(270 100% 50%);
+        }
+      }
+    }
+  }
+
+  #site-settings-close {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: .3rem;
+    top: .5rem;
+    right: .8rem;
+    font-size: .9rem;
+    font-family: var(--font-system-ui);
+    span {
+      font-size: .6rem;
+      display: inline-block;
+      margin-top: .2rem;
+    }
+  }
+
+</style>
+
+<script>
+  let form: HTMLFormElement;
+  let dialogButton: HTMLButtonElement;
+  let settingsClose: HTMLButtonElement;
+  let dialog: HTMLDialogElement;
+
+  // On page load, set the font style from local storage
+  // Right now this default value has to be manually kept in sync with the
+  // default value in the global.css.
+  document.addEventListener('DOMContentLoaded', () => {
+    form = document.querySelector('form#site-settings') as HTMLFormElement;
+    dialogButton = document.querySelector('button#settings-button') as HTMLButtonElement;
+    dialog = document.querySelector('dialog#site-settings-dialog') as HTMLDialogElement;
+    settingsClose = document.querySelector('button#site-settings-close') as HTMLButtonElement;
+
+    dialogButton?.addEventListener('pointerdown', () => dialog.showModal());
+    settingsClose?.addEventListener('pointerdown', () => dialog.close());
+    dialog?.addEventListener('pointerdown', closeOnBackdropClicked);
+    form?.addEventListener('submit', submitSettings);
+    form?.addEventListener('reset', resetSettings);
+    form?.addEventListener('formdata', applySettings);
+
+
+    // load font preferences from local storage. If not found, use the default.
+    const selectedFont = localStorage.getItem('font');
+    if (selectedFont) {
+      setFont(selectedFont, false);
+      form.querySelector(`[name=font] option[value="${selectedFont}"]`)?.setAttribute('selected', 'selected');
+    }
+
+    // load theme preferences from local storage. If not found, we calculate
+    // the default based on system preferences.
+    let selectedTheme = localStorage.getItem('theme');
+    if (selectedTheme) {
+      setTheme(selectedTheme, false);
+      form.querySelector(`[name=theme] option[value="${selectedTheme}"]`)?.setAttribute('selected', 'selected');
+    } else {
+      const highConstrastMode = window.matchMedia('(prefers-contrast: more)').matches;
+      const darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (highConstrastMode) {
+        selectedTheme = darkMode ? 'high-contrast-dark' : 'high-contrast-light';
+      } else {
+        selectedTheme = darkMode ? 'dark' : '';
+      }
+    }
+    setTheme(selectedTheme, false);
+  });
+
+  function closeOnBackdropClicked(e: PointerEvent) {
+    const { clientX: clickedX, clientY: clickedY } = e;
+    const {x, y, width, height} = dialog.getBoundingClientRect();
+    const intersectsHorizontal = clickedX >= x && clickedX <= x + width;
+    const intersectsVertical = clickedY >= y && clickedY <= y + height;
+    if (!intersectsHorizontal || !intersectsVertical) {
+      dialog.close();
+    }
+  }
+
+  function setFont(font: string, store: boolean = true) {
+    const { style } = document.documentElement;
+    (font === '') ?  style.removeProperty('--font-default') : style.setProperty('--font-default', `var(${font})`);
+
+    if (!store) return;
+    (font === '') ? localStorage.removeItem('font') : localStorage.setItem('font', font);
+  }
+
+  function setTheme(theme: string, store: boolean = true) {
+    const { dataset } = document.documentElement;
+    (theme === '') ? delete dataset.theme : dataset.theme = theme;
+    if (!store) return;
+    (theme === '') ? localStorage.removeItem('theme') : localStorage.setItem('theme', theme);
+  }
+
+  function submitSettings(e: SubmitEvent) {
+    e.preventDefault();
+    new FormData(form); // will trigger the formdata event below.
+  }
+
+  function resetSettings() {
+    setFont('');
+    setTheme('');
+  }
+
+  function applySettings(e: FormDataEvent) {
+    const { formData } = e;
+    const entries = formData.entries();
+    for (const [key, value] of entries) {
+      if (key === 'font') {
+        setFont(value as string);
+      } else if (key === 'theme') {
+        setTheme(value as string);
+      }
+    }
+  }
+</script>
+
+<dialog id="site-settings-dialog">
+  <button autofocus id="site-settings-close"><span role="presentation">✖️</span> Close</button>
+<form id="site-settings">
+  <div>
+    <label for="">Font Style:</label>
+    <select name="font">
+      <option value="">Default</option>
+      <option value="--font-system-ui">System UI</option>
+      <option value="--font-transitional">Transitional</option>
+      <option value="--font-old-style">Old Style</option>
+      <option value="--font-humanist">Humanist</option>
+      <option value="--font-geometric-humanist">Geometric Humanist</option>
+      <option value="--font-classical-humanist">Classical Humanist</option>
+      <option value="--font-neo-grotesque">Neo-Grotesque</option>
+      <option value="--font-industrial">Industrial</option>
+      <option value="--font-rounded-sans">Rounded Sans</option>
+      <option value="--font-slab-serif">Slab Serif</option>
+      <option value="--font-antique">Antique</option>
+      <option value="--font-didone">Didone</option>
+      <option value="--font-handwritten">Handwritten</option>
+    </select>
+  </div>
+  <div>
+    <label for="theme">Color Theme:</label>
+    <select name="theme">
+      <option value="">System Default</option>
+      <option value="dark">Dark</option>
+      <option value="high-contrast-light">High Contrast (Light)</option>
+      <option value="high-contrast-dark">High Contrast (Dark)</option>
+    </select>
+  </div>
+  <div id="actions">
+    <button type="reset">Reset</button>
+    <button type="submit">Change</button>
+  </div>
+</form>
+</dialog>

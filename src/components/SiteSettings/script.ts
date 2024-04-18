@@ -1,9 +1,9 @@
 const $ = document.querySelector.bind(document);
 
-const form: HTMLFormElement = $("form#site-settings");
-const dialogButton: HTMLButtonElement = $("button#settings-button");
-const settingsClose: HTMLButtonElement = $("button#site-settings-close");
-const dialog: HTMLDialogElement = $("dialog#site-settings-dialog");
+const form: HTMLFormElement | null = $("form#site-settings");
+const dialogButton: HTMLButtonElement | null = $("button#settings-button");
+const settingsClose: HTMLButtonElement | null = $("button#site-settings-close");
+const dialog: HTMLDialogElement | null = $("dialog#site-settings-dialog");
 
 function closeOnBackdropClicked(e: PointerEvent) {
 	const { clientX: clickedX, clientY: clickedY } = e;

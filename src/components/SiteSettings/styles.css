@@ -1,0 +1,74 @@
+@layer components {
+	form {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1rem;
+	}
+
+	dialog {
+		border-radius: 12px;
+		&::backdrop {
+			/* set the background color to a deep purple using hsl */
+			background-color: hsl(270 20% 20% / 0.4);
+		}
+	}
+
+	form {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		justify-content: stretch;
+		align-items: center;
+		padding: 2rem 2rem;
+
+		> div {
+			display: flex;
+			gap: 1rem;
+			align-items: center;
+			justify-content: space-between;
+			width: 100%;
+		}
+
+		#actions {
+			padding-top: 0.8rem;
+			[type="reset"] {
+				all: unset;
+				color: blue;
+				font-weight: 600;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+			[type="submit"] {
+				background-color: hsl(270 100% 40%);
+				text-shadow: 1px 1px 1px hsl(270 100% 20%), -1px -1px 1px hsl(270 100% 60%);
+				font-weight: 600;
+				color: white;
+				padding: 0.5rem 1rem;
+				border-radius: 12px;
+				transition: background-color 0.3s ease-in-out;
+
+				&:hover {
+					background-color: hsl(270 100% 50%);
+				}
+			}
+		}
+	}
+
+	#site-settings-close {
+		all: unset;
+		position: absolute;
+		display: flex;
+		align-items: center;
+		gap: 0.3rem;
+		top: 0.5rem;
+		right: 0.8rem;
+		font-size: 0.9rem;
+		font-family: var(--font-system-ui);
+		span {
+			font-size: 0.6rem;
+			display: inline-block;
+			margin-top: 0.2rem;
+		}
+	}
+}

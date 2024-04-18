@@ -3,18 +3,24 @@
 @layer theme {
 	:root {
 		--font-system-ui: system-ui, sans-serif;
-		--font-transitional: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
-		--font-old-style: 'Iowan Old Style', 'Palatino Linotype', 'URW Palladio L', P052, serif;
-		--font-humanist: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
-		--font-geometric-humanist: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
-		--font-classical-humanist: Optima, Candara, 'Noto Sans', source-sans-pro, sans-serif;
-		--font-neo-grotesque: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
-		--font-industrial: Bahnschrift, 'DIN Alternate', 'Franklin Gothic Medium', 'Nimbus Sans Narrow', sans-serif-condensed, sans-serif;
-		--font-rounded-sans: ui-rounded, 'Hiragino Maru Gothic ProN', Quicksand, Comfortaa, Manjari, 'Arial Rounded MT', 'Arial Rounded MT Bold', Calibri, source-sans-pro, sans-serif;
-		--font-slab-serif: Rockwell, 'Rockwell Nova', 'Roboto Slab', 'DejaVu Serif', 'Sitka Small', serif;
-		--font-antique: Superclarendon, 'Bookman Old Style', 'URW Bookman', 'URW Bookman L', 'Georgia Pro', Georgia, serif;
-		--font-didone: Didot, 'Bodoni MT', 'Noto Serif Display', 'URW Palladio L', P052, Sylfaen, serif;
-		--font-handwritten: 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive;
+		--font-transitional: Charter, "Bitstream Charter", "Sitka Text", Cambria, serif;
+		--font-old-style: "Iowan Old Style", "Palatino Linotype", "URW Palladio L", P052, serif;
+		--font-humanist: Seravek, "Gill Sans Nova", Ubuntu, Calibri, "DejaVu Sans", source-sans-pro,
+			sans-serif;
+		--font-geometric-humanist: Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro, sans-serif;
+		--font-classical-humanist: Optima, Candara, "Noto Sans", source-sans-pro, sans-serif;
+		--font-neo-grotesque: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans", Arial,
+			sans-serif;
+		--font-industrial: Bahnschrift, "DIN Alternate", "Franklin Gothic Medium", "Nimbus Sans Narrow",
+			sans-serif-condensed, sans-serif;
+		--font-rounded-sans: ui-rounded, "Hiragino Maru Gothic ProN", Quicksand, Comfortaa, Manjari,
+			"Arial Rounded MT", "Arial Rounded MT Bold", Calibri, source-sans-pro, sans-serif;
+		--font-slab-serif: Rockwell, "Rockwell Nova", "Roboto Slab", "DejaVu Serif", "Sitka Small",
+			serif;
+		--font-antique: Superclarendon, "Bookman Old Style", "URW Bookman", "URW Bookman L",
+			"Georgia Pro", Georgia, serif;
+		--font-didone: Didot, "Bodoni MT", "Noto Serif Display", "URW Palladio L", P052, Sylfaen, serif;
+		--font-handwritten: "Segoe Print", "Bradley Hand", Chilanka, TSCu_Comic, casual, cursive;
 		--font-default: var(--font-geometric-humanist);
 
 		--lh-loose: 2;
@@ -22,6 +28,8 @@
 		--lh-tight: 1.2;
 
 		--spacing: 8px;
+
+		--border-radius: 12px;
 
 		/* Default color scheme */
 		--color-background: #ccc;
@@ -77,21 +85,24 @@
 		margin-bottom: 0.5rem;
 	}
 
-	p, li {
+	p,
+	li {
 		line-height: var(--lh-normal);
 	}
 
 	a {
 		transition: color 0.3s ease-in-out, text-decoration-color 0.3s ease-in-out;
 
-		&:link, &:visited {
+		&:link,
+		&:visited {
 			color: var(--color-link);
 			text-decoration-color: oklch(from var(--color-link) l c h / 20%);
 		}
 
-		&:hover, &:active {
+		&:hover,
+		&:active {
 			color: var(--color-link-hover);
-			text-decoration-color:  oklch(from var(--color-link) l c h / 90%);
+			text-decoration-color: oklch(from var(--color-link) l c h / 90%);
 		}
 	}
 }
@@ -188,22 +199,20 @@
 
 @layer components {
 	select {
-		padding: calc(var(--spacing) / 2);
-		margin-block: calc(var(--spacing) / 2);
+		padding: var(--spacing);
 		display: block;
-		border-radius: 8px;
-	}
-	button {
-		appearance: none;
-		padding: calc(var(--spacing) / 2);
-		margin-block: calc(var(--spacing) / 2);
-		display: block;
-		border-radius: 8px;
+		border-radius: var(--border-radius);
 	}
 }
 
 @layer content {
-	p, h1, h2, h3, h4, h5, h6 {
+	p,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
 		hanging-punctuation: first last;
 	}
 	pre {
@@ -217,7 +226,8 @@
 		width: 100%;
 		border-collapse: collapse;
 
-		td, th {
+		td,
+		th {
 			padding: 1rem;
 			border-width: 4px;
 			border-style: ridge;

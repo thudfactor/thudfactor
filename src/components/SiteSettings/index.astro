@@ -1,0 +1,42 @@
+---
+import "./styles.css";
+---
+
+<script src="./script.ts"></script>
+<dialog id="site-settings-dialog">
+	<button autofocus id="site-settings-close"><span role="presentation">✖️</span> Close</button>
+	<form id="site-settings">
+		<div>
+			<label for="font">Font Style:</label>
+			<select name="font">
+				<option value="">Default</option>
+				<option value="--font-system-ui">System UI</option>
+				<option value="--font-transitional">Transitional</option>
+				<option value="--font-old-style">Old Style</option>
+				<option value="--font-humanist">Humanist</option>
+				<option value="--font-geometric-humanist">Geometric Humanist</option>
+				<option value="--font-classical-humanist">Classical Humanist</option>
+				<option value="--font-neo-grotesque">Neo-Grotesque</option>
+				<option value="--font-industrial">Industrial</option>
+				<option value="--font-rounded-sans">Rounded Sans</option>
+				<option value="--font-slab-serif">Slab Serif</option>
+				<option value="--font-antique">Antique</option>
+				<option value="--font-didone">Didone</option>
+				<option value="--font-handwritten">Handwritten</option>
+			</select>
+		</div>
+		<div>
+			<label for="theme">Color Theme:</label>
+			<select name="theme">
+				<option value="">System Default</option>
+				<option value="dark">Dark</option>
+				<option value="high-contrast-light">High Contrast (Light)</option>
+				<option value="high-contrast-dark">High Contrast (Dark)</option>
+			</select>
+		</div>
+		<div id="actions">
+			<button type="reset">Reset</button>
+			<button type="submit">Change</button>
+		</div>
+	</form>
+</dialog>

@@ -6,12 +6,13 @@ const settingsClose: HTMLButtonElement | null = $("button#site-settings-close");
 const dialog: HTMLDialogElement | null = $("dialog#site-settings-dialog");
 
 function closeOnBackdropClicked(e: PointerEvent) {
+	if (!dialog) return;
 	const { clientX: clickedX, clientY: clickedY } = e;
 	const { x, y, width, height } = dialog.getBoundingClientRect();
 	const intersectsHorizontal = clickedX >= x && clickedX <= x + width;
 	const intersectsVertical = clickedY >= y && clickedY <= y + height;
 	if (!intersectsHorizontal || !intersectsVertical) {
-		dialog.close();
+		dialog?.close();
 	}
 }
 
@@ -33,6 +34,7 @@ function setTheme(theme: string, store: boolean = true) {
 }
 
 function submitSettings(e: SubmitEvent) {
+	if (!form) return;
 	e.preventDefault();
 	new FormData(form); // will trigger the formdata event below.
 }
@@ -66,8 +68,8 @@ function applySettings(e: FormDataEvent) {
 	}
 }
 
-dialogButton?.addEventListener("pointerdown", () => dialog.showModal());
-settingsClose?.addEventListener("pointerdown", () => dialog.close());
+dialogButton?.addEventListener("pointerdown", () => dialog?.showModal());
+settingsClose?.addEventListener("pointerdown", () => dialog?.close());
 dialog?.addEventListener("pointerdown", closeOnBackdropClicked);
 form?.addEventListener("submit", submitSettings);
 form?.addEventListener("reset", resetSettings);
@@ -78,7 +80,7 @@ const selectedFont = localStorage.getItem("font");
 if (selectedFont) {
 	setFont(selectedFont, false);
 	form
-		.querySelector(`[name=font] option[value="${selectedFont}"]`)
+		?.querySelector(`[name=font] option[value="${selectedFont}"]`)
 		?.setAttribute("selected", "selected");
 }
 
@@ -88,7 +90,7 @@ let selectedTheme = localStorage.getItem("theme");
 if (selectedTheme) {
 	setTheme(selectedTheme, false);
 	form
-		.querySelector(`[name=theme] option[value="${selectedTheme}"]`)
+		?.querySelector(`[name=theme] option[value="${selectedTheme}"]`)
 		?.setAttribute("selected", "selected");
 } else {
 	selectedTheme = getDefaultTheme();

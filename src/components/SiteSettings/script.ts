@@ -7,6 +7,7 @@ const dialog: HTMLDialogElement | null = $("dialog#site-settings-dialog");
 
 function closeOnBackdropClicked(e: PointerEvent) {
 	if (!dialog) return;
+	if (e.target !== dialog) return;
 	const { clientX: clickedX, clientY: clickedY } = e;
 	const { x, y, width, height } = dialog.getBoundingClientRect();
 	const intersectsHorizontal = clickedX >= x && clickedX <= x + width;
@@ -68,8 +69,8 @@ function applySettings(e: FormDataEvent) {
 	}
 }
 
-dialogButton?.addEventListener("pointerdown", () => dialog?.showModal());
-settingsClose?.addEventListener("pointerdown", () => dialog?.close());
+dialogButton?.addEventListener("click", () => dialog?.showModal());
+settingsClose?.addEventListener("click", () => dialog?.close());
 dialog?.addEventListener("pointerdown", closeOnBackdropClicked);
 form?.addEventListener("submit", submitSettings);
 form?.addEventListener("reset", resetSettings);

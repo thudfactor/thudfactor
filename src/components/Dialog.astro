@@ -1,0 +1,29 @@
+<style>
+	dialog {
+		border-radius: 12px;
+		&::backdrop {
+			/* set the background color to a deep purple using hsl */
+			background-color: hsl(270 20% 20% / 0.4);
+		}
+	}
+</style>
+<script>
+	const closeOnBackdropClicked = (e: MouseEvent) => {
+		if (!dialog) return;
+		if (e.target !== dialog) return;
+		const { clientX: clickedX, clientY: clickedY } = e;
+		const { x, y, width, height } = dialog.getBoundingClientRect();
+		const intersectsHorizontal = clickedX >= x && clickedX <= x + width;
+		const intersectsVertical = clickedY >= y && clickedY <= y + height;
+		if (!intersectsHorizontal || !intersectsVertical) {
+			dialog?.close();
+		}
+	};
+
+	const dialog = document.querySelector("dialog");
+	dialog?.addEventListener("click", closeOnBackdropClicked);
+</script>
+<dialog>
+	<button autofocus id="site-settings-close"><span role="presentation">✖️</span> Close</button>
+	<slot />
+</dialog>

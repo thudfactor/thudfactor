@@ -1,0 +1,99 @@
+---
+title: Is CSS a programming language?
+date: 2024-04-27T08:02:38-04:00
+categories:
+  - CSS
+tags: post
+description: And why does it seem to matter to so many people?
+---
+
+import ArticleFigure from "@components/ArticleFigure.astro";
+import Peter from "./peter.webp";
+
+No, CSS is not a programming language.
+
+Since you’re here, I guess I should probably provide a bit more detail.
+
+## Wait, what are we talking about again?
+
+CSS YouTuber Kevin Powell did a video recently where he shows off a number of games that were created using HTML and CSS alone:
+
+<ArticleFigure>
+	<iframe
+		slot="fig"
+		width="560"
+		height="315"
+		src="https://www.youtube.com/embed/TL41NpYnhWo?si=PCXHt-uZL__H6WDd"
+		title="YouTube video player"
+		frameborder="0"
+		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+		referrerpolicy="strict-origin-when-cross-origin"
+		allowfullscreen
+	></iframe>
+	Every YouTuber apparently has to make dopey over-emotive faces in the thumbnails or The
+	Algorithm™️ rejects them. I’ve just had to get used to it.
+</ArticleFigure>
+
+Powell keeps saying “and they say CSS isn’t a programming language.” He also says “I don’t want people being pedantic in the comments.” Fair enough, I’ll just be pedantic here. CSS is _not_ a programming language, and I do think the distinction matters.
+
+Precisely what constitutes a programming language is a bit hard to pin down. The categories tend to fuzz around the edges, as most categories do. But CSS is lacking _most_ of what we would consider necessary in a programming language.
+
+CSS lacks:
+
+- Flow-of-control structures (conditionals, for-loops)
+- Any means of defining a function
+- Any means of accepting _input_
+- Any means of producing _output_.
+- Variables and constants.
+
+OK, so the last two might raise an eyebrow or two. CSS might seem like it produces output, because it is all about how things look and -- in some rare cases -- you can present actual text to people. I don’t think either of these really count because CSS cannot do this without working in coordination with another language, HTML. Every CSS rule set _begins_ with a selector that references the HTML it provides design instructions for.
+
+HTML, arguably, _is_ output. It doesn't produced it.
+
+As for variables and constants, CSS has a mechanism colloquially called “variables,” but these do not behave like variables at all. They behave _exactly_ like CSS properties, however, because that’s what they are.
+
+_And this is fine_. As part of the front end web stack, CSS plays a very critical role with the other two tools:
+
+- HTML, which describes what content _is_. (The markup language)
+- CSS, which describes how it is _presented_. (The design language)
+- Javascript, which allows for interaction, data processing, input, and output. In other words, the programming language.
+
+HTML and CSS are frequently the _output_ of Javascript (on the client side), or other languages liek PHP, Ruby, or Python on the server side. There are also CSS pre-processors which “add” programming language features like variables, loops, and conditionals: SASS and LESS. These languages do not turn CSS into a programming language, however. They _are_ a programming language, with CSS as the output.
+
+## Why does this matter?
+
+The distinction matters because if you approach CSS like a programming language, you are going to be very confused and disappointed. This happens all the time.
+
+<ArticleFigure
+	image={Peter}
+	alt="Animated gif of Peter Griffin from Family Guy trying to adjust horizontal window blinds."
+>
+	I always thought this meme was funny because all you have to do with window blinds is spend time
+	figuring out how the basic mechanism works, then cooperate with it. The same is true for CSS.
+</ArticleFigure>
+
+When back-end programmers or full-stack programmers (which I don’t think exist, I have never met one) work with CSS, they get frustrated really quickly because _CSS is not a programming language_. One of their first impulses is to correct the fundamental flaw they perceive in CSS: the fact that the values of properties “bleed” into other areas. This is the “cascade,” and it is so fundamental to how CSS works that the language is called “Cascading Style Sheets.”
+
+From a programmery perspective, CSS has too many side effects, too many global variables and no graceful way of scoping things. They will often try to “fix” these things with tools like… SASS, LESS, or CSS-in-JS solutions like Styled Components. Most of these programmers become so frustrated with the language that, like Peter Griffin fighting the blinds, they fall back on the old horrible practice of [programming by coincidence](https://www.informit.com/articles/article.aspx?p=31538). Unable to cope with CSS violating all of their expectations about how programming is supposed to work, they are reduced to making more and more precise selectors and throwing style rules into them to see what works.
+
+Most programmers, certainly most _senior_ programmers, would put a stop to any programming by coincidence that they ran into. But I’ve seen these same programmers flail angrily at CSS until they can retreat back to their comfortable world where variables only have one value at a time and you can shelter the poor things from outside influences.
+
+## CSS is a powerful language. It’s just not a programming one
+
+And again, that’s OK! I think one of the reasons those of us on the front end might _want_ CSS to be a programming language, or at least recognized as one, is that it’s the programming languages that get all the glory. HTML and CSS are all “lesser” somehow, at least in prestige and often in pay.
+
+This mindset reminds me a lot of what I saw in college curriculums where academic and cultural studies felt the need to glue on a veneer of science-ness to their studies, even if science is a poor tool to use to talk about people and art. STEM is where the money was (is), so STEM is what English degrees should be.
+
+We can also see the same mindset in Evangelical Christians, who manufacture concepts like [Creation Science](https://en.wikipedia.org/wiki/Creation_science) or [Intelligent Design](https://en.wikipedia.org/wiki/Intelligent_design) because apparently they think God can’t compete without verification by the scientific method.
+
+Programming relies on a mathematical sensibility as well as a tendency to abstract and generalize solutions. CSS, on the other hand, relies heavily on design-oriented thinking and attention to visual detail.
+
+## CSS is certainly not _easy_
+
+Writing CSS is a rich, complex, meticulous and detailed technical skill in its own right, and deserves respect as such. Any programmer who sneers at CSS _probably isn’t good at writing it_ and doesn’t enjoy the kind of work CSS actually is. Why they feel like they should belittle it I don’t know, but many programmers — not a majority, I hope, at least in web development — don’t see the value of design or UX efforts either.
+
+As for those games Kevin Powell was talking about: as near as I can tell from watching his video, these games rely rather heavily in the interactive tools provided by HTML form elements. They also seem to require a vast amount of CSS, I suspect generated as the output of something like SASS. One example has over a megabyte of CSS, and one does not simply write a megabyte of CSS.
+
+That’s not to say these demos aren’t impressive! They are! And it’s really interesting to see people push CSS in directions that it really isn’t intended to go. I am so interested in it that I’ve signed up for Kevin Powell’s [CSS Games Workshop](https://courses.kevinpowell.co/css-games-workshop). No doubt I will learn a few more tricks.
+
+But when I actually want to write a game, I will probably [reach for Godot instead](https://godotengine.org/).

@@ -1,15 +1,14 @@
 ---
-import Base from '@layouts/Base.astro';
-import Content from '@components/Content.astro';
-import Finial from '@components/Finial.astro';
+import Base from "@layouts/Base.astro";
+import Content from "@components/Content.astro";
 
-const pageProps = (Astro.props.frontmatter || Astro.props);
+const pageProps = Astro.props.frontmatter || Astro.props;
 
 const { title, description } = pageProps;
 ---
+
 <Base title={title} description={description}>
 	<Content {...pageProps}>
 		<slot />
-		<Finial />
 	</Content>
 </Base>

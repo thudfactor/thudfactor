@@ -20,8 +20,6 @@ import MainNavLink from "@components/MainNavLink.astro";
 
 		li:has([aria-current="page"]) {
 			background-color: var(--color-article-background);
-			border: 1px solid oklch(from var(--color-text) l c h / 0.5);
-			border-width: 1px;
 			padding: var(--spacing);
 			border-radius: 8px;
 			margin-left: calc(-1 * var(--spacing) + 1px);
@@ -69,8 +67,6 @@ import MainNavLink from "@components/MainNavLink.astro";
 				padding: var(--spacing);
 
 				&:has([aria-current="page"]) {
-					margin-right: -1px;
-					border-width: 1px 0 1px 1px;
 					border-radius: 8px 0 0 8px;
 					padding-left: calc(var(--spacing) + 6px);
 				}

@@ -242,4 +242,10 @@
 			margin-block: 1rem;
 		}
 	}
+
+	iframe[src*="youtube.com"] {
+		width: 100%;
+		height: auto;
+		aspect-ratio: 16 / 9;
+	}
 }

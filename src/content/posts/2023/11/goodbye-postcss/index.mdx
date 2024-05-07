@@ -13,11 +13,12 @@ cover:
   attribution:
     name: John Williams
 ---
-import AlertCallout from '@components/AlertCallout.astro';
-import ArticleFigure from '@components/ArticleFigure.astro';
-import Scriptaculous from './scriptaculous.png';
-import SlidingDoors from './sliding-doors-sprites.gif';
-import FlashMX from './macromedia-flash-mx-03-preview.png';
+
+import AlertCallout from "@components/AlertCallout.astro";
+import ArticleFigure from "@components/ArticleFigure.astro";
+import Scriptaculous from "./scriptaculous.png";
+import SlidingDoors from "./sliding-doors-sprites.gif";
+import FlashMX from "./macromedia-flash-mx-03-preview.png";
 
 I am really excited to say that the update to _Thudfactor_ that posts this _also_ removes PostCSS from the blog’s build process. SASS and PostCSS handled a lot of CSS complexity. But the CSS standard has mostly caught up to what these tools provide, so now I can now ship exactly the CSS I write… at least for this project.
 
@@ -30,7 +31,8 @@ It’s bonkers to think about now, but back when I first started the way you cha
 <figure>
 
 ```html
-<center><font size=5 face=arial color=red>Hello, World</font></center><p>
+<center><font size="5" face="arial" color="red">Hello, World</font></center>
+<p></p>
 ```
 
 <figcaption>
@@ -40,7 +42,7 @@ Some pre-css HTML circa 1996. The `size` attribute offered seven different, impr
 
 Redesigning often meant crawling through the code, moving and changing these. It was such a tedious, awful, and error-prone process I learned text-editor keyboard shortcuts and regular expressions to cope.
 
-*Replaced by:* CSS
+_Replaced by:_ CSS
 
 ## /cgi-bin/
 
@@ -70,22 +72,25 @@ foreach(@sortedarray){
 
 Some sample PERL code from 1999, creating and then sorting an array.
 
-<cite>Source: <a href="https://perlmonks.org/index.pl?node_id=1641">PerlMonks</a></cite>
+<cite>
+	Source: <a href="https://perlmonks.org/index.pl?node_id=1641">PerlMonks</a>
+</cite>
 
 </figcaption>
 </figure>
 
-*Replaced by:* Cold Fusion (_memories!_), PHP, ASP, Ruby, Node
+_Replaced by:_ Cold Fusion (_memories!_), PHP, ASP, Ruby, Node
 
 ## Javascript Libraries of Yore (MooTools, Prototype, Scriptaculous, jQuery)
 
 <ArticleFigure image={Scriptaculous} alt="screenshot of the scriptaculous website">
-The [Scriptaculous](http://script.aculo.us/) web site is still around, although the last update seems to have been in August of 2011.
+	The [Scriptaculous](http://script.aculo.us/) web site is still around, although the last update
+	seems to have been in August of 2011.
 </ArticleFigure>
 
 Once Javascript matured a bit and it became possible to manipulate the <abbr title="Document Object Model">DOM</abbr> _after_ the HTML was sent to the browser, lots of libraries popped up to make this process a heck of a lot simpler. The basic Javascript tools were very limited and low-level. Some were focused more on visual effects than others, but eventually everyone bowed to jQuery.
 
-*Replaced by:* JavaScript ES6 and beyond. jQuery is still very much with us, of course, but many of its concepts got pulled into Javascript proper.
+_Replaced by:_ JavaScript ES6 and beyond. jQuery is still very much with us, of course, but many of its concepts got pulled into Javascript proper.
 
 ## Layout Hell
 
@@ -97,7 +102,7 @@ One popular mechanism was to just make one honking great image and turn it into 
 
 Around 1998 I was looking into going back to school for web design and the local university’s “web design” web site was just a whole bunch of these.
 
-*Replaced by*: Better design capabilities in HTML and CSS in general
+_Replaced by_: Better design capabilities in HTML and CSS in general
 
 _Suggested by: [@bcdavid@hachyderm.io](https://hachyderm.io/@bcdavid/111369208433512075)_
 
@@ -111,7 +116,7 @@ But that was still all we had for several years, very fancy designs were produce
 
 Heavily related is the 1x1 transparent spacer gif, which was a tiny one-pixel image that was resized as needed to hold table cells open when the image inside them was loaded as a background.
 
-*Replaced by*: Float-based layout
+_Replaced by_: Float-based layout
 
 ### Float Based Layouts
 
@@ -121,7 +126,7 @@ It wasn’t really until the advent of responsive design that the rigidity of ta
 
 If you’re really curious, here’s a 2011 [float-based layout tutorial](https://css-tricks.com/almanac/properties/f/float/) from CSS-Tricks. Pay close attention to the “clearing the float” section, which was crucial to managing these layouts.
 
-*Replaced by:* Flex, grid layouts
+_Replaced by:_ Flex, grid layouts
 
 _Suggested by: [@wonkeythemonkey@mastodon.social](https://mastodon.social/@wonkeythemonkey/111369371376460302)_
 
@@ -139,13 +144,13 @@ Any text change meant having to produce a new image, however, which made this un
 
 Flash, and thus sIFR, suffered a quick death when Apple refused to let Flash load on iPhones.
 
-*Replaced by:* `@font-face,` which enabled the delivery of web fonts.
+_Replaced by:_ `@font-face,` which enabled the delivery of web fonts.
 
 ### Faux Columns
 
 Float-based layout forced much simpler design, but one of the intolerable losses was having a column-based layout where (for example) the left column and the right column backgrounds ended at the same point. “Faux columns” was a technique that ran a large background image behind a wrapper that had all of the column decorations in place; then you would align your float layout over the top. This was _indispensable_ for many years.
 
-*Replaced by:* Flex, Grid
+_Replaced by:_ Flex, Grid
 
 ### Table-based layout (for elements!)
 
@@ -156,23 +161,23 @@ Nowadays you can put rounded borders on something with `border-radius`, but befo
 ```html
 <!-- old style -->
 <a href="http://www.example.com/">
-  <table cellspacing="0" cellpadding="0" border="0">
-    <tr>
-      <td><img src="border-tl.gif"></td>
-      <td><img src="border-tm.gif"></td>
-      <td><img src="border-tr.gif"></td>
-    </tr>
-    <tr>
-      <td><img src="border-l.gif"></td>
-      <td>Click Here</td>
-      <td><img src="border-r.gif"></td>
-    </tr>
-    <tr>
-      <td><img src="border-bl.gif"></td>
-      <td><img src="border-bm.gif"></td>
-      <td><img src="border-br.gif"></td>
-    </tr>
-  </table>
+	<table class="red-border-button">
+		<tr>
+			<td class="red-button-tl"><img src="red-button-green-bg-tl.gif" width="5" height="5" /></td>
+			<td class="red-button-t"></td>
+			<td class="red-button-tr"><img src="red-button-green-bg-tr" width="5" height="5" /></td>
+		</tr>
+		<tr>
+			<td class="red-button-l"></td>
+			<td class="content">Buy now</td>
+			<td class="red-button-r"></td>
+		</tr>
+		<tr>
+			<td class="red-button-bl"><img src="red-button-green-bg-bl" width="5" height="5" /></td>
+			<td class="red-button-b"></td>
+			<td class="red-button-br"><img src="red-button-green-bg-br" width="5" height="5" /></td>
+		</tr>
+	</table>
 </a>
 ```
 
@@ -185,7 +190,7 @@ The four corners would have tiny images in them. The edge pieces would have repe
 
 So. Many. Tables.
 
-*Replaced By:* “Sliding Doors,” (below)
+_Replaced By:_ “Sliding Doors,” (below)
 
 _Suggested by: [@wonkeythemonkey@mastodon.social](https://mastodon.social/@wonkeythemonkey/111369371376460302)_
 
@@ -195,7 +200,7 @@ A related technique to faux-columns was called "sliding doors.” In this, you h
 
 It’s hard to visualize, so [here’s a 2003 article](https://alistapart.com/article/slidingdoors/) from the very influential _A List Apart_ explaining the technique.
 
-*Replaced by:* CSS3
+_Replaced by:_ CSS3
 
 _Suggested by: [@troy@opencoaster.net](https://opencoaster.net/@troy/111370197631409467)_
 
@@ -205,14 +210,23 @@ One of the _earliest_ CSS tricks I learned was how to swap images out of the bac
 
 This later expanded into the performance-enhancing (but maintainability-destroying) advent of sprite sheets. Sprite sheets might contain _several_ needed incidental graphics like bullet styles, backgrounds, icons, and the like into one image which could be downloaded with one request and then shifted around with `background-position` in CSS.
 
-<ArticleFigure image={SlidingDoors} alt="An image with two large horizontal bars with rounded corners on the left, and two small horizontal bars with rounded corners on the right">
-A very small sprite sheet for a sliding doors button. It’s a little hard to tell just looking at the sheet, but this contains both the normal and the hover state for the button design.
-<cite>Image source: Devin Olsen’s <a href="https://devinrolsen.com/beginners-guide-to-css-sprites/">What is a CSS sprite anyways?</a></cite>
+<ArticleFigure
+	image={SlidingDoors}
+	alt="An image with two large horizontal bars with rounded corners on the left, and two small horizontal bars with rounded corners on the right"
+>
+	A very small sprite sheet for a sliding doors button. It’s a little hard to tell just looking at
+	the sheet, but this contains both the normal and the hover state for the button design.
+	<cite>
+		Image source: Devin Olsen’s{" "}
+		<a href="https://devinrolsen.com/beginners-guide-to-css-sprites/">
+			What is a CSS sprite anyways?
+		</a>
+	</cite>
 </ArticleFigure>
 
 The technique required a great deal of precision and made changes and updates difficult. Especially if you weren’t the original design agency and couldn’t get the source Photoshop files.
 
-*Replaced by:* SVG, CSS, more efficient browser load behavior in general
+_Replaced by:_ SVG, CSS, more efficient browser load behavior in general
 
 _Suggested by: [@troy@opencoaster.net](https://opencoaster.net/@troy/111370197631409467)_
 
@@ -226,7 +240,7 @@ Until about 2007, if you needed bits of your website to show through an image yo
 
 To get around this, you had to make your transparent GIF in an image editor using a solid background that matched where you were going to … here, just [read this Stunning Mesh tutorial](https://www.stunningmesh.com/2009/12/unwanted-edges-of-transparent-gifs-photoshop/) from 2009.
 
-*Replaced by:* PNG, WebP, SVG
+_Replaced by:_ PNG, WebP, SVG
 
 _Suggested by:_ [@wonkeythemonkey@mastodon.social](https://mastodon.social/@wonkeythemonkey/111369353992289765)
 
@@ -234,7 +248,7 @@ _Suggested by:_ [@wonkeythemonkey@mastodon.social](https://mastodon.social/@wonk
 
 Then, as now, if you have a really large image it can take forever to download without much user feedback that anything was happening. One solution was to slice the image up into a lot of smaller bits, then re-assemble them in the browser with a table. This way, bits of the image could load in. Ultimately this made the total file size larger and the download slower, but at least it gave some feedback.
 
-*Replaced by:* Better compression (`webp`, for example). Broadband. Paying attention to download sizes. Also `picture` and `img srcset`.
+_Replaced by:_ Better compression (`webp`, for example). Broadband. Paying attention to download sizes. Also `picture` and `img srcset`.
 
 _Suggested by:_ [@bcdavid@hachyderm.io](https://hachyderm.io/@bcdavid/111369208433512075)
 
@@ -246,20 +260,26 @@ The early web — especially before the widespread adoption of Javascript and th
 
 These tended to be hideous and often used for pointless things like animated news tickers, but the _worst_ thing was they would lock up the entire Mac OS until all the applets on a page were downloaded and booted. Mac users in the mid 90s never knew when they hit a new web site if their computer was going to just beach-ball for ninety seconds.
 
-*Replaced by:* Shockwave, Flash
+_Replaced by:_ Shockwave, Flash
 
 ### Flash
 
 Shockwave, and later it’s younger brother Flash, took out Applets. These were both very _design-forward_ tools and they let skilled multimedia designers create elaborate experiences and deliver them over the web instead of CD-ROM.
 
 <ArticleFigure image={FlashMX} alt="The user interface for Flash on Windows circa 2002">
-The Flash timeline was a familiar place for motion designers but pretty inscrutable for web developers used to working in text documents.
-<cite>Image Source: <a href="https://www.webdesignmuseum.org/software/macromedia-flash-mx-in-2002">The Web Design Museum</a></cite>
+	The Flash timeline was a familiar place for motion designers but pretty inscrutable for web
+	developers used to working in text documents.
+	<cite>
+		Image Source:{" "}
+		<a href="https://www.webdesignmuseum.org/software/macromedia-flash-mx-in-2002">
+			The Web Design Museum
+		</a>
+	</cite>
 </ArticleFigure>
 
 There was real concern that the entire web would become this, but Flash was hard to write applications in and _very_ hard to code. Frequent security flaws in the Flash player also limited adoption, especially on work machines. After a brief period where some folks, particularly design agencies, experimented with Flash-only web sites, things moved back around to web standards.
 
-*Replaced by:* HTML5, Javascript ES6
+_Replaced by:_ HTML5, Javascript ES6
 
 ### WYSIWYG web development apps
 
@@ -267,7 +287,7 @@ One thing that has _never_ changed is that professional web development happens 
 
 It’s been a long, long time since I met any web developer who relied on any of these tools.
 
-*Replaced by:* CMS themes, as well as site builders like SquareSpace and Wix
+_Replaced by:_ CMS themes, as well as site builders like SquareSpace and Wix
 
 ---
 

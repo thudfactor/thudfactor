@@ -41,39 +41,41 @@ Sometimes people will ask for rules when I have none to give, so I end up saying
 
 A broadly applicable guideline with rare exceptions can probably be called a rule, but there are very few examples. “Don’t use tables for layout” is a great one. However, it’s crucial that people understand this doesn’t mean “don’t use tables.” It’s not unheard of to discover tabular data, which absolutely belongs in a table, created using a ton of `div` elements and tortured CSS.
 
-Even “provide alt text for images” has exceptions, [explained here by the W3C](https://www.w3.org/WAI/tutorials/images/decorative/)
+Even “provide alt text for images” has exceptions, [explained here by the W3C](https://www.w3.org/WAI/tutorials/images/decorative/):
 
 > The information provided by the image might already be given using adjacent text, or the image might be included to make the website more visually attractive. In these cases, a null (empty) alt text should be provided (alt="") so that they can be ignored by assistive technologies, such as screen readers…
 
 The W3C article goes on for some time about _why_ you would do such a thing, and how to know when. Ultimately, “whether to treat an image as decorative or informative is a judgment that only the author can make, based on the reason for including the image on the page.”
 
-In other words, when you look hard enough even this apparently most iron-clad accessibility rule has exceptions.
+In other words, when you look hard enough even this iron-clad accessibility rule has exceptions near the blurry edges.
 
 ### 2. Don’t put tools out of reach
 
-One of the most frustrating sets of “rules” I see are those ban practices, language features, or languages without any real discussion of why or when. Frameworks like React (Javascript) and Tailwind (CSS) are a popular target, but sometimes even the _idea_ of frameworks themselves come under fire.
+One of the most frustrating sets of “rules” I see are those ban practices, language features, or languages without any real discussion of why or when. Frameworks like React (Javascript) and Tailwind (CSS) are popular targets, but sometimes even the _idea_ of frameworks themselves come under fire.
 
-Many of the arguments against Tailwind and React (for example) make sense, but not in all circumstances. Tailwind can be very heavyweight and does obscure a lot of the operation of CSS from newcomers. On the other hand, it’s a powerful tool in the hands of people who know CSS well _and_ need to do rapid side-building or data-driven design. Tailwind solved a specific but common problem for me: how to expose a complex set of design options to content managers using a CMS.
+Many of the arguments against Tailwind and React (for example) make sense, but not in all circumstances. Tailwind can be very heavyweight and does obscure a lot of the operation of CSS from newcomers. On the other hand, it’s a powerful tool in the hands of people who know CSS well _and_ need to do rapid site-building with data-driven design.
 
-Utility-based CSS was a great way to approach the problem, but there’s a lot of effort involved in creating a utility CSS library. When you’re working to a cash-strapped budget, there’s not time to make bespoke utility systems, so Tailwind is an excellent choice.
+Tailwind solved a specific but common problem for me: how to expose a complex set of design options to content managers using a CMS. Utility-based CSS is a great way to approach the problem, but there’s a lot of effort involved in creating a good bespoke set of utility CSS. When you’re working to a cash-strapped budget, there’s not time to make bespoke utility systems, so Tailwind is an excellent choice.
 
-Often these rules are made out of bad personal experiences or a violation of someone’s personal development philosophy. But the worst reason I see for putting a tool out of use is for the sake of “consistency.” For example, I once worked on a React project that had a prohibition against using _class names_ in CSS. Everything was either a [styled-components](https://styled-components.com/) element or the CSS was rendered dynamically with Javascript and passed props. The goal here was to limit how much developers had to think about the cascade, but the result was tortured, verbose code that could have been expressed a lot more elegantly with simple vanilla CSS.
+Often these rules are made out of bad personal experiences or a violation of someone’s development ideology. But the worst reason I see for putting a tool out of use is for the sake of “consistency.” For example, I once worked on a React project that had a prohibition against using _class names_ in CSS. Everything was either a [styled-components](https://styled-components.com/) element or the CSS was rendered dynamically with Javascript and passed props. The goal here was to limit how much developers had to think about the cascade, but the result was tortured, verbose code that could have been expressed a lot more elegantly with simple vanilla CSS.
 
-Although these banned-for-consistency rules are supposed to reduce confusion in development teams, it is more likely than not they will back you into a corner where you are forced to use a screwdriver to pound in a nail because the rule is _don’t use hammers_.
+Although these banned-for-consistency rules are supposed to reduce confusion in development teams, they often back you into a corner where you are forced to use a screwdriver to pound in a nail because the rule is _don’t use hammers_. You should react to consistency-based rules as though someone were trying to take your toolbox away from you… because that’s exactly what they are doing.
 
 ### 3. Know why the rule was made
 
-And if you are making the rule, know why you are making it. Because rules are only useful under specific circumstances, you need to know when they cease to be useful. PHP is a fine language, but it is not suitable for everything. For example, it is not great at command-line scripts. It’s _possible_ to create command-line scripts with PHP, but it’s not the best tool. If you suddenly find yourself having to write a lot of command line tools, and you are in a “PHP-only shop,” there’s something that needs to be reconsidered.
+And if you are making the rule, know why you are making it. Because rules are only useful under specific circumstances, you need to know when they cease to be useful. Sometimes (often!) the rule can become an impediment.
 
-Another example: A lot of people say Javascript should be used either never or extremely rarely. So far, all of the folks I’ve seen making this argument develop for article-based or content-driven web sites; none of them are using the web platform to write software. Obviously people writing software are going to need Javascript.
+PHP is a fine language, but it is not suitable for everything. For example, it is not great at command-line scripts. It’s _possible_ to create command-line scripts with PHP, but it’s not the best tool. If you suddenly find yourself having to write a lot of command line tools, and you are in a “PHP-only shop,” there’s something that needs to be reconsidered.
+
+Another example: A lot of people say Javascript should be extremely rarely, ideally never. So far, all of the folks I’ve seen making this argument develop for article-based or content-driven web sites; none of them are using the web platform to write software. Obviously people writing software are going to need Javascript.
+
+Javascript _is_ often used where it shouldn’t be, but it is also often the right tool for the job. The moralistic argument does not help anyone make a wise decision.
 
 If you are a junior developer and someone gives you a rule, always ask “why.” Understand what purposes it serves. Sometimes those purposes are good, technical reasons related to the problem domain. But often those rules are either made out of ideology (“commercial OSes are exploitative”, “I am a Microsoft fanboy”) or out of simple aversion (“CSS is bad, so we lobotomized it”).
 
 Ideological rules tend to be easy to spot, but hard to stand against. These rules are often couched in moral terms, and people who question them become the subject of condemnation. That’s the way ideologies work, and it makes more sense to me if you’re discussing more human, interpersonal topics.
 
-“Generative AI is / is not plagiarism” is an ideological argument, but it’s more about the consequences of using generative AI, not its technical suitability for a job. “Stop using Javascript, it is ruining the web” is an argument about _tool choice_ and couches it in terms of good vs. evil: if you use Javascript, which is ruining the web, you are evil because you contribute to the ruination of the web.
-
-If you are making the rules, be sure to know why you are making them. This way you will know when they have ceased to become helpful and have become actively harmful.
+“Generative AI is / is not plagiarism” is an ideological argument, but it’s more about the human consequences of generative AI, not its technical suitability for a job. “Stop using Javascript, it is ruining the web” is an argument about _tool choice_ but it’s couched in terms of good vs. evil: if you use Javascript, which is ruining the web, you are evil because you contribute to the ruination of the web.
 
 ## Finally, always leave the discussion open
 

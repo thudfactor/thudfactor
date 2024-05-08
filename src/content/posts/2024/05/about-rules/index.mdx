@@ -8,6 +8,8 @@ tags: post
 description: My first one is “never call them rules.”
 ---
 
+import AlertCallout from "@components/AlertCallout.astro";
+
 I was thinking this morning about `border-radius`, the CSS property that lets us round off corners. I had almost forgotten that there was a time before. I am not sure when it was introduced, but the [CSS Tricks article](https://css-tricks.com/almanac/properties/b/border-radius/) is from 2011. Prior to `border-radius` if we wanted rounded corners we had to use images, either in a [9-slice table](https://thudfactor.com/posts/2023/11/goodbye-postcss/table-based-layout-for-elements) or through clever techniques like [sliding doors](https://thudfactor.com/posts/2023/11/goodbye-postcss/table-based-layout-for-elements).
 
 When all major browsers finally supported `border-radius`, _tons_ of people were still stuck on IE 6. IE 9 was out, but we were all still testing on IE 6. It’s difficult to explain the significant improvement in developer time and page-weight that came with `border-radius`, but we were stuck making tiny corner images over various background colors because there was this rule:
@@ -56,6 +58,13 @@ One of the most frustrating sets of “rules” I see are those ban practices, l
 Many of the arguments against Tailwind and React (for example) make sense, but not in all circumstances. Tailwind can be very heavyweight and does obscure a lot of the operation of CSS from newcomers. On the other hand, it’s a powerful tool in the hands of people who know CSS well _and_ need to do rapid site-building with data-driven design.
 
 Tailwind solved a specific but common problem for me: how to expose a complex set of design options to content managers using a CMS. Utility-based CSS is a great way to approach the problem, but there’s a lot of effort involved in creating a good bespoke set of utility CSS. When you’re working to a cash-strapped budget, there’s not time to make bespoke utility systems, so Tailwind is an excellent choice.
+
+<AlertCallout variant="info">
+	After I posted this yesterday, I ran into a great post by Kitty Giraudel about why “don’t use the
+	`disabled` attribute” is a _very different thing_ than “disabled buttons are a pain for
+	accessibility.” See: [On Disabled and Aria-Disabled
+	Attributes](https://kittygiraudel.com/2024/03/29/on-disabled-and-aria-disabled-attributes/)
+</AlertCallout>
 
 Often these rules are made out of bad personal experiences or a violation of someone’s development ideology. But the worst reason I see for putting a tool out of use is for the sake of “consistency.” For example, I once worked on a React project that had a prohibition against using _class names_ in CSS. Everything was either a [styled-components](https://styled-components.com/) element or the CSS was rendered dynamically with Javascript and passed props. The goal here was to limit how much developers had to think about the cascade, but the result was tortured, verbose code that could have been expressed a lot more elegantly with simple vanilla CSS.
 

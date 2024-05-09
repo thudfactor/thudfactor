@@ -4,28 +4,6 @@ import ArticleImage from "./ArticleImage.astro";
 const { image, alt, variant } = Astro.props;
 ---
 
-<style>
-	@layer components {
-		figure {
-			padding: 1rem;
-			margin-inline: -1rem;
-			background-color: color(--color-article-background);
-		}
-
-		@container article (min-width: 620px) {
-			.right {
-				float: right;
-				max-width: 40%;
-				margin-inline: 2rem 0;
-			}
-		}
-
-		figcaption {
-			margin-top: 1rem;
-			border-top: 1px var(--color-text) solid;
-		}
-	}
-</style>
 <figure class={variant}>
 	<slot name="fig">
 		<ArticleImage image={image} alt={alt} />

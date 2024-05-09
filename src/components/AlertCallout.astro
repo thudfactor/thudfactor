@@ -6,17 +6,6 @@ interface Props {
 const { variant = "info" } = Astro.props;
 ---
 
-<style>
-	.alert-callout {
-		padding: 0.5rem 1rem;
-		border-radius: 0.5rem;
-		margin: 1rem -1rem;
-	}
-
-	.alert-callout.info {
-		border: 1px currentColor solid;
-	}
-</style>
 <aside class=`alert-callout ${variant}`>
 	<slot />
 </aside>

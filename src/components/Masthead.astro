@@ -3,54 +3,6 @@ import { SITE_TITLE, SITE_VALUE_STATEMENT } from "../consts";
 import FormattedDate from "./FormattedDate.astro";
 ---
 
-<style>
-	@layer components {
-		header {
-			padding-block: 16px;
-			display: flex;
-			flex-direction: column;
-			gap: 8px;
-		}
-
-		a {
-			margin: 0 auto;
-			width: fit-content;
-			font-size: 1.5rem;
-			line-height: 1.2;
-			font-weight: bold;
-			display: flex;
-			justify-content: center;
-			align-items: baseline;
-			text-decoration: none;
-			color: var(--color-text);
-			gap: 8px;
-
-			& span {
-				transition: 0.3s text-decoration-color ease-in-out;
-				text-decoration-line: underline;
-				text-decoration-style: solid;
-				text-decoration-color: hsl(0 0% 0% / 0);
-				text-decoration-thickness: 3px;
-			}
-
-			&:hover span {
-				text-decoration-color: var(--color-text);
-			}
-		}
-
-		svg {
-			height: 1.13rem;
-			width: auto;
-		}
-
-		.lastUpdate {
-			font-style: italic;
-			font-size: 0.8rem;
-			font-weight: 200;
-			color: oklch(from var(--color-text) l c h / 80%);
-		}
-	}
-</style>
 <header role="banner">
 	<a id="Home" href="/">
 		<svg

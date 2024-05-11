@@ -1,14 +1,27 @@
 ---
 import FormattedDate from "./FormattedDate.astro";
-import "../styles/content.css";
 const { title, date, updatedDate, cover } = Astro.props;
 ---
 
+<style>
+	@layer content {
+		.hero-image {
+			img {
+				width: 100%;
+				height: auto;
+			}
+
+			p {
+				font-size: var(--font-size-1);
+				color: var(--stone-8);
+			}
+		}
+	}
+</style>
 <article>
 	<div class="title">
 		<h1>{title}</h1>
 		<div class="date">
-			<span class="date-icon" role="presentation" style="font-style: normal">☉</span>
 			{date && <FormattedDate date={date} />}
 			{
 				updatedDate && date !== updatedDate && (

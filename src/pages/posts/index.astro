@@ -11,24 +11,6 @@ const posts = (await getCollection("posts"))
 	.reverse();
 ---
 
-<style>
-	@layer content {
-		.teaser-card {
-			margin-bottom: var(--size-8);
-
-			h2.title {
-				margin-block: var(--size-1) var(--size-2);
-			}
-			.teaser-card {
-				border-bottom: 2px groove oklch(from var(--color-text) l c h / 0.5);
-				margin: 2rem 0;
-			}
-			small {
-				display: block;
-			}
-		}
-	}
-</style>
 <BlogPost title={title} description={description} date={date}>
 	{
 		posts.map(post => (

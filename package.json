@@ -15,7 +15,7 @@
     "@astrojs/rss": "^4.0.5",
     "@astrojs/sitemap": "^3.1.1",
     "astro": "^4.4.3",
-    "livecodes": "^0.5.0",
+    "open-props": "^1.7.4",
     "typescript": "^5.3.3"
   }
 }

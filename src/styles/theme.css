@@ -1,100 +1,5 @@
 :root {
-	.font-00 {
-		font-size: var(--font-size-00);
-	}
-
-	.font-0 {
-		font-size: var(--font-size-0);
-	}
-
-	.font-1 {
-		font-size: var(--font-size-1);
-	}
-
-	.font-2 {
-		font-size: var(--font-size-2);
-	}
-
-	.font-3 {
-		font-size: var(--font-size-3);
-	}
-
-	.font-4 {
-		font-size: var(--font-size-4);
-	}
-
-	.font-5 {
-		font-size: var(--font-size-5);
-	}
-
-	.font-6 {
-		font-size: var(--font-size-6);
-	}
-
-	.font-7 {
-		font-size: var(--font-size-7);
-	}
-
-	.font-8 {
-		font-size: var(--font-size-8);
-	}
-
 	font-family: var(--font-sans);
-
-	/* Redefine the font-size openprops to use lch
-
-
-	--font-system-ui: system-ui, sans-serif;
-	--font-transitional: Charter, "Bitstream Charter", "Sitka Text", Cambria, serif;
-	--font-old-style: "Iowan Old Style", "Palatino Linotype", "URW Palladio L", P052, serif;
-	--font-humanist: Seravek, "Gill Sans Nova", Ubuntu, Calibri, "DejaVu Sans", source-sans-pro,
-		sans-serif;
-	--font-geometric-humanist: Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro, sans-serif;
-	--font-classical-humanist: Optima, Candara, "Noto Sans", source-sans-pro, sans-serif;
-	--font-neo-grotesque: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans", Arial,
-		sans-serif;
-	--font-industrial: Bahnschrift, "DIN Alternate", "Franklin Gothic Medium", "Nimbus Sans Narrow",
-		sans-serif-condensed, sans-serif;
-	--font-rounded-sans: ui-rounded, "Hiragino Maru Gothic ProN", Quicksand, Comfortaa, Manjari,
-		"Arial Rounded MT", "Arial Rounded MT Bold", Calibri, source-sans-pro, sans-serif;
-	--font-slab-serif: Rockwell, "Rockwell Nova", "Roboto Slab", "DejaVu Serif", "Sitka Small", serif;
-	--font-antique: Superclarendon, "Bookman Old Style", "URW Bookman", "URW Bookman L", "Georgia Pro",
-		Georgia, serif;
-	--font-didone: Didot, "Bodoni MT", "Noto Serif Display", "URW Palladio L", P052, Sylfaen, serif;
-	--font-handwritten: "Segoe Print", "Bradley Hand", Chilanka, TSCu_Comic, casual, cursive;
-	--font-default: var(--font-geometric-humanist);
-
-	/* Default color scheme
-		--color-background: #ccc;
-		--color-article-background: #f0f0f0;
-		--color-text: #000;
-		--color-link: #009;
-		--color-link-hover: #00f;
-
-		&[data-theme="dark"] {
-			--color-background: #111;
-			--color-article-background: #222;
-			--color-text: #fff;
-			--color-link: #0ff;
-			--color-link-hover: #f0f;
-		}
-
-		&[data-theme="high-contrast-light"] {
-			--color-background: #fff;
-			--color-article-background: #fff;
-			--color-text: #000;
-			--color-link: #00f;
-			--color-link-hover: #f0f;
-		}
-
-		&[data-theme="high-contrast-dark"] {
-			--color-background: #000;
-			--color-article-background: #000;
-			--color-text: #fff;
-			--color-link: #0f0;
-			--color-link-hover: #ff0;
-		}
-		 */
 }
 
 /* Josh Comeau's CSS Reset */
@@ -169,4 +74,24 @@ h6 {
 	overflow: hidden;
 	clip: rect(0, 0, 0, 0);
 	border: 0;
+}
+
+a {
+	transition: color 0.3s, text-decoration-color 0.3s;
+	&:link,
+	&:visited {
+		color: var(--indigo-10);
+		font-weight: var(--font-weight-6);
+		text-decoration-color: var(--indigo-5);
+	}
+	&:hover,
+	&:active {
+		color: var(--orange-8);
+		text-decoration-color: var(--orange-8);
+	}
+}
+
+h2 a {
+	text-decoration-thickness: 2px;
+	text-underline-offset: 0.1em;
 }

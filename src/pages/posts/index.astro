@@ -1,38 +1,44 @@
 ---
-import { getCollection } from 'astro:content';
-import FormattedDate from '@components/FormattedDate.astro';
-import BlogPost from '@layouts/BlogPost.astro';
+import { getCollection } from "astro:content";
+import FormattedDate from "@components/FormattedDate.astro";
+import BlogPost from "@layouts/BlogPost.astro";
 const title = "Archives";
 const description = "A list of all the posts on this blog.";
 const date = new Date();
 
-const posts = (await getCollection('posts')).sort(
-	(a, b) => a.data.date.valueOf() - b.data.date.valueOf()
-).reverse();
+const posts = (await getCollection("posts"))
+	.sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf())
+	.reverse();
 ---
+
 <style>
-	@layer foo {
-		h2 {
-			margin-block: 0;
-		}
+	@layer content {
 		.teaser-card {
-			border-bottom: 2px groove oklch(from var(--color-text) l c h / 0.5);
-			margin: 2rem 0;
-		}
-		small {
-			display: block;
+			margin-bottom: var(--size-8);
+
+			h2.title {
+				margin-block: var(--size-1) var(--size-2);
+			}
+			.teaser-card {
+				border-bottom: 2px groove oklch(from var(--color-text) l c h / 0.5);
+				margin: 2rem 0;
+			}
+			small {
+				display: block;
+			}
 		}
 	}
 </style>
-<BlogPost
-	title={title}
-	description={description}
-	date={date}>
+<BlogPost title={title} description={description} date={date}>
 	{
-		posts.map((post) => (
+		posts.map(post => (
 			<div class="teaser-card">
-				<h2 class="title"><a href={`/posts/${post.slug}/`}>{post.data.title}</a></h2>
-				<small><FormattedDate date={post.data.date} /></small>
+				<small>
+					<FormattedDate date={post.data.date} />
+				</small>
+				<h2 class="title">
+					<a href={`/posts/${post.slug}/`}>{post.data.title}</a>
+				</h2>
 				<p>{post.data.description}</p>
 			</div>
 		))

@@ -1,0 +1,101 @@
+---
+title: Popovers and Dialogs, a (kinda) case study
+date: 2024-05-15T06:08:52-04:00
+categories:
+  - CSS
+  - HTML
+tags: post
+description: The differences (and similarities) of the new Popover API and the Dialog element.
+---
+
+HTML has had a couple of exciting, but similar, new releases. `Dialog` is a new element and related API, with broad support among Chrome, Safari, and Firefox since early 2022. The `popover` attribute — which gets added to other HTML elements to convert them into popovers — is much more recent. Chrome and Safari added support in 2023, but it didn’t land in Firefox browsers until a month ago.
+
+I recently used both of these in a production app, so I got to know them relatively well. When I demoed to other engineers, they always asked what the difference was between `popover` and `dialog`. Hidde de Vries has a great (and exhaustive!) post on [just this subject](https://hidde.blog/dialog-modal-popover-differences/), but I want to focus on what I discovered when using these two.
+
+The two components I needed were:
+
+1. A modal dialog box, which needs to be centered and act as a focus trap. It also needed to have a backdrop that obscured the background, and if you clicked outside (on the backdrop), the modal should be dismissed. (This is called a “light dismiss.”)
+2. A tooltip, which needs to show on hover and keyboard focus, have a delay, have _no_ backdrop, and is dismissed only on loss of hover or keyboard focus.
+
+Running mostly on semantics alone, I chose `dialog` for the first option, and `popover` for the second, but from a capabilities standpoint the two of them are actually very much the same. Strangely, _neither_ option was perfectly suited to either component.
+
+## …And Javascript
+
+Practically speaking, both `dialog` and `popover` have extremely limited use without Javascript. This will be upsetting to folks who are aggressively anti-Javascript, but I’d expect these elements to develop over time so you can do more without it.
+
+Those `dialog` elements default to being hidden, but you can open one by adding the `open` attribute. This will open the dialog in non-modal form, which means it gets absolute positioning inside the container, but it does not get any positioning otherwise.
+
+Elements with a `popover` attribute also start life hidden, but I don’t think there’s a way to open them in markup. You _can_ link opening and closing popovers to a button by adding a `popovertarget` attribute to the button, but that’s limited to opening and closing popovers with clicks.
+
+This feels backwards to me, I guess — popovers open with a trigger relationship you can set in markup, but dialogs don’t — because dialogs seem like they would _always_ be opened on click events, but popovers might occur for many reasons. But that’s the API.
+
+## The first component: dialogs
+
+When `dialog` is opened by Javascript, you can choose to open it as a modal — which is what I needed. The modal dialog display does a number of things:
+
+1. The element is moved into the [top layer](https://developer.chrome.com/blog/what-is-the-top-layer/), which resolves a lot of z-index stuff.
+2. Since it’s in the top layer, modal dialogs get a backdrop and `position: fixed`.
+3. The dialog provides a focus trap, and clicks outside the dialog proper and onto the `::backdrop` pseudo-element are all delegated back to the dialog itself.
+
+However, the `dialog` API does not have light dismiss support. You have to add it yourself, which I did by:
+
+1. Listening for clicks on `dialog` directly (not its children). Since clicks on the backdrop are delegated to the dialog, the dialog’s click handler will catch these, too.
+2. Checking the coordinates of the click against the boundaries described by `getClientBoundingRect()` to determine if the click was inside or outside of the dialog element.
+
+Any time I find myself reaching into specific element coordinates I feel like I’m doing pretty low-level UI programming and I’d rather not.
+
+## The second component: tooltips
+
+Buckle up, I am glad I tackled this one _after_ the dialogs.
+
+I decided to use the newer `popover` element for tooltips. `Dialog` seems like a heaver element to use for something so ephemeral, and it’s also a bit more prescriptive semantically. For example: `dialog` has a built-in mechanism to deliver form values when the dialog is closed, and `dialog` elements have an implicit `dialog` role. Our friend `popover` does neither.
+
+Our previous tooltip solution was CSS-only, which was really nice. However, it did not have access to the top layer, and so we had a good deal of `z-index` problems and a few issues with tooltips getting clipped by their containing elements. The top layer solves all of these problems, but there’s no CSS property that tells a popover it’s open — so we had to move that functionality to Javascript.
+
+### Handling hover
+
+Friends, that was a significant blow. Not because I dislike Javascript! It’s my favorite programming language and a crucial leg supporting the web platform. It’s because I couldn’t toggle the popover when a trigger element’s `:hover` state changed.
+
+Perhaps you are thinking: “aha, you can open `onMouseOver` and close `onMouseOut`, that’s the same as hover!” You would think! But that’s not the case. These events (and the similar `pointer*` events) seem to fire _only_ when the pointer is moved into or out of the listener, _not_ when the listener gets moved underneath the pointer. This can happen a number of ways:
+
+- The trigger animates into a position underneath (or out from underneath) the pointer
+- A click on the trigger causes the trigger to move or disappear
+- The trigger gets scrolled into position behind the pointer
+
+At least, that’s what my tests reveal. I’d love to be proven wrong. This is a bit less of a problem for the “enter” state — I can live with a tooltip not firing if the trigger moves underneath the pointer — but it not firing on the _exit_ state means you get an orphaned, visible tooltip. That’s not good.
+
+I solved this exit case by checking the trigger’s `:hover` state constantly (with `matches()`) the entire time the popover was open, and closing it when that check failed. To solve the _enter_ case, I’d have to have each trigger checking while the popover was closed, which seemed like a bit of a performance hit to me.
+
+I had to do something similar to trigger the popover on `:focus-visible` instead of the broader `:focus` because Javascript doesn’t provide an `onfocusvisible` event.
+
+### Handling position
+
+Tooltips need to show up in close proximity to the trigger. The CSS-only non-popover solution could use absolute positioning relative to the trigger as long as the trigger contained the tooltip. But since popovers must have `position: fixed` in the top layer, we can’t do that any more.
+
+The ideal solution for this is [anchor-based positioning](https://developer.chrome.com/blog/anchor-positioning-api), which Chrome started to roll out (_…checks calendar…_) yesterday. Firefox _just_ started work on it, and I don’t know where it is on Safari’s radar.
+
+That means have to use `getBoundingClientRect()` again. And, once again, we have to check that constantly while the popover is open because the trigger might move and we’d need to move the tooltip with it. A tooltip exposed on hover might disappear quickly, but these tooltips also appear with keyboard focus, which is a much more stable state. So yes, a scrolling tooltip is actually pretty common.
+
+This turned out to be an elaborate solution ([also sketched out in that codepen](https://codepen.io/elfinjohn/pen/oNRXBNy)), but one I thought was worth the effort to eliminate the stacking order and containment issues. I also have a lot of hope that I’ll be able to migrate the component to anchor-based positioning before the end of the year, which will simplify matters quite a bit.
+
+### Guess what?
+
+One thing I did _not_ need for tooltips the light dismiss functionality I had to code myself for dialogs.
+
+Popovers have that.
+
+But they don’t do the focus trap thing.
+
+<pre>::shrug::</pre>
+
+## Wrap-up
+
+Popovers and dialogs are really similar in a lot of ways, and I am not entirely convinced that the semantic difference between the two is something most folks will easily grasp. It falls into the same category for me as the difference between a “link” and a “button” — which for most folks is a change in _presentation_, not purpose. Or the difference between `strong` and `b`, which is entirely hair-splitting. Because their functionalities are so similar, I can see most developer settling on using only one, or using `dialog` for only a narrow handful of cases.
+
+I think the weirdness between the two — `dialog` getting a focus trap but no light dismiss, popovers getting the opposite — is an artifact of `dialog` being an older element and popover benefiting from the lessons learned. But I was not in the room for those conversations. That’s just what it looks like to me based on doing the exact same thing myself often.
+
+The stuff that I need to do by hand with Javascript is, on one hand, pretty irritating. I can see how it might even be pretty infuriating if you don’t know / don’t like Javascript.
+
+But on the other hand, these low-level UI programming efforts are a good reminder of what _exactly_ is involved for Chrome, Firefox, and Safari’s browser teams when we ask for new affordances. There are always lots of little wrinkles that take a long time to smooth out, especially in a spec that’s getting quite complicated.
+
+How are _you_ using `dialog` or `popover`? Are you waiting for more (better) support? Anchor-based positioning? Declarative control? Is there a better solution than any I’ve described here? Let me know [via Mastodon](https://hachyderm.io/@thudfactor) or, you know, write your own blog post about it! I’d love to learn from you.

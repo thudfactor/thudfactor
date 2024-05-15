@@ -1,11 +1,6 @@
 @layer openprops, theme, layout, components, content, utilities, samples;
 
-@import "https://unpkg.com/open-props" layer(openprops);
-/*
-@import "https://unpkg.com/open-props/normalize.min.css" layer(theme);
-@import "https://unpkg.com/open-props/buttons.min.css" layer(theme);
-*/
-
+@import "open-props/style" layer(openprops);
 @import "./theme.css" layer(theme);
 @import "./layout.css" layer(layout);
 @import "./content.css" layer(content);

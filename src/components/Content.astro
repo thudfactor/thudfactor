@@ -20,8 +20,7 @@ const { title, date, updatedDate, cover } = Astro.props;
 </style>
 <article>
 	<div class="title">
-		<h1>{title}</h1>
-		<div class="date">
+		<small class="date">
 			{date && <FormattedDate date={date} />}
 			{
 				updatedDate && date !== updatedDate && (
@@ -30,7 +29,8 @@ const { title, date, updatedDate, cover } = Astro.props;
 					</span>
 				)
 			}
-		</div>
+		</small>
+		<h1>{title}</h1>
 	</div>
 
 	{

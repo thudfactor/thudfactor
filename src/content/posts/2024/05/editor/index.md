@@ -28,7 +28,7 @@ Undoubtedly I will have to compromise on a few of these. Anyway, here's some of 
 
 ## Stand-alone editors
 
-I see [Sublime](https://www.sublimetext.com/) is still kicking around. It'd been my favorite for a long time, until Atom and then VSCode seemed more exciting. I think you can [still get Atom](httpsIt'd been my favorite for a long time, until Atom and then VSCode seemed more exciting. I think you can [still get Atom]() but it's no longer in active development. 
+I see [Sublime](https://www.sublimetext.com/) is still kicking around. It'd been my favorite for a long time, until Atom and then VSCode seemed more exciting. It'd been my favorite for a long time, until Atom and then VSCode seemed more exciting. I think you can still get Atom but it's no longer in active development. 
 
 [BBEdit](https://www.barebones.com/support/bbedit/updates.html) is also still with us. In fact, they released version 15 just ten days ago. Much of my early work on the web was done through BBEdit, so I have fond memories. 
 
@@ -39,6 +39,8 @@ Some of the Atom team, though, is working on a new editor called [Zed](https://z
 Using editors from the command line seems potentially very exciting. I spend a lot of time on the command line already. I am writing this post using [Helix](https://helix-editor.com/), and it's a lot of fun. I am certainly feeling the lack of an integrated file browser, though. Maximizing my experience with Helix will require a lot of mindful use, though.
 
 One thing I didn't notice until I started this post is that my very-ingrained key combinations for typographer's quotes, ellipsis, and other international characters don't work in the terminal. This is a _significant_ flaw, since [I use those a lot](https://thudfactor.com/posts/2024/02/punctuation/). It's one of the reasons I never returned to Windows as a development environment. 
+
+*Update:* While I was reading over this again (several hours after posting), I realized that something in my build process is automatically turning the straight quotes into typographer's quotes, so that's an improvement.
 
 [VIM](https://www.vim.org/) & [NeoVIM](https://neovim.io/) are overwhelmingly popular in this space, but the ecosystem is seriously confusing and both of the editors certainly don't meet my fifth requirement. In fact, I've seen several people say they switched _away_ from either VIM or NVIM because they were constantly having to repair their setups _or_ were often distracted by tinkering with the setups. 
 
@@ -51,7 +53,5 @@ Helix, VIM, and NeoVIM are all modal editors, which let you do a lot from the ke
 All of that means the productivity gains might be eaten up (or more!) by the supporting activities.
 
 Emacs was my initial editor when I started in Computer Science. I don't have fond memories. Everything I said about productivity gains and VIM goes triple for Emacs.
-
----
 
 The only way to really choose another tool is to poke at them all for awhile, and not worry too much about the productivity gains. I don't want to be slowed down _too_ much, but if it makes the work more fun that's probably worth the change alone.

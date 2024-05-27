@@ -139,3 +139,42 @@ article {
 		}
 	}
 }
+
+#page-hero {
+	margin-inline: calc(var(--size-6) * -1);
+	margin-block: 0 1rem;
+	img {
+		max-width: 100%;
+		width: 1020px;
+		height: auto;
+		object-fit: cover;
+	}
+	figcaption {
+		border-top-width: 0;
+		margin-top: 0;
+		padding-inline: var(--size-6);
+		padding-block: var(--size-4);
+		background-color: var(--stone-4);
+		span {
+			margin-top: var(--size-2);
+			display: block;
+			text-align: right;
+			font-size: var(--font-size-0);
+		}
+	}
+	.figcontents {
+		position: relative;
+
+		.title {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			color: white;
+			background-color: transparent;
+			background-image: linear-gradient(hsl(0deg 0% 0% / 0) 0, 30%, hsl(0deg 0% 0% / 0.9));
+			padding: var(--size-4) var(--size-6);
+			margin-bottom: 0;
+		}
+	}
+}

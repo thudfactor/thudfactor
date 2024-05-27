@@ -1,33 +1,23 @@
 ---
 import FormattedDate from "@components/FormattedDate.astro";
+import ArticleImage from "@components/ArticleImage.astro";
 const { post } = Astro.props;
 const { cover, date, description, title } = post.data;
 ---
 
-<style>
-	.teaser-card {
-		display: grid;
-		grid-template-rows: 1fr;
-		grid-template-columns: 31% 1fr;
-		gap: var(--size-4);
-	}
-
-	.teaser-image {
-		background-color: green;
-		background-image: var(--gradient-7), var(--noise-3);
-	}
-
-	.teaser-image img {
-		display: block;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-	}
-</style>
 {
 	(
 		<div class="teaser-card">
-			<div class="teaser-image">{cover && <img src={cover.src.src} alt={cover.alt} />}</div>
+			<div class="teaser-image">
+				{cover && (
+					<ArticleImage
+						width={cover.width}
+						height={cover.height}
+						image={cover.src}
+						alt={cover.alt}
+					/>
+				)}
+			</div>
 			<div class="teaser-content">
 				<small>
 					<FormattedDate date={date} />

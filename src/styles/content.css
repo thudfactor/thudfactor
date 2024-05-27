@@ -127,12 +127,25 @@ article {
 	.teaser-card {
 		margin-bottom: var(--size-8);
 		display: grid;
-		grid-template-rows: 1fr;
-		grid-template-columns: 31% 1fr;
+
+		grid-template-columns: 1fr;
+		grid-template-rows: auto auto;
+
 		gap: var(--size-4);
 
-		h2.title {
+		h2 {
+			font-size: var(--font-size-2);
 			margin-block: var(--size-1) var(--size-2);
+			text-decoration-thickness: var(--size-2);
+		}
+
+		@container article (min-width: 460px) {
+			grid-template-rows: 1fr;
+			grid-template-columns: 31% 1fr;
+
+			h2 {
+				font-size: var(--font-size-3);
+			}
 		}
 
 		small {
@@ -141,15 +154,17 @@ article {
 
 		.teaser-image {
 			position: relative;
-			background-color: green;
-			background-image: var(--gradient-7), var(--noise-3);
+
+			&:not(:has(img)) {
+				background-image: var(--gradient-7), var(--noise-3);
+			}
 		}
 
 		img {
 			display: block;
 			object-fit: cover;
-			max-width: 100%;
-			height: auto;
+			width: 100%;
+			height: 100%;
 		}
 	}
 }

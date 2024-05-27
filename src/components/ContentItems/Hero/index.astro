@@ -5,7 +5,7 @@ const { cover } = Astro.props;
 
 <figure id="page-hero">
 	<div class="figcontents">
-		<Image width={cover.width} height={cover.height} src={cover.src} alt={cover.alt} />
+		<Image src={cover.src} alt={cover.alt} />
 		<slot />
 	</div>
 	<figcaption>

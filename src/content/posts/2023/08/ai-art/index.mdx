@@ -32,21 +32,26 @@ egbert:
     also acknowledge the challenges and ethical concerns associated with AI art
     and advocate for greater public investment in the arts to support artists.
     Overall, the author's tone is thoughtful and reflective.
-
 ---
-import ArticleFigure from '@components/ArticleFigure.astro';
-import HogansHeroes from './hogans-heroes.png';
-import PinupPose from './pinupPose.jpg';
-import Nun from './nun.png';
-import Celtic from './celtic.jpg';
-import Screenshot from './screenshot.png';
+
+import ArticleFigure from "@components/ArticleFigure.astro";
+import HogansHeroes from "./hogans-heroes.png";
+import PinupPose from "./pinupPose.jpg";
+import Nun from "./nun.png";
+import Celtic from "./celtic.jpg";
+import Screenshot from "./screenshot.png";
 
 I’ve spent a fair amount of time in the last few days playing around with AI-generated art. I have a few mostly unorganized thoughts I wanted to get down, so here you go.
 
 ## Ethics
 
-<ArticleFigure image={HogansHeroes} alt="An AI generated image of wrestler Hulk Hogan making a giant submarine sandwich" align="right">
-I call this one “Hogan’s Heroes.” This was a rapidly made piece created to respond to a work conversation.
+<ArticleFigure
+	image={HogansHeroes}
+	alt="An AI generated image of wrestler Hulk Hogan making a giant submarine sandwich"
+	align="right"
+>
+	I call this one “Hogan’s Heroes.” This was a rapidly made piece created to respond to a work
+	conversation.
 </ArticleFigure>
 
 The ethical concerns of AI art are somewhat beyond me. I understand that a lot of artists feel like their art has been “stolen” by these companies for profit and without permission, but when you make your art publicly available, it tends to get appropriated and re-used in ways you didn’t anticipate.
@@ -79,8 +84,13 @@ Of course, deciding what is acceptable is often managed by program heuristics of
 
 ### Midjourney
 
-<ArticleFigure image={PinupPose} alt="A woman laying on her stomach, wearing a polka-dot dress, smiling. There is a Coca-cola branded cooler and a Coke bottle nearby.">
-One of the things Midjourney can do is accept an image as guidance along with a prompt. This is where I got into trouble. I wanted to duplicate this pose in my prompt, but Midjourney told me the image was inappropriate.
+<ArticleFigure
+	image={PinupPose}
+	alt="A woman laying on her stomach, wearing a polka-dot dress, smiling. There is a Coca-cola branded cooler and a Coke bottle nearby."
+>
+	One of the things Midjourney can do is accept an image as guidance along with a prompt. This is
+	where I got into trouble. I wanted to duplicate this pose in my prompt, but Midjourney told me the
+	image was inappropriate.
 </ArticleFigure>
 
 [Midjourney](https://www.midjourney.com/) is an AI art tool that you work with using Discord. You write prompts into the chat room and a chatbot moderates between you and the Midjourney software. You can get really amazing results out of this pretty quickly, but once you start trying to nail something specific down things get difficult — and potentially expensive. Midjourney, like a lot of AI art machines, still has difficulty managing the number of limbs and a reasonable range of human motion.
@@ -89,8 +99,13 @@ Getting something usable out of the tool often means making many, many renders u
 
 It seems unlikely this is going to improve much with the existing approach. The way these tools typically work is to take a image full of random pixels and, over several iterations, remove everything that doesn’t look like the prompt.
 
-<ArticleFigure image={Nun} alt="Four thumbnail renders of a nun laying on the beach. The first looks reasonable, the other three have deformed hands, strange shoulders, or awkward poses.">
-The prompt for this was “1950s airbrush painting of a cheerful nun reclining on the beach, facing the viewer, sunny day, in the style of Antonio Vargas --no umbrella --aspect 16:9” Midjourney is trying, but…
+<ArticleFigure
+	image={Nun}
+	alt="Four thumbnail renders of a nun laying on the beach. The first looks reasonable, the other three have deformed hands, strange shoulders, or awkward poses."
+>
+	The prompt for this was “1950s airbrush painting of a cheerful nun reclining on the beach, facing
+	the viewer, sunny day, in the style of Antonio Vargas --no umbrella --aspect 16:9” Midjourney is
+	trying, but…
 </ArticleFigure>
 
 ### Stable Diffusion
@@ -105,8 +120,13 @@ If Automatic1111 looks like a jet cockpit, ComfyUI resembles nothing so much as 
 
 All I’ve been doing recently with SD is trying out different models (each model is trained on different data has its own style), writing prompts, trying to get rid of extra fingers, and attempting to upscale beyond the relatively tiny images SD makes at the start. I prefer the control. I also like the fact that no one is looking over my shoulder to see if I am doing anything wrong. (Was that polka-dotted dress really too racy?)
 
-<ArticleFigure image={Celtic} alt="A woman with messy, braided red hair and green eyes, wearing a tunic decorated with celtic knots, looking to the right with a grim expression on her face.">
-This looks really great if you don’t scrutinize it too much. There's an impression of Celtic knotwork, but it’s incoherent as a real knot. I don’t know what’s up with the weapons, those are strange. But overall, I’m very pleased with this one.
+<ArticleFigure
+	image={Celtic}
+	alt="A woman with messy, braided red hair and green eyes, wearing a tunic decorated with celtic knots, looking to the right with a grim expression on her face."
+>
+	This looks really great if you don’t scrutinize it too much. There's an impression of Celtic
+	knotwork, but it’s incoherent as a real knot. I don’t know what’s up with the weapons, those are
+	strange. But overall, I’m very pleased with this one.
 </ArticleFigure>
 
 Off to the right is an image I worked with for multiple hours over several days. _My_ scruples say AI art belongs to the community, and so I should share my prompts any time I share the art.
@@ -128,8 +148,11 @@ Once I got a smaller version of her growing out of her shoulder.
 
 Here is a screenshot of the ComfyUI workflow I used to create this.
 
-<ArticleFigure image={Screenshot} alt="A screenshot of the comfy UI, showing multiple models being loaded, and several image previews">
-A workflow in ComfyUI.
+<ArticleFigure
+	image={Screenshot}
+	alt="A screenshot of the comfy UI, showing multiple models being loaded, and several image previews"
+>
+	A workflow in ComfyUI.
 </ArticleFigure>
 
 _This does not represent a complex workflow._ Here’s what it’s doing:

@@ -126,16 +126,30 @@ article {
 
 	.teaser-card {
 		margin-bottom: var(--size-8);
+		display: grid;
+		grid-template-rows: 1fr;
+		grid-template-columns: 31% 1fr;
+		gap: var(--size-4);
 
 		h2.title {
 			margin-block: var(--size-1) var(--size-2);
 		}
-		.teaser-card {
-			border-bottom: 2px groove oklch(from var(--color-text) l c h / 0.5);
-			margin: 2rem 0;
-		}
+
 		small {
 			display: block;
+		}
+
+		.teaser-image {
+			position: relative;
+			background-color: green;
+			background-image: var(--gradient-7), var(--noise-3);
+		}
+
+		img {
+			display: block;
+			object-fit: cover;
+			max-width: 100%;
+			height: auto;
 		}
 	}
 }

@@ -2,6 +2,8 @@
 import { getCollection } from "astro:content";
 import FormattedDate from "@components/FormattedDate.astro";
 import BlogPost from "@layouts/BlogPost.astro";
+import Teaser from "@components/PageItems/Teaser/index.astro";
+
 const title = "Archives";
 const description = "A list of all the posts on this blog.";
 const date = new Date();
@@ -12,17 +14,5 @@ const posts = (await getCollection("posts"))
 ---
 
 <BlogPost title={title} description={description} date={date}>
-	{
-		posts.map(post => (
-			<div class="teaser-card">
-				<small>
-					<FormattedDate date={post.data.date} />
-				</small>
-				<h2 class="title">
-					<a href={`/posts/${post.slug}/`}>{post.data.title}</a>
-				</h2>
-				<p>{post.data.description}</p>
-			</div>
-		))
-	}
+	{posts.map(post => <Teaser post={post} />)}
 </BlogPost>

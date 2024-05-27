@@ -1,0 +1,18 @@
+---
+import FormattedDate from "@components/FormattedDate.astro";
+const { date, updatedDate, title } = Astro.props;
+---
+
+<div class="title">
+	<small class="date">
+		{date && <FormattedDate date={date} />}
+		{
+			updatedDate && date !== updatedDate && (
+				<span>
+					• Updated <FormattedDate date={updatedDate} />
+				</span>
+			)
+		}
+	</small>
+	<h1>{title}</h1>
+</div>

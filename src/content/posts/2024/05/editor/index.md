@@ -2,6 +2,12 @@
 title: Seeking a new editor
 description: Some thoughts about changing up my typical toolset
 date: Sat May 25 07:05:25 EDT 2024
+cover:
+  src: ./blue-sage.png
+  alt: A short columnar flower blossom with tiny, white and blue blossoms.
+  description: A mealy blue sage blossom ("mealy" is part of the name), photographed at Busch Gardens Williamsburg in 2023.
+  attribution:
+    name: John Williams
 ---
 
 This week I started looking at other editing tools. I've been a pretty happy user of VSCode for years, but Microsoft's stewardship has me feeling antsy. Their eagerness to work AI into every corner of every process everywhere seems irresponsibly premature at best.

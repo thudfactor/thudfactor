@@ -2,6 +2,10 @@
 title: Seeking a new editor
 description: Some thoughts about changing up my typical toolset
 date: Sat May 25 07:05:25 EDT 2024
+categories:
+  - Editors
+  - VIM
+  - Helix
 cover:
   src: ./blue-sage.png
   alt: A short columnar flower blossom with tiny, white and blue blossoms.

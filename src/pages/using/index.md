@@ -8,7 +8,7 @@ permalink: using/
 
 _Thudfactor_ is built using [Astro](https://astro.build) in mostly HTML, CSS, and maybe a tiny touch of Javascript.
 
-My editor is [VSCode](https://code.visualstudio.com/), my programming font is [Dank Mono](https://philpl.gumroad.com/l/dank-mono). My color theme is [Monokai Pro (filter spectrum)](https://www.vscolors.com/themes/f5d7ffda-c1d6-4070-ba80-803c705a1ee6-3ed72ace) but I might switch that out for something with a punchier name. My OS of choice is Commodore KERNAL, but since that’s wildly impractical these days I just use MacOS.
+My editor is [NeoVim](https://neovim.io/) sometimes via [VSCode](https://code.visualstudio.com/). My OS of choice is Commodore KERNAL, but since that’s wildly impractical these days I just use MacOS.
 
 The site is hosted by [Cloudflare Pages](https://pages.cloudflare.com/) and is continuously deployed from Github.
 

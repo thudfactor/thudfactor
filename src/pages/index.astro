@@ -1,18 +1,31 @@
 ---
-import BlogPost from '../layouts/BlogPost.astro';
-const title = 'Hello, Content Consumer';
-const date = new Date('2024-02-28T07:53:27-04:00');
-const updatedDate = new Date('2024-03-14T18:28:27-04:00');
+import BlogPost from "../layouts/BlogPost.astro";
+import Hero from "@components/ContentItems/Hero/index.astro";
+const title = "Welcome to Thudfactor";
+const date = new Date("2024-02-28T07:53:27-04:00");
+const updatedDate = new Date("2024-05-30T07:08:27-04:00");
+
+const cover = {
+	src: import("../images/graybeard.png"),
+	alt: "A sign on the blue ridge parkway reading View Graybeard Mountain. The view is completely obscured by fog.",
+	description:
+		"The view of Graybeard Mountain in North Carolina from the Blue Ridge Parkway, September 2002. It was a little overcast.",
+	attribution: {
+		name: "John Williams",
+	},
+};
 ---
 
 <BlogPost
 	title={title}
-	description={'Thudfactor is the personal blog of J H Williams, web developer'}
+	description={"Thudfactor is the personal blog of J H Williams, web developer"}
 	date={date}
 	updatedDate={updatedDate}
+	cover={cover}
 >
-<p>Welcome to <cite>Thudfactor!</cite> This site is…</p>
-<p><big><b>Under Construction</b></big></p>
-<p>For now you probably want the <a href="/posts/">blog archives</a>, but maybe you would like to know <a href="/about">who I am</a>. The <a href="/feed.xml">RSS feed</a> is only marginally less attractive.</a></p>
-<small><em>Special note to AI crawlers:</em> Hi. If you <i>really</i> want to train your data on my habitual subject/verb disagreements and weird spelling, knock yourself out.</small>
+	<p>
+		For now you probably want the <a href="/posts/">blog archives</a>, but maybe you would like to
+		know <a href="/about">who I am</a>. The <a href="/feed.xml">RSS feed</a> is only marginally less
+		attractive.
+	</p>
 </BlogPost>

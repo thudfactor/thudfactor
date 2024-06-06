@@ -1,6 +1,7 @@
 ---
 import Base from "@layouts/Base.astro";
 import Content from "@components/Content.astro";
+import EndMark from "@components/PageItems/EndMark.astro";
 
 interface Props {
 	title: string;
@@ -16,5 +17,6 @@ const { title, description } = Astro.props;
 <Base title={title} description={description}>
 	<Content {...Astro.props}>
 		<slot />
+		<EndMark />
 	</Content>
 </Base>

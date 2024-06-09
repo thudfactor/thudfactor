@@ -8,11 +8,6 @@ import MainSidebar from "@components/PageItems/MainSidebar.astro";
 const { title, description } = Astro.props;
 ---
 
-<style>
-	#base-grid {
-		font-size: var(--font-size-1);
-	}
-</style>
 <Page title={title} description={description}>
 	<SkipNav />
 	<div id="base-grid">

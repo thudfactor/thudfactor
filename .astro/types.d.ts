@@ -313,6 +313,13 @@ declare module 'astro:content' {
   collection: "posts";
   data: InferEntrySchema<"posts">
 } & { render(): Render[".mdx"] };
+"2024/06/vim-2/index.mdx": {
+	id: "2024/06/vim-2/index.mdx";
+  slug: "2024/06/vim-2";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".mdx"] };
 };
 
 	};

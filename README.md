@@ -1,68 +1,42 @@
-# Astro Starter Kit: Blog
+Hi!
 
-```sh
-npm create astro@latest -- --template blog
-```
+## I am not a composer
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/blog)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/blog)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/blog/devcontainer.json)
+My name is John Williams, but I am not a composer or a conductor. Sorry about that — it disappoints a lot of people.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Funny story. For as far back as I can remember people have made jokes about me writing the music for _Star Wars_. Occasionally people mix it up and say _Harry Potter_ or _Jurassic Park_. But a few months ago I went through a Dunkin’ Donuts drive-through to pick up an order. The app only puts part of my name on the order sheet — “JOHN W” or some nonsense. The guy at the window says “hey, what’s your name again?”
 
-![blog](https://github.com/withastro/astro/assets/2244813/ff10799f-a816-4703-b967-c78997e8323d)
+“John Williams,” I say, and think _here it comes again_. He laughs and says says “I was hoping it was John Wick!”
 
-Features:
+It’s always nice to hear a new one.
 
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and OpenGraph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
+## From Typesetting to Web Development
 
-## 🚀 Project Structure
+Anyway, I am John Williams the famous _web developer_. I’ve been making web sites [almost from the start](http://localhost:4321/posts/2023/11/goodbye-postcss/). I am so old my earliest sites pre-date CSS. Heck, they pre-date `<table>`. — I remember the earliest debates about table layout. “Tables are for data,” said one side. “But how else can we get a sidebar?” said the other, and that side persevered until better options were available.
 
-Inside of your Astro project, you'll see the following folders and files:
+Because there _was_ no typical path towards web development, I came to the industry sideways through typesetting. I worked summers at my hometown newspaper using QuarkXPress to reproduce ad layouts. We’d print those on a very high-resolution printer, then I’d take a razor blade and [adhesive wax machine](https://www.forgottenartsupplies.com/?what=artifacts&image_id=46&cat=53), cut the ad out, and stick it to a broadsheet. From there it went to the camera room, and then the press. It was an odd mix of technologies, but it worked pretty well.
 
-```text
-├── public/
-├── src/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   └── pages/
-├── astro.config.mjs
-├── README.md
-├── package.json
-└── tsconfig.json
-```
+The web became commercially relevant just as I was graduating from college, so the newspaper hired me to make and run their first web site. This I built with the aid of [BBEdit](https://www.barebones.com/products/bbedit/) and [UserLand Frontier](https://en.wikipedia.org/wiki/UserLand_Software). I used Frontier on my local computer to build the site anew each morning, and pushing the resulting HTML up through a 9600 baud modem.
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Evolving with the Web
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+The web has changed a lot since then. It’s become professional and specialized. For most of my career I’ve stayed in front-end publishing, but in the last few years I’ve slid over to the UI Engineering side of things.
 
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
+It has always been a struggle to keep up, but here in the 2020’s things are really hopping. It’s the most exciting time since the birth of the Web, and I am thrilled to still be here learning new things every day and sharing them as much as I can with the small circle of people around me.
 
-Any static assets, like images, can be placed in the `public/` directory.
+Now you are in that circle! 🎉
 
-## 🧞 Commands
+## Embracing Agile Development
 
-All commands are run from the root of the project, from a terminal:
+I’m also dedicated to agile development processes, serving as my team’s Scrum master. I get to add letters after my name in some contexts. Those letters are [“A-CSM” and “CSPO.”](https://www.scrumalliance.org/community/profile/jwilliams194)
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+What the technology industry calls “agile” a lot of other people call “making stuff.” I came out of the humanities, not traditional computer science education, so when everyone started buzzing about this “agile” stuff I took a look at it and it seemed real dang familiar. I [wrote about that elsewhere](https://www.elfinjohn.com/2019/05/what-studying-the-humanities-taught-me-about-software-development/), if you’re interested. But long story short, most agile frameworks are just the typical creative process scaled up for teams with some process guardrails and a thick buzzword frosting. I will likely discuss that from time to time.
 
-## 👀 Want to learn more?
+## Me, elsewhere
 
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- [ElfinJohn](https://elfinjohn.com) is my portfolio site. It’s not been updated in awhile, really, because it covers a lot of my “working at an agency” life. I now live the “B2B SAAS” life, which makes for a lot fewer pretty pictures.
+- [FilmHydra](https://www.filmhydra.com) is my movie blog. Remember, I said I came from the humanities? Every so often I feel the need to write something about a movie, and that’s the place. My recent favorites are [this review on _Carnival of Souls_](https://www.filmhydra.com/movies/1960/carnival-of-souls/) and [_Dracula vs Frankenstein_](https://www.filmhydra.com/movies/1970/dracula-vs-frankenstein/)
+- You can also follow me on [Letterboxd](https://letterboxd.com/thudfactor/), a movie-focused social media site, but [Mastodon](https://hachyderm.io/@thudfactor) is my social media of choice.
+- Like that very first newspaper website, _Thudfactor_ is built using a scripting toolkit with only static pages pushed up to the web host. You can read more about that on my [Using page](/using). For a more up-to-date sense of what’s going through my head, you can check out the [Now page](/now).
 
-## Credit
-
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+Thanks for sticking around. As the YouTubers say, be sure to Like and Subscribe. Well, it’s kinda hard to “like” something here, but if you have an RSS reader you [can certainly subscribe](/feed.xml).

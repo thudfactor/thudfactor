@@ -1,3 +1,4 @@
+@supports selector( & ) {
 :root {
 	font-family: var(--font-sans);
 }
@@ -94,4 +95,5 @@ a {
 h2 a {
 	text-decoration-thickness: 2px;
 	text-underline-offset: 0.1em;
+}
 }

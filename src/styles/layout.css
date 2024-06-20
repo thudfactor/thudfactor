@@ -1,3 +1,4 @@
+@supports selector( & ) {
 html,
 body {
 	min-height: 100%;
@@ -47,4 +48,41 @@ body {
 			height: 100%;
 		}
 	}
+}
+
+#main-nav {
+ul,
+  li {
+		margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		li {
+			line-height: var(--font-lineheight-3);
+			letter-spacing: var(--font-letterspacing-1);
+			padding-block: var(--size-1);
+
+			&:has(.active) {
+				background-image: linear-gradient(to right, var(--stone-5) 0, 70%, var(--stone-3) 100%);
+				background-color: var(--stone-3);
+			}
+		}
+		a {
+			text-decoration-color: hsl(0 0% 0% / 0);
+			color: black;
+			font-weight: var(--font-weight-6);
+			transition: text-decoration-color 0.2s ease-out;
+
+			&.active {
+				&:before {
+					content: "❇︎";
+					display: inline-block;
+					top: 0;
+					left: 0;
+					width: 1.7ch;
+}
+
+}
+}
+}
 }

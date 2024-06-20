@@ -5,8 +5,6 @@ const { post } = Astro.props;
 const { cover, date, description, title } = post.data;
 ---
 
-{
-	(
 		<div class="teaser-card">
 			<div class="teaser-image">
 				{cover && (
@@ -28,5 +26,3 @@ const { cover, date, description, title } = post.data;
 				<p>{description}</p>
 			</div>
 		</div>
-	)
-}

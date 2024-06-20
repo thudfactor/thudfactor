@@ -1,3 +1,4 @@
+@supports selector( & ) {
 article {
 	container-type: inline-size;
 	container-name: article;
@@ -207,4 +208,11 @@ article {
 			margin-bottom: 0;
 		}
 	}
+}
+}
+
+@supports not ( & ) {
+  img {
+    display: none;
+  }
 }

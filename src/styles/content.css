@@ -213,6 +213,30 @@
 			}
 		}
 	}
+
+	.alert-callout {
+		border: 1px var(--stone-6) solid;
+		background-color: var(--stone-2);
+		padding: 1rem;
+		margin-bottom: 1rem;
+
+		display: flex;
+		align-items: baseline;
+		gap: 0.5rem;
+
+		.icon {
+			font-size: var(--font-size-2);
+			line-height: 1;
+		}
+
+		.message {
+			font-size: var(--font-size-0);
+		}
+
+		& p:last-child {
+			margin-bottom: 0;
+		}
+	}
 }
 
 @supports not selector(&) {

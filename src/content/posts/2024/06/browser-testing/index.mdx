@@ -1,0 +1,104 @@
+---
+title: Tne Regrettable State of Cross-Browser Testing
+date: 2024-06-26T09:51:34.000Z
+categories:
+  - WebDev
+tags: post
+description: >-
+  Update-by-default has pushed the platform forward, but has also put browser
+  testing out of reach for many
+cover:
+  src: ./guard.png
+  alt: A very life-like sculpture of a security officer.
+  description: >-
+    Marc Sijan's "Security Officer," a resin sculpture installed at the Baird
+    Center in Milwaukee. It took me a couple of days before I noticed this guy
+    never moved.
+attribution:
+  name: Photo by John Williams
+---
+import ArticleImage from "@components/ArticleImage.astro";
+import ArticleFigure from "@components/ArticleFigure.astro";
+import AlertCallout from "@components/AlertCallout.astro";
+
+<ArticleFigure
+	image={import("./borked.png")}
+	alt="The website layout for this site, with all page layout items in very narrow columns only a few characters wide."
+	variant="right"
+>
+	There's slightly broken, and then there's this.
+</ArticleFigure>
+
+When I shared my last post on Mastodon (about the perceived ["slow" adoption of new CSS](https://www.thudfactor.com/posts/2024/06/new-hotness/)), I got a lot of great interaction. But I also got a few bug reports about my site design. I am not enormously concerned about supporting older browsers or unusual browsers, but the experience was more than I could stomach.
+
+Just in case you were wondering, _this_ is an excellent way to report that someone's website is borked (thank you!):
+
+> Heads up: On Firefox 115.12.0esr (Debian 12 system version) the page layout is broken (at all viewport widths)?
+
+This likely to get you blocked:
+
+> Why do I get the impression you are either a chrome fan, into the newest, hottest shit, or one of those mobile-first people? :-P
+
+(If you are an indie web person and/or just getting started in web development and someone speaks to you this way, absolutely block, block, block. It's not you, it's them.)
+
+This specific problem occurred because I was (and am still) using [native CSS nesting](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_nesting) instead of running my CSS through a pre-processor. However, I am using the _old_ syntax, which has been generally well-supported across all modern browsers for just shy of a year. Most people don't have any problem seeing this because browsers all push updates by default, the status quo for many, many years now.
+
+The folks having problems with this design were all running the [Firefox Extended Support Release](https://www.mozilla.org/en-US/firefox/enterprise/), locked at the time to version 115 — two releases behind the native CSS nesting support. Of course, Mozilla doesn't make it easy to determine what version ESR is running. A Mastodonian helpfully linked to a third-party site explaining the update schedule for the ESR releases.
+
+Third party!
+
+But yes, "best practice" says I _should_ test the site in many browsers and many different versions. But I don't. Not this site, anyway, for two reasons:
+
+1. I have limited time and no one is paying me for any of this work.
+2. It is either very difficult or extremely expensive these days to test in the full browser selection, let alone many different versions.
+
+## Options for browser testing
+
+If you develop on a Mac, you can easily test using:
+
+- Firefox
+- Safari
+- Chrome
+- Chromium-based Microsoft Edge (Yes, really!)
+
+If you develop on Windows you can test using:
+
+- Firefox
+- Chrome
+- Chromium-based Microsoft Edge
+
+With effort, Mac and Windows developers can test on a simulated version of Android browsers using the Android developer toolkit, which is neither a simple or pleasant experience. As far as I know, the only desktop-based simulator for iOS is in the Mac-only Xcode.
+
+Once upon a time you could run multiple versions of a web browser on your own machine, with no need for Docker, but I don't think it's worked that way for any of them for many years now.
+
+I have been told that you can do live browser testing using [Playwright](https://playwright.dev/), but I haven't tried that out yet. I do have some experience with Playwright, though, and the effort involved in the setup is not trivial.
+
+I was able to lean on my experience with Docker to pull and run a virtual machine locally with Firefox 115 on it to verify my "fix" worked. That is also not a trivial task for someone unfamiliar with Docker, and it was (at least) frustrating for me.
+
+In order to do a handful of minutes of testing I now have an Android developer toolkit, the full Xcode application, and Docker Firefox image all installed on my machine. _This is nuts._
+
+Yeah, there's BrowserStack, but that's 39.00/month. Out of reach for many independent hobby-level developers. Certainly more than I want to pay for the tiny amount of time I need to use it. I tried a competitor, but once I'd signed up for the free tier I discovered that live testing was limited to three-minute sessions and was subjected to the full-court press of commercial sales efforts.
+
+Cross-browser testing is not easy. Or cheap.
+
+## The Indie Web is going to have rough edges
+
+All told, I suppose I spent most of a Saturday morning isolating the cause of this issue, implementing a rough "fix" (not really a fix, just a very simple fallback), and then verifying that the change worked. In my professional environment, where I have the support of a team and access to paid, professional tools, the work would have taken a lot less time in addition to being paid. But on my personal work, it's just me responsible for the design, the implementation, the testing, the dev ops, the writing, and most of the photography. I like doing this stuff, but I feel pretty stretched and the things I know I _should_ is larger than the things I have _time_ to do by several orders of magnitude.
+
+That has to be even more difficult for beginners or folks dabbling in making websites. The surface level of web development is easy to get ahold of, but the attack surface for critique is massive. Is the HTML semantic? Is the site accessible? Did you choose tooling (Wordpress, NextJS, Tailwind, Substack) that people have a technical or political beef with? Did you use vanilla CSS and JavaScript? Did you use _any_ JavaScript? Did you use versions of it that were old enough? Is your site contributing too much to greenhouse emissions because your images aren't properly compressed? Did you use an AI image somewhere?
+
+It's real easy to see how people might decide that it's not worth the scrutiny. We need to be sensitive to that if we want independent creators writing stuff. Especially without expectation of it being monetized or it turning into a side hustle.
+
+As far as browser testing goes, the _typical_ user experience is having one of the Big Three browsers installed and on something relatively close to the most recent version. Unless you are on quite old tech, you have to work _not_ to upgrade. If you are limited by old tech you cannot afford to update, you are using an environment that is now difficult and time-consuming to emulate.
+
+The solution is _not_ to limit ourselves to markup, layouts, and CSS features available circa 2007 (a suggestion I actually got). For all the device compatibility the new stuff has, it was also _much_ more difficult to make accessible. Oh, and required much more extensive browser testing! (Anyone who thinks float-based layouts are "bulletproof" has never had to support IE 6, I assume.)
+
+<AlertCallout>
+	IE 6 was released in 2001, and superseded by IE 7 in 2006. In practice, however, many of us ended
+	up supporting IE 6 well into the 2010s.
+</AlertCallout>
+
+I don't even know what the solution is for website backwards compatibility, at least for the indie web producer. If it's live cross-browser, cross-version testing, it will need to be something at least as easy to use as BrowserStack but much less expensive.
+
+In the meantime, some patience and tolerance will go a long way. On the indie web, people do what they can with the time and resources they have, and what they give us is usually a gift. Please don't respond to that gift with a sneer or a scowl because of technical decisions _you_ have made. Remember to keep your bug reports concise, include the browser type and version, and the OS. And don't be surprised to find out there's very little they are equipped to do.
+

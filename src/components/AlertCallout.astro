@@ -7,5 +7,10 @@ const { variant = "info" } = Astro.props;
 ---
 
 <aside class=`alert-callout ${variant}`>
+  <div class="icon">
+     💁🏻‍♂️
+  </div>
+  <div class="message">
 	<slot />
+  </div>
 </aside>

@@ -334,6 +334,13 @@ declare module 'astro:content' {
   collection: "posts";
   data: InferEntrySchema<"posts">
 } & { render(): Render[".mdx"] };
+"2024/07/domain-shift/index.mdx": {
+	id: "2024/07/domain-shift/index.mdx";
+  slug: "2024/07/domain-shift";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".mdx"] };
 };
 
 	};

@@ -138,6 +138,13 @@ declare module 'astro:content' {
 		"pages": {
 };
 "posts": {
+"2019/11/humanities/index.mdx": {
+	id: "2019/11/humanities/index.mdx";
+  slug: "2019/11/humanities";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".mdx"] };
 "2023/06/article-typography/index.mdx": {
 	id: "2023/06/article-typography/index.mdx";
   slug: "2023/06/article-typography";

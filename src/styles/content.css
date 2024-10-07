@@ -92,6 +92,12 @@ blockquote p:last-of-type {
 	margin-bottom: 0;
 }
 
+blockquote cite {
+	display: block;
+	text-align: right;
+	margin-top: var(--size-1);
+}
+
 figure {
 	width: fit-content;
 	padding: 1rem;
@@ -169,6 +175,22 @@ figcaption p:last-child {
 	object-fit: cover;
 	width: 100%;
 	height: 100%;
+}
+
+.pullquote {
+	margin-block: var(--size-3);
+	line-height: 1.4;
+	font-size: var(--font-size-5);
+
+	> p {
+		line-height: 1.4;
+		font-size: var(--font-size-5);
+	}
+	@container article (min-width: 38rem) {
+		float: right;
+		max-width: 380px;
+		margin: 0 0 var(--size-3) var(--size-6);
+	}
 }
 
 #page-hero {

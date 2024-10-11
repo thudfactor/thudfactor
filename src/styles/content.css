@@ -186,6 +186,7 @@ figcaption p:last-child {
 		line-height: 1.4;
 		font-size: var(--font-size-5);
 	}
+
 	@container article (min-width: 38rem) {
 		float: right;
 		max-width: 380px;

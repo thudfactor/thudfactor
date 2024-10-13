@@ -10,7 +10,7 @@ iframe[src*="youtube.com"] {
 }
 
 article p {
-	font-size: var(--font-size-2);
+	font-size: var(--font-size-3);
 	margin-bottom: var(--size-3);
 	line-height: var(--font-lineheight-4);
 }
@@ -49,6 +49,7 @@ h3,
 h4,
 h5,
 h6 {
+	font-family: var(--font-serif);
 	margin-block: var(--size-4) var(--size-3);
 }
 
@@ -70,7 +71,7 @@ dl {
 	margin-block: var(--size-3);
 }
 
-li {
+article li {
 	line-height: var(--font-lineheight-4);
 }
 
@@ -102,6 +103,7 @@ figure {
 	width: fit-content;
 	padding: 1rem;
 	background-color: var(--stone-2);
+	margin-bottom: 2rem;
 }
 
 figure.right {
@@ -129,7 +131,7 @@ figcaption {
 }
 
 figcaption p {
-	font-size: var(--font-size-0);
+	font-size: var(--font-size-2);
 	line-height: var(--font-lineheight-2);
 }
 
@@ -181,6 +183,7 @@ figcaption p:last-child {
 	margin-block: var(--size-3);
 	line-height: 1.4;
 	font-size: var(--font-size-5);
+	font-family: var(--font-serif);
 
 	> p {
 		line-height: 1.4;
@@ -195,8 +198,8 @@ figcaption p:last-child {
 }
 
 #page-hero {
-	margin-inline: calc(var(--size-6) * -1);
-	margin-block: 0 1rem;
+	margin-top: calc(-1 * var(--size-1));
+	padding: 0;
 }
 
 #page-hero .figcontents {

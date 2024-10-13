@@ -1,4 +1,8 @@
 :root {
+	--font-sans: Seravek, "Gill Sans Nova", Ubuntu, Calibri, "DejaVu Sans", source-sans-pro,
+		sans-serif;
+	--font-serif: Rockwell, "Rockwell Nova", "Roboto Slab", "DejaVu Serif", "Sitka Small", serif;
+	font-weight: normal;
 	font-family: var(--font-sans);
 }
 

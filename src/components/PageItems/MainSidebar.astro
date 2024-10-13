@@ -2,14 +2,6 @@
 import MainNav from "./MainNav/index.astro";
 ---
 
-<style>
-	#main-sidebar {
-		background-color: var(--stone-5);
-		padding-block: var(--size-1);
-		padding-inline-start: var(--size-6);
-		background-image: linear-gradient(to left, var(--stone-6), var(--stone-5) 2%);
-	}
-</style>
 <section id="main-sidebar">
 	<MainNav />
 	<slot name="sidebar" />

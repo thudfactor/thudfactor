@@ -11,10 +11,10 @@ interface Props {
 	cover?: any;
 }
 
-const { title, description } = Astro.props;
+const { title, description, cover } = Astro.props;
 ---
 
-<Base title={title} description={description}>
+<Base title={title} description={description} cover={cover}>
 	<Content {...Astro.props}>
 		<slot />
 		<EndMark />

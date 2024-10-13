@@ -5,10 +5,10 @@ import Footer from "@components/PageItems/Footer.astro";
 import SkipNav from "@components/PageItems/SkipNav.astro";
 import MainSidebar from "@components/PageItems/MainSidebar.astro";
 
-const { title, description } = Astro.props;
+const { title, description, cover } = Astro.props;
 ---
 
-<Page title={title} description={description}>
+<Page title={title} description={description} cover={cover}>
 	<SkipNav />
 	<div id="base-grid">
 		<Header />

@@ -4,10 +4,10 @@ import Content from "@components/Content.astro";
 
 const pageProps = Astro.props.frontmatter || Astro.props;
 
-const { title, description } = pageProps;
+const { title, description, cover } = pageProps;
 ---
 
-<Base title={title} description={description}>
+<Base title={title} description={description} cover={cover}>
 	<Content {...pageProps}>
 		<slot />
 	</Content>

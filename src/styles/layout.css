@@ -24,12 +24,13 @@ body {
 	grid-row: 1 / 2;
 }
 
-#base-grid #main-sidebar {
+#main-sidebar {
 	grid-row: 2 / 3;
 	background-color: var(--stone-9);
+	border-radius: 1rem 1rem 0 0;
 }
 
-#base-grid main {
+main {
 	grid-row: 3 / 4;
 }
 

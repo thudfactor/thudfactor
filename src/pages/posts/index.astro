@@ -13,5 +13,7 @@ const posts = (await getCollection("posts"))
 ---
 
 <BlogPost title={title} description={description} date={date}>
-	{posts.map(post => <Teaser post={post} />)}
+	<div class="pagination-grid">
+		{posts.map(post => <Teaser post={post} />)}
+	</div>
 </BlogPost>

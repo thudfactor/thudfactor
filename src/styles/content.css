@@ -50,7 +50,7 @@ h4,
 h5,
 h6 {
 	font-family: var(--font-serif);
-	margin-block: var(--size-4) var(--size-3);
+	margin-block: var(--size-7) var(--size-3);
 }
 
 h2 {
@@ -72,7 +72,9 @@ dl {
 }
 
 article li {
+	font-size: var(--font-size-2);
 	line-height: var(--font-lineheight-4);
+	max-width: 66ch;
 }
 
 blockquote {
@@ -139,19 +141,27 @@ figcaption p:last-child {
 	margin-bottom: 0;
 }
 
-.teaser-card {
-	margin-bottom: var(--size-8);
+.pagination-grid {
 	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+	grid-template-rows: min-content min-content;
+	gap: 1rem;
+}
 
-	grid-template-columns: 1fr;
-	grid-template-rows: auto auto;
+.teaser-card {
+	display: grid;
+	grid-template-rows: subgrid;
+	grid-row: span 2;
+}
 
-	gap: var(--size-4);
+.teaser-image {
+	grid-row: 1 / 2;
+	grid-column: 1 / -1;
+}
 
-	@container article (min-width: 460px) {
-		grid-template-rows: 1fr;
-		grid-template-columns: 31% 1fr;
-	}
+.teaser-content {
+	grid-row: 2 / 3;
+	grid-column: 1 / -1;
 }
 
 .teaser-card h2 {
@@ -200,10 +210,14 @@ figcaption p:last-child {
 #page-hero {
 	margin-top: calc(-1 * var(--size-1));
 	padding: 0;
+	background-color: var(--stone-4);
+	border-radius: 0 0 1rem 1rem;
 }
 
 #page-hero .figcontents {
 	position: relative;
+	border-radius: 0 0 1rem 1rem;
+	overflow: hidden;
 }
 
 #page-hero .figcontents .title {
@@ -219,9 +233,8 @@ figcaption p:last-child {
 }
 
 #page-hero img {
-	max-width: 100%;
-	width: 1020px;
-	height: auto;
+	max-width: max(100%, 1020px);
+	aspect-ratio: 16 / 9;
 	object-fit: cover;
 }
 
@@ -230,7 +243,6 @@ figcaption p:last-child {
 	margin-top: 0;
 	padding-inline: var(--size-6);
 	padding-block: var(--size-4);
-	background-color: var(--stone-4);
 }
 #page-hero figcaption span {
 	margin-top: var(--size-2);

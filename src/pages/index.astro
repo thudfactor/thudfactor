@@ -1,5 +1,7 @@
 ---
 import BlogPost from "../layouts/BlogPost.astro";
+import { getCollection } from "astro:content";
+import Teaser from "@components/PageItems/Teaser/index.astro";
 const title = "Welcome to Thudfactor";
 const date = new Date("2024-02-28T07:53:27-04:00");
 const updatedDate = new Date("2024-05-30T07:08:27-04:00");
@@ -13,6 +15,11 @@ const cover = {
 		name: "John Williams",
 	},
 };
+
+const posts = (await getCollection("posts"))
+	.sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf())
+	.reverse()
+	.slice(0, 6);
 ---
 
 <BlogPost
@@ -27,4 +34,10 @@ const cover = {
 		know <a href="/about">who I am</a>. The <a href="/feed.xml">RSS feed</a> is only marginally less
 		attractive.
 	</p>
+	<div class="pagination-grid">
+		{posts.map(post => <Teaser post={post} />)}
+	</div>
+	<div style="text-align: center;">
+		<a href="/posts/">More posts…</a>
+	</div>
 </BlogPost>

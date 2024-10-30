@@ -194,6 +194,16 @@ figcaption p:last-child {
 	line-height: 1.4;
 	font-size: var(--font-size-5);
 	font-family: var(--font-serif);
+	color: var(--cyan-9);
+	border: 8px currentColor solid;
+	padding: var(--size-3);
+	border-image-source: linear-gradient(
+		135deg,
+		var(--cyan-9) 0,
+		var(--cyan-7) 44%,
+		hsl(from var(--cyan-6) h s l / 0) 48%
+	);
+	border-image-slice: 1;
 
 	> p {
 		line-height: 1.4;

@@ -4,21 +4,6 @@ import Hero from "./ContentItems/Hero/index.astro";
 const { title, date, updatedDate, cover } = Astro.props;
 ---
 
-<style>
-	@layer content {
-		.title-container {
-			img {
-				width: 100%;
-				height: auto;
-			}
-
-			p {
-				font-size: var(--font-size-1);
-				color: var(--stone-8);
-			}
-		}
-	}
-</style>
 <article>
 	<div class="title-container">
 		{

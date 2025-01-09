@@ -3,12 +3,4 @@ import { Image } from "astro:assets";
 const { image, alt, align } = Astro.props;
 ---
 
-<style>
-	.right {
-		float: right;
-		max-width: 41%;
-		height: auto;
-		margin: 0.5rem 0 0.5rem 0.5rem;
-	}
-</style>
 <Image width="900" src={image} alt={alt} class={align} />

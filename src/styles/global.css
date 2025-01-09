@@ -1,9 +1,3 @@
 @layer openprops, theme, layout, components, content, utilities, samples;
 
-@import "open-props/style" layer(openprops);
 @import "./theme.css" layer(theme);
-@import "./layout.css" layer(layout);
-@import "./content.css" layer(content);
-
-
-

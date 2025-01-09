@@ -3,36 +3,6 @@ import { SITE_TITLE, SITE_VALUE_STATEMENT } from "../../consts";
 import FormattedDate from "../FormattedDate.astro";
 ---
 
-<style>
-	header {
-		padding-block: var(--size-9) var(--size-3);
-	}
-	#Home {
-		display: flex;
-		justify-content: center;
-		align-items: baseline;
-		gap: var(--size-3);
-		text-decoration: none;
-		color: inherit;
-		width: 100%;
-	}
-	svg {
-		height: 2rem;
-		width: auto;
-	}
-	.site-title {
-		font-size: var(--font-size-5);
-		font-weight: var(--font-weight-8);
-	}
-	.site-updated {
-		display: block;
-		text-align: center;
-		font-size: var(--font-size-1);
-		font-style: italic;
-		font-weight: var(--font-weight-2);
-		color: var(--stone-8);
-	}
-</style>
 <header role="banner">
 	<a id="Home" href="/">
 		<svg

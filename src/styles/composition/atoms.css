@@ -39,6 +39,21 @@ img:not([class]) {
 	height: auto;
 }
 
+a:not([class]) {
+	transition: color 0.3s;
+	text-decoration: underline;
+	text-decoration-color: var(--color-indigo-200);
+	text-decoration-thickness: max(1px, 0.08ch);
+}
+
+a:is(:link, :visited) {
+	color: var(--color-blue-700);
+}
+
+a:hover {
+	color: var(--color-fuchsia-700);
+}
+
 /* Set default svg size so it behaves more like icons */
 svg:not([class]) {
 	width: auto;
@@ -47,12 +62,16 @@ svg:not([class]) {
 
 /* Layouts */
 
+article {
+	max-width: 60ch;
+}
+
 .flow > * {
 	margin-block: 0;
 }
 
 .flow > * + * {
-	margin-block-start: var(--spacing-l);
+	margin-block-start: var(--flow-gap, --spacing-xs);
 }
 
 .box {

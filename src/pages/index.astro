@@ -34,7 +34,7 @@ const posts = (await getCollection("posts"))
 		know <a href="/about">who I am</a>. The <a href="/feed.xml">RSS feed</a> is only marginally less
 		attractive.
 	</p>
-	<div class="pagination-grid">
+	<div class="flow">
 		{posts.map(post => <Teaser post={post} />)}
 	</div>
 	<div style="text-align: center;">

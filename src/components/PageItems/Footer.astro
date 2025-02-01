@@ -2,9 +2,15 @@
 const today = new Date();
 ---
 
-<footer>
-	©️ 2023–{today.getFullYear()} J H Williams |
-	<a href="https://github.com/thudfactor" rel="me">Github</a> |
-	<a href="https://hachyderm.io/@thudfactor" rel="me">Mastodon</a>i |
-	<a href="https://www.thudfactor.com/feed.xml">RSS Feed</a>
+<style>
+	#pageFooter {
+		--cluster-justify: space-between;
+	}
+</style>
+<footer id="pageFooter" class="cluster">
+	<div>©️ 2023–{today.getFullYear()} J H Williams</div>
+	<div role="list" class="cluster">
+		<a href="https://github.com/thudfactor" rel="me">Github</a>
+		<a href="https://hachyderm.io/@thudfactor" rel="me">Mastodon</a>
+	</div>
 </footer>

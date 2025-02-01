@@ -5,24 +5,21 @@ const { post } = Astro.props;
 const { cover, date, description, title } = post.data;
 ---
 
-		<div class="teaser-card">
-			<div class="teaser-image">
-				{cover && (
-					<ArticleImage
-						width={cover.width}
-						height={cover.height}
-						image={cover.src}
-						alt={cover.alt}
-					/>
-				)}
-			</div>
-			<div class="teaser-content">
-				<small>
-					<FormattedDate date={date} />
-				</small>
-				<h2 class="title">
-					<a href={`/posts/${post.slug}/`}>{title}</a>
-				</h2>
-				<p>{description}</p>
-			</div>
-		</div>
+<div class="teaser-card">
+	<div class="teaser-image">
+		{
+			cover && (
+				<ArticleImage width={cover.width} height={cover.height} image={cover.src} alt={cover.alt} />
+			)
+		}
+	</div>
+	<div class="teaser-content">
+		<small>
+			<FormattedDate date={date} />
+		</small>
+		<h2>
+			<a href={`/posts/${post.id}/`}>{title}</a>
+		</h2>
+		<p>{description}</p>
+	</div>
+</div>

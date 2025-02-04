@@ -4,7 +4,7 @@ import Hero from "./ContentItems/Hero/index.astro";
 const { title, date, updatedDate, cover } = Astro.props;
 ---
 
-<article class="center flow">
+<div class="flow">
 	<div class="title-container">
 		{
 			cover && (
@@ -15,7 +15,7 @@ const { title, date, updatedDate, cover } = Astro.props;
 		}
 		{!cover && <Title date={date} updatedDate={updatedDate} title={title} />}
 	</div>
-	<div>
+	<article class="flow">
 		<slot />
-	</div>
-</article>
+	</article>
+</div>

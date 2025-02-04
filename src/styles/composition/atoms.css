@@ -60,19 +60,68 @@ svg:not([class]) {
 	height: 1lh;
 }
 
-/* Layouts */
-
-article {
-	max-width: 60ch;
+/* These should be monospaced and also need to be adjusted down a bit because
+monospace fonts typically look larger */
+code,
+kbd,
+samp {
+	font-family: var(--font-mono);
+	font-size: 0.9em;
+	background-color: var(--color-stone-200);
 }
+
+del {
+	text-decoration-color: var(--color-red-700);
+}
+
+ins {
+	text-decoration-style: wavy;
+	text-decoration-color: var(--color-green-700);
+}
+
+cite {
+	font-style: italic;
+}
+
+blockquote {
+	margin-inline: var(--spacing-m);
+	padding-inline-start: var(--spacing-s);
+	border-inline-start: 1px var(--color-stone-200) solid;
+	border-inline-start-width: var(--spacing-3xs);
+}
+
+blockquote > q {
+	font-size: var(--text-base);
+}
+
+blockquote footer {
+	text-align: right;
+	font-style: italic;
+
+	&:before {
+		content: "— ";
+	}
+
+	:is(cite, i, em) {
+		font-style: normal;
+	}
+}
+
+* + h2 {
+	margin-block-start: 2em;
+}
+
+/* Flow */
 
 .flow > * {
 	margin-block: 0;
 }
 
 .flow > * + * {
-	margin-block-start: var(--flow-gap, --spacing-xs);
+	margin-block-start: var(--flow-gap, var(--spacing-s));
 }
+
+/* box */
 
 .box {
 	padding: var(--box-padding, --spacing-s);
@@ -91,6 +140,8 @@ article {
 	color: var(--color-light);
 	background-color: var(--color-dark);
 }
+
+/* center */
 
 .center {
 	box-sizing: content-box;
@@ -113,3 +164,23 @@ article {
 .cluster[role="list"] {
 	--cluster-gap: 0.5ch;
 }
+
+/* Sidebar */
+
+.with-sidebar {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--s1);
+}
+
+.with-sidebar > :first-child {
+	flex-grow: 1;
+}
+
+.with-sidebar > :last-child {
+	flex-basis: 0;
+	flex-grow: 999;
+	min-inline-size: 50%;
+}
+
+/* */

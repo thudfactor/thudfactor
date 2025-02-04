@@ -1,5 +1,4 @@
 :root {
-	font-weight: normal;
 	font-family: var(--font-sans);
 }
 
@@ -40,22 +39,25 @@ img:not([class]) {
 }
 
 a:not([class]) {
-	transition: color 0.3s;
+	transition-property: color, text-decoration-color;
+	transition-duration: 0.3s;
 	text-decoration: underline;
-	text-decoration-color: var(--color-indigo-200);
-	text-decoration-thickness: max(1px, 0.08ch);
+	text-decoration-color: var(--color-indigo-400);
+	text-decoration-thickness: from-font;
+	outline-offset: var(--spacing-3xs);
 }
 
-a:is(:link, :visited) {
-	color: var(--color-blue-700);
+a:not([class]):is(:link, :visited) {
+	color: inherit;
+	/* color: var(--color-blue-700); */
 }
 
-a:hover {
+a:not([class]):is(:hover) {
 	color: var(--color-fuchsia-700);
 }
 
 /* Set default svg size so it behaves more like icons */
-svg:not([class]) {
+svg:not([class]):not([role="img"]) {
 	width: auto;
 	height: 1lh;
 }
@@ -64,7 +66,8 @@ svg:not([class]) {
 monospace fonts typically look larger */
 code,
 kbd,
-samp {
+samp,
+var {
 	font-family: var(--font-mono);
 	font-size: 0.9em;
 	background-color: var(--color-stone-200);
@@ -107,8 +110,8 @@ blockquote footer {
 	}
 }
 
-* + h2 {
-	margin-block-start: 2em;
+.flow > * + :is(h2, h3, h4, h5, h6) {
+	margin-block-start: var(--spacing-lg);
 }
 
 /* Flow */
@@ -124,7 +127,7 @@ blockquote footer {
 /* box */
 
 .box {
-	padding: var(--box-padding, --spacing-s);
+	padding: var(--box-padding, var(--spacing-s));
 	border: var(--box-border-width, 1px) solid var(--color-dark);
 	--color-light: #fff;
 	--color-dark: #000;
@@ -145,7 +148,6 @@ blockquote footer {
 
 .center {
 	box-sizing: content-box;
-	max-inline-size: 60ch;
 	margin-inline: auto;
 	padding-inline: var(--spacing-s);
 	display: flex;
@@ -153,10 +155,12 @@ blockquote footer {
 	align-items: center;
 }
 
+/* cluster */
+
 .cluster {
 	display: flex;
 	flex-wrap: wrap;
-	gap: var(--cluster-gap, --spacing-s);
+	gap: var(--cluster-gap, var(--spacing-s));
 	justify-content: var(--cluster-justify, flex-start);
 	align-items: var(--cluster-align, baseline);
 }
@@ -165,12 +169,22 @@ blockquote footer {
 	--cluster-gap: 0.5ch;
 }
 
+a > .cluster {
+	--cluster-gap: var(--spacing-3xs);
+	--cluster-justify: flex-start;
+	--cluster-align: baseline;
+}
+
+a > .cluster > svg[role="presentation"] {
+	height: 1cap;
+}
+
 /* Sidebar */
 
 .with-sidebar {
 	display: flex;
 	flex-wrap: wrap;
-	gap: var(--s1);
+	gap: var(--sidebar-gap, var(--spacing-m));
 }
 
 .with-sidebar > :first-child {

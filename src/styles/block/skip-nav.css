@@ -1,0 +1,17 @@
+#skip-nav {
+	padding: var(--spacing-s);
+	font-size: var(--text-lg);
+	border: 1px var(--color-stone-700) solid;
+	border-block-start-width: 0;
+	background-color: white;
+	width: fit-content;
+	position: fixed;
+	top: -100%;
+	left: 50%;
+	translate: -50%;
+	transition: top 0.3s;
+}
+
+#skip-nav:has(:focus-visible) {
+	top: 0;
+}

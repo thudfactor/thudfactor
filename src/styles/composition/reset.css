@@ -1,3 +1,7 @@
+* {
+	interpolate-size: allow-keywords;
+}
+
 /* Set Studio reset from https://piccalil.li/blog/a-more-modern-css-reset/ */
 /* Box sizing rules */
 *,

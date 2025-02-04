@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "./fonts.css";
 @import "./composition/reset.css";
+@import "./block/skip-nav.css";
 
 @theme {
 	--font-sans: "Atkinson Hyperlegible", Seravek, "Gill Sans Nova", Ubuntu, Calibri, "DejaVu Sans",

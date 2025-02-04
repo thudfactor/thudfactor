@@ -3,8 +3,8 @@ import { Image } from "astro:assets";
 const { cover } = Astro.props;
 ---
 
-<figure id="page-hero" class="flow">
-	<div class="figcontents">
+<figure class="flow">
+	<div>
 		<Image src={cover.src} alt={cover.alt} />
 		<slot />
 	</div>

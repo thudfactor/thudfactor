@@ -3,8 +3,8 @@ import FormattedDate from "@components/FormattedDate.astro";
 const { date, updatedDate, title } = Astro.props;
 ---
 
-<div class="title flow">
-	<small class="date">
+<div class="flow">
+	<small>
 		{date && <FormattedDate date={date} />}
 		{
 			updatedDate && date !== updatedDate && (

@@ -1,27 +1,8 @@
 ---
 import { SITE_TITLE, SITE_VALUE_STATEMENT } from "../../consts";
-import FormattedDate from "../FormattedDate.astro";
-import MainNav from "../PageItems/MainNav/index.astro";
 ---
 
-<style>
-	header[role="banner"] {
-		--cluster-align: center;
-		--cluster-justify: space-between;
-	}
-	#home {
-		--cluster-gap: var(--spacing-2xs);
-		--cluster-justify: flex-start;
-		--cluster-align: center;
-		line-height: 1;
-		font-family: var(--font-sans);
-		svg {
-			height: 2rcap;
-			fill: var(--color-amber-600);
-		}
-	}
-</style>
-<header role="banner" class="cluster">
+<header id="banner" class="cluster">
 	<div class="flow">
 		<a class="cluster" id="home" href="/">
 			<svg
@@ -40,5 +21,4 @@ import MainNav from "../PageItems/MainNav/index.astro";
 			<span class="site-title">{SITE_TITLE}: {SITE_VALUE_STATEMENT}</span>
 		</a>
 	</div>
-	<MainNav />
 </header>

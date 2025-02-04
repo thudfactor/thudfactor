@@ -10,20 +10,6 @@ const subpath = pathname.match(/[^\/]+/g);
 const isActive = href === pathname || href === "/" + subpath?.[0];
 ---
 
-<style>
-	a.cluster {
-		--cluster-gap: var(--spacing-3xs);
-		--cluster-justify: flex-start;
-		--cluster-align: baseline;
-
-		svg {
-			height: 1rcap;
-		}
-	}
-	a:hover {
-		text-decoration: underline;
-	}
-</style>
 <a
 	href={href}
 	aria-current={isActive ? "page" : undefined}

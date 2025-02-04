@@ -5,17 +5,17 @@ const { title, date, updatedDate, cover } = Astro.props;
 ---
 
 <div class="flow">
-	<div class="title-container">
-		{
-			cover && (
-				<Hero cover={cover}>
-					<Title date={date} updatedDate={updatedDate} title={title} />
-				</Hero>
-			)
-		}
-		{!cover && <Title date={date} updatedDate={updatedDate} title={title} />}
-	</div>
 	<article class="flow">
+		<div class="title-container">
+			{
+				cover && (
+					<Hero cover={cover}>
+						<Title date={date} updatedDate={updatedDate} title={title} />
+					</Hero>
+				)
+			}
+			{!cover && <Title date={date} updatedDate={updatedDate} title={title} />}
+		</div>
 		<slot />
 	</article>
 </div>

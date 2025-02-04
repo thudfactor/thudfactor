@@ -15,14 +15,19 @@ cover:
   attribution:
     name: Ray Harryhausen / United Artists
 ---
-import AlertCallout from '@components/AlertCallout.astro';
-import ArticleFigure from '@components/ArticleFigure.astro';
-import DisplaySettings from './display-settings.png';
+
+import AlertCallout from "@components/AlertCallout.astro";
+import ArticleFigure from "@components/ContentItems/ArticleFigure/index.astro";
+import DisplaySettings from "./display-settings.png";
 
 Some people say Medusa turned people to stone because she was just that ugly. Others portray her as an evil, magical being. Still more claim Medusa was just an unlucky woman cursed by the victim-blaming God Minerva. I have my own theory, which is that Medusa just wanted people to settle down.
 
-<ArticleFigure image={DisplaySettings} alt="Display settings on MacOS, with Reduce Motion, Dim Flashing Lights turned on, and Auto-play Animated Images turned off." align="right">
-The MacOS display settings, which shows many different accessibility options.
+<ArticleFigure
+	image={DisplaySettings}
+	alt="Display settings on MacOS, with Reduce Motion, Dim Flashing Lights turned on, and Auto-play Animated Images turned off."
+	align="right"
+>
+	The MacOS display settings, which shows many different accessibility options.
 </ArticleFigure>
 
 I can sympathize. I am prone to [sensory overload](https://health.clevelandclinic.org/sensory-overload), which is triggered by both motion and sound. Unlike folks with vestibular disorders, I don’t get dizzy, nauseous, or a headache. I instead get tense, anxious, irritable, and withdrawn. That’s why I’ve turned on “reduce motion” for every device that supports it. (It’s also the primary reason I run my browser with ad blockers on — one flashing or auto-playing advertisement on the screen can make the entire page unusable for me.)
@@ -31,13 +36,13 @@ Motion sensitivity is a big problem for a lot of people, but web sites often don
 
 ```css
 @media (prefers-reduced-motion: reduce) {
-  /* alternative, calm animations here */
+	/* alternative, calm animations here */
 }
 
 /* or */
 
 @media (prefers-reduced-motion) {
-  /* alternative, calm animations here */
+	/* alternative, calm animations here */
 }
 ```
 
@@ -45,13 +50,11 @@ If you want to treat animation as a progressive enhancement, you can _add_ anima
 
 ```css
 @media screen and (prefers-reduced-motion: no-preference) {
-  /* your re-implementation of <blink> */
+	/* your re-implementation of <blink> */
 }
 ```
 
-<AlertCallout>
-“No preference” in this context evaluates to “false.”
-</AlertCallout>
+<AlertCallout>“No preference” in this context evaluates to “false.”</AlertCallout>
 
 This media query ties into the accessibility settings on the user’s operating system, so you can test the effect by toggling that feature on and off in your system preferences. Alternatively, there's an emulation switch in Chrome’s developer tools, but if you turn on reduced motion in MacOS display preferences this will override the emulation settings.
 

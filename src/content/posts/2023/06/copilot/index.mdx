@@ -10,7 +10,8 @@ cover:
   alt: The cockpit from Airplane the movie. Left to right, the Autopilot, Elaine, and Ted.
   description: With more experience, Copilot feels less like a different intelligence and more like an inflatable replacement human.
 ---
-import ArticleImage from '@components/ArticleImage.astro';
+
+import ArticleImage from "@components/ContentItems/ArticleImage/index.astro.astro";
 
 I’ve been using Copilot for a few weeks and have thoughts. It’s been helpful in small places, unhelpful in larger ones, and sometimes in the way. In fact, as I write this blog post it is in the way quite a lot.
 
@@ -21,13 +22,25 @@ Some things have indeed become faster since then, but I think he was probably ri
 Any significant improvement software production speed, he argues, would have to come from advancements in how we think about software and what it is we are trying to build. That is, it has to come in the analysis stage, when we are asking WTF we are doing anyway.
 
 > The hardest single part of building a software system is deciding precisely what to build. No other part of the conceptual work is so difficult as establishing the detailed technical requirements, including all the interfaces to people, to machines, and to other software systems. No other part of the work so cripples the resulting system if done wrong. No other part is more difficult to rectify later.
-> <cite>— Frederick P. Brooks<br/>No Silver Bullet: Essence and Accident in Software Engineering</cite>
+>
+> <cite>
+> 	— Frederick P. Brooks
+> 	<br />
+> 	No Silver Bullet: Essence and Accident in Software Engineering
+> </cite>
 
 Copilot is tooling, and imprecise tooling at that. Although it’s better than [IntelliSense](https://code.visualstudio.com/docs/editor/intellisense) at extrapolating what you need to do next, it only has a small part of the picture.
 
 <figure>
-<ArticleImage image={import('./suggestion.png')} alt="Clip of a suggestion from co-pilot while writing this blog post. Text in the caption." />
-<figcaption>Sometimes it doesn’t have any part of the picture. Here, co-pilot tries to write the caption for this post’s cover photo. It suggests completing “the cockpit from Airplane the movie” with the caption “I am serious. And don’t call me Shirley.” That doesn’t match the image at all.</figcaption>
+	<ArticleImage
+		image={import("./suggestion.png")}
+		alt="Clip of a suggestion from co-pilot while writing this blog post. Text in the caption."
+	/>
+	<figcaption>
+		Sometimes it doesn’t have any part of the picture. Here, co-pilot tries to write the caption for
+		this post’s cover photo. It suggests completing “the cockpit from Airplane the movie” with the
+		caption “I am serious. And don’t call me Shirley.” That doesn’t match the image at all.
+	</figcaption>
 </figure>
 
 ## Something that works: refactoring React
@@ -40,23 +53,21 @@ For example, if I have a React element like this…
 
 ```jsx
 const MyComponent = () => {
-  return (
-    <div>
-      <li className="red">One</li>
-      <li className="blue">Two</li>
-      <li className="green">Three</li>
-    </div>
-  );
+	return (
+		<div>
+			<li className="red">One</li>
+			<li className="blue">Two</li>
+			<li className="green">Three</li>
+		</div>
+	);
 };
 ```
 
 …and I decide I want to break those `li` elements into their own components…
 
 ```jsx
-const MyLIComponent = ({color, children}) => {
-  return (
-    <li className={color}>{children}</li>
-  );
+const MyLIComponent = ({ color, children }) => {
+	return <li className={color}>{children}</li>;
 };
 ```
 
@@ -65,24 +76,27 @@ Copilot will tumble to what I am doing pretty quickly. In fact, it completed my 
 That’s not all. After doing that, it figured out I want to replace the old `li` elements with my new component. Watch me just hit tab here in the video as Copilot suggests handle the copy / paste / change values routine.
 
 <figure>
-<video controls width="720">
-  <source src="/video/refactor.mp4" type="video/mp4" />
-  <p>Your browser doesn't support HTML5 video. Here is a <a href="copilot.mp4">link to the video</a> instead.</p>
-</video>
-<figcaption>
-Copilot understands what I am trying to do and helps me out along the way.
-</figcaption>
+	<video controls width="720">
+		<source src="/video/refactor.mp4" type="video/mp4" />
+		<p>
+			Your browser doesn't support HTML5 video. Here is a{" "}
+			<a href="copilot.mp4">link to the video</a> instead.
+		</p>
+	</video>
+	<figcaption>
+		Copilot understands what I am trying to do and helps me out along the way.
+	</figcaption>
 </figure>
 
 ```jsx
 const MyComponent = () => {
-  return (
-    <div>
-      <MyLIComponent color="red">One</MyLIComponent>
-      <MyLIComponent color="blue">Two</MyLIComponent>
-      <MyLIComponent color="green">Three</MyLIComponent>
-    </div>
-  );
+	return (
+		<div>
+			<MyLIComponent color="red">One</MyLIComponent>
+			<MyLIComponent color="blue">Two</MyLIComponent>
+			<MyLIComponent color="green">Three</MyLIComponent>
+		</div>
+	);
 };
 ```
 
@@ -94,11 +108,11 @@ With CSS, the results are rather more dire. Here, I want to make a div that cove
 
 ```css
 .coverContainer {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  background-color: #000;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background-color: #000;
 }
 ```
 
@@ -106,11 +120,11 @@ That … might work. But I hope you didn't want to put anything else in that blo
 
 ```css
 .coverContainer {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  background-color: #000;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background-color: #000;
 }
 ```
 
@@ -118,13 +132,13 @@ Better, but still wrong. Here’s the thing. When containers are positioned abso
 
 ```css
 .coverContainer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  background-color: #000;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background-color: #000;
 }
 ```
 
@@ -132,10 +146,10 @@ Copilot read my last sentence and suggested top and left coordinates. A real imp
 
 ```css
 .coverContainer {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  background-color: #000;
+	position: absolute;
+	inset: 0;
+	overflow: hidden;
+	background-color: #000;
 }
 ```
 
@@ -146,10 +160,15 @@ This is a concern I have with Copilot. Since Copilot has been trained on a heck 
 This is the problem with prompt-based software development. You have to ask for what you want. And, as Brooks pointed out, knowing what you want is tricky and often requires several rounds of conversations and iterations. Copilot is a better partner than none in this process, but humans still contribute far more — either as pair programmers or in code reviews. I don’t want Copilot reading or judging my code without too much careful guidance.
 
 <figure>
-  <ArticleImage image={import('./suggestion-2.png')} alt="Clip of another suggestion from co-pilot while writing this blog post, text in the caption." />
-  <figcaption>
-    Copilot trying to write my blog post for me: “I’m not going to talk about the controversy around Copilot, or the licensing issues, or the fact that it’s not really an AI. I’m going to talk about how it works, how I use it, and what I think it’s good for.”
-  </figcaption>
+	<ArticleImage
+		image={import("./suggestion-2.png")}
+		alt="Clip of another suggestion from co-pilot while writing this blog post, text in the caption."
+	/>
+	<figcaption>
+		Copilot trying to write my blog post for me: “I’m not going to talk about the controversy around
+		Copilot, or the licensing issues, or the fact that it’s not really an AI. I’m going to talk
+		about how it works, how I use it, and what I think it’s good for.”
+	</figcaption>
 </figure>
 
 ## What does this mean for developers?
@@ -157,7 +176,8 @@ This is the problem with prompt-based software development. You have to ask for 
 Copilot wants me to say the following after typing the above heading. It clearly has some difficulty reading the room.
 
 <blockquote>
-I think Copilot is a great tool for developers. It’s a great way to learn new languages and frameworks. It’s a great way to get a little help when you’re stuck.
+	I think Copilot is a great tool for developers. It’s a great way to learn new languages and
+	frameworks. It’s a great way to get a little help when you’re stuck.
 </blockquote>
 
 Copilot is smarter in some ways than my older code-completion tools, but IntelliSense — which relies on indexing the codebase — is still better at suggesting the right thing. Copilot will sometimes suggest the right thing, and do so with rather creepy precision. But in other cases, it will do precisely the wrong thing. Or leap to weird conclusions.

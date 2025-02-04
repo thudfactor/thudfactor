@@ -19,7 +19,8 @@ cover:
       name: CC BY 2.0
       link: https://creativecommons.org/licenses/by/2.0/
 ---
-import ArticleFigure from '@components/ArticleFigure.astro';
+
+import ArticleFigure from "@components/ContentItems/ArticleFigure/index.astro";
 
 My fellow developers find it tedious, but I always check punctuation in public-facing text in pull requests. Punctuation is a deep and complex subject, and our typewriter layouts—the US layouts, at least—still reflect the legacy of an earlier age. Here I want to discuss common and often misused punctuation marks: quotation marks, apostrophes, and ellipsis.
 
@@ -44,34 +45,37 @@ Text editors and web forms don’t usually replace these for us, at least not wi
 Mac users can access these quotes on the `[` and `]` keys:
 
 <ArticleFigure>
-<table slot="fig">
-  <caption>Keystrokes required for curly quotes (Mac)</caption>
-  <thead>
-    <tr>
-      <th>Keystroke</th>
-      <th>Character</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Opt-[</td>
-      <td>“</td>
-    </tr>
-    <tr>
-      <td>Shift-Opt-[</td>
-      <td>”</td>
-    </tr>
-    <tr>
-      <td>Opt-]</td>
-      <td>‘</td>
-    </tr>
-    <tr>
-      <td>Shift-Opt-]</td>
-      <td>’</td>
-    </tr>
-  </tbody>
-</table>
-Fun fact: the Mac OS has had these keystrokes in place for _ages_. A major selling point of pre-web Macs was their use in desktop publishing, and I learned about these from Robin Williams’s (not that Robin Williams) classic desktop publishing book [_The Mac is Not a Typewriter_](https://openlibrary.org/works/OL3502195W/The_Mac_is_not_a_typewriter?edition=key%3A/books/OL8416336M).
+	<table slot="fig">
+		<caption>Keystrokes required for curly quotes (Mac)</caption>
+		<thead>
+			<tr>
+				<th>Keystroke</th>
+				<th>Character</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Opt-[</td>
+				<td>“</td>
+			</tr>
+			<tr>
+				<td>Shift-Opt-[</td>
+				<td>”</td>
+			</tr>
+			<tr>
+				<td>Opt-]</td>
+				<td>‘</td>
+			</tr>
+			<tr>
+				<td>Shift-Opt-]</td>
+				<td>’</td>
+			</tr>
+		</tbody>
+	</table>
+	Fun fact: the Mac OS has had these keystrokes in place for _ages_. A major selling point of
+	pre-web Macs was their use in desktop publishing, and I learned about these from Robin Williams’s
+	(not that Robin Williams) classic desktop publishing book [_The Mac is Not a
+	Typewriter_](https://openlibrary.org/works/OL3502195W/The_Mac_is_not_a_typewriter?edition=key%3A/books/OL8416336M).
 </ArticleFigure>
 
 Apostrophes are always the closed `’` variant. Although you may have heard people say they are _only_ used for possession or contraction, the [real rules](https://en.wikipedia.org/wiki/Apostrophe#Usage_in_English) are frighteningly complicated and add nothing to the language, which is why playwright George Bernard Shaw refused to use them. Some folks think we should [stop using apostrophes](https://slate.com/human-interest/2013/09/the-apostrophe-why-the-punctuation-is-unnecessary-confusing-and-condescending.html) altogether. Suggesting this is a good way to start a fight. It’s right up there with saying “I don’t think schools should teach cursive” or “knives should go point-down in the dishwasher.”
@@ -89,14 +93,14 @@ In any case, isn’t it strange to have an element for one set of punctuation bu
 _I_ think you should use curly quotes in text just because they look a lot more polished. They give a text more of a typeset, published feel, while the straight quotes always look to me like someone was in a hurry or not paying attention. But programmers have another good reason to learn this trick: you don't have to escape-quote curly quotes.
 
 ```js
-const straightQuotes = "\"Well, butter my britches,\" bellowed the bat.";
-const curlyQuotes    = "“Well, butter my britches,” bellowed the bat.";
+const straightQuotes = '"Well, butter my britches," bellowed the bat.';
+const curlyQuotes = "“Well, butter my britches,” bellowed the bat.";
 ```
 
 This is great, because I occasionally see programmers choose quotation marks based on what they’d have to escape:
 
 ```js
-const iUsedDoubleQuotes = "I don't like escaping characters so 'quotations get single quotes' now."
+const iUsedDoubleQuotes = "I don't like escaping characters so 'quotations get single quotes' now.";
 ```
 
 This arbitrary use triggers typesetters and armchair grammarians both.
@@ -104,7 +108,7 @@ This arbitrary use triggers typesetters and armchair grammarians both.
 “But wait!” Some of you say. “If you are writing HTML, shouldn’t you be using HTML entities?” If you’re a young developer wondering what the heck those are, we’re talking about this nonsense:
 
 ```html
-<p>&ldquo;Well, butter by britches,&rdquo; bellowed&hellip;"
+<p>&ldquo;Well, butter by britches,&rdquo; bellowed&hellip;"</p>
 ```
 
 These kinds of special characters were needed a long time ago when we were using much older character encoding strategies. Nowadays you should use UTF-8 encoding unless you have [a very good reason otherwise](https://www.w3.org/International/questions/qa-choosing-encodings#nutshell). In fact, UTF-8 encoding is typically the default, so unless you are using old software or have deliberately changed it, it’s likely the files you write code in are encoded as UTF-8 already.
@@ -116,4 +120,3 @@ const Δ = Math.abs(oldValue - newValue);
 ```
 
 But think twice, maybe, about your colleagues on Windows machines, because you’re making those variable names very difficult to type.
-

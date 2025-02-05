@@ -1,7 +1,8 @@
 @import "tailwindcss";
 @import "./fonts.css";
-@import "./composition/reset.css";
-@import "./block/skip-nav.css";
+@import "./composition/index.css" layer(composition);
+@import "./utility/index.css" layer(utilities);
+@import "./block/index.css" layer(block);
 
 @theme {
 	--font-sans: "Atkinson Hyperlegible", Seravek, "Gill Sans Nova", Ubuntu, Calibri, "DejaVu Sans",
@@ -43,8 +44,32 @@
 	--spacing-s-l: clamp(1.125rem, 0.6467rem + 2.3913vw, 2.5rem);
 }
 
-#base-grid {
-	padding: var(--spacing-l);
+@view-transition {
+	navigation: auto;
 }
 
-@import "./composition/atoms.css";
+html {
+	scrollbar-gutter: stable both-edges;
+}
+
+body {
+	background-color: var(--color-stone-700);
+}
+
+/* page layout */
+#page-container {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	max-width: 100rem;
+	margin-inline: auto;
+
+	> :is(header, footer) {
+		flex-grow: 1;
+	}
+
+	> div {
+		flex-basis: 0;
+		flex-grow: 999;
+	}
+}

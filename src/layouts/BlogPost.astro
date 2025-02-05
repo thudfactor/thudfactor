@@ -1,6 +1,6 @@
 ---
-import Base from "@layouts/Base.astro";
-import Content from "@components/Content.astro";
+import Page from "@components/PageItems/Page.astro";
+import Content from "@components/PageItems/Content.astro";
 import EndMark from "@components/PageItems/EndMark.astro";
 
 interface Props {
@@ -14,9 +14,9 @@ interface Props {
 const { title, description, cover } = Astro.props;
 ---
 
-<Base title={title} description={description} cover={cover}>
+<Page title={title} description={description} cover={cover}>
 	<Content {...Astro.props}>
 		<slot />
 		<EndMark />
 	</Content>
-</Base>
+</Page>

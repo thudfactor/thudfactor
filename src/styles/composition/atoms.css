@@ -1,5 +1,6 @@
 :root {
 	font-family: var(--font-sans);
+	letter-spacing: 0.02ch;
 }
 
 /* text styles */
@@ -166,7 +167,7 @@ blockquote footer {
 }
 
 .cluster[role="list"] {
-	--cluster-gap: 0.5ch;
+	--cluster-gap: 1.2ch;
 }
 
 a > .cluster {
@@ -184,7 +185,7 @@ a > .cluster > svg[role="presentation"] {
 .with-sidebar {
 	display: flex;
 	flex-wrap: wrap;
-	gap: var(--sidebar-gap, var(--spacing-m));
+	gap: var(--sidebar-gap, 0);
 }
 
 .with-sidebar > :first-child {
@@ -194,7 +195,7 @@ a > .cluster > svg[role="presentation"] {
 .with-sidebar > :last-child {
 	flex-basis: 0;
 	flex-grow: 999;
-	min-inline-size: 50%;
+	min-inline-size: 66%;
 }
 
 /* */

@@ -1,3 +1,11 @@
-<aside>
-	<slot />
+---
+const { variant, position } = Astro.props;
+---
+
+<aside data-position={position || "right"} data-variant={variant} class="box">
+	<p>
+		<q>
+			<slot />
+		</q>
+	</p>
 </aside>

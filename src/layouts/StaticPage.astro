@@ -1,6 +1,7 @@
 ---
 import Page from "@components/PageItems/Page.astro";
 import Content from "@components/PageItems/Content.astro";
+import EndMark from "@components/PageItems/EndMark.astro";
 
 const pageProps = Astro.props.frontmatter || Astro.props;
 
@@ -11,4 +12,5 @@ const { title, description, cover } = pageProps;
 	<Content {...pageProps}>
 		<slot />
 	</Content>
+	<EndMark />
 </Page>

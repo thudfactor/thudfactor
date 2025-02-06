@@ -1,12 +1,16 @@
 ---
 import ArticleImage from "@components/ContentItems/ArticleImage/index.astro";
+import Attribution from "../Attribution.astro";
 
-const { image, alt, variant } = Astro.props;
+const { image, alt, variant, position, attribution } = Astro.props;
 ---
 
-<figure class={variant}>
+<figure data-position={position} data-variant={variant} class="flow">
 	<slot name="fig">
 		<ArticleImage image={image} alt={alt} />
+		{attribution && <Attribution attribution={attribution} />}
 	</slot>
-	<figcaption><slot /></figcaption>
+	<figcaption>
+		<slot />
+	</figcaption>
 </figure>

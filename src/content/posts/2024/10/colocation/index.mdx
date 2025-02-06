@@ -13,14 +13,15 @@ cover:
     name: John Williams
 ---
 
-import ArticleFigure from "@components/ArticleFigure.astro";
+import ArticleFigure from "@components/ContentItems/ArticleFigure/index.astro";
 import Pullquote from "@components/ContentItems/Pullquote/index.astro";
+import Blockquote from "@components/ContentItems/Blockquote.astro";
 
 Recently my remote company held a few days of in-person social and work events. It was nice to be able to see people, but I wish I had been able to hear people, too. Because I am hearing impaired[^1] the switch to remote work during the pandemic has made a huge difference in how I feel about work. It’s a difference that wasn’t really apparent to me until this week of events. That week was the week I discovered the hearing aids I'd been using for three years were totally inadequate for group events.
 
 I mean, I couldn't _hear_ anyone. This didn't just limit my participation, though. The experience left me feeling isolated, exhausted, and very self-conscious.
 
-<Pullquote>I don't have this problem with video conferencing.</Pullquote>
+<Pullquote position="left">I don't have this problem with video conferencing.</Pullquote>
 
 [^1]: Some people object to the phrase “hearing impaired” and prefer the alternative phrasing “hard-of-hearing.” [The National Association for the Deaf](https://www.nad.org/resources/american-sign-language/community-and-culture-frequently-asked-questions/) says "hearing impaired" suggests that the person is incomplete or broken, while "hard-of-hearing" does not. For my part, I can’t see a dime’s worth of difference between the two.
 
@@ -36,9 +37,14 @@ But it's hard getting around the fact that co-location is a part of capital-A Ag
 
 Large Scale Scrum (LeSS) even insists on everyone working in the same office space:
 
-> Each team is co-located in the same room. This might sound unreasonable. Wouldn’t you, in today’s globalized world, want to use the best skilled people in the place where they are? No. We want the best teams that can take a shared responsibility for the outcome of the Team, and learns from each other. Shared responsibility requires trust. Humans build up trust quickest by close cooperation and face-to-face communication. Co-location also promotes team learning—the essence of continuous improvement.
->
-> <cite>[LeSS Teams](https://less.works/less/structure/teams)</cite>
+<Blockquote note="LeSS Teams" link="https://less.works/less/structure/teams">
+	Each team is co-located in the same room. This might sound unreasonable. Wouldn’t you, in today’s
+	globalized world, want to use the best skilled people in the place where they are? No. We want the
+	best teams that can take a shared responsibility for the outcome of the Team, and learns from each
+	other. Shared responsibility requires trust. Humans build up trust quickest by close cooperation
+	and face-to-face communication. Co-location also promotes team learning—the essence of continuous
+	improvement.
+</Blockquote>
 
 All humans? Or just certain ones? And even if this were true, is it true _all_ the time? Do we need to be face-to-face all the time? Why isn't video-conferencing face-to-face? What makes you think people have to be physically close to collaborate closely?
 
@@ -58,18 +64,21 @@ Buildings are not often designed with accessibility in mind. Federal requirement
 
 Small and large organizations alike continue to manufacture new accessibility problems in the physical space. For example, in 2017 Virginia Tech built a staircase up a short hill but did not include a ramp, forcing people who can’t use stairs to use a much longer, circuitous route:
 
-> Ashley Shew, a professor of science and technology in society at Tech and co-founder of the caucus, said there are several problems with getting around the campus. When she has to teach classes anywhere but the Upper Quad, there are challenges to getting up and down the hill that take her on winding paths around buildings.
-> "If I get tenure, I'll spend decades walking around every building on this campus," said Shew, who is an amputee and has hearing loss. "You feel like a second class citizen when you have to take the long way."
->
-> <cite>
-> 	<a href="https://aging.networkofcare.org/riverside/CommunityResources/News/Article?articleId=82329">
-> 		'Sit out' at Tech opposes set of stairs
-> 	</a>
-> </cite>
+<Blockquote note="'Sit out' at Tech opposes set of stairs" link="https://aging.networkofcare.org/riverside/CommunityResources/News/Article?articleId=82329">
+
+Ashley Shew, a professor of science and technology in society at Tech and co-founder of the caucus, said there are several problems with getting around the campus. When she has to teach classes anywhere but the Upper Quad, there are challenges to getting up and down the hill that take her on winding paths around buildings.
+
+"If I get tenure, I'll spend decades walking around every building on this campus," said Shew, who is an amputee and has hearing loss. "You feel like a second class citizen when you have to take the long way."
+
+</Blockquote>
 
 A spokesperson for Virginia Tech defended the choice in a way that was both patronizing and dismissive:
 
-> "We are not in Kansas," [Mark] Owczarski said. "This is not a flat place."
+<Blockquote>
+
+"We are not in Kansas," [Mark] Owczarski said. "This is not a flat place."
+
+</Blockquote>
 
 Again, the staircase was new construction. And it should not have come as a surprise to any construction planner that Blacksburg is not flat or that some people struggle with stairs.
 
@@ -119,19 +128,18 @@ There’s a growing body of evidence that open offices actually [lead to worse o
 
 [^2]: Another advantage of open offices is that they improve surveillance of employees, making it easy to see who is present and busy. This is not usually the advertised purpose, but many people suspect it's one of the real reasons the C-Suite pushes Return to Office mandates. [Spotify acknowledged this recently](https://www.msn.com/en-us/money/companies/spotify-s-hr-chief-says-remote-staff-aren-t-children-as-company-reaffirms-work-from-anywhere-policy/ar-AA1rT08K) when they reaffirmed a commitment to remote work, saying "our employees are not children."
 
-> Even in open spaces with colleagues in close proximity, people who want to eschew interactions have an amazing capacity to do so. They avoid eye contact, discover an immediate need to use the bathroom or take a walk, or become so engrossed in their tasks that they are selectively deaf (perhaps with the help of headphones). Ironically, the proliferation of ways to interact makes it easier not to respond: For example, workers can simply ignore a digital message.
->
-> <cite>
-> 	[The Truth About Open Offices](https://hbr.org/2019/11/the-truth-about-open-offices), Harvard
-> 	Business Review
-> </cite>
+<Blockquote note="Harvard Business Review: The Truth About Open Offices" link="https://hbr.org/2019/11/the-truth-about-open-offices">
+
+Even in open spaces with colleagues in close proximity, people who want to eschew interactions have an amazing capacity to do so. They avoid eye contact, discover an immediate need to use the bathroom or take a walk, or become so engrossed in their tasks that they are selectively deaf (perhaps with the help of headphones). Ironically, the proliferation of ways to interact makes it easier not to respond: For example, workers can simply ignore a digital message.
+
+</Blockquote>
 
 Imagine being so committed to constant communication that employees being "engrossed in their tasks" is a bad thing.
 
 <ArticleFigure
 	image={import("./stop-doing-offices.jpg")}
 	alt="Stop doing offices meme: Work was not supposed to take 90 minutes by car to get to | Years of urbanization yet no real-world use found for going to a different building to use the same internet | Wanted to do that anyway for a laugh? We had a tool for that, it was called Coffee Shops | Can you wrap this call, we have this room booked & how do we get office parking reimbursed: statements dreamt up by the utterly deranged | Hello I would like to hear half of your zoom call | They have played us for absolute fools"
-	variant="right"
+	position="right"
 >
 	Despite what many RTO advocates think, I really have no need to be informed of every conversation
 	in the building.
@@ -176,7 +184,18 @@ Scrum actively discourages measuring busyness and insists the work product is th
 
 Perhaps the greatest evidence that open offices fail workers is that workers have been resisting return-to-office mandates created by C-suite executives that would never allow themselves to be chained to their desk.
 
-> The new world of work has no time for technological holdouts and leaders who let the digital transformation pass them by now grapple with the realities of being out of touch. “The reason they want to have people back in the office is ‘fill in the blank,’ but usually it’s about how they feel like they don’t have their finger on the pulse of the organization,” says Slack SVP Brian Elliott. <cite><a href="https://www.awarehq.com/blog/return-to-office-resistance-top-companies-bridge-disconnect">The Truth About Return to Office Resistance and How Top Companies Bridge the Disconnect</a></cite>
+<Blockquote>
+	The new world of work has no time for technological holdouts and leaders who let the digital
+	transformation pass them by now grapple with the realities of being out of touch. “The reason they
+	want to have people back in the office is ‘fill in the blank,’ but usually it’s about how they
+	feel like they don’t have their finger on the pulse of the organization,” says Slack SVP Brian
+	Elliott.
+	<cite slot="quote-note">
+		<a href="https://www.awarehq.com/blog/return-to-office-resistance-top-companies-bridge-disconnect">
+			The Truth About Return to Office Resistance and How Top Companies Bridge the Disconnect
+		</a>
+	</cite>
+</Blockquote>
 
 In fact, RTO policies so often drive people away that companies have deployed them [as an alternative to layoffs](https://www.msn.com/en-us/money/companies/a-leading-remote-work-expert-says-amazon-s-rto-order-is-about-backdoor-layoffs/ar-AA1rwhki). The folks most likely to leave are the senior employees and high performers, which are also (coincidentally?) the ones who are most likely to be expensive troublemakers. Employees who quit don't get severance. When you get to the point where you are forcing people into poor working conditions _because you want a third of them gone_ it's hard to take any of the arguments about the supremacy of the open office seriously.
 

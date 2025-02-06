@@ -1,0 +1,7 @@
+pre:has(code) {
+	padding: var(--spacing-xs);
+}
+
+pre > code {
+	background-color: transparent;
+}

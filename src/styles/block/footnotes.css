@@ -1,0 +1,11 @@
+.footnotes {
+	border-top: 1px var(--color-stone-600) solid;
+}
+
+.footnotes li {
+	margin-block-start: var(--spacing-s);
+}
+
+.footnotes p {
+	font-size: var(--text-s);
+}

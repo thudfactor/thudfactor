@@ -1,0 +1,28 @@
+.prose {
+	line-height: 1.5;
+}
+
+.prose :is(ul, ol) {
+	margin-left: var(--spacing-lg);
+	font-size: var(--text-base);
+}
+
+.prose dt {
+	font-weight: bold;
+}
+
+.prose dd {
+	margin-left: 1em;
+}
+
+.prose ol > li {
+	list-style-type: decimal;
+}
+
+.prose ul > li {
+	list-style-type: disc;
+}
+
+.prose li + li {
+	margin-block-start: var(--spacing-2xs);
+}

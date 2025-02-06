@@ -1,0 +1,16 @@
+---
+const { link, name: attributeTo, license } = Astro.props.attribution;
+---
+
+<cite>
+	Source:
+	{link && <a href={link}>{attributeTo}</a>}
+	{!link && attributeTo}
+	{
+		license && (
+			<>
+				/ <a href={license.link}>{license.name}</a>
+			</>
+		)
+	}
+</cite>

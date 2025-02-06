@@ -1,0 +1,20 @@
+.prose :is(ul, ol) {
+	margin-left: 1em;
+	font-size: inherit;
+}
+
+.prose dt {
+	font-weight: bold;
+}
+
+.prose dd {
+	margin-left: 1em;
+}
+
+.prose ol > li {
+	list-style-type: decimal;
+}
+
+.prose ul > li {
+	list-style-type: disc;
+}

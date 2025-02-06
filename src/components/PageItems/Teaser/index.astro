@@ -1,32 +1,21 @@
 ---
 import FormattedDate from "@components/FormattedDate.astro";
 import ArticleImage from "@components/ContentItems/ArticleImage/index.astro";
-const { post, style } = Astro.props;
+const { post } = Astro.props;
 const { cover, date, description, title } = post.data;
 ---
 
 <div>
-	<div>
-		<div>
-			{
-				cover && (
-					<ArticleImage
-						width={cover.width}
-						height={cover.height}
-						image={cover.src}
-						alt={cover.alt}
-					/>
-				)
-			}
-		</div>
-		<div>
-			<small>
-				<FormattedDate date={date} />
-			</small>
-			<h2>
-				<a href={`/posts/${post.id}/`}>{title}</a>
-			</h2>
-			<p>{description}</p>
-		</div>
-	</div>
+	<article class="flow">
+		{
+			cover && (
+				<ArticleImage width={cover.width} height={cover.height} image={cover.src} alt={cover.alt} />
+			)
+		}
+		<h2>
+			<a href={`/posts/${post.id}/`}>{title}</a>
+		</h2>
+		<FormattedDate date={date} />
+		<p>{description}</p>
+	</article>
 </div>

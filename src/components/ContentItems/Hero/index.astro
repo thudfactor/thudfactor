@@ -1,26 +1,9 @@
 ---
-import { Image } from "astro:assets";
-const { cover } = Astro.props;
+import ArticleFigure from "@components/ContentItems/ArticleFigure/index.astro";
+const { alt, src, attribution, description } = Astro.props.cover;
 ---
 
-<figure class="flow">
-	<div>
-		<Image src={cover.src} alt={cover.alt} />
-		<slot />
-	</div>
-	<figcaption>
-		{cover.description}
-		{
-			cover.attribution && (
-				<span>
-					<b>Image credit: </b>
-					{cover.attribution.link && <a href={cover.attribution.link}>{cover.attribution.name}</a>}
-					{!cover.attribution.link && cover.attribution.name && cover.attribution.name}
-					{cover.attribution.license && (
-						<a href={cover.attribution.license.link}>{cover.attribution.license.name}</a>
-					)}
-				</span>
-			)
-		}
-	</figcaption>
-</figure>
+<ArticleFigure data-missing-alt={!alt} alt={alt || ""} image={src} attribution={attribution}>
+	<p>{description}</p>
+</ArticleFigure>
+<slot />

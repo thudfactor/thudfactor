@@ -4,18 +4,14 @@ import Hero from "@components/ContentItems/Hero/index.astro";
 const { title, date, updatedDate, cover } = Astro.props;
 ---
 
-<div class="flow">
-	<article class="flow">
-		<div class="title-container">
-			{
-				cover && (
-					<Hero cover={cover}>
-						<Title date={date} updatedDate={updatedDate} title={title} />
-					</Hero>
-				)
-			}
-			{!cover && <Title date={date} updatedDate={updatedDate} title={title} />}
-		</div>
-		<slot />
-	</article>
-</div>
+<article class="flow prose">
+	{
+		cover && (
+			<Hero cover={cover}>
+				<Title date={date} updatedDate={updatedDate} title={title} />
+			</Hero>
+		)
+	}
+	{!cover && <Title date={date} updatedDate={updatedDate} title={title} />}
+	<slot />
+</article>

@@ -2,7 +2,7 @@
 @import "./fonts.css";
 @import "./composition/index.css" layer(composition);
 @import "./utility/index.css" layer(utilities);
-@import "./block/index.css" layer(block);
+@import "./block/index.css" layer(blocks);
 
 @theme {
 	--font-sans: "Atkinson Hyperlegible", Seravek, "Gill Sans Nova", Ubuntu, Calibri, "DejaVu Sans",

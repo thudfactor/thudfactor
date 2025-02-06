@@ -2,16 +2,6 @@
 const today = new Date();
 ---
 
-<style>
-	footer {
-		text-align: center;
-		font-size: var(--font-size-0);
-		padding-block: var(--size-3);
-	}
-</style>
-<footer>
-	©️ 2023–{today.getFullYear()} J H Williams |
-	<a href="https://github.com/thudfactor" rel="me">Github</a> |
-	<a href="https://hachyderm.io/@thudfactor" rel="me">Mastodon</a>i | 
-  <a href="https://www.thudfactor.com/feed.xml">RSS Feed</a>
+<footer id="pageFooter" class="cluster p-s bg-stone-800 text-stone-200">
+	<div>©️ 2023–{today.getFullYear()} J H Williams</div>
 </footer>

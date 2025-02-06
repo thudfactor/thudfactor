@@ -1,0 +1,285 @@
+:root {
+	font-family: var(--font-sans);
+	letter-spacing: 0.02ch;
+}
+
+/* text styles */
+p:not([class]) {
+	font-size: var(--text-base);
+	max-width: 60ch;
+}
+
+:is(h1, h2, h3, h4, h5, h6):not([class]) {
+	font-family: var(--font-serif);
+	font-weight: 400;
+	max-width: 35ch;
+}
+
+h1:not([class]) {
+	font-size: var(--text-4xl);
+}
+
+h2:not([class]) {
+	font-size: var(--text-3xl);
+}
+
+h3:not([class]) {
+	font-size: var(--text-2xl);
+}
+
+h4:not([class]),
+h5:not([class]),
+h6:not([class]) {
+	font-size: var(--text-xl);
+}
+
+figure:not([class]) {
+	margin-inline: 0;
+}
+
+img:not([class]) {
+	height: auto;
+}
+
+a:not([class]) {
+	transition-property: color, text-decoration-color;
+	transition-duration: 0.3s;
+	text-decoration: underline;
+	text-decoration-color: var(--color-indigo-400);
+	text-decoration-thickness: from-font;
+	outline-offset: var(--spacing-3xs);
+}
+
+a:not([class]):is(:link, :visited) {
+	color: inherit;
+	/* color: var(--color-blue-700); */
+}
+
+a:not([class]):is(:hover) {
+	color: var(--color-fuchsia-700);
+}
+
+/* Set default svg size so it behaves more like icons */
+svg:not([class]):not([role="img"]) {
+	width: auto;
+	height: 1lh;
+}
+
+/* These should be monospaced and also need to be adjusted down a bit because
+monospace fonts typically look larger */
+code,
+kbd,
+samp,
+var {
+	font-family: var(--font-mono);
+	font-size: 0.9em;
+	background-color: var(--color-stone-200);
+}
+
+del {
+	text-decoration-color: var(--color-red-700);
+}
+
+ins {
+	text-decoration-style: wavy;
+	text-decoration-color: var(--color-green-700);
+}
+
+cite {
+	font-style: italic;
+}
+
+blockquote {
+	margin-inline: var(--spacing-m);
+	padding-inline-start: var(--spacing-s);
+	border-inline-start: 1px var(--color-stone-200) solid;
+	border-inline-start-width: var(--spacing-3xs);
+}
+
+blockquote > q {
+	font-size: var(--text-base);
+}
+
+blockquote footer {
+	text-align: right;
+	font-style: italic;
+
+	&:before {
+		content: "— ";
+	}
+
+	:is(cite, i, em) {
+		font-style: normal;
+	}
+}
+
+table {
+	min-width: 40ch;
+}
+
+table thead {
+	border-bottom: 3px currentColor double;
+	background-color: var(--color-stone-200);
+}
+
+table caption {
+	font-style: italic;
+	background-color: var(--color-stone-200);
+}
+
+:is(th, td, caption) {
+	padding-block: var(--spacing-3xs);
+	padding-inline: var(--spacing-3xs);
+	&:first-child {
+		padding-inline-start: 0;
+	}
+}
+
+tbody tr:has(:hover) {
+	background-color: var(--color-slate-200);
+}
+
+tbody tr:nth-child(even) {
+	background-color: var(--color-stone-200);
+	&:has(:hover) {
+		background-color: var(--color-slate-200);
+	}
+}
+
+tr + tr {
+	border-top: 1px var(--color-stone-300) solid;
+}
+
+tbody th:first-child {
+	text-align: right;
+	border-right: 1px #ccc solid;
+}
+
+details {
+	border: 1px #ccc solid;
+}
+
+summary {
+	font-size: var(--text-lg);
+	background-color: var(--color-stone-700);
+	color: var(--color-stone-100);
+	padding-inline: var(--spacing-xs);
+}
+
+details > :not(summary) {
+	margin-block: var(--spacing-xs);
+	margin-inline: var(--spacing-xs);
+}
+
+.flow > * + :is(h2, h3, h4, h5, h6) {
+	margin-block-start: var(--spacing-lg);
+}
+
+/* Flow */
+
+.flow > * {
+	margin-block: 0;
+}
+
+.flow > * + * {
+	margin-block-start: var(--flow-gap, var(--spacing-s));
+}
+
+/* box */
+
+.box {
+	padding: var(--box-padding, var(--spacing-s));
+	border: var(--box-border-width, 1px) solid var(--color-dark);
+	--color-light: #fff;
+	--color-dark: #000;
+	color: var(--color-dark);
+	background-color: var(--color-light);
+}
+
+.box * {
+	color: inherit;
+}
+
+.box.invert {
+	color: var(--color-light);
+	background-color: var(--color-dark);
+}
+
+/* center */
+
+.center {
+	box-sizing: content-box;
+	margin-inline: auto;
+	padding-inline: var(--spacing-s);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+/* cluster */
+
+.cluster {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--cluster-gap, var(--spacing-s));
+	justify-content: var(--cluster-justify, flex-start);
+	align-items: var(--cluster-align, baseline);
+}
+
+.cluster[role="list"] {
+	--cluster-gap: 1.2ch;
+}
+
+a > .cluster {
+	--cluster-gap: var(--spacing-3xs);
+	--cluster-justify: flex-start;
+	--cluster-align: baseline;
+}
+
+a > .cluster > svg[role="presentation"] {
+	height: 1cap;
+}
+
+/* Sidebar */
+
+.with-sidebar {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--sidebar-gap, 0);
+}
+
+.with-sidebar > :first-child {
+	flex-grow: 1;
+}
+
+.with-sidebar > :last-child {
+	flex-basis: 0;
+	flex-grow: 999;
+	min-inline-size: 66%;
+}
+
+aside {
+	max-width: 40ch;
+}
+
+aside q:before,
+aside q:after {
+	content: "";
+}
+
+[data-position] {
+	max-width: 38%;
+	min-width: 19rem;
+}
+
+[data-position="right"] {
+	float: right;
+	clear: right;
+	margin-inline-start: var(--spacing-m);
+}
+
+[data-position="left"] {
+	float: left;
+	clear: left;
+	margin-inline-end: var(--spacing-m);
+}

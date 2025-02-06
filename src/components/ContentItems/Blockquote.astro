@@ -1,0 +1,15 @@
+---
+const { variant, note, link } = Astro.props;
+---
+
+<blockquote data-variant={variant} class="flow">
+	<slot />
+	{
+		note && (
+			<footer>
+				{!link && note}
+				{link && <a href={link}>{note}</a>}
+			</footer>
+		)
+	}
+</blockquote>

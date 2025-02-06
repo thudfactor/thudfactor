@@ -113,6 +113,10 @@ blockquote footer {
 	}
 }
 
+table {
+	min-width: 40ch;
+}
+
 table thead {
 	border-bottom: 3px currentColor double;
 	background-color: var(--color-stone-200);

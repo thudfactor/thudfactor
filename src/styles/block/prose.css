@@ -1,6 +1,10 @@
+.prose {
+	line-height: 1.5;
+}
+
 .prose :is(ul, ol) {
-	margin-left: 1em;
-	font-size: inherit;
+	margin-left: var(--spacing-lg);
+	font-size: var(--text-base);
 }
 
 .prose dt {
@@ -17,4 +21,8 @@
 
 .prose ul > li {
 	list-style-type: disc;
+}
+
+.prose li + li {
+	margin-block-start: var(--spacing-2xs);
 }

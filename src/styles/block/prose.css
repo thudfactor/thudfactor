@@ -1,5 +1,6 @@
 .prose {
 	line-height: 1.5;
+	container-type: inline-size;
 }
 
 .prose p {

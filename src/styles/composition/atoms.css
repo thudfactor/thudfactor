@@ -317,19 +317,21 @@ aside q:after {
 	content: "";
 }
 
-[data-position] {
-	max-width: 38%;
-	min-width: 19rem;
-}
+@container (min-width: 600px) {
+	[data-position] {
+		max-width: 38%;
+		min-width: 19rem;
+	}
 
-[data-position="right"] {
-	float: right;
-	clear: right;
-	margin-inline-start: var(--spacing-m);
-}
+	[data-position="right"] {
+		float: right;
+		clear: right;
+		margin-inline-start: var(--spacing-m);
+	}
 
-[data-position="left"] {
-	float: left;
-	clear: left;
-	margin-inline-end: var(--spacing-m);
+	[data-position="left"] {
+		float: left;
+		clear: left;
+		margin-inline-end: var(--spacing-m);
+	}
 }

@@ -6,13 +6,13 @@
 /* text styles */
 p:not([class]) {
 	font-size: var(--text-base);
-	max-width: 60ch;
+	max-inline-size: 60ch;
 }
 
 :is(h1, h2, h3, h4, h5, h6):not([class]) {
 	font-family: var(--font-serif);
 	font-weight: 400;
-	max-width: 35ch;
+	max-inline-size: 35ch;
 }
 
 h1:not([class]) {
@@ -198,6 +198,10 @@ figcaption:empty {
 	display: none;
 }
 
+figcaption p {
+	max-inline-size: none !important;
+}
+
 .flow > *:not(img) + :is(h2, h3, h4, h5, h6) {
 	margin-block-start: var(--spacing-lg);
 }
@@ -309,7 +313,7 @@ a > .cluster > svg[role="presentation"] {
 	*/
 
 aside {
-	max-width: 40ch;
+	max-inline-size: 40ch;
 }
 
 aside q:before,
@@ -319,7 +323,7 @@ aside q:after {
 
 @container (min-width: 600px) {
 	[data-position] {
-		max-width: 38%;
+		max-inline-size: 38%;
 		min-width: 19rem;
 	}
 

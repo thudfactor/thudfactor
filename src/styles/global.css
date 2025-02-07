@@ -62,7 +62,7 @@ body {
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
-	max-width: 100rem;
+	max-inline-size: 100rem;
 	margin-inline: auto;
 
 	> :is(header, footer) {

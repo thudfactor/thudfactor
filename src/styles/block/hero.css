@@ -3,3 +3,8 @@
 	margin-block-start: calc(var(--spacing-s) * -1);
 	position: relative;
 }
+
+.hero img {
+	aspect-ratio: 16/9;
+	object-fit: cover;
+}

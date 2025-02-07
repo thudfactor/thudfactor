@@ -33,10 +33,6 @@ h6:not([class]) {
 	font-size: var(--text-xl);
 }
 
-figure:not([class]) {
-	margin-inline: 0;
-}
-
 img:not([class]) {
 	height: auto;
 }
@@ -90,10 +86,11 @@ cite {
 }
 
 blockquote {
-	margin-inline: var(--spacing-m);
+	margin-inline-start: var(--spacing-lg);
 	padding-inline-start: var(--spacing-s);
 	border-inline-start: 1px var(--color-stone-200) solid;
 	border-inline-start-width: var(--spacing-3xs);
+	max-inline-size: 60ch;
 }
 
 blockquote > q {
@@ -171,11 +168,15 @@ details > :not(summary) {
 	margin-inline: var(--spacing-xs);
 }
 
+figure:not([class]) {
+	margin-inline: 0;
+}
+
 figure {
 	position: relative;
 }
 
-figure cite {
+figure.flow cite {
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -185,7 +186,7 @@ figure cite {
 	margin-block-start: 0;
 }
 
-figcaption {
+figure.flow figcaption {
 	background-color: var(--color-stone-800);
 	color: var(--color-stone-100);
 	padding-inline: var(--spacing-s);

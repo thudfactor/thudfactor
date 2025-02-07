@@ -4,7 +4,6 @@
 
 .prose p {
 	hyphens: auto;
-	text-align: justify;
 }
 
 .prose :is(ul, ol) {

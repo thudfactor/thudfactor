@@ -5,17 +5,11 @@ const { post } = Astro.props;
 const { cover, date, description, title } = post.data;
 ---
 
-<div>
-	<article class="flow">
-		{
-			cover && (
-				<ArticleImage width={cover.width} height={cover.height} image={cover.src} alt={cover.alt} />
-			)
-		}
-		<h2>
-			<a href={`/posts/${post.id}/`}>{title}</a>
-		</h2>
-		<FormattedDate date={date} />
-		<p>{description}</p>
-	</article>
-</div>
+<article class="teaser flow">
+	{cover && <ArticleImage width={600} image={cover.src} alt={cover.alt} />}
+	<h2>
+		<a href={`/posts/${post.id}/`}>{title}</a>
+	</h2>
+	<FormattedDate date={date} />
+	<p>{description}</p>
+</article>

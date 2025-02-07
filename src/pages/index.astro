@@ -29,12 +29,7 @@ const posts = (await getCollection("posts"))
 	updatedDate={updatedDate}
 	cover={cover}
 >
-	<p>
-		For now you probably want the <a href="/posts/">blog archives</a>, but maybe you would like to
-		know <a href="/about">who I am</a>. The <a href="/feed.xml">RSS feed</a> is only marginally less
-		attractive.
-	</p>
-	<div class="flow">
+	<div class="switcher">
 		{posts.map(post => <Teaser post={post} />)}
 	</div>
 	<div style="text-align: center;">

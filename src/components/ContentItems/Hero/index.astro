@@ -3,7 +3,9 @@ import ArticleFigure from "@components/ContentItems/ArticleFigure/index.astro";
 const { alt, src, attribution, description } = Astro.props.cover;
 ---
 
-<ArticleFigure data-missing-alt={!alt} alt={alt || ""} image={src} attribution={attribution}>
-	<p>{description}</p>
-</ArticleFigure>
-<slot />
+<div class="hero flow">
+	<ArticleFigure data-missing-alt={!alt} alt={alt || ""} image={src} attribution={attribution}>
+		<p>{description}</p>
+	</ArticleFigure>
+	<slot />
+</div>

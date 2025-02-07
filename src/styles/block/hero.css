@@ -1,9 +1,5 @@
-.hero {
-	border: 1px #000 solid;
-	--flow-gap: 0.5rem;
-}
-
-.hero.flow > * + * {
-	--flow-gap: 0.5rem;
-	border: 1px red solid;
+.hero figure {
+	margin-inline: calc(var(--spacing-s) * -1);
+	margin-block-start: calc(var(--spacing-s) * -1);
+	position: relative;
 }

@@ -10,7 +10,5 @@ const { image, alt, variant, position, attribution } = Astro.props;
 		<ArticleImage image={image} alt={alt} />
 		{attribution && <Attribution attribution={attribution} />}
 	</slot>
-	<figcaption>
-		<slot />
-	</figcaption>
+	<figcaption><slot /></figcaption>
 </figure>

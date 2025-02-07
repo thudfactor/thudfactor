@@ -171,8 +171,38 @@ details > :not(summary) {
 	margin-inline: var(--spacing-xs);
 }
 
-.flow > * + :is(h2, h3, h4, h5, h6) {
+figure {
+	position: relative;
+}
+
+figure cite {
+	position: absolute;
+	top: 0;
+	right: 0;
+	background-color: var(--color-stone-800);
+	color: var(--color-stone-100);
+	padding-inline: var(--spacing-3xs);
+	margin-block-start: 0;
+}
+
+figcaption {
+	background-color: var(--color-stone-800);
+	color: var(--color-stone-100);
+	padding-inline: var(--spacing-s);
+	padding-block: var(--spacing-xs);
+	margin-block-start: 0;
+}
+
+figcaption:empty {
+	display: none;
+}
+
+.flow > *:not(img) + :is(h2, h3, h4, h5, h6) {
 	margin-block-start: var(--spacing-lg);
+}
+
+.flow > time {
+	display: block;
 }
 
 /* Flow */
@@ -257,6 +287,25 @@ a > .cluster > svg[role="presentation"] {
 	flex-grow: 999;
 	min-inline-size: 66%;
 }
+
+.switcher {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--spacing-m);
+	--threshold: 30rem;
+}
+
+.switcher > * {
+	flex-grow: 1;
+	flex-basis: calc((30rem - 100%) * 999);
+}
+
+/*
+.switcher > :nth-last-child(n + 5),
+.switcher > :nth-last-child(n + 5) ~ * {
+	flex-basis: 100%;
+}
+	*/
 
 aside {
 	max-width: 40ch;

@@ -1,0 +1,12 @@
+.teaser {
+	min-inline-size: 20rem;
+}
+
+.teaser h2 {
+	font-size: var(--text-lg);
+}
+
+.teaser img {
+	aspect-ratio: 16/9;
+	object-fit: cover;
+}

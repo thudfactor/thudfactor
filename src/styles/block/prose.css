@@ -2,6 +2,11 @@
 	line-height: 1.5;
 }
 
+.prose p {
+	hyphens: auto;
+	text-align: justify;
+}
+
 .prose :is(ul, ol) {
 	margin-left: var(--spacing-lg);
 	font-size: var(--text-base);
@@ -13,6 +18,10 @@
 
 .prose dd {
 	margin-left: 1em;
+}
+
+.prose :is(ul, ol, dl) {
+	max-width: calc(60ch - var(--spacing-lg));
 }
 
 .prose ol > li {

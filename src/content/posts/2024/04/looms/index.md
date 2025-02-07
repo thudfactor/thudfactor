@@ -1,10 +1,10 @@
 ---
-title: “You could hear these looms”
+title: AI, computers, and looms
 date: 2024-04-19T08:02:38-04:00
 categories:
   - Work Life
 tags: post
-description: In which I argue that the real enemies are not robots, but the people who own them.
+description: We seem to be very selective about whose jobs deserve to be automated.
 cover:
   src: ./jacquard-loom.jpg
   alt: A closeup photo of a Jacquard loom, a large wooden contraption with many threads attached and a thick stack of punch cards.

@@ -52,7 +52,7 @@ rules:
 
     - width
     - min-width
-    - max-width
+    - max-inline-size
 
     - height
     - min-height

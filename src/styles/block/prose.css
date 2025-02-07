@@ -21,7 +21,7 @@
 }
 
 .prose :is(ul, ol, dl) {
-	max-width: calc(60ch - var(--spacing-lg));
+	max-inline-size: calc(60ch - var(--spacing-lg));
 }
 
 .prose ol > li {

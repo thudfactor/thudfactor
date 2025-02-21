@@ -202,116 +202,6 @@ figcaption p {
 	max-inline-size: none !important;
 }
 
-.flow > *:not(img) + :is(h2, h3, h4, h5, h6) {
-	margin-block-start: var(--spacing-lg);
-}
-
-.flow > time {
-	display: block;
-}
-
-/* Flow */
-
-.flow > * {
-	margin-block: 0;
-}
-
-.flow > * + * {
-	margin-block-start: var(--flow-gap, var(--spacing-s));
-}
-
-/* box */
-
-.box {
-	padding: var(--box-padding, var(--spacing-s));
-	border: var(--box-border-width, 1px) solid var(--color-dark);
-	--color-light: #fff;
-	--color-dark: #000;
-	color: var(--color-dark);
-	background-color: var(--color-light);
-}
-
-.box * {
-	color: inherit;
-}
-
-.box.invert {
-	color: var(--color-light);
-	background-color: var(--color-dark);
-}
-
-/* center */
-
-.center {
-	box-sizing: content-box;
-	margin-inline: auto;
-	padding-inline: var(--spacing-s);
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
-/* cluster */
-
-.cluster {
-	display: flex;
-	flex-wrap: wrap;
-	gap: var(--cluster-gap, var(--spacing-s));
-	justify-content: var(--cluster-justify, flex-start);
-	align-items: var(--cluster-align, baseline);
-}
-
-.cluster[role="list"] {
-	--cluster-gap: 1.2ch;
-}
-
-a > .cluster {
-	--cluster-gap: var(--spacing-3xs);
-	--cluster-justify: flex-start;
-	--cluster-align: baseline;
-}
-
-a > .cluster > svg[role="presentation"] {
-	height: 1cap;
-}
-
-/* Sidebar */
-
-.with-sidebar {
-	display: flex;
-	flex-wrap: wrap;
-	gap: var(--sidebar-gap, 0);
-}
-
-.with-sidebar > :first-child {
-	flex-grow: 1;
-}
-
-.with-sidebar > :last-child {
-	flex-basis: 0;
-	flex-grow: 999;
-	min-inline-size: 66%;
-}
-
-.switcher {
-	display: flex;
-	flex-wrap: wrap;
-	gap: var(--spacing-m);
-	--threshold: 30rem;
-}
-
-.switcher > * {
-	flex-grow: 1;
-	flex-basis: calc((30rem - 100%) * 999);
-}
-
-/*
-.switcher > :nth-last-child(n + 5),
-.switcher > :nth-last-child(n + 5) ~ * {
-	flex-basis: 100%;
-}
-	*/
-
 aside {
 	max-inline-size: 40ch;
 }
@@ -319,6 +209,10 @@ aside {
 aside q:before,
 aside q:after {
 	content: "";
+}
+
+dt:not([class]):not(:first-child) {
+	margin-top: var(--spacing-2xs);
 }
 
 @container (min-width: 600px) {

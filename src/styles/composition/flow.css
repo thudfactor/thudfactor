@@ -1,0 +1,17 @@
+.flow > *:not(img) + :is(h2, h3, h4, h5, h6) {
+	margin-block-start: var(--spacing-lg);
+}
+
+.flow > time {
+	display: block;
+}
+
+/* Flow */
+
+.flow > * {
+	margin-block: 0;
+}
+
+.flow > * + * {
+	margin-block-start: var(--flow-gap, var(--spacing-s));
+}

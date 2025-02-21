@@ -1,0 +1,27 @@
+@property --cluster-justify {
+	syntax: "flex-start | flex-end | space-around | space-between";
+	inherits: false;
+	initial-value: flex-start;
+}
+
+.cluster {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--cluster-gap, var(--spacing-s));
+	justify-content: var(--cluster-justify, flex-start);
+	align-items: var(--cluster-align, baseline);
+}
+
+.cluster[role="list"] {
+	--cluster-gap: 1.2ch;
+}
+
+a > .cluster {
+	--cluster-gap: var(--spacing-3xs);
+	--cluster-justify: flex-start;
+	--cluster-align: baseline;
+}
+
+a > .cluster > svg[role="presentation"] {
+	height: 1cap;
+}

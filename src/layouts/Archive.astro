@@ -1,0 +1,19 @@
+---
+import Page from "@components/PageItems/Page.astro";
+import Hero from "@components/ContentItems/Hero/index.astro";
+interface Props {
+	title: string;
+	description: string;
+	cover?: any;
+}
+
+const { title, description, cover } = Astro.props;
+---
+
+<Page title={title} description={description} cover={cover}>
+	<header class="content-header">
+		{cover && <Hero cover={cover} />}
+		<h1>{title}</h1>
+	</header>
+	<slot />
+</Page>

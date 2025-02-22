@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import BlogPost from "@layouts/BlogPost.astro";
+import Archive from "@layouts/Archive.astro";
 import Teaser from "@components/PageItems/Teaser/index.astro";
 
 const title = "Archives";
@@ -12,8 +12,8 @@ const posts = (await getCollection("posts"))
 	.reverse();
 ---
 
-<BlogPost title={title} description={description} date={date}>
+<Archive title={title} description={description} date={date}>
 	<div class="switcher">
 		{posts.map(post => <Teaser post={post} />)}
 	</div>
-</BlogPost>
+</Archive>

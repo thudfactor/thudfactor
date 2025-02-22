@@ -12,7 +12,7 @@ const posts = (await getCollection("posts"))
 	.reverse();
 ---
 
-<Archive title={title} description={description} date={date}>
+<Archive title={title} description={description}>
 	<div class="switcher">
 		{posts.map(post => <Teaser post={post} />)}
 	</div>

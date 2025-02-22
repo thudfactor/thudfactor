@@ -23,6 +23,7 @@
 	cursor: pointer;
 	background-color: hsl(from var(--color-stone-800) h s l / 0.6);
 	color: white;
+	anchor-name: --hero-caption-button;
 
 	&:hover {
 		background-color: hsl(from var(--color-stone-800) h s l / 1);
@@ -38,6 +39,8 @@
 #hero-caption:popover-open {
 	top: 50%;
 	left: 50%;
+	width: 45ch;
+	max-width: 80%;
 	translate: -50% -50%;
 	padding: var(--spacing-m);
 	border-radius: var(--spacing-m);
@@ -46,6 +49,21 @@
 
 #hero-caption::backdrop {
 	background-color: hsl(from var(--color-stone-800) h s l / 60%);
+}
+
+@supports (position-anchor: --anchor-name) {
+	#hero-caption:popover-open {
+		position-anchor: --hero-caption-button;
+		right: anchor(left);
+		bottom: anchor(top);
+		left: auto;
+		top: auto;
+		translate: none;
+	}
+
+	#hero-caption::backdrop {
+		background-color: transparent;
+	}
 }
 
 .hero + h1 {

@@ -1,11 +1,18 @@
 ---
-import ArticleFigure from "@components/ContentItems/ArticleFigure/index.astro";
+import { Image } from "astro:assets";
+import Attribution from "@components/ContentItems/Attribution.astro";
 const { alt, src, attribution, description } = Astro.props.cover;
 ---
 
-<div class="hero flow">
-	<ArticleFigure data-missing-alt={!alt} alt={alt || ""} image={src} attribution={attribution}>
-		<p>{description}</p>
-	</ArticleFigure>
-	<slot />
+<div class="hero">
+	<Image width={2400} src={src} alt={alt || ""} />
+
+	<div id="hero-caption" popover="auto">
+		<div>{description}</div>
+		{attribution && <Attribution attribution={attribution} />}
+	</div>
+	<button popovertarget="hero-caption">
+		<span>ℹ︎</span>
+		<span class="sr-only">Photo Information</span>
+	</button>
 </div>

@@ -1,0 +1,31 @@
+#site-info {
+	padding: var(--spacing-xs);
+	background-color: var(--color-stone-800);
+	color: var(--color-stone-200);
+
+	a:hover {
+		color: var(--color-amber-400);
+	}
+
+	> * {
+		display: block;
+		width: fit-content;
+		height: fit-content;
+		margin-inline: auto;
+	}
+
+	@container pageContainer (min-width: 700px) {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		> * {
+			display: block;
+			margin-inline: 0;
+		}
+		:nth-child(2) {
+			justify-self: center;
+		}
+		:nth-child(3) {
+			justify-self: end;
+		}
+	}
+}

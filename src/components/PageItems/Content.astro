@@ -1,17 +1,20 @@
 ---
-import Title from "@components/ContentItems/Title/index.astro";
 import Hero from "@components/ContentItems/Hero/index.astro";
+import PostDate from "@components/ContentItems/PostDate/index.astro";
 const { title, date, updatedDate, cover } = Astro.props;
 ---
 
-<article class="flow prose">
+<header class="content-header">
 	{
 		cover && (
 			<Hero cover={cover}>
-				<Title date={date} updatedDate={updatedDate} title={title} />
+				<h1>{title}</h1>
 			</Hero>
 		)
 	}
-	{!cover && <Title date={date} updatedDate={updatedDate} title={title} />}
+	{!cover && <h1>{title}</h1>}
+</header>
+<article class="flow prose">
+	<PostDate date={date} updatedDate={updatedDate} />
 	<slot />
 </article>

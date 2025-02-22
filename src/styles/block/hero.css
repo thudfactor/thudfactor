@@ -1,4 +1,4 @@
-.hero figure {
+.hero {
 	margin-inline: calc(var(--spacing-s) * -1);
 	margin-block-start: calc(var(--spacing-s) * -1);
 	position: relative;
@@ -6,5 +6,48 @@
 
 .hero img {
 	aspect-ratio: 16/9;
+	max-height: 80vh;
 	object-fit: cover;
+}
+
+.hero [popovertarget] {
+	position: absolute;
+	bottom: var(--spacing-m);
+	right: var(--spacing-m);
+	border: 1px var(--color-stone-800) solid;
+	display: grid;
+	place-content: center;
+	height: 2em;
+	width: 2em;
+	border-radius: 50%;
+	cursor: pointer;
+	background-color: hsl(from var(--color-stone-800) h s l / 0.6);
+	color: white;
+
+	&:hover {
+		background-color: hsl(from var(--color-stone-800) h s l / 1);
+	}
+}
+
+#hero-caption cite {
+	display: block;
+	margin-top: var(--spacing-s);
+	font-size: var(--text-sm);
+}
+
+#hero-caption:popover-open {
+	top: 50%;
+	left: 50%;
+	translate: -50% -50%;
+	padding: var(--spacing-m);
+	border-radius: var(--spacing-m);
+	box-shadow: var(--shadow-xl);
+}
+
+#hero-caption::backdrop {
+	background-color: hsl(from var(--color-stone-800) h s l / 60%);
+}
+
+.hero + h1 {
+	margin-block: var(--spacing-m);
 }

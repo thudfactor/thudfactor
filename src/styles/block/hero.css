@@ -65,6 +65,7 @@
 
 	#hero-caption::backdrop {
 		background-color: transparent;
+		backdrop-filter: none;
 	}
 }
 

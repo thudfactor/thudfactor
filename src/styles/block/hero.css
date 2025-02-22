@@ -14,19 +14,19 @@
 	position: absolute;
 	bottom: var(--spacing-m);
 	right: var(--spacing-m);
-	border: 1px var(--color-stone-800) solid;
+	border: 1px var(--color-stone-200) solid;
 	display: grid;
 	place-content: center;
-	height: 2em;
-	width: 2em;
+	padding: var(--spacing-3xs);
 	border-radius: 50%;
 	cursor: pointer;
 	background-color: hsl(from var(--color-stone-800) h s l / 0.6);
 	color: white;
+	transition: 0.3s background-color linear;
 	anchor-name: --hero-caption-button;
 
 	&:hover {
-		background-color: hsl(from var(--color-stone-800) h s l / 1);
+		background-color: hsl(from var(--color-amber-600) h s l / 1);
 	}
 }
 

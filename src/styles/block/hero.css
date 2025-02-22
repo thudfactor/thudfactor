@@ -49,7 +49,7 @@
 
 #hero-caption::backdrop {
 	background-color: hsl(from var(--color-stone-800) h s l / 60%);
-	backdrop-filter: blur(4px) contrast(150%) sepia(80%);
+	backdrop-filter: blur(4px) contrast(70%) sepia(20%);
 }
 
 @supports (position-anchor: --anchor-name) {

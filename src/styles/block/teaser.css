@@ -1,5 +1,17 @@
 .teaser {
 	min-inline-size: 20rem;
+	--box-border-color: var(--color-stone-300);
+	box-shadow: 0 0 0.1px var(--color-amber-800);
+	transition:
+		border-color 0.3s linear,
+		background-color 0.3s linear,
+		box-shadow 0.3s linear;
+}
+
+.teaser:hover {
+	border-color: var(--color-amber-400);
+	background-color: var(--color-amber-100);
+	box-shadow: 0 0 4px var(--color-amber-800);
 }
 
 .teaser h2 {
@@ -10,4 +22,5 @@
 	aspect-ratio: 16/9;
 	object-fit: cover;
 	border: 1px var(--color-amber-700) solid;
+	border-radius: var(--spacing-2xs) var(--spacing-2xs) 0 0;
 }

@@ -5,11 +5,11 @@ const { post } = Astro.props;
 const { cover, date, description, title } = post.data;
 ---
 
-<article class="box teaser flow">
+<a href={`/posts/${post.id}`} class="box teaser flow">
 	{cover && <ArticleImage width={600} image={cover.src} alt={cover.alt} />}
 	<h2>
-		<a href={`/posts/${post.id}/`}>{title}</a>
+		{title}
 	</h2>
 	<FormattedDate date={date} />
 	<p>{description}</p>
-</article>
+</a>

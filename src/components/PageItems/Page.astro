@@ -17,15 +17,9 @@ const { title, description, cover } = Astro.props;
 		</div>
 		<div id="page-container">
 			<Header />
-			<div class="with-sidebar">
-				<div class="p-s bg-stone-400">
-					<MainNav class="flow" />
-					<slot name="sidebar" />
-				</div>
-				<main class="p-s bg-stone-100" id="skip-target">
-					<slot />
-				</main>
-			</div>
+			<main class="p-s bg-stone-100" id="skip-target">
+				<slot />
+			</main>
 			<Footer />
 		</div>
 	</body>

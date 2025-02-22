@@ -3,10 +3,8 @@
 	letter-spacing: 0.02ch;
 }
 
-/* text styles */
-p:not([class]) {
+:is(ul, ol, dl, p):not([class]) {
 	font-size: var(--text-base);
-	max-inline-size: 60ch;
 }
 
 :is(h1, h2, h3, h4, h5, h6):not([class]) {

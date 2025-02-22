@@ -1,28 +1,3 @@
-#main-nav {
-	font-size: var(--text-base);
-	font-weight: 900;
-}
-
-#main-nav li {
-	display: list-item;
-	background-color: var(--color-stone-200);
-	padding-inline: var(--spacing-m);
-	border-radius: var(--spacing-2xs);
-	transition: background-color, border-radius;
-	transition-duration: 0.2s;
-
-	&:has(:hover) {
-		background-color: var(--color-yellow-100);
-		border-radius: var(--spacing-xs);
-	}
-
-	&:has([aria-current="page"]) {
-		background-color: var(--color-lime-100);
-	}
-}
-
-#main-nav a {
-	display: inline-block;
-	text-decoration: none;
-	translate: 0 0.05em;
+#main-nav li:has([aria-current="page"]) {
+	color: var(--color-lime-100);
 }

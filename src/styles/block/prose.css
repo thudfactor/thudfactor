@@ -5,11 +5,15 @@
 
 .prose p {
 	hyphens: auto;
+	font-size: var(--text-base);
+	max-inline-size: 60ch;
+	text-align: justify;
 }
 
-.prose :is(ul, ol) {
+.prose :is(ul, ol, dl) {
 	margin-left: var(--spacing-lg);
 	font-size: var(--text-base);
+	max-inline-size: calc(60ch - var(--spacing-lg));
 }
 
 .prose dt {
@@ -18,10 +22,6 @@
 
 .prose dd {
 	margin-left: 1em;
-}
-
-.prose :is(ul, ol, dl) {
-	max-inline-size: calc(60ch - var(--spacing-lg));
 }
 
 .prose ol > li {

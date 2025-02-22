@@ -1,3 +1,14 @@
+#banner {
+	font-size: var(--text-base);
+	padding: var(--spacing-s);
+	background-color: var(--color-stone-800);
+	color: var(--color-stone-300);
+}
+
 #banner.cluster {
 	--cluster-justify: space-between;
+}
+
+#banner a:hover {
+	color: var(--color-stone-100);
 }

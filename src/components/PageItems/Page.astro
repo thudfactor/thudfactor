@@ -12,13 +12,6 @@ const { title, description, cover } = Astro.props;
 		<BaseHead title={title} description={description} image={cover?.src.src} />
 	</head>
 	<body>
-		<Image
-			width={600}
-			class="backdrop"
-			role="presentation"
-			alt=""
-			src={import("@assets/cato.jpg")}
-		/>
 		<div class="center" id="skip-nav">
 			<a href="#skip-target">Skip to main content</a>
 		</div>
@@ -29,5 +22,12 @@ const { title, description, cover } = Astro.props;
 			</main>
 			<Footer />
 		</div>
+		<Image
+			width={600}
+			class="backdrop"
+			role="presentation"
+			alt=""
+			src={import("@assets/cato.jpg")}
+		/>
 	</body>
 </html>

@@ -59,11 +59,16 @@ body {
 
 /* page layout */
 #page-container {
+	container-type: inline-size;
+	container-name: pageContainer;
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 	max-inline-size: 100rem;
 	margin-inline: auto;
+	border-inline: 1px solid var(--color-amber-900);
+
+	box-shadow: 0 0 30px hsl(from var(--color-stone-800) h s l / 0.8);
 
 	> :is(header, footer) {
 		flex-grow: 1;

@@ -9,4 +9,5 @@
 .teaser img {
 	aspect-ratio: 16/9;
 	object-fit: cover;
+	border: 1px var(--color-amber-700) solid;
 }

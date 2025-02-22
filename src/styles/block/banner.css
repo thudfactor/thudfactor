@@ -3,10 +3,17 @@
 	padding: var(--spacing-s);
 	background-color: var(--color-stone-800);
 	color: var(--color-stone-300);
+
+	.site-title {
+		font-size: var(--text-lg);
+		line-height: 1;
+		text-box: trim;
+	}
 }
 
 #banner.cluster {
 	--cluster-justify: space-between;
+	--cluster-align: center;
 }
 
 #banner a:hover {

@@ -1,9 +1,11 @@
 ---
 const today = new Date();
+import EndMark from "./EndMark.astro";
 import Socials from "./Socials/index.astro";
 ---
 
-<footer id="pageFooter" class="cluster p-s bg-stone-800 text-stone-200">
+<footer id="site-info">
 	<div>&copy; 2023–{today.getFullYear()} J H Williams</div>
+	<EndMark />
 	<Socials />
 </footer>

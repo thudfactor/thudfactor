@@ -1,7 +1,6 @@
 ---
 import Hero from "@components/ContentItems/Hero/index.astro";
 import PostDate from "@components/ContentItems/PostDate/index.astro";
-import EndMark from "@components/PageItems/EndMark.astro";
 const { title, date, updatedDate, cover } = Astro.props;
 ---
 
@@ -12,5 +11,4 @@ const { title, date, updatedDate, cover } = Astro.props;
 <article class="flow prose">
 	<PostDate date={date} updatedDate={updatedDate} />
 	<slot />
-	<EndMark />
 </article>

@@ -2,7 +2,7 @@
 import BaseHead from "../BaseHead.astro";
 import Header from "./Header.astro";
 import Footer from "./Footer.astro";
-import MainNav from "./MainNav/index.astro";
+import { Image } from "astro:assets";
 
 const { title, description, cover } = Astro.props;
 ---
@@ -12,6 +12,13 @@ const { title, description, cover } = Astro.props;
 		<BaseHead title={title} description={description} image={cover?.src.src} />
 	</head>
 	<body>
+		<Image
+			width={600}
+			class="backdrop"
+			role="presentation"
+			alt=""
+			src={import("@assets/cato.jpg")}
+		/>
 		<div class="center" id="skip-nav">
 			<a href="#skip-target">Skip to main content</a>
 		</div>

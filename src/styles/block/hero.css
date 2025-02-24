@@ -13,7 +13,7 @@
 
 .hero [popovertarget] {
 	position: absolute;
-	bottom: var(--spacing-m);
+	top: var(--spacing-m);
 	right: var(--spacing-m);
 	border: 1px var(--color-stone-200) solid;
 	display: grid;
@@ -57,9 +57,9 @@
 	#hero-caption:popover-open {
 		position-anchor: --hero-caption-button;
 		right: anchor(left);
-		bottom: anchor(top);
+		top: anchor(bottom);
 		left: auto;
-		top: auto;
+		bottom: auto;
 		translate: none;
 	}
 
@@ -70,5 +70,17 @@
 }
 
 .hero + h1 {
-	margin-block: var(--spacing-m);
+	width: fit-content;
+	margin-block-start: calc(-1 * var(--spacing-xl));
+	margin-block-end: var(--spacing-m);
+	padding-block-start: var(--spacing-m);
+	padding-inline: var(--spacing-m);
+	position: relative;
+	border-radius: var(--spacing-m);
+	border: 1px transparent solid;
+	color: var(--color-amber-800);
+	background:
+		linear-gradient(var(--color-stone-200), var(--color-stone-100) var(--spacing-xl)) padding-box,
+		linear-gradient(180deg, var(--color-amber-700) var(--spacing-xl), transparent var(--spacing-xl))
+			border-box;
 }

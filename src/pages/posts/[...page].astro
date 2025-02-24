@@ -3,34 +3,38 @@ import type { GetStaticPaths } from "astro";
 import { getCollection } from "astro:content";
 import Archive from "@layouts/Archive.astro";
 import Teaser from "@components/PageItems/Teaser/index.astro";
+import Pagination from "@components/PageItems/Pagination.astro";
 
 const title = "Archives";
 const description = "A list of all the posts on this blog.";
-const date = new Date();
+
+const cover = {
+	src: import("@assets/ice.png"),
+	alt: "Macro photo of ice clinging to the window of a car after an ice storm. It has a very lumpy texture with polygonal shapes",
+	description: "Ice clings to the window of my car after an ice storm.",
+	attribution: {
+		name: "John Williams",
+	},
+};
 
 export const getStaticPaths = (async ({ paginate }) => {
 	const posts = (await getCollection("posts"))
 		.sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf())
 		.reverse();
+	// todo: adjust the page size so the pages are spread out as evenly as possible
+	// across each archive page
 	return paginate(posts, { pageSize: 8 });
 }) satisfies GetStaticPaths;
 
 const { page } = Astro.props;
 ---
 
-<Archive title={title} description={description}>
-	<div class="pagination text-lg mx-auto my-m">
-		{page.url.prev && <a href={page.url.prev}>Prev</a>}
-		{page.url.prev && page.url.next && "|"}
-		{page.url.next && <a href={page.url.next}>Next</a>}
-	</div>
+<Archive title={title} description={description} cover={cover}>
+	<Pagination current={page.currentPage} last={page.lastPage} url={page.url} />
 
 	<div class="switcher">
 		{page.data.map(post => <Teaser post={post} />)}
 	</div>
 
-	<div class="pagination text-lg mx-auto my-m">
-		{page.url.prev !== "" && <a href={page.url.prev}>Prev</a>}
-		{page.url.next !== "" && <a href={page.url.next}>Next</a>}
-	</div>
+	<Pagination current={page.currentPage} last={page.lastPage} url={page.url} />
 </Archive>

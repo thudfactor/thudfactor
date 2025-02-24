@@ -1,0 +1,9 @@
+---
+const { url, currentPage, lastPage } = Astro.props;
+---
+
+<div class="pagination text-lg mx-auto my-m">
+	{url.prev && <a href={url.prev}>⇠ Newer</a>}
+	{url.prev && url.next && "|"}
+	{url.next && <a href={url.next}>Older ⇢</a>}
+</div>

@@ -6,8 +6,17 @@
 .prose p {
 	hyphens: auto;
 	font-size: var(--text-base);
-	max-inline-size: 60ch;
 	text-align: justify;
+}
+
+.prose :is(h2, h3, h4) {
+	color: var(--color-amber-800);
+}
+
+@container pageContainer (min-width: 85ch) {
+	.prose :is(h2, h3, h4) {
+		margin-left: -4rem;
+	}
 }
 
 .prose :is(ul, ol, dl) {

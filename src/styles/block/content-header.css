@@ -2,4 +2,9 @@
 	max-width: 25ch;
 	margin-inline: auto;
 	text-align: center;
+	color: var(--color-amber-800);
+
+	&:first-child {
+		margin-top: var(--spacing-xl);
+	}
 }

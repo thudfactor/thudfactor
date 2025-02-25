@@ -10,7 +10,7 @@
 :is(h1, h2, h3, h4, h5, h6):not([class]) {
 	font-family: var(--font-serif);
 	font-weight: 400;
-	max-inline-size: 35ch;
+	hyphens: auto;
 }
 
 h1:not([class]) {
@@ -88,7 +88,6 @@ blockquote {
 	padding-inline-start: var(--spacing-s);
 	border-inline-start: 1px var(--color-stone-200) solid;
 	border-inline-start-width: var(--spacing-3xs);
-	max-inline-size: 60ch;
 }
 
 blockquote > q {

@@ -70,9 +70,9 @@ A lot of articles about color models have illustrations of the models as 3D obje
 
 <ArticleFigure position="right">
 	<div class="box" slot="fig">
-		<LabeledSwatch color="#ff0000" label="#ff0000" />
-		<LabeledSwatch color="#00ff00" label="#00ff00" />
-		<LabeledSwatch color="#0000ff" label="#0000ff" />
+		<LabeledSwatch color="#ff0000" label="#ff0000 - red" />
+		<LabeledSwatch color="#00ff00" label="#00ff00 - green" />
+		<LabeledSwatch color="#0000ff" label="#0000ff - blue" />
 	</div>
 	Hexadecimal notation of the three primaries. Although we might think of these as three numbers
 	jammed together, the result is just one number.
@@ -88,8 +88,8 @@ The sRGB color space — created in 1996 — is the most common and compatible 
 		<LabeledSwatch color="#009060" label="36,960 — forest green" />
 		<LabeledSwatch color="#f00073" label="15,728,755 — pink" />
 	</div>
-	Some RGB colors represented as decimals. Once you start mixing colors, it becomes really hard to
-	break the colors down into their component parts.
+	Some RGB colors represented as decimals. Once you start mixing primaries, it's difficult to
+	predict what the resulting color will be.
 </ArticleFigure>
 
 Why hexadecimal notation? This format makes it easy for us to see the intensity of red, green, and blue values independently. Decimal is a lot harder to manage. “15,728,755” is a combination of both red and blue, but it’s hard to tease out how much by looking at the decimals. Once it’s in hex, it’s a lot easier to see that it's quite a lot of red and a bit of blue: `#f00073`.

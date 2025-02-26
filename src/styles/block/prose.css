@@ -15,19 +15,13 @@
 	}
 }
 
-.prose .box {
-	border-color: var(--color-amber-700);
-	color: var(--color-amber-800);
-	font-weight: bold;
-}
-
-.prose .box p {
-	font-size: var(--text-lg);
-	font-weight: 450;
-}
-
 .prose :is(h2, h3, h4) {
 	color: var(--color-amber-800);
+}
+
+.box:has(+ figcaption) {
+	border-end-start-radius: 0;
+	border-end-end-radius: 0;
 }
 
 @container pageContainer (min-width: 95ch) {

@@ -199,10 +199,6 @@ figcaption p {
 	max-inline-size: none !important;
 }
 
-aside {
-	max-inline-size: 40ch;
-}
-
 aside q:before,
 aside q:after {
 	content: "";

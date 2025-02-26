@@ -4,9 +4,15 @@
 	initial-value: flex-start;
 }
 
+@property --cluster-wrap {
+	syntax: "wrap | nowrap";
+	inherits: false;
+	initial-value: wrap;
+}
+
 .cluster {
 	display: flex;
-	flex-wrap: wrap;
+	flex-wrap: var(--cluster-wrap, wrap);
 	gap: var(--cluster-gap, var(--spacing-s));
 	justify-content: var(--cluster-justify, flex-start);
 	align-items: var(--cluster-align, baseline);

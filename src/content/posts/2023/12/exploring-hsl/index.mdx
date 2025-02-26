@@ -18,23 +18,26 @@ cover:
   attribution:
     name: John Williams
 ---
-import ColorBar from '@components/ColorBar.astro';
-import AlertCallout from '@components/AlertCallout.astro';
-import LabeledSwatch from '@components/LabeledSwatch.astro';
-import './hsl-bars.css';
+
+import ArticleFigure from "@components/ContentItems/ArticleFigure/index.astro";
+import ColorBar from "@components/ColorBar.astro";
+import AlertCallout from "@components/AlertCallout.astro";
+import LabeledSwatch from "@components/LabeledSwatch.astro";
+import "./hsl-bars.css";
 
 The next most common color model in CSS is _HSL_. Unlike the RGB color model, HSL doesn’t define color as a mixture of three primaries. It describes color as being made up of three different qualities.
 
 The first, _hue_, sets the overall color from the spectrum. _Saturation_ is how much that hue contributes to the overall color. _Lightness_ is how light or dark the color is.
 
-<figure class="right">
-  <LabeledSwatch color="#c414b3" label="#c414b3" />
-  <LabeledSwatch color="rgb(196 20 179)" label="rgb(196 20 179)"/>
-  <LabeledSwatch color="hsl(306deg, 81%, 42%)" label="hsl(306deg 81% 42%)"/>
-  <figcaption>
-    Specifying the same color three different ways: RGB hex notation, the `rgb()` function, and the `hsl()` function.
-  </figcaption>
-</figure>
+<ArticleFigure position="right">
+	<div class="box" slot="fig">
+		<LabeledSwatch color="#c414b3" label="#c414b3" />
+		<LabeledSwatch color="rgb(196 20 179)" label="rgb(196 20 179)" />
+		<LabeledSwatch color="hsl(306deg, 81%, 42%)" label="hsl(306deg 81% 42%)" />
+	</div>
+	Specifying the same color three different ways: RGB hex notation, the `rgb()` function, and the
+	`hsl()` function.
+</ArticleFigure>
 
 In CSS, both the HSL and the RGB color models work within the sRGB color space. All colors specified using RGB can also be specified using HSL, so you can pick the one you are more comfortable with. But many people find working with HSL values more intuitive.
 
@@ -42,84 +45,83 @@ In CSS, both the HSL and the RGB color models work within the sRGB color space. 
 
 Just as we did with RGB, let’s look at each axis in isolation. (Or, at least, as much isolation as we can manage.)
 
-<figure>
-<ColorBar numSwatches="18" class="hsl hue" style="margin-bottom: 1rem;" />
-<ColorBar numSwatches="20" class="hsl saturation" style="margin-bottom: 1rem;" />
-<ColorBar numSwatches="20" class="hsl lightness" style="margin-bottom: 1rem;" />
-<figcaption>
-
-  Top: Changing the _hue_ value from 0º to 360º.
-  Middle: Changing the _saturation_ value from 0% to 100%, with lightness 50%.
-  Bottom: changing the _lightness_ value from 0% to 100%, saturation 100%.
-
-</figcaption>
-</figure>
+<ArticleFigure>
+	<div class="box" slot="fig">
+		<ColorBar numSwatches="18" class="hsl hue" style="margin-bottom: 1rem;" />
+		<ColorBar numSwatches="20" class="hsl saturation" style="margin-bottom: 1rem;" />
+		<ColorBar numSwatches="20" class="hsl lightness" style="margin-bottom: 1rem;" />
+	</div>
+	Top: Changing the _hue_ value from 0º to 360º. Middle: Changing the _saturation_ value from 0% to
+	100%, with lightness 50%. Bottom: changing the _lightness_ value from 0% to 100%, saturation 100%.
+</ArticleFigure>
 
 Hue is specified as an angle on a color wheel, so values range from 0º to 360º, with decimal values available. Just as with other circles, angles equal to or greater than 360º just take another turn around the wheel — 0º and 360º are the same hue (red), 60º and 420º are both the same yellow, and so forth.
 
 Saturation and lightness are both specified as percentages. Adjusting saturation alone causes colors to tend towards grey, which sometimes appears to lighten the colors even though the lightness value is untouched. At 0% saturation, all colors are the same because the hue value contributes nothing to the overall color. Only saturation and lightness matter.
 
-<figure>
-  <ColorBar numSwatches="16" class="hsl hue" style="--s: 100%"/>
-  <ColorBar numSwatches="16" class="hsl hue" style="--s: 75%"/>
-  <ColorBar numSwatches="16" class="hsl hue" style="--s: 50%"/>
-  <ColorBar numSwatches="16" class="hsl hue" style="--s: 25%"/>
-  <ColorBar numSwatches="16" class="hsl hue" style="--s: 0%"/>
-  <figcaption>
-    Reducing saturation in 25% increments from 100% to 0%, lightness kept constant at 50%.
-  </figcaption>
-</figure>
+<ArticleFigure>
+	<div class="box" slot="fig">
+		<ColorBar numSwatches="16" class="hsl hue" style="--s: 100%" />
+		<ColorBar numSwatches="16" class="hsl hue" style="--s: 75%" />
+		<ColorBar numSwatches="16" class="hsl hue" style="--s: 50%" />
+		<ColorBar numSwatches="16" class="hsl hue" style="--s: 25%" />
+		<ColorBar numSwatches="16" class="hsl hue" style="--s: 0%" />
+	</div>
+	Reducing saturation in 25% increments from 100% to 0%, lightness kept constant at 50%.
+</ArticleFigure>
 
 Adjusting lightness can also seem to pull the hue out of the color because the hue is overwhelmed by black and white, but you can’t get anything approaching a neutral grey that way.
 
-<figure>
-  <ColorBar numSwatches="16" class="hsl hue" style="--l: 0%"/>
-  <ColorBar numSwatches="16" class="hsl hue" style="--l: 20%"/>
-  <ColorBar numSwatches="16" class="hsl hue" style="--l: 40%"/>
-  <ColorBar numSwatches="16" class="hsl hue" style="--l: 60%"/>
-  <ColorBar numSwatches="16" class="hsl hue" style="--l: 80%"/>
-  <ColorBar numSwatches="16" class="hsl hue" style="--l: 100%"/>
-  <figcaption>
-    Increasing lightness in 20% increments from 0% to 100%, saturation kept constant at 50%.
-  </figcaption>
-</figure>
+<ArticleFigure>
+	<div class="box" slot="fig">
+		<ColorBar numSwatches="16" class="hsl hue" style="--l: 0%" />
+		<ColorBar numSwatches="16" class="hsl hue" style="--l: 20%" />
+		<ColorBar numSwatches="16" class="hsl hue" style="--l: 40%" />
+		<ColorBar numSwatches="16" class="hsl hue" style="--l: 60%" />
+		<ColorBar numSwatches="16" class="hsl hue" style="--l: 80%" />
+		<ColorBar numSwatches="16" class="hsl hue" style="--l: 100%" />
+	</div>
+	Increasing lightness in 20% increments from 0% to 100%, saturation kept constant at 50%.
+</ArticleFigure>
 
 To get those neutral tones, you can set the hue to any degree, reduce saturation to 0, and and then change the lightness.
 
-<figure>
-  <ColorBar numSwatches="16" class="hsl lightness" style="--s: 0%"/>
-  <ColorBar numSwatches="16" class="hsl hue" style="--l: 25%"/>
-  <figcaption>
-    Every block in both bars has a different hue, but they are all shades of grey in the top bar because saturation is 0%.
-  </figcaption>
-</figure>
+<ArticleFigure>
+	<div class="box" slot="fig">
+		<ColorBar numSwatches="16" class="hsl lightness" style="--s: 0%" />
+		<ColorBar numSwatches="16" class="hsl hue" style="--l: 25%" />
+	</div>
+	Every block in both bars has a different hue, but they are all shades of grey in the top bar
+	because saturation is 0%.
+</ArticleFigure>
 
 The difference between lightness and saturation is a bit hard to grasp, but think about changing colors in a photograph. Removing saturation from a color photo will make it look black and white. But increasing or decreasing lightness makes a color photo more darker or brighter. You will start to lose details in the shadows (which get darker) or highlights (which get blown out) until everything disappears into black or white.
 
 ## Advantages and Disadvantages
 
-<figure class="right">
-  <LabeledSwatch color="hsl(127deg 100% 50%)" label="hsl(127deg 100% 50%)"/>
-  <LabeledSwatch color="hsl(127deg 10% 50%)" label="hsl(127deg 10% 50%)"/>
-  <LabeledSwatch color="hsl(127deg, 56%, 37%)" label="hsl(127deg 56% 37%)"/>
-  <figcaption>
-    All three color swatches above use the same hue value.
-    Top: A very vivid green. Middle: A very faded green. Bottom: A rather spring-like green.
-  </figcaption>
-</figure>
+<ArticleFigure position="right">
+	<div class="box" slot="fig">
+		<LabeledSwatch color="hsl(127deg 100% 50%)" label="hsl(127deg 100% 50%)" />
+		<LabeledSwatch color="hsl(127deg 10% 50%)" label="hsl(127deg 10% 50%)" />
+		<LabeledSwatch color="hsl(127deg, 56%, 37%)" label="hsl(127deg 56% 37%)" />
+	</div>
+	All three color swatches above use the same hue value. Top: A very vivid green. Middle: A very
+	faded green. Bottom: A rather spring-like green.
+</ArticleFigure>
 
 Once you have a good feel for where hues are located on the color wheel, it’s easy to pick a color and get it into the general ballpark. It does take some practice, but in my experience you have a wider range of colors you can get to without having to reach for a color picker.
 
 HSL also mimics a common way we think about colors. If you think “that red is too vivid,” you can pull saturation down. But if you want “dark red” or “light red” you can adjust lightness. This also means it’s better suited to cases where colors have to change programmatically.
 
-<figure class="right">
-  <LabeledSwatch color="hsl(270deg 100% 100%)" label="hsl(270deg 100% 100%)"/>
-  <LabeledSwatch color="hsl(60deg 75% 100%)" label="hsl(60deg 75% 100%)"/>
-  <LabeledSwatch color="hsl(43.23deg 0% 100%)" label="hsl(43.23deg 0% 100%)"/>
-  <figcaption>
-    Although these swatches all describe colors at different points on the hue wheel and with different amounts of saturation, they are all white.
-  </figcaption>
-</figure>
+<ArticleFigure position="right">
+	<div class="box" slot="fig">
+		<LabeledSwatch color="hsl(270deg 100% 100%)" label="hsl(270deg 100% 100%)" />
+		<LabeledSwatch color="hsl(60deg 75% 100%)" label="hsl(60deg 75% 100%)" />
+		<LabeledSwatch color="hsl(43.23deg 0% 100%)" label="hsl(43.23deg 0% 100%)" />
+	</div>
+	Although these swatches all describe colors at different points on the hue wheel and with
+	different amounts of saturation, they are all white.
+</ArticleFigure>
 
 There are a couple of flaws with HSL, however. Because all three color components are always required, there are a few places where just one or two matter. At 100% or 0% lightness, it does not matter what either the saturation or the hue are. Those “theoretical” colors just get clipped to white and black.
 
@@ -129,17 +131,20 @@ You can see this tendency in many online color pickers or color picker apps. Alt
 
 The biggest disadvantage, however, is that colors of the same lightness _value_ are perceived as lighter or darker than their neighbors. Let’s take a look at the HSL spectrum again:
 
-<figure>
-  <ColorBar numSwatches="18" class="hsl hue" style="--s: 100%"/>
-  <figcaption>
-    The HSL color spectrum, with saturation at 100% and lightness at 50%. Although lightness is consistent, some of these colors look brighter than others.
-  </figcaption>
-</figure>
+<ArticleFigure>
+	<div class="box" slot="fig">
+		<ColorBar numSwatches="18" class="hsl hue" style="--s: 100%" />
+	</div>
+	The HSL color spectrum, with saturation at 100% and lightness at 50%. Although lightness is
+	consistent, some of these colors look brighter than others.
+</ArticleFigure>
 
 This is not as critical for some concerns as it is for others, but it’s critical if you’re assigning colors automatically while sticking to the WCAG color contrast guidelines.
 
 <AlertCallout>
-Fun fact: the WCAG 2.0 color contrast guidelines have some [significant deficiencies](https://git.apcacontrast.com/documentation/WhyAPCA), in part because they also lean on a flawed mathematical  understanding of contrast.
+	Fun fact: the WCAG 2.0 color contrast guidelines have some [significant
+	deficiencies](https://git.apcacontrast.com/documentation/WhyAPCA), in part because they also lean
+	on a flawed mathematical understanding of contrast.
 </AlertCallout>
 
 Other color models try to address this, and we’ll take a look at those in future installments.
@@ -148,19 +153,17 @@ Other color models try to address this, and we’ll take a look at those in futu
 
 There are many similar color models often confused with HSL. CSS also has HWB, which expresses color as a mixture of hue, white, and black. Changing _either_ W or B while keeping the other at 0% is the same as sweeping through the "lightness" values in HSL. HWB is perhaps more intuitive for lightening and darkening colors, but counter-intuitive for neutral tones.
 
-<figure>
-  <ColorBar numSwatches="16" class="hwb hue" style="margin-bottom: 1rem;"/>
-  <ColorBar numSwatches="16" class="hwb whiteness" style="margin-bottom: 1rem;"/>
-  <ColorBar numSwatches="16" class="hwb blackness" style="margin-bottom: 1rem;"/>
-  <figcaption>
-
-    Top: Changing the _hue_ value from 0º to 360º.
-    Middle: Changing the _whiteness_ value from 0% to 100%, blackness 0%.
-    Bottom: changing the _blackness_ value from 0% to 100%, whiteness 100%.
-    Note that all swatches have some hue component except for the pure white and pure black at the ends of the color bars.
-
-  </figcaption>
-</figure>
+<ArticleFigure>
+	<div class="box" slot="fig">
+		<ColorBar numSwatches="16" class="hwb hue" style="margin-bottom: 1rem;" />
+		<ColorBar numSwatches="16" class="hwb whiteness" style="margin-bottom: 1rem;" />
+		<ColorBar numSwatches="16" class="hwb blackness" style="margin-bottom: 1rem;" />
+	</div>
+	Top: Changing the _hue_ value from 0º to 360º. Middle: Changing the _whiteness_ value from 0% to
+	100%, blackness 0%. Bottom: changing the _blackness_ value from 0% to 100%, whiteness 100%. Note
+	that all swatches have some hue component except for the pure white and pure black at the ends of
+	the color bars.
+</ArticleFigure>
 
 Stefan Judis has an excellent [article about HWB](https://www.stefanjudis.com/blog/hwb-a-color-notation-for-humans/).
 
@@ -170,7 +173,7 @@ HSV (Hue, Saturation, and Value) is the same color model as HSB — they just d
 
 ## Which is better, RGB or HSL?
 
-If you had to choose just one of these two, HSL is more often than not a better choice. It’s easy to understand. With practice it’s easier to picture what any given color value will be. And the biggest benefit is that it’s easier to manipulate with code.
+If you had to choose just one of these two, HSL is more often than not a better choice. It’s easy to understand. With practice, it’s easier to picture what any given color value will be. And the biggest benefit is that it’s easier to manipulate with code.
 
 That said, _you don’t have to choose_. CSS supports both, so there’s no reason not to switch modes if you find one works better than the other. Remember that you can create every color with HSL that you can with RGB (even if some color pickers won’t let you), so use the one you like until circumstances require a change.
 

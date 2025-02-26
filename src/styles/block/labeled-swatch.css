@@ -1,0 +1,17 @@
+[data-element="labeledSwatch"] {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	font-size: 12px;
+
+	.swatch {
+		width: 50px;
+		flex-shrink: 0;
+		aspect-ratio: 3/2;
+		background-color: var(--color, #ccc);
+	}
+
+	.label {
+		font-family: monospace;
+	}
+}

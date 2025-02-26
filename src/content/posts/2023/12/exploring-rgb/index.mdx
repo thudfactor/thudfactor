@@ -96,7 +96,7 @@ Why hexadecimal notation? This format makes it easy for us to see the intensity 
 
 The amount of each of these colors tells us how much of that wavelength of light contributes to the final color value. If we turn off all but one, and then sweep through the values from 0 to 256 for a single color, we get shades of that color.
 
-<ArticleFigure class="ColorBars">
+<ArticleFigure>
 	<div class="box" slot="fig">
 		<ColorBar numSwatches="16" class="rgb red" style="" />
 		<ColorBar numSwatches="16" class="rgb green" style="" />
@@ -108,7 +108,7 @@ The amount of each of these colors tells us how much of that wavelength of light
 
 You can get other hues by blending two of the three primary colors.
 
-<ArticleFigure class="ColorBars">
+<ArticleFigure >
 	<div class="box" slot="fig">
   <ColorBar numSwatches="16" class="rgb red" style="--b: 0"/>
   <ColorBar numSwatches="16" class="rgb red" style="--b: 64"/>
@@ -137,7 +137,7 @@ You can get other hues by blending two of the three primary colors.
 
 Pure neutral tones have equal amounts red, green, and blue. The closer the red, green, and blue channels are to each other, the more desaturated -- or “grey” -- the colors get.
 
-<ArticleFigure class="ColorBars">
+<ArticleFigure>
 	<div class="box" slot="fig">
 		<ColorBar numSwatches="32" class="rgb greyscale" style="--g: 0; margin-bottom: 1rem;" />
 		<ColorBar numSwatches="16" class="rgb green" style="--b: 0; --r: 0" />
@@ -152,7 +152,7 @@ Pure neutral tones have equal amounts red, green, and blue. The closer the red, 
 
 Mix all three unevenly and you get lighter, more pastel-like shades.
 
-<ArticleFigure class="ColorBars">
+<ArticleFigure>
 	<div class="box" slot="fig">
 		<ColorBar numSwatches="16" class="rgb green" style="--b: 128; --r: 0" />
 		<ColorBar numSwatches="16" class="rgb green" style="--b: 256; --r: 64" />
@@ -196,7 +196,7 @@ As a color model, RGB has some big advantages:
 - Every color in the sRGB space can be addressed by precisely one combination of R, G, and B.
 - This mode of expressing colors in digital design is as common as dirt.
 
-<ArticleFigure position="right" class="ColorBars">
+<ArticleFigure position="right">
 	<div class="box" slot="fig">
 		<LabeledSwatch color="#ff0000" label="#ff0000" />
 		<LabeledSwatch color="#f44e4e" label="#f44e4e" />

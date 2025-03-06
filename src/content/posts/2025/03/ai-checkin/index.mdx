@@ -11,6 +11,7 @@ cover:
 ---
 
 import Pullquote from "@components/ContentItems/Pullquote/index.astro";
+import AlertCallout from "@components/AlertCallout.astro";
 import ArticleFigure from "@components/ContentItems/ArticleFigure/index.astro";
 
 It seemed like a good time to do a check-in on where my head is at with generative AI these days, especially since my country's right wing seems to think most government employees can now be [replaced with AI](https://www.cio.com/article/3828445/musks-plan-to-replace-government-workers-with-ai-could-create-chaos.html). (I don't know if they actually believe that — it's hard to tell what MAGA believes and what is merely pretext — but it's what some of them are telling their constituents.) This impulse is what a lot of us expected, of course. Some folks just can't resist the opportunity to rid their organizations of troublesome, expensive humans and replace them with theoretically more compliant, less needy computers. There are, of course, plenty of voices claiming that AI helps but can't replace humans, so jobs won't be lost… but that's a hard argument to make to anyone paying attention.
@@ -68,13 +69,18 @@ There is a more-or-less canned response to "this AI keeps giving me wrong answer
 
 I'm not sure the AI boosters realize this, but it feels a bit like a bait-and-switch. "Just talk to it normal. Also take my $300 class on how to write prompts."
 
-<Pullquote>"Just talk to it normal. Also take my $300 class on how to write prompts."</Pullquote>
+<Pullquote>“Just talk to it normal. Also take my $300 class on how to write prompts.”</Pullquote>
 
 One developer I know who works a lot with developing AI assistants described a strategy by which
 _multiple_ "agents" coordinate in the background, each specialized to a specific task, and sometimes
 offloading work to more traditional programming to get the correct answer. Building this kind of
 thing is non-trivial and requires a great deal of understanding about how the AI works. The end
 result, while better, is still not entirely reliable.
+
+<AlertCallout>
+	A friend of mine _has_ found a really useful purpose for generative image AI: creating paintings
+	of Jesus smoking blunts. If that's not a good use of resources, is anything?
+</AlertCallout>
 
 It's also basically a department full of experts, except none of them insist on health insurance.
 

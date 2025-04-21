@@ -2,13 +2,14 @@ import { glob } from "astro/loaders";
 import { defineCollection, z } from "astro:content";
 
 const posts = defineCollection({
-	loader: glob({ pattern: "./**/[^_]*.{md,mdx}", base: "./src/content/posts"}),
+	loader: glob({ pattern: "./**/[^_]*.{md,mdx}", base: "./src/content/posts" }),
 	// Type-check frontmatter using a schema
 	schema: ({ image }) =>
 		z.object({
 			title: z.string(),
 			subtitle: z.string().optional(),
 			description: z.string(),
+			draft: z.boolean().optional(),
 			// Transform string to Date object
 			date: z.coerce.date(),
 			updatedDate: z.coerce.date().optional(),
@@ -35,7 +36,7 @@ const posts = defineCollection({
 });
 
 const pages = defineCollection({
-	loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/pages"}),
+	loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/pages" }),
 	// Type-check frontmatter using a schema
 	schema: z.object({
 		title: z.string(),

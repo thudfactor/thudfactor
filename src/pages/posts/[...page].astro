@@ -18,7 +18,7 @@ const cover = {
 };
 
 export const getStaticPaths = (async ({ paginate }) => {
-	const posts = (await getCollection("posts"))
+	const posts = (await getCollection("posts", p => p.data.draft !== true))
 		.sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf())
 		.reverse();
 	// todo: adjust the page size so the pages are spread out as evenly as possible

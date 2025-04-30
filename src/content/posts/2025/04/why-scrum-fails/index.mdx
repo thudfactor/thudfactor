@@ -1,8 +1,7 @@
 ---
 title: Why scrum fails
-draft: true
 description: A story that illustrates what we were all told about capitalism, and most of us still feel to be true. Even if we know better.
-date: Fri Apr 21 06:19:30 EDT 2025
+date: Fri Apr 30 06:19:30 EDT 2025
 cover:
   src: ./new-growth.jpg
   alt: A branch of a shrub with a newly sprouted green leaf; the leaf and the branch are encased in ice
@@ -12,18 +11,25 @@ cover:
 ---
 
 import Blockquote from "@components/ContentItems/Blockquote.astro";
+import Pullquote from "@components/ContentItems/Pullquote/index.astro";
 
 About five years ago I joined a team of developers who were already pretty advanced in their use of scrum, and in the past five years they have only become better at it. In my opinion, the team has correctly identified some flaws in the scrum framework and found adaptations to work around those. The other engineering team in the company _also_ uses scrum; they have for many years. They are also good at it, and it is very effective for them.
 
-Frustratingly, this seems like an exception rather than the rule. My previous job at a digital agency _also_ tried a scrum transformation; after several years of trying to make the process work I eventually realized that the business was unlikely to ever succeed at it. In theory, scrum can work just about anywhere there's a need for creative work requiring a lot of analysis and with a significant degree of uncertainty. In practice many organizations will fail to implement scrum. I don't think this is because scrum doesn't work. I think it's because scrum optimizes for delivering a quality product rapidly, which is simply not a problem many companies are looking to solve.
+In theory, scrum can work anywhere the work is primarily analytical and creative. In practice, many organizations struggle and fail to implement scrum. My previous job at a digital agency _also_ tried a scrum transformation; after several years of trying to make the process work I eventually realized that the business was unlikely to ever succeed at it.
 
-Worse than that, "delivering a quality product rapidly" might actually be _contrary_ to a business's actual goals. These goals -- making boatloads of money for a select few -- privilege work that has just enough of the appearance of quality to get the business over a specific competitive hump. This puts significant downward pressure on quality and encourages businesses to maximize employee output while minimizing investment in employees. It creates an adversarial relationship between the company and its employees that cannot tolerate either giving scrum teams autonomy or treating teams like partners in an enterprise. In the absence of autonomy (or, in fact, honesty about a company's goals), Scrum is doomed.
+I don't think this is because scrum doesn't work. Scrum just optimizes for delivering a quality product rapidly, and that is not a problem most companies are looking to solve. Worse than that, "delivering a quality product rapidly" might actually be _contrary_ to a business's actual goal. This goal -- making boatloads of money for a select few -- rewards work that is just good enough to earn another round of funding or get over a specific competitive hump.
 
-Unfortunately for the practice, this describes most companies.
+<Pullquote>People should be left alone to do the things they are good at.</Pullquote>
 
-## Scrum requires autonomy
+This puts significant downward pressure on excellence. Instead, it encourages maximizing employee output while minimizing investment. It creates an adversarial relationship between the company and its employees, an environment that cannot tolerate giving scrum teams autonomy or treating engineering teams like partners in an enterprise. But without these, scrum is doomed.
 
-To understand how and why, we need to look back at the foundational documents -- to the parts poor scrum implementations either gloss over or never prioritize. These three items from ["Principles Behind the Agile Manifesto"](https://agilemanifesto.org/principles.html) come at it sideways:
+This describes most companies. That's why scrum so often fails.
+
+## Scrum requires autonomy…
+
+To understand how and why, we need to revisit scrum values, the parts poor scrum implementations either gloss over or never prioritize. Key to scrum success is the idea that people should mostly be left alone to do the work they are good at. For example, product owners decide what work gets done because they understand the business goals and purpose. But the team doing the work is in control of how work gets done and at what pace.
+
+These three items from ["Principles Behind the Agile Manifesto"](https://agilemanifesto.org/principles.html) come at the notion sideways:
 
 <Blockquote note="Principles four, seven, and eight">
 
@@ -43,71 +49,107 @@ but are more explicit here (emphasis mine):
 
 </Blockquote>
 
-The recurring theme here is that managers get to decide what work gets done, but the team doing the work is in control of how work gets done and at what pace.t
-
-- Principle four argues against fire-and-forget management (work is not directed, it is cooperative).
-- Principle seven argues against abstract metrics
-- Principle eight is explicit about avoiding overwork and disruption
-- Principles five, eleven, and twelve state directly that the team should be trusted to _manage itself_, identifying both problems and solutions on their own.
+Principle four argues against fire-and-forget management (work is not directed, it is cooperative). Seven argues against abstract metrics. Eight is explicit about avoiding overwork and disruption. Principles five, eleven, and twelve state directly that the team should be trusted to _manage itself_, identifying both problems and solutions on their own.
 
 [The Scrum Guide](https://scrumguides.org/scrum-guide.html) interprets these principles this way:
 
 <Blockquote note="Scrum Values">
-	The Scrum Team and its stakeholders are open about the work and the challenges. Scrum Team members
-	respect each other to be capable, independent people, and are respected as such by the people with
-	whom they work… The decisions that are made, the steps taken, and the way Scrum is used should
-	reinforce these values, not diminish or undermine them.
+
+    The Scrum Team and its stakeholders are open about the work and the challenges. Scrum Team members respect each other to be capable, independent people, and are respected as such by the people with whom they work… The decisions that are made, the steps taken, and the way Scrum is used should reinforce these values, not diminish or undermine them.
+
 </Blockquote>
 
 Furthermore,
 
 <Blockquote note="The Scrum Team">
-	The Scrum Team is responsible for all product-related activinpties from stakeholder collaboration,
-	verification, maintenance, operation, experimentation, research and development, and anything else
-	that might be required. They are structured and empowered by the organization to manage their own
-	work.
+
+    The Scrum Team is responsible for all product-related activities from stakeholder collaboration, verification, maintenance, operation, experimentation, research and development, and anything else that might be required. They are structured and empowered by the organization to manage their own work.
+
 </Blockquote>
 
-The upshot of all of this means that Scrum envisions a largely autonomous production team. They work together with, but _crucially not under the control of_, the business side of the operation. It is a collaborative culture, not a top-down authoritarian structure.[^1]
+Scrum envisions a largely autonomous production team. They work together with, but _crucially not under the control of_, the business side of the operation. It is a collaborative culture, not a top-down authoritarian structure.[^1]
 
 ## …that corporations aren't willing to grant
 
-Most, if not all, of the stories I've seen or heard about scrum failures are caused by the organization refusing to accommodate this (admittedly radical) inversion of authority. They refuse to empower and collaborate with the team, retaining command-and-control structures as well as common carrot-and-stick management approaches that depersonalize team members and sometimes set them up against each other. Examples of these kinds of behaviors are:
+It seems to me that most scrum failures happen because the organization cannot tolerate this sharing of authority. They refuse to empower and collaborate with the team, retaining command-and-control structures as well as common carrot-and-stick leadership approaches that depersonalize team members and sometimes set them up against each other.
 
-- Tracking individual team member's contributions to velocity (scrum's measure of a team's capacity)
-- Insisting on maintaining or steadily increasing velocity
+<Pullquote position="right">
+	Scrum without empowerment is not scrum; agile without autonomy is not agile.
+</Pullquote>
+
+Examples of these kinds of behaviors are:
+
+- Tracking individual team member's contributions to velocity
+- Insisting on steadily increasing velocity ("make the number go up")
 - _Assigning_ specific scrum tasks or velocity goals to team members
 - Publicly rewarding "top" individuals while taking punitive action against "low" performers, such as personal improvement plans (PIPs) or culling "low" performers on a predictable basis.
 - Assigning specific stories to a sprint without team input, then mandating all stories be completed
 - Planning multiple sprints ahead, and committing the team to producing on that schedule
 - Frequently re-organizing teams[^2]
 
-Many things about Scrum can be tweaked or adjusted, but the autonomy of teams to do the work their way is sacrosanct. Scrum without empowerment is not scrum; agile without autonomy is not agile. This is _not_ a surprise to anyone or any business that has gone through basic scrum training; this principle receives considerable attention in both the Certified Scrum Master and Certified Product Owner training materials. (The possible exception here are some so-called "scaled scrum" schemes.)
+Many things about Scrum can be tweaked or adjusted, but the freedom for teams to do the work their way is sacrosanct. Scrum without empowerment is not scrum; agile without autonomy is not agile. This is _not_ a surprise to anyone or any business that has gone through basic scrum training; this principle receives considerable attention in both the Certified Scrum Master and Certified Product Owner training materials. Companies adopting scrum but refusing to adapt to scrum's most crucial prerequisite has puzzled me for years.
 
-Companies adopting scrum but refusing to adapt to scrum's most crucial prerequisite has puzzled me for years. My CSM training typically framed the cultural shift required as an issue of trust: stakeholders don't think scrum can actually deliver, so you need to deliver value rapidly and _prove_ the process works. That seems like a reasonable approach if the stakeholders are actually interested in delivering a quality product -- an assumption, one that we are raised to believe is so fundamental to capitalism it hardly requires mentioning. But this assumption is not true for many companies. Corporate leadership cannot admit this out loud, though, because much of buying and selling rests on the assumption that "[quality is job one](https://www.youtube.com/watch?v=lKMKZ54HDKY)."
+My CSM training typically framed the cultural shift required as an issue of trust: stakeholders don't think scrum can actually deliver, so you need to deliver value rapidly and _prove_ the process works. That seems like a reasonable approach if the stakeholders are actually interested in delivering a good product.
 
-The capitalism we are taught to believe in, and (in fact) is reflected in most professional training, is [fairy-tale capitalism](https://www.thudfactor.com/posts/2025/03/fairy-tale/). The assumption is that our businesses compete in the marketplace by creating quality goods and services. Everyone on a production team is dedicated to producing that quality. But for many companies, quality is only useful for a specific circumstance and a limited period of time. At a certain stage the _illusion_ of quality is far more profitable. At this point, team-based autonomy is not only less useful, it actively works against the extraction of wealth from labor and its concentration in the investor class.
+But of course they are, right? We are raised to believe this drive is so fundamental to capitalism it hardly seems right to question it.
+
+<Pullquote position="left">Often the illusion of quality is far more profitable.</Pullquote>
+
+But this assumption is not true of many companies. Corporate leadership cannot admit this out loud, though, because much of buying and selling rests on the assumption that "[quality is job one](https://www.youtube.com/watch?v=lKMKZ54HDKY)."
+
+The capitalism we are taught to believe in, and is reflected in most professional training, is [fairy-tale capitalism](https://www.thudfactor.com/posts/2025/03/fairy-tale/). We assume our business is trying to compete by creating quality goods and services. Everyone on a production team is therefore dedicated to producing that.
+
+But for many companies, excellence is only useful for a specific circumstance and a limited period of time. Often the _illusion_ of it is far more profitable. At this point, team self-determination is not only less useful, it actively works against the extraction of wealth and its concentration in the investor class.
 
 ## Real-world capitalism
 
-Fairy-tale capitalism suggests that quality is ensured through the operations of a free market, and competition helps bring prices down. Real-world capitalism, especially when unconstrained, is more complex and offers several paths to increasing income, largely created through a parallel marketplace companies participate in where the companies themselves are the product, either through private investors or through the stock market.
+Fairy-tale capitalism suggests that good products are ensured through the operations of a free market, and competition helps bring prices down. Real-world capitalism, especially when unconstrained, is more complex. There are many paths to profit, largely created through a parallel marketplace where a business's "customers" aren't really the customers. Instead, they are an asset that can be exploited and traded just like any other.
 
 - Entrepreneurs can get rich by creating a company that is attractive to investors; income can be generated through salaries, bonuses, or other pathways paid out of this investment.
-- And / or they can get rich by _selling_ that company to a competing company, who will often shut it down, or to investors who purchase it with the intent of milking the company or liquidating its assets.
+- Or they can get rich by _selling_ that company to a competing company, who will often shut it down
+- Or by draining the company of all value as rapidly as possible, then liquidating its assets.
+- Or they can _sell_ customer data and attention through an advertising marketplace
+- Or any combination of the above
 
-In under-regulated markets, companies can also make loads of money by _initially_ creating a valuable product, either squeezing out competition (Walmart) or creating an interlocking set of features often called an "ecosystem" that makes it difficult for customers to move away (Apple, Amazon AWS). They can then gradually _decrease_ the quality of their products, converting brand loyalty into investor value, until the company is no longer able to function. (In the online space, this is often called [enshitification](https://en.wikipedia.org/wiki/Enshittification).)
+A company's founders may have _once_ cared about the company they started, but in the hands of competition or investors interests shift to exploitation. The work is sure to suffer -- especially if owners are willing to accept the ultimate destruction of the company in exchange for short-term gain.
 
-A company's founders may have _once_ cared about the company they started, but once in the hands of competition or investors, that interest in the product diminishes rapidly -- if it was there at all. Once the owners are more interested in the money a company generates than they are the actual product, quality is sure to suffer -- especially if they are willing to accept the ultimate destruction of the company to increase their short-term gain.
+These strategies are extractive: the purpose is to squeeze as much extra cash out of the product as possible before exiting entirely. Some small businesses essentially start in an extractive mode, with the founders intending to scale fast, then sell out.[^3] The purpose here is never _really_ to build a product attractive to consumers, it's to build a product whose consumers are attractive to another investor. Long-term, strategic investments in a product (for example, in code stability) are not as useful to the business's real purpose as flashy new features.
 
-Any of these strategies can be considered _extractive_: the purpose is to squeeze as much extra cash out of the product as possible before exiting entirely. Some small businesses essentially start in an extractive mode, with the founders intending to scale fast, then sell out.[^3] The purpose here is never _really_ to build a product attractive to consumers, it's to build a product whose consumers are attractive to another investor. Long-term, strategic investments in a product (for example, in code stability or reliability) are not as useful to the business's real purpose as flashy new features.
+<Pullquote>
 
-In other extractive modes, the employees are only valuable as a means of keeping the company afloat with as minimal investment as possible so the maximum amount of profits can be siphoned off into investor pockets -- assuming investors think a slow starvation will net them more than immediate liquidation.
+    Authoritarian, top-down scrum is _fantastic_ at creating an atmosphere of paranoia.
 
-Regardless, it is crucial to keep the costs of creating product low. That means compromising on quality and keeping employment costs low Scrum emphasizes long-term viability and strategic thinking, while encouraging employees be empowered and encouraged to work closely together. The former is arguably wasted investment, and the latter is uncomfortably close to unionization.
+</Pullquote>
+
+In other extractive modes, the employees are only valuable as a means of keeping the company afloat with as minimal investment as possible, so the maximum amount of profits can be siphoned off into investor pockets.
+
+Scrum emphasizes the need for strategic thinking and empowered employees. The former is arguably wasted investment, and the latter is uncomfortably close to unionization. In these circumstances, _functioning_ scrum is not just a waste, it's a threat.
+
+Authoritarian, top-down scrum, on the other hand, is _fantastic_ at extracting labor output, discouraging long-term thinking, and creating an atmosphere of paranoia.
+
+Best of all, what gets the blame? Scrum.
 
 ## What does this mean for scrum practitioners?
 
-[^1]: There's an unfortunate ambiguity in Scrum jargon here in the title of "scrum master." Some businesses (not to mention scrum masters) parse the word "master" to be equivalent to "boss," but the mastery meant here is mastery of scrum principles and processes, not authority over the team members themselves.
+Scrum practitioners need to come to grips with a few things. The first is that scrum really _isn't_ going to work for many companies. At least, not the way we would hope. I have some suggestions for how to tell if a company is a good candidate for, but those I'll have to save for another post.
+
+We also need to recognize that scrum boosterism runs smack up against the lived experience of people who've been in bad scrum environments. These concerns are not easily dismissed, and the damage poor implementations have done not just to scrum is significant. If we want to continue working with scrum -- at least, under that terminology -- we have to find a way to address these people where they are.
+
+We should recognize that scrum is political. Scrum is not just about how to do work well; it's about how to do work safely, collaboratively, and in a manner that respects people as people. Both the agile values and derived scrum values assume that workers are _partners_ in success and deserve to work reasonable hours for fair pay, while actively discouraging abusive and extractive labor practices. As such it has more in common with [a revitalized labor movement](https://ethanmarcotte.com/books/you-deserve-a-tech-union/) than it does management training.
+
+<Pullquote position="left">Scrum is political.</Pullquote>
+
+Agility also stands in stark contrast to hustle culture and the work hard / lean in culture espoused by places like Google, Amazon, and Facebook. The real-world effect of these cultures is to push people towards burnout but without providing any tangible benefit. Many workers have stories of long nights spent and family sacrifices made in the service of company priorities, only to find themselves escorted out of the door when the business needs to juice its earnings report.
+
+Finally, executives _really_ need to be on board with the process, because they have to loosen their grip on how the work gets done. Instead, too many scrum teams end up with the added _responsibility_ of figuring things out on-the-fly, but lack the autonomy to execute. The crucial culture shift that needs to happen is more often at the management level than the team level.
+
+The agile values are not optional. They are key to making this work, assuming we all agree that quality products delivered in a reasonable time is the definition of "work."
+
+That's not always a correct assumption.
+
+## Footnotes
+
+[^1]: There's an unfortunate ambiguity in scrum jargon here in the title of "scrum master." Some businesses (not to mention scrum masters) parse the word "master" to be equivalent to "boss," but the mastery meant here is mastery of scrum principles and processes, not authority over the team members themselves.
 
 [^2]: One individual I spoke with who says he's _never_ seen functional scrum has primarily worked on scrum teams as a contractor, but companies that rely on contract labor in their scrum teams have already failed at scrum implementation.
 

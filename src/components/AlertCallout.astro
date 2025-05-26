@@ -1,13 +1,15 @@
 ---
 interface Props {
 	variant: string;
+	icon: string;
 }
 
 const { variant = "info" } = Astro.props;
+const { icon = "💁" } = Astro.props;
 ---
 
 <div class=`cluster box alert ${variant}`>
-	<div class="icon">💁🏻‍♂️</div>
+	<div class="icon">{icon}</div>
 	<div class="message">
 		<slot />
 	</div>

@@ -1,0 +1,32 @@
+---
+import { getCollection } from "astro:content";
+import Archive from "@layouts/Archive.astro";
+import Book from "@components/Book/index.astro";
+
+const title = "Books";
+const description = "Books I've Read / Some of My Favorites";
+
+const books = (await getCollection("books", p => p.data.draft !== true)).sort((a, b) =>
+	a.data.title.localeCompare(b.data.title)
+);
+---
+
+<Archive title={title} description={description}>
+	<article class="flow prose">
+		<p>
+			I used to use Goodreads until I discovered how important it was for authors to get five-star
+			ratings. My silly ratings don't need to hurt someone else's chance at a writing career.
+		</p>
+		<p>
+			In lieu of that, here's a list of some of my favorite (or recent) reads. No links to sources;
+			I assume you know where to get books.
+		</p>
+	</article>
+	<div class="booklist switcher">
+		{
+			books.map(book => {
+				return <Book book={book} />;
+			})
+		}
+	</div>
+</Archive>

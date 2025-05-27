@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import EleventyFetch from "@11ty/eleventy-fetch";
+
 const { title, published, genres, openlibrary } = Astro.props.book.data;
 
 interface Props {
@@ -39,17 +40,14 @@ for (let i = 0; i < authors.length; i++) {
 		authorDeets.push(thisAuthor.name);
 	}
 }
+
+const coverBase = covers?.length > 0 ? `https://covers.openlibrary.org/b/id/${covers[0]}` : "";
+
+const defaultImage = covers?.length > 0 ? `${coverBase}-M.jpg` : coverBase;
 ---
 
 <article class="book">
-	{
-		covers?.length > 0 && (
-			<img
-				src={`https://covers.openlibrary.org/b/id/${covers[0]}-M.jpg`}
-				alt="Book cover from Open Library"
-			/>
-		)
-	}
+	<img src={defaultImage} alt="" role="presentation" />
 	<header>
 		<h2>
 			{title} ({published})

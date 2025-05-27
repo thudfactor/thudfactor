@@ -2,7 +2,7 @@ import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 import tailwindcss from "@tailwindcss/vite";
 import { remarkDefinitionList, defListHastHandlers } from "remark-definition-list";
-
+import
 import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config

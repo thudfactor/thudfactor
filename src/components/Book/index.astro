@@ -26,6 +26,7 @@ const getJSON = async (path: string, duration: string = "365d") => {
 	const url = new URL(path, apibase);
 	const config = { ...fetchConfig, duration };
 	const resp = await EleventyFetch(url.toString(), config);
+	console.log(resp);
 	return resp;
 };
 

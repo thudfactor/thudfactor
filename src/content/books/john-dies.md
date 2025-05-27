@@ -12,4 +12,4 @@ published: 2009
 openlibrary: OL8378245W
 ---
 
-John and Dave take the wrong drug at a party and begin to see things… everywhere. Probably the first horror novel to really scare me since I read _It_ in high school, despite the satirical overtones.
+John and Dave take the wrong drug at a party and begin to see things… everywhere. One of few horror novels to scare me, despite the satirical overtones.

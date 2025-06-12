@@ -1,0 +1,25 @@
+---
+import Experiment from "@components/PageItems/Experiment.astro";
+---
+
+<style></style>
+<script is:inline src="/scripts/nature-of-code/Walker.class.js"></script>
+<Experiment p5 title="Simple P5 Example">
+	<canvas id="P5Canvas"></canvas>
+	<script is:inline>
+		const P5Canvas = document.querySelector("#P5Canvas");
+		let walker;
+		const width = 600;
+		const height = 400;
+		function setup() {
+			createCanvas(width, height, P5Canvas);
+			walker = new Walker();
+			background(255);
+		}
+		function draw() {
+			background(100);
+			walker.step();
+			walker.show();
+		}
+	</script>
+</Experiment>

@@ -1,0 +1,50 @@
+---
+import "../../styles/global.css";
+
+const { title, description, gsap = false, p5 = false } = Astro.props;
+---
+
+<html lang="en">
+	<head>
+		<title>{title} | Thudfactor</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<link rel="icon" type="image/svg+xml" href="/anvil-favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		{p5 && <script is:inline src="/scripts/p5.min.js" />}
+		{gsap && <script is:inline src="/scripts/gsap/gsap.min.js" />}
+		<style>
+			html,
+			body {
+				margin: 0;
+				padding: 0;
+				scrollbar-gutter: initial;
+				--cover-gap: 0;
+			}
+			header,
+			footer {
+				background-color: var(--color-indigo-950);
+				color: var(--color-indigo-200);
+			}
+			.cover > section {
+				background-color: gray;
+				position: relative;
+				display: grid;
+				place-items: center;
+				flex: 1 1 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="cover">
+			<header>
+				<div>Thudfactor: {title}</div>
+				<slot name="nav" />
+			</header>
+			<section>
+				<slot />
+			</section>
+			<footer><a href="/">Thudfactor</a> &copy; 2025 JH Williams</footer>
+		</div>
+	</body>
+</html>

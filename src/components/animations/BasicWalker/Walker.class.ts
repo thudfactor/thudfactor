@@ -12,7 +12,6 @@ class Walker {
 	}
 
 	show() {
-		console.log("step");
 		this.p.stroke(255);
 		this.p.strokeWeight(10);
 		this.p.point(this.x, this.y);

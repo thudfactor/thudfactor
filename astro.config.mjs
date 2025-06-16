@@ -6,29 +6,29 @@ import sitemap from "@astrojs/sitemap";
 
 import cloudflare from "@astrojs/cloudflare";
 
-import db from "@astrojs/db";
+//import db from "@astrojs/db";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://www.thudfactor.com",
-  integrations: [mdx(), sitemap(), db()],
+	site: "https://www.thudfactor.com",
+	integrations: [mdx(), sitemap()],
 
-  vite: {
-      plugins: [tailwindcss()],
-    },
+	vite: {
+		plugins: [tailwindcss()],
+	},
 
-  devToolbar: {
-      enabled: false,
-    },
+	devToolbar: {
+		enabled: false,
+	},
 
-  markdown: {
-      remarkPlugins: [[remarkDefinitionList, {}]],
-      remarkRehype: {
-          handlers: {
-              ...defListHastHandlers,
-          },
-      },
-    },
+	markdown: {
+		remarkPlugins: [[remarkDefinitionList, {}]],
+		remarkRehype: {
+			handlers: {
+				...defListHastHandlers,
+			},
+		},
+	},
 
-  adapter: cloudflare(),
+	adapter: cloudflare(),
 });

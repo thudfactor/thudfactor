@@ -5,7 +5,8 @@ import Archive from "@layouts/Archive.astro";
 import Teaser from "@components/PageItems/Teaser/index.astro";
 import Pagination from "@components/PageItems/Pagination.astro";
 
-const title = "Archives";
+const { page } = Astro.props;
+const title = `Archives: ${page.currentPage} of ${page.lastPage}`;
 const description = "A list of all the posts on this blog.";
 
 const cover = {
@@ -20,13 +21,12 @@ const cover = {
 export const getStaticPaths = (async ({ paginate }) => {
 	const posts = (await getCollection("posts", p => p.data.draft !== true))
 		.sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf())
-		.reverse();
+		.reverse()
+		.slice(8);
 	// todo: adjust the page size so the pages are spread out as evenly as possible
 	// across each archive page
-	return paginate(posts, { pageSize: 8 });
+	return paginate(posts, { pageSize: 16 });
 }) satisfies GetStaticPaths;
-
-const { page } = Astro.props;
 ---
 
 <Archive title={title} description={description} cover={cover}>

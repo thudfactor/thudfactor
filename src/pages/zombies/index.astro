@@ -1,0 +1,48 @@
+---
+import Experiment from "@layouts/Experiment.astro";
+import "./zombies.css";
+---
+
+<Experiment title="Simple P5 Example">
+	<template id="player-template">
+		<div data-position="9,9" class="position">
+			<div class="player">
+				<div class="sprite"><button data-position="0,0" class="stop">🤷‍</button></div>
+				<button data-position="0,-1" class="n">⬆︎</button>
+				<button data-position="0,1" class="s">⬆︎</button>
+				<button data-position="1,0" class="e">⬆︎</button>
+				<button data-position="-1,0" class="w">⬆︎</button>
+				<button data-position="-1,-1" class="nw">⬆︎</button>
+				<button data-position="-1,1" class="sw">⬆︎</button>
+				<button data-position="1,-1" class="ne">⬆︎</button>
+				<button data-position="1,1" class="se">⬆︎</button>
+			</div>
+		</div>
+	</template>
+
+	<template id="zombie-template">
+		<div data-position="-1,-1" class="position">
+			<div class="zombie">🧟</div>
+		</div>
+	</template>
+
+	<template id="rubble-template">
+		<div data-position="-1,-1" class="position">
+			<div class="rubble">💩</div>
+		</div>
+	</template>
+
+	<div id="canvas">
+		<div id="controls">
+			<button id="LastStand">Last Stand</button>
+			<button id="Teleport" data-left="2">Teleport</button>
+			<button id="Disintegrator" data-left="2">Disintegrator</button>
+		</div>
+		<div id="board"></div>
+		<div id="gameOver">
+			You are zombie chow. Score: <span id="score"></span>
+			<button id="Reset">Play Again</button>
+		</div>
+	</div>
+</Experiment>
+<script src="./game.ts"></script>

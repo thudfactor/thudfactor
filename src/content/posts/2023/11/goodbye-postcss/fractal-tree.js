@@ -1,4 +1,4 @@
-let canvas;
+let gameboard;
 let ctx;
 
 const maxLevel = 4; // Controls recursion. There's a lot of it, so don't set this too awful high
@@ -13,7 +13,7 @@ function drawBranch(level = 0) {
 	if (level > maxLevel) {
 		return;
 	}
-	const len = canvas.width / 4;
+	const len = gameboard.width / 4;
 
 	ctx.beginPath();
 	ctx.moveTo(0, 0);
@@ -67,10 +67,10 @@ function animate() {
 }
 
 window.addEventListener("load", () => {
-  canvas = document.getElementById("fractal-tree");
-  ctx = canvas.getContext("2d");
+	gameboard = document.getElementById("fractal-tree");
+	ctx = gameboard.getContext("2d");
 
-	ctx.translate(canvas.width / 2, canvas.width / 2);
+	ctx.translate(gameboard.width / 2, gameboard.width / 2);
 	ctx.strokeStyle = color;
 	ctx.lineWidth = 4;
 	ctx.lineCap = "round";

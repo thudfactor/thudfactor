@@ -1,0 +1,136 @@
+:root {
+	font-size: 32px;
+}
+
+#canvas {
+	position: absolute;
+	inset: 0;
+	background-color: black;
+
+	> * {
+		position: absolute;
+		inset: 0;
+		margin: auto;
+	}
+
+	#gameOver {
+		visibility: hidden;
+	}
+
+	&.game-over #gameOver {
+		visibility: visible;
+	}
+}
+
+#controls button {
+	background-color: white;
+	padding: 0.3em;
+	border-radius: 0.3em;
+}
+
+.position {
+	position: absolute;
+	transition:
+		left 0.3s ease-out,
+		top 0.3s ease-out;
+
+	.player,
+	.zombie,
+	.rubble {
+		position: absolute;
+		translate: -50% -50%;
+	}
+}
+
+#board {
+	width: 20rem;
+	height: 20rem;
+	background-color: tan;
+	overflow: hidden;
+}
+
+#gameOver {
+	width: 20rem;
+	height: 20rem;
+	background-color: hsl(0deg 70% 30% / 0.8);
+	color: white;
+	display: grid;
+	place-content: center;
+}
+
+.zombie {
+	line-height: 1;
+	width: 1rem;
+	height: 1rem;
+}
+
+.player {
+	display: grid;
+	width: 3rem;
+	height: 3rem;
+	grid-template-rows: 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr;
+	transform-origin: 1.5rem 1.5rem;
+
+	.sprite {
+		grid-row: 2;
+		grid-column: 2;
+	}
+
+	button {
+		appearance: none;
+		background-color: transparent;
+		border-width: 0;
+		transform-origin: 0.5rem 0.5rem;
+		background-color: lightgreen;
+		border-radius: 0.5rem;
+
+		&.s {
+			grid-row: 3;
+			grid-column: 2;
+			rotate: 180deg;
+		}
+
+		&.e {
+			grid-row: 2;
+			grid-column: 3;
+			rotate: 90deg;
+		}
+
+		&.w {
+			grid-row: 2;
+			grid-column: 1;
+			rotate: -90deg;
+		}
+
+		&.nw {
+			grid-row: 1;
+			grid-column: 1;
+			rotate: -45deg;
+		}
+
+		&.ne {
+			grid-row: 1;
+			grid-column: 3;
+			rotate: 45deg;
+		}
+
+		&.sw {
+			grid-row: 3;
+			grid-column: 1;
+			rotate: -135deg;
+		}
+
+		&.se {
+			grid-row: 3;
+			grid-column: 3;
+			rotate: 135deg;
+		}
+	}
+
+	> * {
+		width: 1rem;
+		height: 1rem;
+		line-height: 1rem;
+	}
+}

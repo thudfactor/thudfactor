@@ -1,6 +1,5 @@
-import type { ActorName, Position } from "./lib";
+import type { ActorName, Position, CollisionMap } from "./lib";
 import {
-	getHTML,
 	posToString,
 	getPosition,
 	randomPosition,
@@ -8,7 +7,6 @@ import {
 	cloneId,
 	getOccupiedSpaces,
 	getType,
-	stringToPos,
 } from "./lib";
 import ZombieGame from "./ZombieGame";
 import { tests } from "./tests";
@@ -17,54 +15,63 @@ const Game = new ZombieGame();
 
 tests();
 
-function updateButtonCount(btn: HTMLElement) {
-	const leftIndicator = getHTML(".left", btn);
-	if (!leftIndicator) {
-		throw new Error("Missing button indicator");
-	}
-	const newLeft = +leftIndicator.innerText - 1;
-	leftIndicator.innerText = `${newLeft}`;
-	if (newLeft === 0) {
-		btn.setAttribute("disabled", "true");
-	}
+function removeZombiesNear([x, y]: Position) {
+	const surroundingPos: Position[] = [
+		[x - 1, y - 1],
+		[x, y - 1],
+		[x + 1, y - 1],
+		[x - 1, y],
+		[x + 1, y],
+		[x - 1, y + 1],
+		[x, y + 1],
+		[x + 1, y + 1],
+	];
+	surroundingPos.forEach((p) => {
+		removeZombiesAt(p);
+	});
 }
 
 function teleport(e: Event) {
 	if (!(e.target instanceof HTMLElement)) return;
 	const newSpot = randomPosition(Game);
-	const player = getActor("player").item(0);
-	if (!(player instanceof HTMLElement)) return;
+	const player = getPlayer();
 	setPosition(player, newSpot);
 	processTurn(newSpot);
 }
 
 function lastStand(e: Event) {
-	const player = getActor("player").item(0);
-	if (!(player instanceof HTMLElement)) return;
-	const playerposStr = player.dataset.position;
-	if (!playerposStr) {
-		throw new Error("Player missing position");
-	}
-	const playerPos = stringToPos(playerposStr);
-	processTurn(playerPos);
+	const player = getPlayer();
+	const { position } = getPosition(player);
+	processTurn(position);
 	const interval = setInterval(() => {
-		console.log(interval);
 		if (!Game.gameIsOver) {
-			processTurn(playerPos);
+			processTurn(position);
 		} else {
 			clearInterval(interval);
 		}
-	}, 400);
+	}, 300);
 }
 
 function disintegrate(e: Event) {
 	if (!(e.target instanceof HTMLElement)) return;
-	updateButtonCount(e.target);
+	const { position } = getPosition(getPlayer());
+	removeZombiesNear(position);
+	processTurn(position);
+}
+
+function reset() {
+	Game.playground.replaceChildren();
+	Game.score = 0;
+	Game.gameIsOver = false;
+	Game.levelIsOver = false;
+	(Game.scoreboard as HTMLInputElement).value = "0";
+	initialize();
 }
 
 document.querySelector("#LastStand")?.addEventListener("click", lastStand);
 document.querySelector("#Teleport")?.addEventListener("click", teleport);
-document.querySelector("#Disintegrate")?.addEventListener("click", disintegrate);
+document.querySelector("#Disintegrator")?.addEventListener("click", disintegrate);
+document.querySelector("#Reset")?.addEventListener("click", reset);
 
 function initialize() {
 	tests();
@@ -91,6 +98,14 @@ function getActor(actor: ActorName) {
 	return document.querySelectorAll(`[data-position]:has(.${actor})`);
 }
 
+function getPlayer(): HTMLElement {
+	const player = getActor("player").item(0);
+	if (!(player instanceof HTMLElement)) {
+		throw new Error("Player not found or is not an HTML Element");
+	}
+	return player;
+}
+
 function placeZombies() {
 	for (let i = 0; i < NUM_ZOMBIES; i++) {
 		const zombieTemplate = cloneId("#zombie-template");
@@ -106,14 +121,6 @@ function setPosition(sprite: HTMLElement, position: Position) {
 	sprite.style.setProperty("left", `${x + 0.5}rem`);
 	sprite.style.setProperty("top", `${y + 0.5}rem`);
 }
-
-type CollisionMap = {
-	position: Position;
-	zombie: number;
-	player: boolean;
-	rubble: boolean;
-	total: number;
-};
 
 function getCollisions() {
 	const occupiedSpaces = getOccupiedSpaces(Game);
@@ -155,36 +162,39 @@ function getCollisions() {
 }
 
 function movePlayerTo(pos: Position) {
-	const player = getActor("player").item(0);
-	if (!(player instanceof HTMLElement)) return;
-	setPosition(player, pos);
+	setPosition(getPlayer(), pos);
 }
 
 function processTurn(newPlayerPos: Position) {
 	movePlayerTo(newPlayerPos);
 	moveZombies(newPlayerPos);
-	const collisions = getCollisions();
-	let scoreDelta = 0;
-	let gameShouldBeOver = false;
-	collisions.forEach((c) => {
-		scoreDelta += c.zombie;
-		if (c.player) {
-			gameShouldBeOver = true;
-			const player = getActor("player").item(0);
-			if (player instanceof HTMLElement) {
+	setTimeout(() => {
+		const collisions = getCollisions();
+		let scoreDelta = 0;
+		let gameShouldBeOver = false;
+		collisions.forEach((c) => {
+			scoreDelta += c.zombie;
+			if (c.player) {
+				gameShouldBeOver = true;
+				const player = getPlayer();
 				player.dataset.dead = "true";
+			} else if (c.zombie > 0) {
+				if (!c.rubble && !c.player) {
+					createRubbleAt(c.position);
+				}
+				removeZombiesAt(c.position);
 			}
-		} else if (c.zombie > 0) {
-			if (!c.rubble && !c.player) {
-				createRubbleAt(c.position);
-			}
-			removeZombiesAt(c.position);
+		});
+		Game.score += scoreDelta;
+		const nowHowManyZombies = getActor("zombie").length;
+		if (!(Game.scoreboard instanceof HTMLInputElement)) {
+			throw new Error("Scorefield is not an input");
 		}
-	});
-	Game.score += scoreDelta;
-	const nowHowManyZombies = getActor("zombie").length;
-	Game.gameIsOver = gameShouldBeOver || nowHowManyZombies < 1;
-	updateUI();
+		Game.scoreboard.value = `${Game.score}`;
+		Game.levelIsOver = nowHowManyZombies < 1;
+		Game.gameIsOver = gameShouldBeOver;
+		updateUI();
+	}, 400);
 }
 
 function navigationHandler(event: Event) {
@@ -210,7 +220,7 @@ function removeZombiesAt(pos: Position) {
 }
 
 function getNextPlayerPosition([vx, vy]: Position): Position {
-	const player = getActor("player").item(0) as HTMLElement;
+	const player = getPlayer();
 	const {
 		position: [px, py],
 	} = getPosition(player);
@@ -239,19 +249,15 @@ function moveZombies(playerPos: Position) {
 	});
 }
 
-function reset() {
-	Game.tabletop.replaceChildren();
-	Game.score = 0;
-	Game.gameIsOver = false;
-	initialize();
-}
-
 function updateUI() {
 	if (Game.gameIsOver) {
 		Game.scoreboard.innerText = `${Game.score}`;
 		Game.tabletop.classList.add("game-over");
+	} else if (Game.levelIsOver) {
+		Game.tabletop.classList.add("game-won");
 	} else {
 		Game.tabletop.classList.remove("game-over");
+		Game.tabletop.classList.remove("game-won");
 	}
 }
 

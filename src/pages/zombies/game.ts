@@ -13,8 +13,6 @@ import { tests } from "./tests";
 
 const Game = new ZombieGame();
 
-tests();
-
 function removeZombiesNear([x, y]: Position) {
 	const surroundingPos: Position[] = [
 		[x - 1, y - 1],

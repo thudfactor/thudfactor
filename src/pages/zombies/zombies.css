@@ -13,12 +13,24 @@
 		margin: auto;
 	}
 
-	#gameOver {
+	#gameOver,
+	#gameWon {
 		visibility: hidden;
 	}
 
-	&.game-over #gameOver {
+	&.game-over #gameOver,
+	&.game-won #gameWon {
 		visibility: visible;
+	}
+}
+
+#feedback {
+	inset: auto 0 0 auto;
+	color: white;
+
+	input {
+		width: 3ch;
+		text-align: right;
 	}
 }
 
@@ -42,6 +54,10 @@
 	}
 }
 
+.feedback {
+	color: white;
+}
+
 #board {
 	width: 20rem;
 	height: 20rem;
@@ -49,13 +65,21 @@
 	overflow: hidden;
 }
 
-#gameOver {
+.gameScreen {
 	width: 20rem;
 	height: 20rem;
-	background-color: hsl(0deg 70% 30% / 0.8);
-	color: white;
 	display: grid;
 	place-content: center;
+}
+
+#gameOver {
+	background-color: hsl(0deg 70% 30% / 0.8);
+	color: white;
+}
+
+#gameWon {
+	background-color: hsl(120deg 70% 30% / 0.8);
+	color: white;
 }
 
 .zombie {

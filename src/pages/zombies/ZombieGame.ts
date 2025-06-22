@@ -6,12 +6,13 @@ export default class ZombieGame {
 	scoreboard: HTMLElement;
 	score: number;
 	gameIsOver: boolean;
+	levelIsOver: boolean;
 	spaces: Position[];
 
 	constructor() {
 		const tabletop = getHTML("#canvas");
 		const playground = getHTML("#board");
-		const scoreboard = getHTML("#score");
+		const scoreboard = getHTML("#scoreField");
 
 		if (!tabletop || !playground || !scoreboard) {
 			throw new Error("Missing critical infrastructure");
@@ -22,6 +23,7 @@ export default class ZombieGame {
 		this.tabletop = tabletop;
 		this.score = 0;
 		this.gameIsOver = false;
+		this.levelIsOver = false;
 		this.spaces = generateBoard(ROWS, COLS);
 	}
 }

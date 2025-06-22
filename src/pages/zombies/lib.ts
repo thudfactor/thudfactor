@@ -1,7 +1,16 @@
 import type ZombieGame from "./ZombieGame";
+
 export type ActorName = "zombie" | "player" | "rubble";
 
 export type Position = [number, number];
+
+export type CollisionMap = {
+	position: Position;
+	zombie: number;
+	player: boolean;
+	rubble: boolean;
+	total: number;
+};
 
 export const NUM_ZOMBIES = 10;
 export const ROWS = 20;

@@ -1,0 +1,211 @@
+<style>
+	#canvas {
+		position: absolute;
+		inset: 0;
+		background-color: black;
+
+		> * {
+			position: absolute;
+			inset: 0;
+			margin: auto;
+		}
+
+		#gameOver,
+		#gameWon {
+			visibility: hidden;
+		}
+
+		&.game-over #gameOver,
+		&.game-won #gameWon {
+			visibility: visible;
+		}
+	}
+
+	#feedback {
+		inset: auto 0 0 auto;
+		color: white;
+
+		input {
+			width: 3ch;
+			text-align: right;
+		}
+	}
+
+	#controls button {
+		background-color: white;
+		padding: 0.3em;
+		border-radius: 0.3em;
+
+		&[disabled] {
+			opacity: 0.5;
+		}
+	}
+
+	.position {
+		position: absolute;
+		transition:
+			left 0.3s ease-out,
+			top 0.3s ease-out;
+
+		.player,
+		.zombie,
+		.rubble {
+			position: absolute;
+			translate: -50% -50%;
+		}
+	}
+
+	.feedback {
+		color: white;
+	}
+
+	#board {
+		width: 20rem;
+		height: 20rem;
+		background-color: lightsteelblue;
+		overflow: hidden;
+		zoom: 2;
+	}
+
+	.gameScreen {
+		width: 20rem;
+		height: 20rem;
+		display: grid;
+		place-content: center;
+		zoom: 2;
+	}
+
+	#gameOver {
+		background-color: hsl(0deg 70% 30% / 0.8);
+		color: white;
+	}
+
+	#gameWon {
+		background-color: hsl(120deg 70% 30% / 0.8);
+		color: white;
+	}
+
+	.zombie {
+		line-height: 1;
+		width: 1rem;
+		height: 1rem;
+	}
+
+	.player {
+		display: grid;
+		width: 3rem;
+		height: 3rem;
+		grid-template-rows: 1fr 1fr 1fr;
+		grid-template-columns: 1fr 1fr 1fr;
+		transform-origin: 1.5rem 1.5rem;
+
+		.sprite {
+			grid-row: 2;
+			grid-column: 2;
+		}
+
+		button {
+			appearance: none;
+			background-color: transparent;
+			border-width: 0;
+			transform-origin: 0.5rem 0.5rem;
+			border-radius: 0.5rem;
+
+			&.s {
+				grid-row: 3;
+				grid-column: 2;
+				rotate: 180deg;
+			}
+
+			&.e {
+				grid-row: 2;
+				grid-column: 3;
+				rotate: 90deg;
+			}
+
+			&.w {
+				grid-row: 2;
+				grid-column: 1;
+				rotate: -90deg;
+			}
+
+			&.nw {
+				grid-row: 1;
+				grid-column: 1;
+				rotate: -45deg;
+			}
+
+			&.ne {
+				grid-row: 1;
+				grid-column: 3;
+				rotate: 45deg;
+			}
+
+			&.sw {
+				grid-row: 3;
+				grid-column: 1;
+				rotate: -135deg;
+			}
+
+			&.se {
+				grid-row: 3;
+				grid-column: 3;
+				rotate: 135deg;
+			}
+		}
+
+		> * {
+			width: 1rem;
+			height: 1rem;
+			line-height: 1rem;
+		}
+	}
+</style>
+<zombie-dodge>
+	<template id="player-template">
+		<div data-position="9,9" class="position">
+			<div class="player">
+				<div class="sprite"><button data-position="0,0" class="stop">🤷‍♂️</button></div>
+				<button data-position="0,-1" class="n">⬆︎</button>
+				<button data-position="0,1" class="s">⬆︎</button>
+				<button data-position="1,0" class="e">⬆︎</button>
+				<button data-position="-1,0" class="w">⬆︎</button>
+				<button data-position="-1,-1" class="nw">⬆︎</button>
+				<button data-position="-1,1" class="sw">⬆︎</button>
+				<button data-position="1,-1" class="ne">⬆︎</button>
+				<button data-position="1,1" class="se">⬆︎</button>
+			</div>
+		</div>
+	</template>
+
+	<template id="zombie-template">
+		<div data-position="-1,-1" class="position">
+			<div class="zombie">🧟</div>
+		</div>
+	</template>
+
+	<template id="rubble-template">
+		<div data-position="-1,-1" class="position">
+			<div class="rubble">💩</div>
+		</div>
+	</template>
+
+	<div id="canvas">
+		<div id="controls">
+			<button id="LastStand">Last Stand (L)</button>
+			<button id="Teleport" data-left="2">Teleport (T)</button>
+			<button id="Disintegrator" data-left="2">Disintegrator (D)</button>
+			<button id="Reset">Reset (R)</button>
+		</div>
+		<div id="board"></div>
+		<div class="gameScreen" id="gameOver">You are zombie chow.</div>
+		<div class="gameScreen" id="gameWon">You defeated all the zombies!</div>
+		<div id="feedback">
+			<label>Score: <input type="number" value="0" id="scoreField" /></label>
+		</div>
+	</div>
+</zombie-dodge>
+<script>
+	import { ZombieDodge } from "./scripts/game.ts";
+	customElements.define("zombie-dodge", ZombieDodge);
+</script>

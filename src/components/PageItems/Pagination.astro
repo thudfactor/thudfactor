@@ -2,8 +2,23 @@
 const { url } = Astro.props;
 ---
 
-<div class="pagination text-lg mx-auto my-m">
-	{url.prev && <a href={url.prev}>⇠ Newer</a>}
+<style>
+	[aria-label="pagination"] {
+		margin-inline: auto;
+		width: fit-content;
+		background-color: var(--color-slate-300);
+		padding: var(--text-xs) var(--text-sm);
+		border-radius: var(--text-xs);
+		line-height: 1;
+
+		a:hover {
+			color: var(--color-slate-950);
+			text-decoration: underline;
+		}
+	}
+</style>
+<nav class="cluster" aria-label="pagination">
+	{url.prev && <a href={url.prev}>⇠ Newer Posts</a>}
 	{url.prev && url.next && "|"}
-	{url.next && <a href={url.next}>Older ⇢</a>}
-</div>
+	{url.next && <a href={url.next}>Older Posts ⇢</a>}
+</nav>

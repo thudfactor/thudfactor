@@ -5,12 +5,10 @@ const { posts, h } = Astro.props;
 
 <style>
 	.link-list {
-		margin-block-start: var(--text-3xl);
 		padding-inline-start: 0;
-
-		li {
-			margin-block-end: var(--text-base);
-		}
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
 	}
 </style>
 <ul class="link-list">

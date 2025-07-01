@@ -8,9 +8,18 @@ const { variant = "info" } = Astro.props;
 const { icon = "💁" } = Astro.props;
 ---
 
-<div class=`cluster box alert ${variant}`>
+<style>
+	.alert {
+		--cluster-wrap: nowrap;
+		margin-block: 1lh;
+		border: 1px var(--color-slate-600) solid;
+		background-color: var(--color-slate-100);
+		padding: var(--text-base);
+	}
+</style>
+<aside class=`cluster alert ${variant}`>
 	<div class="icon">{icon}</div>
 	<div class="message">
 		<slot />
 	</div>
-</div>
+</aside>

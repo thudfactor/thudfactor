@@ -25,7 +25,7 @@ export const getStaticPaths = (async ({ paginate }) => {
 		.slice(8);
 	// todo: adjust the page size so the pages are spread out as evenly as possible
 	// across each archive page
-	return paginate(posts, { pageSize: 16 });
+	return paginate(posts, { pageSize: 8 });
 }) satisfies GetStaticPaths;
 ---
 

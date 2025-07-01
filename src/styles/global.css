@@ -74,6 +74,7 @@
 	border-radius: 0 0 var(--text-s) var(--text-s);
 	border: var(--color-accent) solid 0.3ch;
 	border-block-start-width: 0;
+	z-index: 1;
 	transition: 0.3s translate ease-out;
 
 	&:focus {
@@ -81,7 +82,15 @@
 	}
 }
 
+html {
+	height: 100%;
+	background-color: black;
+}
+
 body {
+	min-height: 100%;
+	display: grid;
+	grid-template-rows: fit-content(100%) 1fr fit-content(100%);
 	background: var(--color-background);
 	color: var(--color-foreground);
 	padding: 0;
@@ -110,6 +119,18 @@ body {
 	padding-inline-start: 1em;
 }
 
+dt {
+	font-weight: 600;
+}
+
+dd {
+	margin-left: 2ch;
+}
+
+dd + dt {
+	margin-top: 1lh;
+}
+
 article {
 	max-width: 65ch;
 	margin-inline: auto;
@@ -136,6 +157,44 @@ blockquote {
 	font-size: var(--text-base);
 	font-style: italic;
 	max-width: 50ch;
+}
+
+figure {
+	width: 100%;
+	height: auto;
+	margin-block: 1lh;
+
+	img {
+		max-height: 40dvh;
+		width: 100%;
+		object-fit: contain;
+	}
+
+	figcaption {
+		font-style: italic;
+	}
+}
+
+@container main (width > 40ch) {
+	[data-position] {
+		max-width: 36%;
+	}
+	[data-position="right"] {
+		float: right;
+		margin-inline-start: 1ch;
+	}
+
+	[data-position="left"] {
+		float: left;
+		margin-inline-end: 1ch;
+	}
+}
+
+.pullquote {
+	font-family: var(--font-serif);
+	font-size: var(--text-2xl);
+	font-weight: 600;
+	font-style: italic;
 }
 
 a {
@@ -178,4 +237,20 @@ nav a {
 body > :is(header, main, footer) {
 	padding-inline: var(--text-xl);
 	padding-block: var(--text-base);
+}
+
+main {
+	container-type: inline-size;
+	container-name: main;
+}
+
+article ol li {
+	list-style-type: decimal-leading-zero;
+}
+
+article ul li {
+	list-style-type: circle;
+}
+
+.pullquote {
 }

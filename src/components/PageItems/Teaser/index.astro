@@ -1,15 +1,28 @@
 ---
 import FormattedDate from "@components/FormattedDate.astro";
-import ArticleImage from "@components/ContentItems/ArticleImage/index.astro";
-const { post } = Astro.props;
-const { cover, date, description, title } = post.data;
+const {
+	h,
+	post: {
+		id,
+		data: { date, description, title },
+	},
+} = Astro.props;
+const HLevel = h ? `h${h}` : `h2`;
 ---
 
-<a href={`/posts/${post.id}`} class="box teaser flow">
-	{cover && <ArticleImage width={600} image={cover.src} alt={cover.alt} />}
-	<h2>
-		{title}
-	</h2>
-	<FormattedDate date={date} />
-	<p>{description}</p>
-</a>
+<style>
+	:is(h2, h3, h4) {
+		text-wrap: auto;
+		max-width: none;
+		margin-bottom: var(--text-s);
+	}
+</style>
+<div class="flow">
+	<HLevel>
+		<a href={`/posts/${id}`}>
+			{title}
+		</a>
+	</HLevel>
+
+	<p><FormattedDate date={date} /> | {description}</p>
+</div>

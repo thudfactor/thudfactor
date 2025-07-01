@@ -1,8 +1,8 @@
 ---
 import type { GetStaticPaths } from "astro";
 import { getCollection } from "astro:content";
-import Archive from "@layouts/Archive.astro";
-import Teaser from "@components/PageItems/Teaser/index.astro";
+import BlogPost from "@layouts/BlogPost.astro";
+import TeaserList from "@components/PageItems/TeaserList.astro";
 import Pagination from "@components/PageItems/Pagination.astro";
 
 const { page } = Astro.props;
@@ -29,12 +29,8 @@ export const getStaticPaths = (async ({ paginate }) => {
 }) satisfies GetStaticPaths;
 ---
 
-<Archive title={title} description={description} cover={cover}>
+<BlogPost title={title} description={description} cover={cover}>
 	<Pagination current={page.currentPage} last={page.lastPage} url={page.url} />
-
-	<div class="switcher">
-		{page.data.map(post => <Teaser post={post} />)}
-	</div>
-
+	<TeaserList posts={page.data} h={3} />
 	<Pagination current={page.currentPage} last={page.lastPage} url={page.url} />
-</Archive>
+</BlogPost>

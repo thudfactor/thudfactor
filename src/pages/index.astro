@@ -1,18 +1,8 @@
 ---
-import Archive from "../layouts/Archive.astro";
+import BlogPost from "../layouts/BlogPost.astro";
 import { getCollection } from "astro:content";
-import Teaser from "@components/PageItems/Teaser/index.astro";
+import TeaserList from "@components/PageItems/TeaserList.astro";
 const title = "Welcome to Thudfactor";
-
-const cover = {
-	src: import("../images/graybeard.png"),
-	alt: "A sign on the blue ridge parkway reading View Graybeard Mountain. The view is completely obscured by fog.",
-	description:
-		"The view of Graybeard Mountain in North Carolina from the Blue Ridge Parkway, September 2002. It was a little overcast.",
-	attribution: {
-		name: "John Williams",
-	},
-};
 
 const posts = (await getCollection("posts", p => p.data.draft !== true))
 	.sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf())
@@ -20,17 +10,15 @@ const posts = (await getCollection("posts", p => p.data.draft !== true))
 	.slice(0, 8);
 ---
 
-<Archive
+<BlogPost
 	title={title}
 	description={"Thudfactor is the personal blog of J H Williams, web developer"}
-	cover={cover}
 >
+	<h2>Recently published</h2>
 	<div class="flow">
-		<div class="switcher">
-			{posts.map(post => <Teaser post={post} />)}
-		</div>
+		<TeaserList posts={posts} h={3} />
 		<div class="center">
 			<a href="/posts/">More posts…</a>
 		</div>
 	</div>
-</Archive>
+</BlogPost>

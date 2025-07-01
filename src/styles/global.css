@@ -1,61 +1,181 @@
 @import "tailwindcss";
-@import "./fonts.css";
-@import "./composition/index.css" layer(composition);
-@import "./utility/index.css" layer(utilities);
-@import "./block/index.css" layer(blocks);
-@import "./exception/index.css" layer(exceptions);
+@import "./reset.css";
+@import "./composition/flow.css";
+@import "./composition/cluster.css";
+@import "./composition/icon.css";
+@import "./composition/center.css";
+@import "./utils.css";
+
+@font-face {
+	font-family: "Atkinson Hyperlegible Next";
+	src: url("/fonts/AtkinsonHyperlegibleNextVF-Variable.woff2") tech(variations);
+	font-weight: 200 800;
+	font-style: italic 0 1;
+}
+
+@font-face {
+	font-family: "Playfair Display";
+	src: url("/fonts/PlayfairDisplay-VariableFont_wght.ttf") tech(variations);
+	font-weight: 400 900;
+}
+
+/* sub out playfair-display italic for italic styles in this font face */
+@font-face {
+	font-family: "Playfair Display";
+	src: url("/fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf") tech(variations);
+	font-weight: 400 900;
+	font-style: italic;
+}
 
 @theme {
-	--font-sans: "Atkinson Hyperlegible Next", Seravek, "Gill Sans Nova", Ubuntu, Calibri,
-		"DejaVu Sans", source-sans-pro, sans-serif;
-	--font-serif: Rockwell, "Rockwell Nova", "Roboto Slab", "DejaVu Serif", "Sitka Small", serif;
-
-	/* @link https://utopia.fyi/type/calculator?c=320,18,1.2,1240,20,1.333,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
-	--text-xs: clamp(0.7035rem, 0.8083rem + -0.1353vw, 0.7813rem);
-	--text-sm: clamp(0.9375rem, 0.9374rem + 0.0004vw, 0.9377rem);
-	--text-base: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
-	--text-lg: clamp(1.35rem, 1.24rem + 0.55vw, 1.6663rem);
-	--text-xl: clamp(1.62rem, 1.4109rem + 1.0454vw, 2.2211rem);
-	--text-2xl: clamp(1.944rem, 1.5904rem + 1.7682vw, 2.9607rem);
-	--text-3xl: clamp(2.3328rem, 1.7715rem + 2.8067vw, 3.9467rem);
-	--text-4xl: clamp(2.7994rem, 1.9432rem + 4.281vw, 5.2609rem);
-
-	/* @link https://utopia.fyi/space/calculator?c=320,18,1.2,1240,20,1.333,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
-	--spacing-3xs: clamp(0.3125rem, 0.3125rem + 0vw, 0.3125rem);
-	--spacing-2xs: clamp(0.5625rem, 0.5408rem + 0.1087vw, 0.625rem);
-	--spacing-xs: clamp(0.875rem, 0.8533rem + 0.1087vw, 0.9375rem);
-	--spacing-s: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
-	--spacing-m: clamp(1.6875rem, 1.6223rem + 0.3261vw, 1.875rem);
-	--spacing-lg: clamp(2.25rem, 2.163rem + 0.4348vw, 2.5rem);
-	--spacing-xl: clamp(3.375rem, 3.2446rem + 0.6522vw, 3.75rem);
-	--spacing-2xl: clamp(4.5rem, 4.3261rem + 0.8696vw, 5rem);
-	--spacing-3xl: clamp(6.75rem, 6.4891rem + 1.3043vw, 7.5rem);
-
-	/* One-up pairs */
-	--spacing-3xs-2xs: clamp(0.3125rem, 0.2038rem + 0.5435vw, 0.625rem);
-	--spacing-2xs-xs: clamp(0.5625rem, 0.4321rem + 0.6522vw, 0.9375rem);
-	--spacing-xs-s: clamp(0.875rem, 0.7446rem + 0.6522vw, 1.25rem);
-	--spacing-s-m: clamp(1.125rem, 0.8641rem + 1.3043vw, 1.875rem);
-	--spacing-m-l: clamp(1.6875rem, 1.4049rem + 1.413vw, 2.5rem);
-	--spacing-l-xl: clamp(2.25rem, 1.7283rem + 2.6087vw, 3.75rem);
-	--spacing-xl-2xl: clamp(3.375rem, 2.8098rem + 2.8261vw, 5rem);
-	--spacing-2xl-3xl: clamp(4.5rem, 3.4565rem + 5.2174vw, 7.5rem);
-
-	/* Custom pairs */
-	--spacing-s-l: clamp(1.125rem, 0.6467rem + 2.3913vw, 2.5rem);
-
-	/* Reading container size */
-	--scan-length: 68ch;
+	--font-sans: "Atkinson Hyperlegible Next", Inter, Roboto, "Helvetica Neue", "Arial Nova",
+		"Nimbus Sans", Arial, sans-serif;
+	--font-serif: "Playfair Display", Didot, "Bodoni MT", "Noto Serif Display", "URW Palladio L",
+		P052, Sylfaen, serif;
+	--text-xs: 0.64rem;
+	--text-s: 0.8rem;
+	--text-base: 1rem;
+	--text-xl: 1.25rem;
+	--text-2xl: 1.563rem;
+	--text-3xl: 1.953rem;
+	--text-4xl: 2.441rem;
+	--text-5xl: 3.052rem;
+	--text-6xl: 3.815rem;
 }
 
-@view-transition {
-	navigation: auto;
+:root {
+	--color-dark: var(--color-gray-900);
+	--color-light: var(--color-gray-50);
+	--color-dark-alt: var(--color-slate-700);
+	--color-light-alt: var(--color-slate-100);
+	--color-accent: var(--color-orange-400);
+	--color-accent-alt: var(--color-yellow-200);
+	--body-padding: 2em;
+	--body-unpadding: calc(var(--body-padding) * -1);
+
+	--color-primary: var(--color-cyan-500);
+	--color-foreground: var(--color-dark);
+	--color-background: var(--color-light);
+	--color-foreground-alt: var(--color-dark-alt);
+	--color-background-alt: var(--color-light-alt);
+	--hover-color: var(--color-accent);
+	--link-color: var(--color-primary);
 }
 
-html {
-	scrollbar-gutter: stable both-edges;
+[href="#skip-target"] {
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 50%;
+	translate: -50% -100%;
+	background-color: white;
+	padding: var(--text-xs) var(--text-s);
+	font-size: var(--text-lg);
+	border-radius: 0 0 var(--text-s) var(--text-s);
+	border: var(--color-accent) solid 0.3ch;
+	border-block-start-width: 0;
+	transition: 0.3s translate ease-out;
+
+	&:focus {
+		translate: -50% 0%;
+	}
 }
 
 body {
-	background-color: var(--color-stone-700);
+	background: var(--color-background);
+	color: var(--color-foreground);
+	padding: 0;
+	font-family: var(--font-sans);
+	font-size: var(--text-base);
+	line-height: 1.7;
+}
+
+:is(h1, h2, h3) {
+	font-family: var(--font-serif);
+	font-weight: 400;
+	line-height: 1.2;
+	text-wrap: balance;
+}
+
+:is(h1, h2, h3) :is(i, em) {
+	font-family: var(--font-serif);
+}
+
+:is(h4, h5, h6) {
+	font-family: var(--font-sans);
+	font-weight: 200;
+}
+
+:is(ul, ol) {
+	padding-inline-start: 1em;
+}
+
+article {
+	max-width: 65ch;
+	margin-inline: auto;
+}
+
+h1 {
+	font-size: var(--text-4xl);
+	max-width: 20ch;
+}
+
+h2 {
+	font-size: var(--text-3xl);
+	max-width: 28ch;
+}
+
+h3 {
+	font-size: var(--text-2xl);
+	max-width: 28ch;
+}
+
+blockquote {
+	padding-inline-start: 1em;
+	border-inline-start: 0.3rem solid var(--color-dark);
+	font-size: var(--text-base);
+	font-style: italic;
+	max-width: 50ch;
+}
+
+a {
+	color: currentColor;
+	text-decoration: underline;
+	text-decoration-color: var(--link-color);
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.3ex;
+	transition:
+		text-decoration-color 0.3s,
+		text-decoration-thickness 0.3s;
+
+	&:hover {
+		text-decoration-color: var(--hover-color);
+		text-decoration-thickness: 0.3ex;
+	}
+}
+
+.lede {
+	font-size: var(--text-2xl);
+	font-family: var(--font-serif);
+	font-style: italic;
+	font-weight: 400;
+	letter-spacing: 0.02em;
+	max-width: 50ch;
+	text-wrap: balance;
+}
+
+.lede + * {
+	--flow-space: 2em;
+}
+
+nav a {
+	text-decoration: none;
+	&:hover {
+		color: var(--hover-color);
+	}
+}
+
+body > :is(header, main, footer) {
+	padding-inline: var(--text-xl);
+	padding-block: var(--text-base);
 }

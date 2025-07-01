@@ -1,0 +1,17 @@
+.bleed {
+	margin-inline: var(--body-unpadding);
+	padding-inline: var(--body-padding);
+}
+
+.contrast {
+	--hover-color: var(--color-accent-alt);
+	background-color: var(--color-foreground-alt);
+	color: var(--color-background-alt);
+}
+
+a.designer-link {
+	text-decoration: none;
+	&:hover {
+		color: var(--hover-color);
+	}
+}

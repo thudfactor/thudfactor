@@ -1,4 +1,14 @@
-<a id="EndMarkLink" href="/endmark">
+<style>
+	#EndMarkLink {
+		color: hsl(from var(--color-foreground) h s l / 0.3);
+		transition: 0.3s ease-in-out;
+		padding-block: var(--text-4xl);
+		&:hover {
+			color: var(--color-primary);
+		}
+	}
+</style>
+<a id="EndMarkLink" class="center" href="/endmark">
 	<svg
 		id="EndMark"
 		width="336.328"

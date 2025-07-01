@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import Archive from "@layouts/Archive.astro";
+import BlogPost from "@layouts/BlogPost.astro";
 import Book from "@components/Book/index.astro";
 
 const title = "Books";
@@ -11,7 +11,7 @@ const books = (await getCollection("books", p => p.data.draft !== true)).sort((a
 );
 ---
 
-<Archive title={title} description={description}>
+<BlogPost title={title} description={description}>
 	<article class="flow prose">
 		<p>
 			I used to use Goodreads until I discovered how important it was for authors to get five-star
@@ -29,4 +29,4 @@ const books = (await getCollection("books", p => p.data.draft !== true)).sort((a
 			})
 		}
 	</div>
-</Archive>
+</BlogPost>

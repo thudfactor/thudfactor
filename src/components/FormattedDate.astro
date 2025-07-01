@@ -4,14 +4,22 @@ interface Props {
 }
 
 const { date: incomingDate } = Astro.props;
-const date = typeof incomingDate === 'string' ? new Date(incomingDate) : incomingDate;
+const date = typeof incomingDate === "string" ? new Date(incomingDate) : incomingDate;
 ---
+
+<style>
+	time {
+		font-style: italic;
+		font-weight: 600;
+		color: oklch(from var(--color-foreground) l c h / 0.6);
+	}
+</style>
 <time datetime={date.toISOString()}>
 	{
-		date.toLocaleDateString('en-us', {
-			year: 'numeric',
-			month: 'long',
-			day: 'numeric',
+		date.toLocaleDateString("en-us", {
+			year: "numeric",
+			month: "long",
+			day: "numeric",
 		})
 	}
 </time>

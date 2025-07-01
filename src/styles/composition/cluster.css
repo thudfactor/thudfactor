@@ -13,9 +13,13 @@
 .cluster {
 	display: flex;
 	flex-wrap: var(--cluster-wrap, wrap);
-	gap: var(--cluster-gap, var(--spacing-s));
+	gap: var(--cluster-gap, var(--text-s));
 	justify-content: var(--cluster-justify, flex-start);
 	align-items: var(--cluster-align, baseline);
+}
+
+.cluster:has(> svg) {
+	--cluster-gap: var(--text-xs);
 }
 
 .cluster[role="list"] {
@@ -26,8 +30,4 @@ a > .cluster {
 	--cluster-gap: var(--spacing-3xs);
 	--cluster-justify: flex-start;
 	--cluster-align: baseline;
-}
-
-a > .cluster > svg[role="presentation"] {
-	height: 1cap;
 }

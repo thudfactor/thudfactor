@@ -1,11 +1,15 @@
 ---
 const today = new Date();
-import EndMark from "./EndMark.astro";
 import Socials from "./Socials/index.astro";
 ---
 
-<footer id="site-info">
-	<div>&copy; 2023–{today.getFullYear()} J H Williams</div>
-	<EndMark />
+<style>
+	#site-info {
+		--cluster-align: center;
+		--cluster-justify: space-between;
+	}
+</style>
+<footer id="site-info" class="cluster contrast">
+	<div>&copy; 2018–{today.getFullYear()} J H Williams</div>
 	<Socials />
 </footer>

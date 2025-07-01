@@ -1,0 +1,24 @@
+---
+import Teaser from "@components/PageItems/Teaser/index.astro";
+const { posts, h } = Astro.props;
+---
+
+<style>
+	.link-list {
+		margin-block-start: var(--text-3xl);
+		padding-inline-start: 0;
+
+		li {
+			margin-block-end: var(--text-base);
+		}
+	}
+</style>
+<ul class="link-list">
+	{
+		posts.map((post: any) => (
+			<li>
+				<Teaser post={post} h={h} />
+			</li>
+		))
+	}
+</ul>

@@ -1,7 +1,6 @@
 ---
-const { image, alt, align } = Astro.props;
+import { Image } from "astro:assets";
+const { image, alt, align, width } = Astro.props;
 ---
 
-<img src={image} alt={alt} class={align} />
-
-<!--Image width={width || 2400} src={image} alt={alt} class={align} /-->
+<Image width={width || 2400} src={image} alt={alt} class={align} />

@@ -11,7 +11,6 @@ import db from "@astrojs/db";
 export default defineConfig({
 	site: "https://www.thudfactor.com",
 	integrations: [mdx(), sitemap(), db()],
-	output: "server",
 
 	vite: {
 		plugins: [tailwindcss()],

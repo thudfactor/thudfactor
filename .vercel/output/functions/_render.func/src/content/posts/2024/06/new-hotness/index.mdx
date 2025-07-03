@@ -1,0 +1,143 @@
+---
+title: Uptake of the new CSS seems slow. Why?
+date: 2024-06-19T09:51:34
+categories:
+  - CSS
+tags: post
+description: There’s so much great new stuff in CSS, some of it with extraordinary support. Why aren’t people leaping on it?
+cover:
+  src: ./fortune.png
+  alt: A fortune from a fortune cookie, which reads Be content with your lot, one cannot be first in everything.
+  description: I don't know about you, but the last thing I want from a fortune cookie is to be faced with hard truths.
+  attribution:
+    name: John Williams
+---
+
+import ArticleFigure from "@components/ContentItems/ArticleFigure/index.astro";
+
+Over on Mastodon, [Piccalilli asks](https://front-end.social/@piccalilli/112642936601407699):
+
+> There's a lot of chatter about the slow adoption of CSS features.
+> We're working on a theory that folks are finding it hard to work out where the new features can be helpful in real world projects, but what's actually going on?
+
+There are many reasons for this, I think. It's frustrating when people don't leap on new features after all of the hard work (sometimes years!) in the standards mines. I am confident that grid layouts and container queries will eventually get the kind of use they deserve, but it's going to take awhile. Probably longer than a lot of people would like.
+
+Most of the reasons, I think, can be boiled down to either a lack of knowledge or a lack of opportunity. The lack of opportunity is probably the most difficult to address, but addressing the lack of knowledge is more difficult than you might think -- and understanding the lack of opportunity might help inform how we address the lack of knowledge.
+
+Before we get started, I'm basing the following on what I've observed over twenty-eight years of professional web development working for digital agencies, publishers, government, and (most recently) B2B SAAS development. It's not grounded in statistics, surveys, or a review of literature — all of which are possibly more constructive than this top-of-the-head stuff I am about to do.
+
+Also in those 28 years I have never been a rock-star developer. I enjoy the work, like to try to keep up, and have a passion for it. I also like to take breaks now and then to play Assassin's Creed.
+
+With that out of the way, let's start with opportunity.
+
+## Lack of Opportunity, or "easier said than done."
+
+Although "privilege" is mostly used in political and civil rights contexts, it's a useful lens for looking at professional activity as well. When I work at digital agencies, I have a significant amount of freedom and latitude to make technical decisions. When I am attached to an established project with a large team I have a lot less opportunity to do so.
+
+Developer with privilege, developer without privilege.
+
+### The best project is a new project
+
+The ideal profile of a project for these new technologies is a _new_ project that has an empowered front-end development team. This describes small digital agencies rather well, and I think most of the people who push CSS forward fall into this category or something adjacent. When this is you, you can swoop in and drop a lot of knowledge. Then you grab your brolly and float off into the sky when the wind changes.
+
+<ArticleFigure
+	image={import("./poppins.jpg")}
+	alt="Mary Poppins flying away. Text says Screw this, I am done. So done."
+	position="right"
+/>
+
+This used to be me. When I worked at a digital agency, I could count on starting a brand new project every three to six months. I also rarely coordinated with other front-end engineers, so I did not have to explain myself or justify the decision. Once the work left my hands, though, it would often be integrated into a lot of systems, turned into policy, gain a governing board, etc.
+
+Perhaps we can call this "the originator’s privilege." Part of what makes new projects so much fun is this wide range of latitude. Every successful project becomes legacy code, though, and people still need to work in it.
+
+### Don't we eschew frameworks and libraries so we _don't have to replace everything constantly_?
+
+Last week I saw someone arguing against frameworks (in general, which is a pet peeve of mine, about which more later also) by saying that HTML and CSS would not get out-of-date, whereas frameworks often did. Fair point.
+
+Over yonder is someone wondering why so many websites still don't use grid.
+
+It is not true that HTML and CSS don't get out of date. The consequences of being out of date are less severe, unless you're relying on `<blink>` I guess, but no one wants to see an old table-based layout turn up.
+
+### Frameworks are the rule, not the exception
+
+Last week I spent trivial amount of time converting our (poorly) z-indexed popover info box into a more modern one that used the new `popover` API. I then spent a non-trivial amount of time convincing React and Styled Components to let me use native HTML, please.
+
+Possibly a little voice in your head went "ugh, React." Maybe it even said "this is why you shouldn't use frameworks."
+
+Yes. But.
+
+React exists because it solved a problem that native HTML could not solve before, and still cannot solve completely. The code I am working in uses React because the project was started over ten years ago. It was a ground-up rewrite of the same application in Flash. ("Ugh, Flash.") But that hardly matters.
+
+Any large, non-trivial code base shared among developers will have one or more of the following:
+
+1. A well-tested, public framework built on native HTML, CSS, and JavaScript. React, Angular, Vue, Bootstrap, Tailwind.
+2. A custom-built, internal framework purposely designed for the specific problem space (but not nearly so well-tested). _This includes custom component libraries and style guides_.
+3. A tangle of native, bare-metal JavaScript and CSS, written in multiple styles and idioms, spread out across several generations of CSS and ECMAScript. (HTML and SVG are not riding the New Feature Train yet).
+
+That list is ordered from what would make me most happy to most sad to find. If the project uses something like React or Angular, I may not like the framework, or it may have many flaws, but it will most likely be reasonably documented and have a library of conversations online about how to do certain things. Custom-built frameworks, not so much.
+
+### Project parameters are a limiting factor
+
+"This feature is supported by all modern browsers."
+
+I hear that a lot. I've used it a lot. Sometimes though, it doesn't matter. At the last digital agency I worked for, we supported IE 11 long after it was reasonable to do so because most of our clients insisted on IE 11 support in their RFPs. What are you going to do? Most digital agencies like to look cash-rich but it's a difficult business, and the profit margins can be quite thin. The client says they need IE 11 support, well, we're going to give them IE 11 support.
+
+We did eventually drop support, though. Then I changed jobs to a SAAS company with several very large corporate clients. They also demanded IE 11 support. Monitoring the analytics, we could see a very much non-trivial amount of their traffic was still on IE 11 -- because that's what they used in the office. We could not drop support until _they_ dropped support. Which meant (as a for-instance) that much of `grid` was off-limits. CSS custom properties were _right out_.
+
+You can do fallbacks, progressive enhancement, polyfills, client education… lots of ways to stay current while supporting the old stuff. It's expensive to do, hard to maintain, and very confusing to the juniors.
+
+Did I mention I am _nine years_ behind on Assassin's Creed games?
+
+Speaking of juniors…
+
+## Lack of knowledge, or "you don't know what you don't know"
+
+OK, so as I said I've been working on the web platform almost the entire time it has been in existence. I absolutely try to keep up. Nevertheless I learned about the web browser "Interop" effort in late 2023 when I paid for [a class by Manuel Matuzović](https://smashingconf.com/online-workshops/workshops/modern-css-manuel-matuzovic/) that I paid for out of my own pocket. None of my peers seemed to be aware of the project, either. Interop has been a going concern since 2021.
+
+### It's an insular crowd
+
+This is particularly true of CSS practitioners. There aren't a lot of people who eat, sleep, and breathe CSS. CSS is _my_ favorite part of the web platform, but my duties at work are split using all **three** parts of the web platform (HTML, CSS, JS), as well as handling mentorship duties and working as a Scrum Master. Right now there's only one big CSS-specific conference that I know of, and that's CSS Day in Amsterdam. I hope to make it someday, but that's a haul from the mountains of Virginia. Of course we watch the stream, but there's a force multiplier to being able to go out for drinks after the talks.
+
+"Oh, you should start a CSS users group!" Friend, my list of "shoulds" far outstrips my capacity for "can," and starting a local developer user group isn't even
+
+A lot of the folks who _do_ commit themselves to CSS are most comfortable on Mastodon. [I'm there](https://hachyderm.io/@thudfactor), so I get to see what they all say. Sometimes I even get answers to my questions or feedback on the more ill-considered of my posts. (Thank you, by the way.) But Mastodon is not where most people are. "Where do you learn this stuff?" people ask me. "Mastodon," I say. "You should join." And then they don't join. It's easy to think of the Mastodon crowd as being "the community" but most web developers are not there.
+
+Also, I love you but y'all ain't precisely the friendliest crowd. Much of "the discourse" borders on snobbery, and occasionally someone will strip all the way down to their skivvies and leap right into the deep-end of elitism. Just this morning I watched a snarky, sarcastic exchange over utility-based CSS. It's a strategy! It's not even a framework! You can do utility CSS with _vanilla_ CSS! What's your beef?
+
+Mastodon is also where people take absolutist opinions against single page apps, or JavaScript in general, or even — believe it or not! — CSS! There's a contingent of small web / indie-web types who treat _no CSS_ as the _ideal_.
+
+"I don't count anyone who uses GitHub as being part of the indie web." Yikes!
+
+I have unfollowed folks on Mastodon who are contributing great things to the web platform because they spend three-quarters of the time running other people down for using tools they don't approve of. Sans context. React? Always bad. Next!
+
+If only we could fight the rise of global fascism with the kind of enthusiasm and authority with which some people rail against single page apps.
+
+### New talent has to start somewhere.
+
+Web development is a hard skill to learn. I had the significant advantage of getting to spend thirty years learning this stuff as it developed at a sustainable pace, whereas a newcomer to the industry has to get their hands on it somewhere. That "somewhere" is likely to be React, Tailwind, Bootstrap, because those are all tools that help people make something useful fast.
+
+I would _like_ for everyone to understand the JavaScript and CSS underneath it. I'd _like_ everyone to learn the value of semantic HTML. That's why I try to approach people where they are. Imagine a new person, someone who has just learned Tailwind and are proud of what they can now do. They are excited by their new skill. They go tell someone about it, and that person sneers at them. "Yuck, Tailwind, you should just use CSS." It's the rare person who will not get either defensive or discouraged by this, especially if the person sneering at the work is doing it from on stage.
+
+I know someone who applied for an entry-level web developer job and basically failed the interview because she said she used Tailwind on a project. _Entry level_. She doesn't think the interviewer even bothered to look at her portfolio.
+
+Intentional or not, snobbery is a form of gatekeeping. _If_ the web development intelligentsia responsible for evangelizing new tech are _also_ snobby, guess what that gate is around. Personally I really like web components, for example, but anyone I direct that way is going to run into a lot of intense anti-React, anti-framework, anti-JavaScript, anti-application rhetoric because those seem to go hand-in-hand. Which is weird, because the best use cases I can think of for web components are web apps and style guides.
+
+### Evangelism takes a bit
+
+Finally, the new stuff is going to take a while to get uptake. The Last Great Evangelism I saw in web development was [Ethan Marcotte leading us all to responsive web design](https://alistapart.com/article/responsive-web-design/). He explained the what, the how, and the why very well. That was a web-developer generational effort on a par with discarding tables for layout. It required a lot of time, effort and cooperation from a lot of other people. My project manager had to persuade _me_. I had to persuade UX folks and designers. Everyone had to persuade people with purse strings.
+
+I was probably making the case for responsive design about as late as 2018. I think I had my last conversation about "why we don't just use tables for design" in 2015. I don't think I've had my last conversation about content being "above the fold" yet.
+
+Grid and container queries, specifically, are things design teams as well as developer teams are going to need to wrap their heads around, and unfortunately most designers work at a remove from the browser. Their tools have to catch up before they can catch up, and it's not work we developers can do for them. You want to start a fight with a designer? Say "you know, you might be interested in learning how to write a little CSS."
+
+## Let me sum up
+
+If you've read this far, thank you and I'm sorry. I got a bit ranty there towards the end, and might have lost the thread a bit. I'll try to recap.
+
+1. Not everyone is in a position to update old code. Frameworks, business practices, and contractual arrangements interfere.
+2. Updating legacy code is expensive, both in money and labor terms.
+3. It's not just a developer education problem, it's designers, project managers, and other stakeholders.
+4. There's something about web developer culture at the moment that feels very insular and gate-keepery, which makes getting the word out hard.
+5. Also, new web paradigms, [like love](https://youtu.be/FkDpwF6-QiA?si=abWbTT8GFXttHrba), take time.
+
+Finally, if you want to show people a better way it rarely helps to shit all over their work.

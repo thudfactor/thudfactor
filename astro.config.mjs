@@ -4,12 +4,14 @@ import tailwindcss from "@tailwindcss/vite";
 import { remarkDefinitionList, defListHastHandlers } from "remark-definition-list";
 import sitemap from "@astrojs/sitemap";
 
-//import db from "@astrojs/db";
+import vercel from "@astrojs/vercel";
 
-// https://astro.build/config
+import db from "@astrojs/db";
+
 export default defineConfig({
 	site: "https://www.thudfactor.com",
-	integrations: [mdx(), sitemap()],
+	integrations: [mdx(), sitemap(), db()],
+	output: "server",
 
 	vite: {
 		plugins: [tailwindcss()],
@@ -27,4 +29,6 @@ export default defineConfig({
 			},
 		},
 	},
+
+	adapter: vercel(),
 });

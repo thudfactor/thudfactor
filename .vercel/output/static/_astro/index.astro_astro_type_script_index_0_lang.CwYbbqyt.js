@@ -1,0 +1,1 @@
+import{p as r}from"./app.D6HS1y5B.js";const a=e=>{e.setup=()=>{e.createCanvas(400,400),e.background(128)},e.draw=()=>{e.stroke("rebeccapurple"),e.strokeWeight(100),e.point(200,200)}},t=document.getElementById("Target");t&&new r(a,t);

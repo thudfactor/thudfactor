@@ -5,10 +5,11 @@
   "scripts": {
     "dev": "astro dev --host",
     "start": "astro dev",
-    "build": "astro check && astro build",
+    "build": "astro check && astro build --remote",
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/vercel": "^8.2.1",
     "p5": "^2.0.3"
   },
   "devDependencies": {

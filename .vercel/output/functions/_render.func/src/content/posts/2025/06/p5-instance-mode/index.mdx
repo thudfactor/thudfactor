@@ -1,0 +1,110 @@
+---
+title: P5.js in Instance Mode
+description: Working with the JavaScript implementation of Processing in a way that cooperates with other JavaScript / frameworks is a little tricky.
+date: 2025-06-15T06:59:39-04:00
+cover:
+  src: ./paw.jpg
+  alt: A grey cat's paw dangles from above the frame. You can see one small claw.
+  description: Cheery the kitten, asleep in her cat tree, gives me a great opportunity to photograph a foot.
+  attribution:
+    name: John Williams
+---
+
+import SimpleDemo from "@components/animations/SimpleDemo/index.astro";
+
+For the uninitiated, [P5](https://p5js.org/) is a JavaScript implementation of the [Processing](https://processing.org/) programming language. For the Very Olds among us, Processing is a bit like [Logo](<https://en.wikipedia.org/wiki/Logo_(programming_language)>). That is: a simple language geared towards producing art.
+
+Every so often I give P5 a poke or two because I find generative art (the non-AI kind) fascinating. Usually I do this on CodePen ([here's a fractal tree](https://codepen.io/elfinjohn/pen/eYxBeEL)), but I really want to roll it into this site.
+
+However, P5 is written with the basic learner in mind and there's a lot of stuff set up with the expectation that you're just going to set up a P5-exclusive project and go. It uses a classic mode of JavaScript development, putting everything in a global space and depending on correct sequencing of source-file downloads. Which is nice, but it means the simple approach is hostile to integration with other frameworks, build tools, and JavaScript.
+
+Fortunately, P5 has an "instance mode" and a `npm` package, but getting these to work required a bit of digging. I don't _think_ either is mentioned in the official documentation. You have to go look up [instance mode](https://github.com/processing/p5.js/wiki/Global-and-instance-mode) in their wiki.
+
+## OK, what I did
+
+This site is built using [Astro](https://astro.build/), but I think this process is going to be pretty similar if you have some sort of build process. This assumes you have an existing node project.
+
+Add to your project with [NPM](https://www.npmjs.com/package/p5) or similar; for example: `npm i p5`. You can then import into your source files with `import p5 from "p5"`.
+
+I use TypeScript[^1], so at this point my project started barking at me about missing types, but the error message was a new one on me:
+
+```text
+Could not find a declaration file for module 'p5'. '[...]/node_modules/p5/dist/app.js' implicitly has an 'any' type.
+
+There are types at '[...]//node_modules/p5/types/p5.d.ts', but this result could not be resolved when respecting package.json "exports". The 'p5' library may need to update its package.json or typings.
+```
+
+I solved this by adding a separate type project (`npm i --save-dev @types/p5`). It seems to work, but there's probably a better way.
+
+When you `import p5 from "p5"` you get a class you can instantiate:
+
+```js
+import p5 from "p5"
+
+const sketch = new p5((p5) => { [...] })
+```
+
+The constructor accepts a single argument function that you can then use to call all of P5's methods. It will also take a second argument: an element to use as a render target.
+
+Here's a simple, complete example:
+
+```js
+import p5 from "p5";
+
+// For clarity's sake, I like to store the sketch in a variable
+const sketch = (p: p5) => {
+  p.setup = () => {
+    p.createCanvas(200, 200);
+    p.background(128);
+  };
+
+  p.draw = () => {
+    p.stroke("rebeccapurple");
+    p.strokeWeight(50);
+    p.point(100, 100);
+  };
+};
+
+const target = document.getElementById("Target");
+
+if (target) {
+  new p5(sketch, target);
+}
+```
+
+That will get you this:
+
+<SimpleDemo />
+
+In "global" mode, P5 looks for `window.setup()` and `window.draw()` functions. It's not going to find those, so it will then switch to "instance" mode and run the `setup()` and `draw()` functions defined on the P5 instance created by the constructor.
+
+There's no need to kick off the animation. P5 will start automatically, just as it does in global mode.
+
+## Working with Classes
+
+If you want to follow [Daniel Shiffman's advice](https://natureofcode.com/random/#the-random-walker-class) and turn your animation elements into separate classes, you'll need to pass the P5 instance to your class constructors for them to have access:
+
+```js
+class Walker {
+
+	constructor(p) {
+		this.x = p.width / 2;
+		this.y = p.height / 2;
+		this.p = p;
+	}
+
+	show() {
+		this.p.stroke(255);
+		this.p.strokeWeight(10);
+		this.p.point(this.x, this.y);
+	}
+
+  [...]
+}
+```
+
+Shiffman doesn't do this in his examples because he still has P5 running in global mode, so all of the P5 functions are defined in the global space.
+
+Anyway, I hope this helps someone, somewhere, assuming a search engine chooses to show my website at any point. 🤣
+
+[^1]: I know I said [I don't like TypeScript](/posts/2025/06/i-like-javascript/) but it helps in a complex codebase.

@@ -1,0 +1,24 @@
+---
+import BlogPost from "../layouts/BlogPost.astro";
+import { getCollection } from "astro:content";
+import TeaserList from "@components/PageItems/TeaserList.astro";
+const title = "Welcome to Thudfactor";
+
+const posts = (await getCollection("posts", p => p.data.draft !== true))
+	.sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf())
+	.reverse()
+	.slice(0, 8);
+---
+
+<BlogPost
+	title={title}
+	description={"Thudfactor is the personal blog of J H Williams, web developer"}
+>
+	<h2>Recently published</h2>
+	<div class="flow">
+		<TeaserList posts={posts} h={3} />
+		<div class="center">
+			<a href="/posts/">More posts…</a>
+		</div>
+	</div>
+</BlogPost>

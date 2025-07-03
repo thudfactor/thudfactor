@@ -1,0 +1,8 @@
+async function getMod() {
+						return import('./index_DBJpi6HM.mjs');
+					}
+					const collectedLinks = [];
+					const collectedStyles = ["[data-element=\"color-bar\"] {\n\tdisplay: flex;\n\tjustify-content: stretch;\n\theight: var(--color-bar-height, 5rem);\n\n\t> * {\n\t\twidth: 100%;\n\t}\n}\n",".alert[data-astro-cid-2mn2hodj]{--cluster-wrap: nowrap;margin-block:1lh;border:1px var(--color-slate-600) solid;background-color:var(--color-slate-100);padding:var(--text-base)}","[data-element=\"labeledSwatch\"] {\n\tdisplay: flex;\n\talign-items: center;\n\tgap: 1rem;\n\tfont-size: 12px;\n\n\t.swatch {\n\t\twidth: 50px;\n\t\tflex-shrink: 0;\n\t\taspect-ratio: 3/2;\n\t\tbackground-color: var(--color, #ccc);\n\t}\n\n\t.label {\n\t\tfont-family: monospace;\n\t}\n}\n",".hsl {\n\t--h: 0;\n\t--s: 100%;\n\t--l: 50%;\n\n\t.swatch {\n\t\tbackground-color: hsl(var(--h) var(--s) var(--l));\n\t}\n\n\t&.hue .swatch {\n\t\t--h: calc(360 / var(--numswatches) * var(--index));\n\t}\n\n\t&.lightness .swatch {\n\t\t--l: calc(100% / var(--numswatches) * var(--index));\n\t}\n\n\t&.saturation .swatch {\n\t\t--s: calc(100% / var(--numswatches) * var(--index));\n\t}\n}\n\n.hwb {\n\t--h: 0;\n\t--w: 0%;\n\t--b: 0%;\n\n\t.swatch {\n\t\tbackground-color: hwb(var(--h) var(--w) var(--b));\n\t}\n\n\t&.hue .swatch {\n\t\t--h: calc(360 / var(--numswatches) * var(--index));\n\t}\n\n\t&.whiteness .swatch {\n\t\t--w: calc(100% / var(--numswatches) * var(--index));\n\t}\n\n\t&.blackness .swatch {\n\t\t--b: calc(100% / var(--numswatches) * var(--index));\n\t}\n}\n"];
+					const defaultMod = { __astroPropagation: true, getMod, collectedLinks, collectedStyles, collectedScripts: [] };
+
+export { defaultMod as default };

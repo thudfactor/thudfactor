@@ -1,6 +1,6 @@
 import './chunks/_astro_actions_8Tfj1QoI.mjs';
 import * as z from 'zod';
-import { d as db, C as Comment } from './chunks/_astro_db_CcysHX8J.mjs';
+import { d as db, C as Comment } from './chunks/_astro_db_B_HXa1Yn.mjs';
 import { d as defineAction } from './chunks/server_DHkN6osW.mjs';
 
 const server = {

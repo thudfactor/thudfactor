@@ -32,10 +32,6 @@
 			"dest": "_render"
 		},
 		{
-			"src": "^/books/?$",
-			"dest": "_render"
-		},
-		{
 			"src": "^/endmark/?$",
 			"dest": "_render"
 		},

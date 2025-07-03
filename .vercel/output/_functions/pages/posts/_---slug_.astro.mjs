@@ -1,11 +1,11 @@
 import { c as createAstro, a as createComponent, m as maybeRenderHead, e as addAttribute, b as renderTemplate, r as renderComponent } from '../../chunks/astro/server_B4EwhNOI.mjs';
 import 'kleur/colors';
-import { a as getEntry, r as renderEntry } from '../../chunks/_astro_content_C9HKnmlZ.mjs';
+import { a as getEntry, r as renderEntry } from '../../chunks/_astro_content_RGBQCZHu.mjs';
 import { $ as $$BlogPost } from '../../chunks/BlogPost_CTxqPoOR.mjs';
 import 'clsx';
 import { a as actions } from '../../chunks/_astro_actions_8Tfj1QoI.mjs';
 import { i as isInputError } from '../../chunks/astro-designed-error-pages_BT-6sFHy.mjs';
-import $$CommentsList from '../../chunks/CommentsList_CRs9l5bC.mjs';
+import $$CommentsList from '../../chunks/CommentsList_DMZXSg9F.mjs';
 /* empty css                                     */
 export { renderers } from '../../renderers.mjs';
 

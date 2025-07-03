@@ -1,5 +1,6 @@
 # dependencies installed by npm
 node_modules
+.astro
 
 # build artefacts
 src/css

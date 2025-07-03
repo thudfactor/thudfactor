@@ -6,8 +6,7 @@
     "dev": "astro dev --host",
     "start": "astro dev",
     "build": "astro check && astro build",
-    "astro": "astro",
-    "preview": "astro check && astro build && wrangler dev"
+    "astro": "astro"
   },
   "dependencies": {
     "p5": "^2.0.3"
@@ -15,17 +14,15 @@
   "devDependencies": {
     "@11ty/eleventy-fetch": "^5.1.0",
     "@astrojs/check": "^0.9.4",
-    "@astrojs/cloudflare": "^12.5.4",
     "@astrojs/db": "^0.15.0",
     "@astrojs/mdx": "^4.3.0",
     "@astrojs/rss": "^4.0.12",
     "@astrojs/sitemap": "^3.4.1",
     "@tailwindcss/vite": "^4.0.3",
-    "astro": "^5.9.3",
     "@types/p5": "^1.7.6",
+    "astro": "^5.9.3",
     "prettier": "^3.4.2",
     "prettier-plugin-tailwindcss": "^0.6.11",
-    "wrangler": "^4.20.0",
     "remark-definition-list": "^2.0.0",
     "tailwindcss": "^4.0.3",
     "typescript": "^5.6.3"

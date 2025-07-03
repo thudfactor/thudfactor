@@ -1,9 +1,0 @@
-{
-	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "thudfactor",
-	// Update to today's date
-	"compatibility_date": "2025-06-13",
-	"assets": {
-		"directory": "./dist",
-	},
-}

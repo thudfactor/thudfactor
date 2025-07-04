@@ -22,7 +22,7 @@
     "@astrojs/sitemap": "^3.4.1",
     "@tailwindcss/vite": "^4.0.3",
     "@types/p5": "^1.7.6",
-    "astro": "^5.9.3",
+    "astro": "^5.11.0",
     "prettier": "^3.4.2",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "remark-definition-list": "^2.0.0",

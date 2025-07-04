@@ -5,7 +5,7 @@ const { alt, src, attribution, description } = Astro.props.cover;
 ---
 
 <div class="hero">
-	<Image width={2400} src={src} alt={alt || ""} />
+	<Image src={src} alt={alt || ""} />
 
 	<div id="hero-caption" popover="auto">
 		<div>{description}</div>

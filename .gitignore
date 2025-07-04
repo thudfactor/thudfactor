@@ -21,4 +21,5 @@ _site
 .vscode
 .github
 .cache
+.vercel
 

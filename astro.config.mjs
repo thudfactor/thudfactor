@@ -11,7 +11,10 @@ import vercel from "@astrojs/vercel";
 export default defineConfig({
 	site: "https://www.thudfactor.com",
 	integrations: [mdx(), sitemap()],
-	adapter: vercel({ imageService: true }),
+	adapter: vercel({
+		imageService: true,
+		imagesConfig: { formats: ["image/webp"], sizes: [300, 600, 900, 1200, 2400] },
+	}),
 
 	vite: {
 		plugins: [tailwindcss()],

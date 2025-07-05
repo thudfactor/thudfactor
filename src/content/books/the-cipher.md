@@ -12,4 +12,4 @@ published: 1991
 openlibrary: OL21243717W
 ---
 
-When a mysterious hole appears in the floor of the storage room of Nicolas and Nakota's apartment building, the "Funhole" becomes their entire purpose in a story that's a bit like Lord of the Flies but it's starving artists.
+When a mysterious hole appears in the floor of the storage room of Nicolas and Nakota's apartment building, the "Funhole" becomes their entire purpose. The story is a bit like Lord of the Flies but with starving artists.

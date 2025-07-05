@@ -22,7 +22,7 @@ import ArticleFigure from "@components/ContentItems/ArticleFigure/index.astro";
 import ExampleScanLength from "./ExampleScanLength.astro";
 import ExampleLineHeight from "./ExampleLineHeight.astro";
 
-“Thud factor” is academic slang for how loud your thesis sounds when it’s thrown downstairs. When I first registered this domain in (let me check…) August of 2000 (‼️) my intent was to fill up the site with a whole bunch of text. I did actually do that once upon a time, but one thing I never really got right was the typography.
+“Thud factor” is academic slang for how loud your thesis sounds when it’s thrown downstairs. When I first registered this domain in (let me check…) August of 2000 (‼️) my intent was to fill up the site with a bunch of text. I did actually do that once upon a time, but one thing I never really got right was the typography.
 
 That’s unfortunate because getting the basics of typography right is not that difficult and there are quite a few excellent examples to emulate. I am still learning, still working on this site. But here’s some stuff about the basics.
 
@@ -65,7 +65,7 @@ The former sets the _default_ size of fonts throughout the document to 120% of t
 	[rem unit](https://blog.logrocket.com/using-em-vs-rem-css/).
 </AlertCallout>
 
-A lot of people suggest sticking with the default font size for your main article content. That’s a good place to start, but don’t feel shy about bumping it up a bit. Many of my favorite web sites do, too.
+A lot of people suggest sticking with the default font size for your main article content. That’s a good place to start, but don’t feel shy about bumping it up a bit. Many of my favorite websites do, too.
 
 ### What about those other units?
 
@@ -83,7 +83,7 @@ In CSS-land, points and units like `pt`, `in`, `mm` are called “absolute units
 
 What about pixels? Well, they _were_ the universal screen unit. Computed values in your web development panel often translate to pixel units for this reason. But the typical size and meaning of “pixel” has changed a lot over the years.
 
-One pixel was one screen dot for most people for a long time. As part of the desktop publishing revolution, early Mac displays intentionally made `1px = 1pt = 1/72in`. Later, as display technology improved and screen dots could be made smaller, the rule of thumb became `1px = 1/96in`. Now, with some displays running between 220 to 300 pixels per inch, it's not a reliable measure of size anymore.
+One pixel was one screen dot for most people for a long time. As part of the desktop publishing revolution, early Mac displays intentionally made `1px = 1pt = 1/72in`. Later, as display technology improved and screen dots could be made smaller, the rule of thumb became `1px = 1/96in`. Now, with some displays running between 220 and 300 pixels per inch, it's not a reliable measure of size anymore.
 
 Now, the W3C defines both “device pixels” and “reference pixels” — with the CSS `px` unit theoretically comprising [the reference pixel](https://www.w3.org/TR/css-values-3/#reference-pixel). In practice, display manufacturers size pixels up and down pretty fluidly these days.
 
@@ -144,7 +144,7 @@ In traditional typesetting, then, if you have 12pt type with 6pt leading, the ty
 	<figcaption>Text with leading between the text rows (traditional print).</figcaption>
 </figure>
 
-For reasons that are not entirely clear to me but probably have to do with making programming browsers easier, CSS abandoned that convention long ago. In browsers, the extra space we call “leading” is split between the top and bottom of a text row. that means 1rem type with 0.5rem leading becomes 0.25rem at the top, 1rem of text, and the other 0.25 rem at the bottom.
+For reasons that are not entirely clear to me but probably have to do with making programming browsers easier, CSS abandoned that convention long ago. In browsers, the extra space we call “leading” is split between the top and bottom of a text row. That means 1rem type with 0.5rem leading becomes 0.25rem at the top, 1rem of text, and the other 0.25 rem at the bottom.
 
 <figure class="text-figure">
 	<div style="margin-top: 1rem; font-size: 2rem; line-height: 2; background-image: repeating-linear-gradient(to bottom, hsl(200deg 100% 65%) 0, hsl(200deg 100% 65%) 1rem, hsl(200deg 100% 100%) 1rem, hsl(200deg 100% 100%) 3rem, hsl(200deg 100% 65%) 3rem, hsl(200deg 100% 65%) calc(4rem - 1px), hsl(200deg 100% 100%) 4rem);">
@@ -173,7 +173,7 @@ It becomes a mathematical and strategic exercise any time you want to align a bo
 
 To optically align these items, you either have to shift the text _up_ slightly from its natural position or shift the other thing down. Which one you choose and how you do it depends on the specific circumstances.
 
-One way of doing this is by applying margins or negative margins to some of the elements, depending on how the layout works. Shifting the text is the strategy I used in the figure below.
+One way of doing this is by applying margins or negative margins to some elements, depending on how the layout works. Shifting the text is the strategy I used in the figure below.
 
 <figure class="text-figure">
 	<blockquote style="line-height: 2; border-left: 2px black solid; padding-block: 2px; padding-left: .8rem; margin-left:0;">
@@ -193,9 +193,9 @@ Maybe someday we’ll have an easier way to adjust the line height to something 
 
 ## How I chose my values
 
-Typography is a discipline and it requires both a design eye and careful attention to detail. Fortunately, setting large blocks of text isn’t an activity that rewards novelty, so we can cheat a little bit.
+Typography is a discipline that requires both a design eye and careful attention to detail. Fortunately, setting large blocks of text isn’t an activity that rewards novelty, so we can cheat a bit.
 
-OK, we can straight-up steal.
+OK, we can steal.
 
 In this case, I went to [The Verge](https://www.theverge.com/) because I liked how their articles looked. I swiped their font size, line width, and line height values. Once I chose my font, I tinkered a little with those settings.
 
